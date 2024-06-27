@@ -176,13 +176,63 @@ going to use **containerd** as container runtime interface for K8s (since K8s ca
 WILL DISCUSS What are all the container runtime that we have?
 WHAT K8s has supported?
 Why **containerd** and why **Docker** got deprecated v1.24+?
+>Note: K8s supports lot of container runtime interfaces. CRI. Just as listed below. 
+>1) Containerd
+>2) CRI-O
+>3) Docker-Engine (using cri-dockerd) 
+>4) Rocket Container Engine (rkt)
+>5) and more
+>6) also we have hypervisor container runtime interfaces as well
 
-container runtimes
+Here, we're primarily using **containerd**
+**container runtimes**
 
 | Runtime                              | Path to UNIX Domain socket               |
 | ------------------------------------ | ---------------------------------------- |
-| container                            | unix://var/run/container/containerd.sock |
+| ==container==                        | unix://var/run/container/containerd.sock |
 | crio                                 | unix://var/run/crio/crio.sock            |
 | Docker Engine (using cri-containerd) | unix://var/run/cri-dockerd.sock          |
 
+> [!NOTE] Why **containerd**?
+> > **containerd** allows the kubelet to talk to the containerd with low latency and high efficiency compared to **Docker-Engine**.  *major reason why Docker-Engine got deprecated* and now the containerd is the default Container Runtime Interface for Kubernetes.
+any other CRI can be used too as per ops convenience. such as we seen above. Rocket contanier runtime(rkt)
+   
+**HOW THIS WORKS IN UNDER THE HOOD?**
 ![[Pasted image 20240627145820.png]]
+> **Kubelet🛞** (a grpc client) < - -*CRI protocol*- - > **CRI shim** (grpc server) < - - > (*container runtime*) **cri-containerd** -- >>> containers on PODS
+
+As given in the above diagram, (say creating containers as POD)
+1) **Kubelet🛞** (a part of K8s) -> this, a **daemon-service** WILL BE SEEN RUNNING ON ALL THE NODES (*both control plane or worker node*) => this will get in act as a ==**CLIENT**== and in this context, **cri-containerd**, a **==SERVER==**
+>this **Kubelet🛞**client having an objective is to create PODS.:
+>In order to do that, **Kubelet🛞** client -> has to talk to CR -> **cri-containerd** server => to create PODS.
+`CLIENT HAS TO TALK TO THE SERVER`
+	In-between, we got something called **cri-shim** or whatever tool. this is called as a => ***Mediator or Middleware.*** => THIS IS ULTIMATELY, THE **==CRI==** **CONTAINER RUNTIME INTERFACE**.
+
+> [!NOTE] **CRI - CONTAINER RUNTIME INTERFACE** high level overview
+> CRI, a Container Runtime Interface is a mediator between the **Kubelet**(**Client**) and the **container runtime (Server).**
+ 
+ > This Container Runtime will receive the information the **Kubelet🛞** via/with the help of **CRI** => using **==gRPC==** protocol (an RPC Framework)  => MODE OF COMMUNICATION TO PASS THE INFORMATION FROM THE **Kubelet🛞** to the **Container Runtime** which is **containerd**(or) can be others.
+ 
+ ==container-runtime takes information and create containers accordingly.== once all the containers get created and deployed.
+
+THIS HOW IT WORKS UNDER THE HOOD.
+###### How Docker works in parallel, all the working principles and the inner workflow behind the magic of CREATING CONTAINERS:
+![[Pasted image 20240627173518.png]]
+
+> [!NOTE] **DOCKER CONTAINER CREATION WORKFLOW** Magic of containerization
+> **Kubelet🛞**(**client**) --> passes info using [Rest API] --> **docker (container runtime)** ***CLI*** --> takes the information in and to docker(d) **docker daemon(server)** -->  talks to using [gRPC] **containerd** --> passes by [OCI bundle] to --> **runc** --> assigns [namespaces, cgroups] --> **libcontainer** --> *packager completes containerizing by isolating with namespaces and cgroups* , [runc exits] *from here* --> **container status** -- [console output] --> PODS gets CREATED --> this output get passed back to --> **Kubelet🛞**
+
+this is how it works in backend when you try to created containers using Docker in the K8s cluster. 
+
+**SEEMS GOOD! WHY IT GOT DEPRECATED and Should we thrash Docker!? No!** explain why?
+eg:
+I need to create a `Dockerfile` with all the custom instructions and scripts. I need to build a docker image and store in a container registry as artifacts. CAN KUBERNETES DO THIS? **NO**!
+
+Need Containerization tool for sure. In that, you got the popular tool Docker. With this, we can able to build images and store it in container registries. And to test your application in the local system, Kube have no use doing the same on that scale for simple use cases. 
+
+Simply, you can build the same by writing the essential `Dockerfile`and test the apps. Obviously **Docker!** it just got deprecated the support for Kubernetes to create containers. 
+
+HOW IT GOT DEPRECATED?  
+> **docker (container runtime)** ***CLI*** --> takes the information in and to docker(d) **docker daemon(server)** -->
+> THESE STEPS GOT SKIPPED!
+
