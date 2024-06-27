@@ -177,7 +177,6 @@ WILL DISCUSS What are all the container runtime that we have?
 WHAT K8s has supported?
 Why **containerd** and why **Docker** got deprecated v1.24+?
 
-
 container runtimes
 
 | Runtime                              | Path to UNIX Domain socket               |
@@ -185,4 +184,5 @@ container runtimes
 | container                            | unix://var/run/container/containerd.sock |
 | crio                                 | unix://var/run/crio/crio.sock            |
 | Docker Engine (using cri-containerd) | unix://var/run/cri-dockerd.sock          |
+
 ![[Pasted image 20240627145820.png]]
