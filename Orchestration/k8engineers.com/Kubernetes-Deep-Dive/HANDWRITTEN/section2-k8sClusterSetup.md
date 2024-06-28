@@ -236,3 +236,100 @@ HOW IT GOT DEPRECATED?
 > **docker (container runtime)** ***CLI*** --> takes the information in and to docker(d) **docker daemon(server)** -->
 > THESE STEPS GOT SKIPPED!
 
+==and rolling over that update as -> **Kubelet🛞**(**client**) -> directs talks to **cri-plugin** as interface (which is) cri-containerd ->  having **containerd (the server)** --> creates CONTAINERS AS PODS.==
+DIRECTLY TALK TO **containerd**. less latency.
+> this why **containerd** became the default option. v1.24+
+
+**WILL SEE ALL THESE WITH MORE DETAILS-**
+###### Why kubernetes dropped support for Docker as CRI from v1.24+
+we have seen these already in [section1](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2FKubernetes-Deep-Dive%2FHANDWRITTEN%2Fsection1-k8sArchitecture) dropping support for Docker. A short diagram for your reference. 
+![[Pasted image 20240628101805.png]]
+
+All the architectural differences between all three of these. +Remember, 
+> after all these pods gets created, the information has to sent back to **Kubelet🛞**)
+
+1) All these Docker clunks
+2) **Containerd** v1.0 --> **Kubelet🛞**(**client**) talks to -> **CRI interface** -> receives and then pass it to **containerd** -> and left it to create **containers**
+ 3) Container v2.0 -> **Kubelet🛞**(**client**) --> cri became a part of containerd itself as **cri-containerd** (like a plugin) which directly creates --> **containers**.
+
+THIS HOW THE LATENCY HAS BEEN AVOIDED AND IMPROVISED by cutting down inbetween clunks of docker!  
+***
+
+## 4.  Kubernetes single node setup using kubeadm tool(cri-containerd)
+
+Setting up Single-node Kube setup to create a cluster infra using Kubeadm tool:
+In this demo, we use:
+1) **Kubeadm** - to create cluster
+2) **containerd v1.25** - Container runtime (plugin plugged in)
+
+##### CREATE A VM
+1) Any VM Engine as per your convenience. Ill be using Hyper-V. 
+2) Create VM
+	1) Name - vmName (kubeadm-Single-Node)
+	2) ISO folder -Ubunti 24.04 - live server jammy jelly
+	3) Image
+	4) Type
+	5) Version
+
+Hyper-V steps:
+1) Open Hyper-V
+2) New -> Create VM -> next
+3) Name, Gen2, RAM (4096MB/2GB), Bridge Connection (for static IP) - > 4x Next
+4) Name, Location, Storage Size (50gb) -> all default -> Next
+5) OS (ISO location) 
+6) Preview 
+7) Finish
+Right Click -> Settings
+1) Security -> Disable Secure Boot
+2) Apply convenient configurations
+3) Apply and Ok
+4) Open VM
+
+Ubuntu 24.0 Boot Settings:
+1) Try Install
+2) Language
+3) Continue with or without (I'm continuing without updating)
+4) Keyboard Layout (with default)
+5) base OS Version (Ubuntu Server Standard)
+6) Network Interface config 
+`Note: We can see an IP allocated by default without config. This happened because of bridge Network where it automatically allocates an IP cause of DHCP given by router. Which isn't static or permanent. We'd like to have a static IP to get the image be persistent.
+> Will configure the same.
+
+1) (Tab) to eth0 => Edit IPv4 -> (say that it is Automatic(DHCP)(ip gets allocated just like your mobile gets connected to the wifi giving an IP) **These IPs comes from router**)
+	`Need a fixed IP address, have to change automatic to static to assign a fixed IP to the system, in this case, VM`
+2)  Enter -> Manual
+` Open cmd -> ipconfig -> Ethernet adapter - Bridged, Have this aside for this reference)`
+```cmd
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::612f:24d5:4f01:4e62%17
+   IPv4 Address. . . . . . . . . . . : ==192.168.0.158==
+   Subnet Mask . . . . . . . . . . . : ==255.255.255.0==
+   Default Gateway . . . . . . . . . : 192.168.0.1
+```
+4)  Edit eth0 IPv4 Configuration
+	IPv4 Method: Manual
+	Subnet: 192.168.0.0 (subnet rule IP/Mask)
+	Address: 192.168.0.222
+	Gateway: 192.168.0.1
+	Name Servers: 8.8.8.8,8.8.4.4
+	Search Domains: -blank-
+
+5) Now, Network Config Interface:
+	eth0 - 
+	static: 792.168.0.222/24
+
+6) Configure Proxy, if required
+	Proxy Address: 
+7) Mirror Default
+8) Storage Config (default) - OS to take care of it. 
+	Option1
+PREVIEW -> Done + Continue!
+
+Profile Setup:
+1) Name
+2) Server (computerName)
+3) username
+4) password
+5) confirm
+
+Ubuntu Pro: Apply if required
