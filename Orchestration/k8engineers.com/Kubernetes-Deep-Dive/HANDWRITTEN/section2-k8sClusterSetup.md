@@ -332,4 +332,19 @@ Profile Setup:
 4) password
 5) confirm
 
-Ubuntu Pro: Apply if required
+Ubuntu Pro: Apply if required 
+
+Checks:
+1) Login
+2) Ping
+3) Check network
+4) IP and more
+all done.
+
+> -- So far we have performed setting the VM for Kubernetes. Now will set-up kubernetes single node setup. --
+
+# Setup Single node having One Control plane + worker node:
+
+
+
+
