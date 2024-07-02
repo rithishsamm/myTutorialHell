@@ -346,5 +346,3 @@ all done.
 # Setup Single node having One Control plane + worker node:
 
 
-
-
