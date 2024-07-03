@@ -343,6 +343,5 @@ all done.
 
 > -- So far we have performed setting the VM for Kubernetes. Now will set-up kubernetes single node setup. --
 
-# Setup Single node having One Control plane + worker node:
-
+# 5. Setup Single node having One Control plane + worker node:
 
