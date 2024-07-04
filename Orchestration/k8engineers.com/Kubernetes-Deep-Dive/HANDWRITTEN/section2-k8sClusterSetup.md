@@ -1,3 +1,4 @@
+
 ### Section 2: K8S Setup
 #### 1.  Tools to setup kubernetes cluster and Cloud services
 ###### Cluster setup - [Doc](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fofficial%2FMaster%20Docker%20and%20Kubernetes%2Fsection2%2FTools%20to%20setup%20kubernetes%20cluster%20and%20cloud%20service)
@@ -266,7 +267,7 @@ In this demo, we use:
 1) Any VM Engine as per your convenience. Ill be using Hyper-V. 
 2) Create VM
 	1) Name - vmName (kubeadm-Single-Node)
-	2) ISO folder -Ubunti 24.04 - live server jammy jelly
+	2) ISO folder -Ubuntu 22.04 - live server jammy jelly
 	3) Image
 	4) Type
 	5) Version
