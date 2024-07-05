@@ -1,0 +1,103 @@
+#spec.containers[].resources.limits.cpu
+#spec.containers[].resources.limits.memory
+#spec.containers[].resources.limits.hugepages-<size>
+#spec.containers[].resources.requests.cpu
+#spec.containers[].resources.requests.memory
+#spec.containers[].resources.requests.hugepages-<size>
+#pod updates may not change fields other than `spec.containers[*].image`, `spec.initContainers[*].image`, `spec.activeDeadlineSeconds` or `spec.tolerations`
+
+#Specify the CPU request and limit
+#In args we are questing or 2 cpu which is beyond te limit for failure
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-demo
+  namespace: cpu-example
+spec:
+  containers:
+  - name: cpu-demo-ctr
+    image: vish/stress
+    resources:
+      limits:
+        cpu: "1"  #1 or 1000m == 1 core cpu, 0.5 == 500m, 0.1 == 100m
+      requests:
+        cpu: "0.5"
+    args:
+    - -cpus
+    - "2"
+---
+#lets specify the CPU limit more than the node
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-demo-2
+  namespace: cpu-example
+spec:
+  containers:
+  - name: cpu-demo-ctr-2
+    image: vish/stress
+    resources:
+      limits:
+        cpu: "100"
+      requests:
+        cpu: "100"
+    args:
+    - -cpus
+    - "2"
+---
+#In this we are providing the memory request and limit
+#Generate the stress below limit and check the status of the POD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-demo
+  namespace: mem-example
+spec:
+  containers:
+  - name: memory-demo-ctr
+    image: polinux/stress
+    resources:
+      limits:
+        memory: "200Mi" #Ki, Mi, Gi, Ti, Pi
+      requests:
+        memory: "100Mi"
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
+---
+#In this we are providing the memory request and limit
+#Generate the stress above limit and check the status of the POD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-demo-2
+  namespace: mem-example
+spec:
+  containers:
+  - name: memory-demo-2-ctr
+    image: polinux/stress
+    resources:
+      requests:
+        memory: "50Mi"
+      limits:
+        memory: "100Mi"
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "250M", "--vm-hang", "1"]
+---
+#In this we are providing the memory request and limit
+#Set the limit and request beyond the node resources
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-demo-3
+  namespace: mem-example
+spec:
+  containers:
+  - name: memory-demo-3-ctr
+    image: polinux/stress
+    resources:
+      limits:
+        memory: "1000Gi"
+      requests:
+        memory: "1000Gi"
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]

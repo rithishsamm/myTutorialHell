@@ -1,7 +1,6 @@
 #### Docker Deep Dive
 #####  Description
 Docker Engine is an open source containerization technology for building and containerizing your applications.
-
 ##### Section 1: Introduction to Containers
 1.  Virtualization with Hypervisor
 2. Limitations on Virtual Machines or Servers
@@ -19,30 +18,30 @@ Docker Engine is an open source containerization technology for building and con
 3. Docker Engine setup using package manager
 		Docker Engine Setup using Package Manager.[docx](obsidian://open?vault=tutorialHell&file=Docker%20Engine%20Setup%20using%20Package%20Manager)
 4. Docker Engine setup using script
-		Docker Engine installation in Ubuntu using convenience script.[docx]()
+		Docker Engine installation in Ubuntu using convenience script.[docx](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FDocker%20Engine%20installation%20in%20Ubuntu%20using%20convenience%20script)
 5. Understanding Docker default parameters
-		Docker default parameters [docs]()
+		Docker default parameters [docs](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FDocker%20default%20parameters)
 ##### Section 4: Docker Containers
 1. What is a Docker container?
-		Container Introduction.[docx]()
+		Container Introduction.[docx](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FWhat%20is%20a%20Container)
 2. Nginx application container creation part1
 3. Nginx application container creation part2
-		Nginx Application deployment on Docker Engine [Doc]()
+		Nginx Application deployment on Docker Engine [Doc](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FWhat%20is%20Docker%20Container)
 4. MySQL application Deployment
-		MYSQL Application Deployment_.[docx]()
+		MYSQL Application Deployment_.[docx](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FMYSQL%20APPLICATION%20DEPLOYMENT)
 5. Container creation Workflow in Docker Engine
-		Container Creation Workflow.[docx]
+		Container Creation Workflow.[docx](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FDOCKER%20CONTAINER%20CREATION%20WORKFLOW)
 6. Configure static IP address for Docker host machine
-		Configure static IP address for Docker Host.[docx]()
+		Configure static IP address for Docker Host.[docx](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FConfigure%20Static%20IP%20address%20for%20Docker%20Host%20Machine)
 7. Understanding how to access applications from outside of Docker host machine
 8. Practical session on accessing applications from outside of Docker Host
-		- Accessing Applications outside of Docker Host [Doc]()
+		- Accessing Applications outside of Docker Host [Doc](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FContainer%20Restart%20Policy)
 9. Understanding container restart policy
 10. Container restart policy
-		container restart policy[Doc]()
+		container restart policy[Doc](obsidian://open?vault=tutorialHell&file=Containerization%2Fk8engineers%2Fofficial%2FContainer%20Restart%20Policy)
 11. Points to remember while creating container (rm, exec, create)
 12. Difference between docker container create and run
-		Container commands rm, exec, run and create.[docx]{}
+		Container commands rm, exec, run and create.
 ##### Section 5: Docker Network
 1. Network types supported by Docker
 		Network types suppported by Docker.[docx]()

@@ -263,7 +263,7 @@ In this demo, we use:
 1) **Kubeadm** - to create cluster
 2) **containerd v1.25** - Container runtime (plugin plugged in)
 
-##### CREATE A VM
+###### CREATE A VM
 1) Any VM Engine as per your convenience. Ill be using Hyper-V. 
 2) Create VM
 	1) Name - vmName (kubeadm-Single-Node)
@@ -334,15 +334,23 @@ Profile Setup:
 5) confirm
 
 Ubuntu Pro: Apply if required 
+install Essentials - such as openSSH and more.
+Done!
 
 Checks:
 1) Login
 2) Ping
 3) Check network
 4) IP and more
+5) Connect remote - ssh username@IP and password, yes and password  
+6) check ip -a
 all done.
-
 > -- So far we have performed setting the VM for Kubernetes. Now will set-up kubernetes single node setup. --
 
-# 5. Setup Single node having One Control plane + worker node:
+###### Setup Single node having One Control plane + worker node:
+will have all the manifest and refer the same.
+Reference: https://github.com/devopsyuva/kubernetes_latest_manifest
+-> if docker, 2) k8s-setup-kubeadm-containerd.md
+-> if containerd, 3) k8s-setup-kubeadm-containerd.md
+All the documentation for the same have delivered here.
 
