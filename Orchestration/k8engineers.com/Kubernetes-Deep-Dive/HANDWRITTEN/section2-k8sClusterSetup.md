@@ -354,3 +354,73 @@ Reference: https://github.com/devopsyuva/kubernetes_latest_manifest
 -> if containerd, 3) k8s-setup-kubeadm-containerd.md
 All the documentation for the same have delivered here.
 
+**Using K8s Setup using kubeadm *containerd*** [Doc](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fkubernetes_latest_manifest%2FKubernetes%2F01-kubernetes-architecture-Installation%2F01-k8s-components)
+1) all the system specs 
+> This documents includes both single and Two node setup.
+
+**STEPS TO FOLLOW:**
+1) sudo -i and apt updates
+2)  reboot check by -> `ls -l /vat/run/reboot/`
+-> if it doesn't exist, no reboot is required
+4) Follow:
+to containerd and kubernetes installation, we have to upgrade and enable some modules and some network configuration:
+```
+containerd:
+
+cat > /etc/modules-load.d/containerd.conf <<EOF
+overlay
+br_netfilter
+EOF
+
+modprobe overlay
+modprobe br_netfilter
+
+# Setup required sysctl params, these persist across reboots.
+cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+sysctl --system
+```
+
+> enabling modules, such as 
+> 1) overlay
+> 2) br-netfilter (bridge network filters)
+> setting up systemctl params:
+	net.bridge.bridge-nf-call-iptables  = 1
+	net.ipv4.ip_forward                 = 1
+	net.bridge.bridge-nf-call-ip6tables = 1
+	EOF
+>3) to check all of these,
+>`sysctl --system`
+
+NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE `containerd` INSTALLATION
+refer docs for containerd installation,
+or do follow the same,
+
+```bash
+apt update && apt apt-get install -y containerd.io
+```
+
+### [Reference:](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#reference)
+- [Containerd](https://docs.docker.com/engine/install/ubuntu/)
+- [kubeadm install](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
+++
+- [crictl](https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md)
+- [containerd](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
+- [Docker and Containerd](https://kubernetes.io/docs/tasks/administer-cluster/migrating-from-dockershim/check-if-dockershim-deprecation-affects-you/)
+or search Docker install ubuntu. to check accessing ubuntu package index pages:
+```bash
+sudo apt update
+sudo apt full-upgrade
+sudo apt install ca-certificates \curl \gnupg \lsb-releases
+```
+
+2. Add Docker's official GPG key:
+```
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor 
+```
+
