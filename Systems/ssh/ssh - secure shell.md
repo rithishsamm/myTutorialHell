@@ -37,4 +37,12 @@ instead of all stand in manual clutter configuring stuff irl Realtime. simply by
 ##### Connecting to a server via OpenSSH:
 to check SSH exist in a machine, do `which ssh`. shows the binary location. 
 
-Since SSH is both client and server,  apt search `apt search openssh-client`. 
+To check whether SSH exist on both client and server,  do `apt search openssh-client`. 
+
+To SSH into a machine, the syntax of the command is:
+```bash
+ssh username@IP #passwd prompt will show only if the maching running to perform ssh, 
+password
+```
+
+
