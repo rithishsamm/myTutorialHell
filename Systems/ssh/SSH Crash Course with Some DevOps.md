@@ -15,5 +15,10 @@ SSH, a protocol that helps us communicate with other computers.
 
 ###### Client Server Communication
 ssh -> Client, sshd -> Server (openSSH Daemon)
-The host server mush sshd installed, running and configured to allow the traffic properly or else you'll not be able to use it.
+The host server mush sshd installed, running and configured to allow the traffic properly or else you'll not be able to use it. which it auth with username password with few encryption standards.
+
+
+
+
+
 
