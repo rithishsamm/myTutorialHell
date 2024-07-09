@@ -35,8 +35,18 @@ There is a full suite of utilities not just one binary. which are mostly on both
 instead of all stand in manual clutter configuring stuff irl Realtime. simply by using OpenSSH, connect with devices and systems in ease remotely anywhere. 
 
 ##### Connecting to a server via OpenSSH:
-to check SSH exist in a machine, do `which ssh`. shows the binary location. 
+can't ssh into whatever server that exist, It has to has something known as **sshd**, which here is openssh which just sits and listen to ssh connections.
+There will be `sshd_config` which you can configure ssh based on your convenience. 
 
+AVAILABLE AUTHENTICATION METHODS:
+ssh login syntax: `ssh username@ip` + `password`
+1) Password
+2) Public / Private Key Pair
+3) Host Based
+
+
+
+to check SSH exist in a machine, do `which ssh`. shows the binary location. 
 To check whether SSH exist on both client and server,  do `apt search openssh-client`. 
 
 To SSH into a machine, the syntax of the command is:
