@@ -263,6 +263,10 @@ In this demo, we use:
 1) **Kubeadm** - to create cluster
 2) **containerd v1.25** - Container runtime (plugin plugged in)
 
+for system reference:
+```
+ipconfig/all
+```
 ###### CREATE A VM
 1) Any VM Engine as per your convenience. Ill be using Hyper-V. 
 2) Create VM
@@ -286,6 +290,13 @@ Right Click -> Settings
 3) Apply and Ok
 4) Open VM
 
+Virtual Box Setup:
+1) New
+2) Name, ISO, Skip Unattended Installation
+3) Spec: 4CPU, 4GB RAM
+4) Storage
+5) 
+
 Ubuntu 24.0 Boot Settings:
 1) Try Install
 2) Language
@@ -293,13 +304,15 @@ Ubuntu 24.0 Boot Settings:
 4) Keyboard Layout (with default)
 5) base OS Version (Ubuntu Server Standard)
 6) Network Interface config 
-`Note: We can see an IP allocated by default without config. This happened because of bridge Network where it automatically allocates an IP cause of DHCP given by router. Which isn't static or permanent. We'd like to have a static IP to get the image be persistent.
+`Note: We can see an IP allocated by default without config. This happened because of bridge Network where it automatically allocates an IP cause of DHCP given by router. Which isn't static or permanent. 
+**We'd like to have a static IP to get the image be persistent.**
 > Will configure the same.
 
 1) (Tab) to eth0 => Edit IPv4 -> (say that it is Automatic(DHCP)(ip gets allocated just like your mobile gets connected to the wifi giving an IP) **These IPs comes from router**)
 	`Need a fixed IP address, have to change automatic to static to assign a fixed IP to the system, in this case, VM`
 2)  Enter -> Manual
 ` Open cmd -> ipconfig -> Ethernet adapter - Bridged, Have this aside for this reference)`
+
 ```cmd
    Connection-specific DNS Suffix  . :
    Link-local IPv6 Address . . . . . : fe80::612f:24d5:4f01:4e62%17
@@ -309,6 +322,7 @@ Ubuntu 24.0 Boot Settings:
 ```
 4)  Edit eth0 IPv4 Configuration
 	IPv4 Method: Manual
+Subnet is nothing but base IP Address
 	Subnet: 192.168.0.0 (subnet rule IP/Mask)
 	Address: 192.168.0.222
 	Gateway: 192.168.0.1
