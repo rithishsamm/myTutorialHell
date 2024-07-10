@@ -308,9 +308,10 @@ Ubuntu 24.0 Boot Settings:
 **We'd like to have a static IP to get the image be persistent.**
 > Will configure the same.
 
-1) (Tab) to eth0 => Edit IPv4 -> (say that it is Automatic(DHCP)(ip gets allocated just like your mobile gets connected to the wifi giving an IP) **These IPs comes from router**)
+2) (Tab) to eth0 => Edit IPv4 -> (say that it is Automatic(DHCP)(ip gets allocated just like your mobile gets connected to the wifi giving an IP) **These IPs comes from router**)
 	`Need a fixed IP address, have to change automatic to static to assign a fixed IP to the system, in this case, VM`
-2)  Enter -> Manual
+
+3)  Enter -> Manual
 ` Open cmd -> ipconfig -> Ethernet adapter - Bridged, Have this aside for this reference)`
 
 ```cmd
@@ -320,13 +321,18 @@ Ubuntu 24.0 Boot Settings:
    Subnet Mask . . . . . . . . . . . : ==255.255.255.0==
    Default Gateway . . . . . . . . . : 192.168.0.1
 ```
+
 4)  Edit eth0 IPv4 Configuration
 	IPv4 Method: Manual
-Subnet is nothing but base IP Address
+**-> Subnet is nothing but base IP Address. In cmd prompt, shows the IPv4 address - 192.168..0.0/24 based on the subnet mask which is 255.255.255.0. Based on the subnet mask, its /24.**  
+If any 
 	Subnet: 192.168.0.0 (subnet rule IP/Mask)
-	Address: 192.168.0.222
+**-> Address is what Static IP that you'd wanted to assign to this persistent VM. (in this case, in my network, i've assigned what hasn't been used before)**
+	Address: 192.168.0.==222==
+**-> Gateway from base machine will not be much of a problem.**
 	Gateway: 192.168.0.1
-	Name Servers: 8.8.8.8,8.8.4.4
+**-> here, you can use google, Cloudflare's, cisco name servers or the ISP Provided name servers.** 
+	Name Servers: 8.8.8.8,8.8.4.4 //googles
 	Search Domains: -blank-
 
 5) Now, Network Config Interface:
