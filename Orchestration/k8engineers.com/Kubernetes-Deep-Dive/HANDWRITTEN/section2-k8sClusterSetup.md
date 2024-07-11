@@ -332,7 +332,7 @@ If any
 **-> Gateway from base machine will not be much of a problem.**
 	Gateway: 192.168.0.1
 **-> here, you can use google, Cloudflare's, cisco name servers or the ISP Provided name servers.** 
-	Name Servers: 8.8.8.8,8.8.4.4 //googles
+	Name Servers: 8.8.8.8,8.8.4.4 //Google's
 	Search Domains: -blank-
 
 5) Now, Network Config Interface:
