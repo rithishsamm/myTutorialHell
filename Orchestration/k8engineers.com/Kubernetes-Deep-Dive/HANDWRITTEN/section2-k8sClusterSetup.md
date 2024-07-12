@@ -264,7 +264,7 @@ In this demo, we use:
 2) **containerd v1.25** - Container runtime (plugin plugged in)
 
 for system reference:
-```
+```bash
 ipconfig/all
 ```
 ###### CREATE A VM
@@ -314,11 +314,11 @@ Ubuntu 24.0 Boot Settings:
 3)  Enter -> Manual
 ` Open cmd -> ipconfig -> Ethernet adapter - Bridged, Have this aside for this reference)`
 
-```cmd
+```shell
    Connection-specific DNS Suffix  . :
    Link-local IPv6 Address . . . . . : fe80::612f:24d5:4f01:4e62%17
-   IPv4 Address. . . . . . . . . . . : ==192.168.0.158==
-   Subnet Mask . . . . . . . . . . . : ==255.255.255.0==
+   IPv4 Address. . . . . . . . . . . : 192.168.0.158
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
    Default Gateway . . . . . . . . . : 192.168.0.1
 ```
 
@@ -367,33 +367,49 @@ Checks:
 all done.
 > -- So far we have performed setting the VM for Kubernetes. Now will set-up kubernetes single node setup. --
 
-###### Setup Single node having One Control plane + worker node:
-will have all the manifest and refer the same.
+prerequisite for kubernetes kubeadm single node setup,
+COMPLETED SINGLE NODE KUBEADM VM SETUP WITH SSH COMPATIBILITY.
+Now in this particular machine, will see how to 
+## Setup Single Node having One Control plane + worker node:
+Steps and Procedures to follow the same - 
+USING KUBEADM TOOL TO SETUP KUBERNETES CLUSTER +  Containerd as Container runtime interface in the backend -> For kubernetes to launch the application.
+
+**Prepared a document which** will have all the manifest and refer the same.
 Reference: https://github.com/devopsyuva/kubernetes_latest_manifest
 -> if docker, 2) k8s-setup-kubeadm-containerd.md
 -> if containerd, 3) k8s-setup-kubeadm-containerd.md
 All the documentation for the same have delivered here.
 
 **Using K8s Setup using kubeadm *containerd*** [Doc](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fkubernetes_latest_manifest%2FKubernetes%2F01-kubernetes-architecture-Installation%2F01-k8s-components)
+How and why we're using containerd:
+![[Pasted image 20240711151147.png]]
 1) all the system specs 
-> This documents includes both single and Two node setup.
+> This documents includes both ==**Single and Two node setup.**==
 
-**STEPS TO FOLLOW:**
+**PREREQUISITES TO CONFIGURE CONTAINERD:**
 1) sudo -i and apt updates
-2)  reboot check by -> `ls -l /vat/run/reboot/`
+2)  verify if reboot required checking by -> `ls -l /vat/run/reboot-required/` 
 -> if it doesn't exist, no reboot is required
 4) Follow:
-to containerd and kubernetes installation, we have to upgrade and enable some modules and some network configuration:
-```
-containerd:
+-> BEFORE INSTALLING KUBEADM + CONTAINERD -> We have to ==install some packages== + ==enable and modify some modules== + ==network configurations==:
+enabling  
+1) overlay
+2) br_netfilter -> Bridge network Filter
+with the cmd 
+`modprobe overlay` and `modeprobe br_netfilter` 
+> Problem with executing these commands standalone is that these command has to be executed after every reboot. Instead, will make all of those permanent. for that, save it in a file as script named `containerd.conf`. ,**MODULES ARE ENABLED SUCCESSFULLY.**
+
+After that, we should to do some systemctl parameters. Will execute the third para comment to do the save it a file named `kubernetes-cri.conf`.  
+
+After applying these, you need to enable these changes, for that can't reboot the system instead, `systemctl --system` 
+```shell
+modprobe overlay
+modprobe br_netfilter
 
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
 EOF
-
-modprobe overlay
-modprobe br_netfilter
 
 # Setup required sysctl params, these persist across reboots.
 cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
@@ -404,43 +420,113 @@ EOF
 
 sysctl --system
 ```
-
-> enabling modules, such as 
-> 1) overlay
-> 2) br-netfilter (bridge network filters)
-> setting up systemctl params:
-	net.bridge.bridge-nf-call-iptables  = 1
-	net.ipv4.ip_forward                 = 1
-	net.bridge.bridge-nf-call-ip6tables = 1
-	EOF
->3) to check all of these,
+> to check and enable all of these,
 >`sysctl --system`
 
-NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE `containerd` INSTALLATION
-refer docs for containerd installation,
-or do follow the same,
+**NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE **
+## `containerd` INSTALLATION
+Will follow all the steps to install containerd package on all nodes. REFER THE SAME OR REFER OFFICIAL DOCKER DOCS. -> since we are installing containerd not docker packages.
 
+---
+- Set up the repository
+- Install packages to allow apt to use a repository over HTTPS
 ```bash
 apt update && apt apt-get install -y containerd.io
 ```
-
-### [Reference:](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#reference)
+or else, refer: 
+[Reference:](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#reference)
 - [Containerd](https://docs.docker.com/engine/install/ubuntu/)
 - [kubeadm install](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
 ++
 - [crictl](https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md)
 - [containerd](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
 - [Docker and Containerd](https://kubernetes.io/docs/tasks/administer-cluster/migrating-from-dockershim/check-if-dockershim-deprecation-affects-you/)
-or search Docker install ubuntu. to check accessing ubuntu package index pages:
+or search [**==Docker install ubuntu==**](https://docs.docker.com/engine/install/ubuntu/). to check accessing ubuntu package index pages:
 ```bash
 sudo apt update
 sudo apt full-upgrade
 sudo apt install ca-certificates \curl \gnupg \lsb-releases
 ```
+basic packages to proceed further.  
+AND, since we're using docker official docs. WE GOTTA IMPORT THE `GPG key` and store it in the local system. first to create a `dir` and store the same.
 
 2. Add Docker's official GPG key:
-```
+```bash
 sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor 
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 ```
+
+3) after that, need to create a repo.
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+whenever you create a new repo especially in the host ubuntu machine, run `apt update`. eg: 
+```
+ls -l /etc/apt/source.list
+```
+run `apt update`
+> NOW, The `apt` can fetch the docker as well. 
+
+After then, will install all the essential packages with the `containerd`
+here, in order to install: 
+	in docker docs, we have all the commands which we can install relevant run **Docker**,  but we need only `containerd` , to filter and install that, skip all except `containerd.io`:
+```
+sudo apt-get install containerd.io 
+```
+
+  Next,
+  We are all done with the installation. NOW WE HAVE TO CONFIGURE THE `containerd`. which means, we need to save the configuration in a file as same as we did before - with minimum required parameters in the configuration. Create the same by,  Configure containerd,
+  1) mkdir
+  2) load config
+  3) changing a Cgroup from **false** to **true**. Can be performed both manually or by via the script.
+```bash
+mkdir -p /etc/containerd
+
+containerd config default > /etc/containerd/config.toml
+
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+```
+and Restart and check status containerd
+```
+systemctl restart containerd
+systemctl status containerd
+```
+CONFIGURATIONS IS SUCCESSFULLY COMPLETED AND ITS UP AND RUNNING. 
+Back to rest and continue following all the steps:
+
+## `crictl` INSTALLATION
+**INORDER TO INTERACT WITH THE `CONTAINERD` TO PERFORM ALL THE ACTIONS LIKE TROUBLESHOOTING, CONTAINER CREATIONS AND ALL THE CRI STUFF, SINCE WEREN'T USING DOCKER HERE TO USE ITS CLI COMMANDS. WE SHOULD HAVE `crictl` tool.** which is all available by default.
+*To execute crictl CLI commands, ensure we create a configuration file as mentioned below*. 
+Here,  
+1) Creating config file for `crictl.yaml` 
+2) Means that we're telling `crictl`, to follow this yaml config file to communicate with `containerd`
+3) Create and save the data by running the command.
+```SHELL
+cat > /etc/crictl.yaml <<EOF
+runtime-endpoint: unix:///run/containerd/containerd.sock
+image-endpoint: unix:///run/containerd/containerd.sock
+timeout: 2
+EOF
+```
+## `kubadm` `kubernetes`  INSTALLATION
+Follow the same documentation or follow official docs. Following the official docs. to follow, search [==**kubeadm install**==](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), scroll till - [Debian-based distributions](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#k8s-install-0) section. Now, we have to install all the packages named,
+- Kubeadm
+- Kubectl
+- Kubelet
+1) before all of that, will do setup all the prerequisite to setup all of these. To do that,
+do run, # apt-transport-https may be a dummy package; if so, you can skip that package. we're installing it.
+```shell
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+```
+Download `gpg keys` for the same:
+```shell
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+```
+
+
+
 
