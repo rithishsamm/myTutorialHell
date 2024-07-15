@@ -708,12 +708,13 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 here, 
 1) creating `.kube` directory 
 > `mkdir -p $HOME/.kube`
-2) under that `.kube`, gotta store a **config** file. Why? If someone wants to communicate with the kubernetes cluster, must have a **kube-config** file. Without it, can't able to communicate with the Kubernetes Cluster regardless of platforms. 
+2) under that `.kube`, gotta store a **config** file. Why? If someone wants to communicate with the kubernetes cluster, must have a **kube-config** file. Without it, can't able to communicate with the Kubernetes Cluster regardless of platforms both on-prem or cloud. 
+By this time, the kubeconfig presented in default and have to move it to home directory.  the file entries will be saved under the configured file location.
 > `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
 3) and, change permissions to the `config` files
 > `sudo chown $(id -u):$(id -g) $HOME/.kube/config`
 
-After that, can skip `  export KUBECONFIG=/etc/kubernetes/admin.conf` since we already ran our thing before in prior.
+After that, can skip `export KUBECONFIG=/etc/kubernetes/admin.conf` since we already ran our thing before in prior.
 
 NOW, WILL INSTALL AND ENABLE ADDONS WHICH IS VITAL RELATED TO ORCHESTRATING THE CLUSTERS: -> **A CNI - Container Network Interface**. -> We are using `Calicio` - network for kubernetes CNI for our use case. Alternatively, there are cilium Istio and more does exists.
 
@@ -728,9 +729,62 @@ kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 SEARCH **Calico Kubernetes**. -> Official Docs -> Install Calico -> Kubernetes -> QuickStart -> [QuickStart for Calico on Kubernetes](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#big-picture)
 Following the docs, Installing Calico CNI
 Install Calico[​](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico "Direct link to Install Calico")
-1. Install the Tigera Calico operator and custom resource definitions.
+1) Install the Tigera Calico operator and custom resource definitions.
 ```
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
 ```
-make you dont expose ports on the system for prior services.
+make you don't expose ports on the system for prior services.
+kubectl **Output:**
+```
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
+namespace/tigera-operator created
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgpfilters.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/apiservers.operator.tigera.io created
+customresourcedefinition.apiextensions.k8s.io/imagesets.operator.tigera.io created
+customresourcedefinition.apiextensions.k8s.io/installations.operator.tigera.io created
+customresourcedefinition.apiextensions.k8s.io/tigerastatuses.operator.tigera.io created
+serviceaccount/tigera-operator created
+clusterrole.rbac.authorization.k8s.io/tigera-operator created
+clusterrolebinding.rbac.authorization.k8s.io/tigera-operator created
+deployment.apps/tigera-operator created
+```
+
+Done! Secondly, this. 
+2) Install Calico by creating the necessary custom resource. For more information on configuration options available in this manifest, see [the installation reference](https://docs.tigera.io/calico/latest/reference/installation/api).
+
+> Note: but I dont want to run the same directly. Because, We made few modifications in the pod CIDR = 192.168.0.0`/16` but we change it to `/24`  . So, Cant use this since we're using different CIDR. To apply the relevant config for the same
+
+-- Get binaries using `wget` command. 
+```
+wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml 
+```
+
+-- edit `custom-resource.yaml` using `vi` or `nano`
+```
+nano custom-resource.yaml
+```
+and modify the CIDR by finding it in the spec section from `16` to `24`
+	cidr: `192.168.0.0/24` //in docs,  `10.244.0.0/24`
+
+To apply the settings:
+```
+kubectl apply -f custom-resources.yaml 
+```
 
