@@ -324,7 +324,7 @@ Ubuntu 24.0 Boot Settings:
 
 4)  Edit eth0 IPv4 Configuration
 	IPv4 Method: Manual
-**-> Subnet is nothing but base IP Address. In cmd prompt, shows the IPv4 address - 192.168..0.0/24 based on the subnet mask which is 255.255.255.0. Based on the subnet mask, its /24.**  
+**-> Subnet is nothing but base IP Address. In cmd prompt, shows the IPv4 address - 192.168.0.0/24 based on the subnet mask which is 255.255.255.0. Based on the subnet mask, its /24.**  
 If any 
 	Subnet: 192.168.0.0 (subnet rule IP/Mask)
 **-> Address is what Static IP that you'd wanted to assign to this persistent VM. (in this case, in my network, i've assigned what hasn't been used before)**
@@ -511,6 +511,7 @@ image-endpoint: unix:///run/containerd/containerd.sock
 timeout: 2
 EOF
 ```
+now these `crictl` commands will communicate with the `containerd` to fetch kube information.
 ## `kubadm` `kubernetes`  INSTALLATION
 Follow the same documentation or follow official docs. Following the official docs. to follow, search [==**kubeadm install**==](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), scroll till - [Debian-based distributions](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#k8s-install-0) section. Now, we have to install all the packages named,
 - Kubeadm
@@ -522,11 +523,214 @@ do run, # apt-transport-https may be a dummy package; if so, you can skip that p
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 ```
-Download `gpg keys` for the same:
+2) Download `gpg keys` for the same:
 ```shell
 curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 ```
+3) Add K8s `apt` repo:
+```shell
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+4) Update the `apt` package index, install kubelet, kubeadm and kubectl
+> to check available versions of the same, check it by 
+> `apt-cache policy kubelet` it'll install the latest if no version specified while installation. all three of these packages shares and maintains the same version. if specific version needed, you need to do an `=vName`
+> ++
+> 	WHY HOLD PACKAGES? - **FOR NO AUTO-UPGRADE**. If not, it will do an auto-update  where it is prone to mess the cluster.
+```shell
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+5) After installation, Enable the kubelet service before running kubeadm:
+```shell
+sudo systemctl enable --now kubelet
+```
+
+ > Now, WILL CREATE ALL THE KUBERNETES CLUSTERS BY **BOOTSTRAPPING THE SINGLE  NODE.**
+
+To do that,
+SYNTAX:
+> kubeadm init 
+> - `[mapping IPAddr to apiserver]`do not use localhost or 127.0.0.1IP
+> - `[referring config file for cri ]`
+> - `[declaring destination network cidr block to deploy pods at the endpoint]`which is the server'S itself. POD NETWORK CIDR.
+Every POD inside the Kubernetes Cluster will get an IPAddr from this series. Here,w e have class A Network.
+
+```
+kubeadm init --apiserver-advertise-address=IPADDR --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
+```
+
+```
+kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24
+```
+
+1) Runs all the pre-flight checks => THIS PROCESS IS CALLED AS **BOOTSTRAPPING** the node.
+Troubleshoot all of them :(, my encounters are,
+-> Swap enabled, to turn off -> 1`swapoff -a` it temporarily disables it. 
+for a permanent turnoff, do 
+```
+vi /etc/fstab 
+#/swap.img none swap sw 0 0
+```
 
 
+comment out the hashed one.
+**Re-run kubeadm. If any errors still persists. Troubleshoot it. or If you know what you are doing, you can `ignore-preflight-checks= whatever to skip or all`**
+```
+kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24 --ignore-preflight-checks=all
+```
+voila! Successfully initialized control-plane. must give the output of,
+```
+Your Kubernetes control-plane has initialized successfully!
 
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.0.222:6443 --token bqflzv.nbb753ji2xawnm6q \
+        --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
+```
+
+> [!NOTE] output
+> ```
+> sudo kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24 --ignore-preflight-errors=all
+W0712 10:21:46.616343   14940 initconfiguration.go:125] Usage of CRI endpoints without URL scheme is deprecated and can cause kubelet errors in the future. Automatically prepending scheme "unix" to the "criSocket" with value "/run/containerd/containerd.sock". Please update your configuration!
+[init] Using Kubernetes version: v1.30.2
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+W0712 10:21:47.877835   14940 checks.go:844] detected that the sandbox image "registry.k8s.io/pause:3.8" of the container runtime is inconsistent with that used by kubeadm.It is recommended to use "registry.k8s.io/pause:3.9" as the CRI sandbox image.
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubeadm1n kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.0.222]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [kubeadm1n localhost] and IPs [192.168.0.222 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [kubeadm1n localhost] and IPs [192.168.0.222 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "super-admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests"
+[kubelet-check] Waiting for a healthy kubelet. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 503.07131ms
+[api-check] Waiting for a healthy API server. This can take up to 4m0s
+[api-check] The API server is healthy after 9.504487982s
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node kubeadm1n as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node kubeadm1n as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: bqflzv.nbb753ji2xawnm6q
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+HERE in bootstrapping these node means **BOOOTSRAPPING THE CONTROL PLANE NODE**.
+>IN THE CLUSTER, makes it up one node first and joins with the rest.
+
+all the 
+1) The command gets initiated
+2) Images been pulled
+3) Files and configurations got created
+4) Setups and addons has been applied
+ YET TO COMPLETE CREATING THE KUBERNETES CLUSTER SETUP. THIS IS THE OUTPUT THAT WE SUPPOSED TO END UP WITH which is: Your Kubernetes control-plane has initialized successfully!
+ 
+and the rest of these should be followed in order to start using the cluster. till at least `kubectl apply` if it is a single node setup.
+
+If it is a multi-node setup, rest of it should be completed, to join whatever Compute plane worker node to the control plane node. Have to execute the command till that. which is simply, joining the control plane with `worker nodes`
+>**ignoring the last since we're setting up a single node cluster setup.**
+```
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.0.222:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
+```
+**BOOTSTRAPPING DONE SUCCESSFULLY!**
+
+#### To start using your cluster, you need to run the following as a regular user:
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+here, 
+1) creating `.kube` directory 
+> `mkdir -p $HOME/.kube`
+2) under that `.kube`, gotta store a **config** file. Why? If someone wants to communicate with the kubernetes cluster, must have a **kube-config** file. Without it, can't able to communicate with the Kubernetes Cluster regardless of platforms. 
+> `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
+3) and, change permissions to the `config` files
+> `sudo chown $(id -u):$(id -g) $HOME/.kube/config`
+
+After that, can skip `  export KUBECONFIG=/etc/kubernetes/admin.conf` since we already ran our thing before in prior.
+
+NOW, WILL INSTALL AND ENABLE ADDONS WHICH IS VITAL RELATED TO ORCHESTRATING THE CLUSTERS: -> **A CNI - Container Network Interface**. -> We are using `Calicio` - network for kubernetes CNI for our use case. Alternatively, there are cilium Istio and more does exists.
+
+**BEFORE RUNNING THIS,** should pull - calico network for kubernetes CNI
+simply, you should now deploy a pod network to the cluster. Run 
+```
+kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+```
+
+##### INSTALLING CALICO NETWORK IN OUR KUBERNETES CLUSTER:
+SEARCH **Calico Kubernetes**. -> Official Docs -> Install Calico -> Kubernetes -> QuickStart -> [QuickStart for Calico on Kubernetes](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#big-picture)
+Following the docs, Installing Calico CNI
+Install Calico[​](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico "Direct link to Install Calico")
+1. Install the Tigera Calico operator and custom resource definitions.
+```
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
+```
+make you dont expose ports on the system for prior services.
 
