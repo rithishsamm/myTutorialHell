@@ -295,7 +295,7 @@ Virtual Box Setup:
 2) Name, ISO, Skip Unattended Installation
 3) Spec: 4CPU, 4GB RAM
 4) Storage
-5) 
+5) Pre-allocate : false
 
 Ubuntu 24.0 Boot Settings:
 1) Try Install
@@ -328,7 +328,7 @@ Ubuntu 24.0 Boot Settings:
 If any 
 	Subnet: 192.168.0.0 (subnet rule IP/Mask)
 **-> Address is what Static IP that you'd wanted to assign to this persistent VM. (in this case, in my network, i've assigned what hasn't been used before)**
-	Address: 192.168.0.==222==
+	Address: 192.168.0.==143==
 **-> Gateway from base machine will not be much of a problem.**
 	Gateway: 192.168.0.1
 **-> here, you can use google, Cloudflare's, cisco name servers or the ISP Provided name servers.** 
@@ -787,4 +787,3 @@ To apply the settings:
 ```
 kubectl apply -f custom-resources.yaml 
 ```
-
