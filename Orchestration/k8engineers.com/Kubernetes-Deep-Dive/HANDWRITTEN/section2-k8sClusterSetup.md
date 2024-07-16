@@ -410,10 +410,10 @@ modprobe br_netfilter
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
-EOF
+EOF  
 ```
+Setup required sysctl params, these persist across reboots.
 ```sh
-# Setup required sysctl params, these persist across reboots.
 cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
 net.bridge.bridge-nf-call-iptables  = 1
 net.ipv4.ip_forward                 = 1
@@ -426,15 +426,15 @@ sysctl --system
 > to check and enable all of these,
 >`sysctl --system`
 
-**NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE **
-## `containerd` INSTALLATION
-Will follow all the steps to install containerd package on all nodes. REFER THE SAME OR REFER OFFICIAL DOCKER DOCS. -> since we are installing containerd not docker packages.
+**NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE REST INSTALLING OTHER COMPONENTS**
 
 ---
+## `containerd` INSTALLATION
+Will follow all the steps to install containerd package on all nodes. REFER THE SAME OR REFER OFFICIAL DOCKER DOCS. -> since we are installing containerd not docker packages.
 - Set up the repository
 - Install packages to allow apt to use a repository over HTTPS
 ```bash
-apt update && apt apt-get install -y containerd.io
+apt update && apt full-upgrade && apt install -y containerd.io
 ```
 or else, refer: 
 [Reference:](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#reference)
@@ -445,45 +445,45 @@ or else, refer:
 - [containerd](https://kubernetes.io/blog/2018/05/24/kubernetes-containerd-integration-goes-ga/)
 - [Docker and Containerd](https://kubernetes.io/docs/tasks/administer-cluster/migrating-from-dockershim/check-if-dockershim-deprecation-affects-you/)
 or search [**==Docker install ubuntu==**](https://docs.docker.com/engine/install/ubuntu/). to check accessing ubuntu package index pages:
-```bash
-sudo apt update
-sudo apt full-upgrade
-sudo apt install ca-certificates \curl \gnupg \lsb-releases
+since we're using docker official docs. WE GOTTA IMPORT THE `GPG key` and store it in the local system. first to create a `dir` and store the same.
+1) and 2) Set up repo + Add Docker's official GPG key:
+```Shell
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-releases
+
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 basic packages to proceed further.  
-AND, since we're using docker official docs. WE GOTTA IMPORT THE `GPG key` and store it in the local system. first to create a `dir` and store the same.
-
-2. Add Docker's official GPG key:
-```bash
-sudo mkdir -p /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-```
-
+AND, 
 3) after that, need to create a repo.
 ```bash
+# Add the repository to Apt sources:
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
 ```
 whenever you create a new repo especially in the host ubuntu machine, run `apt update`. eg: 
 ```
-ls -l /etc/apt/source.list
+ls -l /etc/apt/
 ```
-run `apt update`
+run `apt update
 > NOW, The `apt` can fetch the docker as well. 
 
 After then, will install all the essential packages with the `containerd`
 here, in order to install: 
 	in docker docs, we have all the commands which we can install relevant run **Docker**,  but we need only `containerd` , to filter and install that, skip all except `containerd.io`:
 ```
-sudo apt-get install containerd.io 
+sudo apt install -y containerd.io 
 ```
 
   Next,
   We are all done with the installation. NOW WE HAVE TO CONFIGURE THE `containerd`. which means, we need to save the configuration in a file as same as we did before - with minimum required parameters in the configuration. Create the same by,  Configure containerd,
-  1) mkdir
-  2) load config
+  1) mkdir - Create directory
+  2) load config - execute the given command below for saving the output in this file.
   3) changing a Cgroup from **false** to **true**. Can be performed both manually or by via the script.
 ```bash
 mkdir -p /etc/containerd
@@ -498,8 +498,11 @@ systemctl restart containerd
 systemctl status containerd
 ```
 CONFIGURATIONS IS SUCCESSFULLY COMPLETED AND ITS UP AND RUNNING. 
-Back to rest and continue following all the steps:
+Other steps to follow:
+-- Since we're doing all container things with containerd but not docker, We need something to make communication and interact with containerd. (if docker, we could've executed it's client but not doing that here)
 
+To interact with containerd, `crictl` is a solution where we can perform all the container creation, troubleshooting and the CRI stuff. -> It is available by 
+Back to rest and continue following all the step installing crictl:
 ## `crictl` INSTALLATION
 **INORDER TO INTERACT WITH THE `CONTAINERD` TO PERFORM ALL THE ACTIONS LIKE TROUBLESHOOTING, CONTAINER CREATIONS AND ALL THE CRI STUFF, SINCE WEREN'T USING DOCKER HERE TO USE ITS CLI COMMANDS. WE SHOULD HAVE `crictl` tool.** which is all available by default.
 *To execute crictl CLI commands, ensure we create a configuration file as mentioned below*. 
@@ -534,9 +537,10 @@ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --
 ```shell
 echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
+
 4) Update the `apt` package index, install kubelet, kubeadm and kubectl
 > to check available versions of the same, check it by 
-> `apt-cache policy kubelet` it'll install the latest if no version specified while installation. all three of these packages shares and maintains the same version. if specific version needed, you need to do an `=vName`
+> `apt-cache policy kubelet` it'll install the latest if no version specified while installation. **all three of these packages shares and maintains the same version**. if specific version needed, you need to do an `=versionNO`
 > ++
 > 	WHY HOLD PACKAGES? - **FOR NO AUTO-UPGRADE**. If not, it will do an auto-update  where it is prone to mess the cluster.
 ```shell
@@ -548,8 +552,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ```shell
 sudo systemctl enable --now kubelet
 ```
-
- > Now, WILL CREATE ALL THE KUBERNETES CLUSTERS BY **BOOTSTRAPPING THE SINGLE  NODE.**
+ > Now, WILL CREATE ALL THE KUBERNETES CLUSTERS BY **BOOTSTRAPPING THE SINGLE  NODE both Control Plane and Worker Node.** 
 
 To do that,
 SYNTAX:
@@ -557,55 +560,44 @@ SYNTAX:
 > - `[mapping IPAddr to apiserver]`do not use localhost or 127.0.0.1IP
 > - `[referring config file for cri ]`
 > - `[declaring destination network cidr block to deploy pods at the endpoint]`which is the server'S itself. POD NETWORK CIDR.
-Every POD inside the Kubernetes Cluster will get an IPAddr from this series. Here,w e have class A Network.
+Every POD inside the Kubernetes Cluster will get an IPAddr from this series - 10.244.0.0/24. This is a class A Network. Execute the same and modify the parameters.
 
 ```sh
 kubeadm init --apiserver-advertise-address=IPADDR --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
 ```
 
 ```sh
-kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24
+kubeadm init --apiserver-advertise-address=192.168.0.143 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
 ```
 
 1) Runs all the pre-flight checks => THIS PROCESS IS CALLED AS **BOOTSTRAPPING** the node.
 Troubleshoot all of them :(, my encounters are,
--> Swap enabled, to turn off -> 1`swapoff -a` it temporarily disables it. 
-for a permanent turnoff, do 
+-> Swap enabled, to turn off -> 
 ```sh
-vi /etc/fstab 
+free -h
+swapoff -a
+```
+but, it only disables temporarily it. for a permanent turnoff, do comment out the swap section. i gave this #'ed for your reference.
+```sh
+free -h
+nano /etc/fstab 
 #/swap.img none swap sw 0 0
 ```
-
-
 comment out the hashed one.
-**Re-run kubeadm. If any errors still persists. Troubleshoot it. or If you know what you are doing, you can `ignore-preflight-checks= whatever to skip or all`**
+
+**Re-run kubeadm. If any errors still persists. Troubleshoot it.
+Since i cancelled the process in-between which already bootstrapped half way and not re-running next other steps-> Steps that i followed is,**
+```
+kubeadm reset 
+iptables
+ipvsadm -clear #if not, sudo apt install ipvsadm
+done!
+```
+or If you know what you are doing, you can `ignore-preflight-checks= whatever to skip or all`**
 ```sh
-kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24 --ignore-preflight-checks=all
+kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16 --ignore-preflight-checks=all
 ```
 voila! Successfully initialized control-plane. must give the output of,
-```sh
-Your Kubernetes control-plane has initialized successfully!
-
-To start using your cluster, you need to run the following as a regular user:
-
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-Alternatively, if you are the root user, you can run:
-
-  export KUBECONFIG=/etc/kubernetes/admin.conf
-
-You should now deploy a pod network to the cluster.
-Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
-  https://kubernetes.io/docs/concepts/cluster-administration/addons/
-
-Then you can join any number of worker nodes by running the following on each as root:
-
-kubeadm join 192.168.0.222:6443 --token bqflzv.nbb753ji2xawnm6q \
-        --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
-```
-
 > [!NOTE] output
 > ```
 > sudo kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24 --ignore-preflight-errors=all
@@ -667,41 +659,57 @@ W0712 10:21:47.877835   14940 checks.go:844] detected that the sandbox image "re
 [addons] Applied essential addon: kube-proxy
 HERE in bootstrapping these node means **BOOOTSRAPPING THE CONTROL PLANE NODE**.
 >IN THE CLUSTER, makes it up one node first and joins with the rest.
-
 all the 
 1) The command gets initiated
 2) Images been pulled
 3) Files and configurations got created
 4) Setups and addons has been applied
  YET TO COMPLETE CREATING THE KUBERNETES CLUSTER SETUP. THIS IS THE OUTPUT THAT WE SUPPOSED TO END UP WITH which is: Your Kubernetes control-plane has initialized successfully!
- 
-and the rest of these should be followed in order to start using the cluster. till at least `kubectl apply` if it is a single node setup.
-
-If it is a multi-node setup, rest of it should be completed, to join whatever Compute plane worker node to the control plane node. Have to execute the command till that. which is simply, joining the control plane with `worker nodes`
->**ignoring the last since we're setting up a single node cluster setup.**
 ```sh
-Your Kubernetes control-plane has initialized successfully!
-
-To start using your cluster, you need to run the following as a regular user:
+#Your Kubernetes control-plane has initialized successfully!
+#To start using your cluster, you need to run the following as a regular user:
 
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-Alternatively, if you are the root user, you can run:
+#Alternatively, if you are the root user, you can run:
+   export KUBECONFIG=/etc/kubernetes/admin.conf
 
-  export KUBECONFIG=/etc/kubernetes/admin.conf
-
-You should now deploy a pod network to the cluster.
-Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+#You should now deploy a pod network to the cluster.Run 
+kubectl apply -f [podnetwork].yaml #with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
-Then you can join any number of worker nodes by running the following on each as root:
+#Then you can join any number of worker nodes by running the following on each as root:
 
-kubeadm join 192.168.0.222:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
+kubeadm join 192.168.0.143:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
 ```
-**BOOTSTRAPPING DONE SUCCESSFULLY!**
 
+>You can perform the following instructions, if
+  -> **Single node setup**
+```sh
+###To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#Alternatively, if you are the root user, you can run:
+#skip this:   export KUBECONFIG=/etc/kubernetes/admin.conf
+
+#You should now deploy a pod network to the cluster. For that you need to install a CNI first. We'll be using calico. After that, run 
+kubectl apply -f [podnetwork].yaml #with one of the options listed at:
+https://kubernetes.io/docs/concepts/cluster-administration/addons/
+```
+> ->  If it is a **multi-node setup**, rest of it should be completed, to join whatever Compute plane worker node to the control plane node. Have to execute the command till that. which is simply, joining the control plane with `worker nodes`
+> 
+> you continue with the rest of it by,
+```sh
+#Then you can join any number of worker nodes by running the following on each as root:
+kubeadm join 192.168.0.143:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
+```
+and the rest of these should be followed in order to start using the cluster. till at least `kubectl apply` if it is a single node setup.
+>**ignoring the last since we're setting up a single node cluster setup.**
+**BOOTSTRAPPING DONE SUCCESSFULLY!**
 #### To start using your cluster, you need to run the following as a regular user:
 ```sh
 mkdir -p $HOME/.kube
@@ -721,12 +729,8 @@ After that, can skip `export KUBECONFIG=/etc/kubernetes/admin.conf` since we alr
 
 NOW, WILL INSTALL AND ENABLE ADDONS WHICH IS VITAL RELATED TO ORCHESTRATING THE CLUSTERS: -> **A CNI - Container Network Interface**. -> We are using `Calicio` - network for kubernetes CNI for our use case. Alternatively, there are cilium Istio and more does exists.
 
-**BEFORE RUNNING THIS,** should pull - calico network for kubernetes CNI
-simply, you should now deploy a pod network to the cluster. Run 
-```sh
-kubectl apply -f [podnetwork].yaml" with one of the options listed at:
-  https://kubernetes.io/docs/concepts/cluster-administration/addons/
-```
+**BEFORE RUNNING THIS,** should pull - calico network for kubernetes CNI. Then will run that `kubectl apply -f podnetwork.yaml https://kubernetes.io/docs/concepts/cluster-administration/addons/`
+with the CNI + Addons to complete the same.
 
 ##### INSTALLING CALICO NETWORK IN OUR KUBERNETES CLUSTER:
 SEARCH **Calico Kubernetes**. -> Official Docs -> Install Calico -> Kubernetes -> QuickStart -> [QuickStart for Calico on Kubernetes](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#big-picture)
@@ -770,9 +774,8 @@ deployment.apps/tigera-operator created
 ```
 
 Done! Secondly, this. 
+>Note: but I don't want to run the same directly. Because, We made few modifications in the pod CIDR = 192.168.0.0`/16` but we change it to `/24`  . So, Cant use this since we're using different CIDR. To apply the relevant config for the same.
 2) Install Calico by creating the necessary custom resource. For more information on configuration options available in this manifest, see [the installation reference](https://docs.tigera.io/calico/latest/reference/installation/api).
-> Note: but I don't want to run the same directly. Because, We made few modifications in the pod CIDR = 192.168.0.0`/16` but we change it to `/24`  . So, Cant use this since we're using different CIDR. To apply the relevant config for the same.
-
 -- Get binaries using `wget` command. 
 ```sh
 wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml 
@@ -782,11 +785,62 @@ wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/cu
 ```sh
 nano custom-resource.yaml
 ```
-and modify the CIDR by finding it in the spec section from `16` to `24`
-	cidr: `192.168.0.0/24` //in docs,  `10.244.0.0/24`
+and modify the CIDR by finding it in the spec section, CIDR.
+	cidr:  //in docs,  `10.244.0.0/24` 
+since, we've ran `kubectl init` with all the ip, container config and CIDR
 
-To apply the settings:
-```sh
+Run, To apply the settings:
+```kubectl
 kubectl apply -f custom-resources.yaml 
 ```
+Output: Tigera.io's Operator of Installation and apiserver/default got created.
 
+To check, Run this by watching the running nodes and pods:
+```kubectl
+kubectl get no #for node
+kubectl get po -A #or --all-namespaces for pods
+```
+ALL OF THESE PODS HAS TO BE UP AND RUNNING. Few might've initiated, others might've in pending. Wait till completion. Only after completion, you'll see the node's status is ready.. ALL GOOD!
+
+For more info about the node, run 
+```kubectl
+kubectl get no -o wide
+```
+telling the role which is obviously `control plane`, time, version, IP for the control-plane, OS, Kernel and Container runtime.
+
+### *==**KUBERENETES ON A SINGLE NODE SETUP HAS BEEN COMPLETED SUCCESSFULLY!!!**==*
+==**USING KUBEADM WITH CONTAINERD AS A CONTAINER RUNTIME AND CALICO AS CNI HAS BEEN COMPLETED SUCCESSFULLY!!!***==
+
+**NOW, We can deploy our applications**. If you want to deploy and launch applications on these nodes, first we have to test it. Will test it by launching a pod running our applications on it.
+
+No experimentation. such testing a real world application on a POD. 
+To do that, follow
+```kubectl
+kubectl run test-pod --image=node/alpine -t -i 
+```
+if you run this, throws
+> error: timed out waiting for  connection
+```
+kubectl get po
+kubectl get po -o wide
+```
+shows: **test-pod** status is **Pending** and nothing in all ways.
+WHY?, LETS TROUBLESHOOT.
+```
+kubectl describe test-pod #pod-name
+```
+Shows the description,
+in the events section, if notification shows a 
+>Type: Warning, Reason: Failed Scheduling, ,Message: untolerated taint. 
+
+The Reason behind that is Taints. 
+We have only one node. So, the control plane by default will not allow me to run the pod/application. Our objective is to practice kubernetes deploying applications  on the single node. Here, the single node is a control plane node. Now, we need to add that metrics for the compute plane too. So we need convert the compute plane to compute plane in order to launch pods on the same.  We need to remove taints,
+
+###### What is Taints and Tolerations:
+Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints.
+
+ Since our Single node is a control plane node, which also have compute plane components.
+ Now we want our control plane node to act as a compute plane node in-order run our pods in ease without any taints and tolerations. For that, we simply have to disable it.
+
+
+  
