@@ -405,19 +405,22 @@ After applying these, you need to enable these changes, for that can't reboot th
 ```shell
 modprobe overlay
 modprobe br_netfilter
-
+```
+```sh
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
 EOF
-
+```
+```sh
 # Setup required sysctl params, these persist across reboots.
 cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
 net.bridge.bridge-nf-call-iptables  = 1
 net.ipv4.ip_forward                 = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 EOF
-
+```
+```sh
 sysctl --system
 ```
 > to check and enable all of these,
@@ -556,11 +559,11 @@ SYNTAX:
 > - `[declaring destination network cidr block to deploy pods at the endpoint]`which is the server'S itself. POD NETWORK CIDR.
 Every POD inside the Kubernetes Cluster will get an IPAddr from this series. Here,w e have class A Network.
 
-```
+```sh
 kubeadm init --apiserver-advertise-address=IPADDR --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
 ```
 
-```
+```sh
 kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24
 ```
 
@@ -568,7 +571,7 @@ kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/conta
 Troubleshoot all of them :(, my encounters are,
 -> Swap enabled, to turn off -> 1`swapoff -a` it temporarily disables it. 
 for a permanent turnoff, do 
-```
+```sh
 vi /etc/fstab 
 #/swap.img none swap sw 0 0
 ```
@@ -576,11 +579,11 @@ vi /etc/fstab
 
 comment out the hashed one.
 **Re-run kubeadm. If any errors still persists. Troubleshoot it. or If you know what you are doing, you can `ignore-preflight-checks= whatever to skip or all`**
-```
+```sh
 kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=192.168.0.0/24 --ignore-preflight-checks=all
 ```
 voila! Successfully initialized control-plane. must give the output of,
-```
+```sh
 Your Kubernetes control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
@@ -676,7 +679,7 @@ and the rest of these should be followed in order to start using the cluster. ti
 
 If it is a multi-node setup, rest of it should be completed, to join whatever Compute plane worker node to the control plane node. Have to execute the command till that. which is simply, joining the control plane with `worker nodes`
 >**ignoring the last since we're setting up a single node cluster setup.**
-```
+```sh
 Your Kubernetes control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
@@ -700,7 +703,7 @@ kubeadm join 192.168.0.222:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-to
 **BOOTSTRAPPING DONE SUCCESSFULLY!**
 
 #### To start using your cluster, you need to run the following as a regular user:
-```
+```sh
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
@@ -720,7 +723,7 @@ NOW, WILL INSTALL AND ENABLE ADDONS WHICH IS VITAL RELATED TO ORCHESTRATING THE 
 
 **BEFORE RUNNING THIS,** should pull - calico network for kubernetes CNI
 simply, you should now deploy a pod network to the cluster. Run 
-```
+```sh
 kubectl apply -f [podnetwork].yaml" with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 ```
@@ -730,12 +733,12 @@ SEARCH **Calico Kubernetes**. -> Official Docs -> Install Calico -> Kubernetes -
 Following the docs, Installing Calico CNI
 Install Calico[​](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#install-calico "Direct link to Install Calico")
 1) Install the Tigera Calico operator and custom resource definitions.
-```
+```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
 ```
 make you don't expose ports on the system for prior services.
 kubectl **Output:**
-```
+```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
 namespace/tigera-operator created
 customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
@@ -768,22 +771,22 @@ deployment.apps/tigera-operator created
 
 Done! Secondly, this. 
 2) Install Calico by creating the necessary custom resource. For more information on configuration options available in this manifest, see [the installation reference](https://docs.tigera.io/calico/latest/reference/installation/api).
-
-> Note: but I dont want to run the same directly. Because, We made few modifications in the pod CIDR = 192.168.0.0`/16` but we change it to `/24`  . So, Cant use this since we're using different CIDR. To apply the relevant config for the same
+> Note: but I don't want to run the same directly. Because, We made few modifications in the pod CIDR = 192.168.0.0`/16` but we change it to `/24`  . So, Cant use this since we're using different CIDR. To apply the relevant config for the same.
 
 -- Get binaries using `wget` command. 
-```
+```sh
 wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml 
 ```
 
 -- edit `custom-resource.yaml` using `vi` or `nano`
-```
+```sh
 nano custom-resource.yaml
 ```
 and modify the CIDR by finding it in the spec section from `16` to `24`
 	cidr: `192.168.0.0/24` //in docs,  `10.244.0.0/24`
 
 To apply the settings:
-```
+```sh
 kubectl apply -f custom-resources.yaml 
 ```
+
