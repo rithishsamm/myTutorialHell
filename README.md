@@ -3,7 +3,7 @@
 # My Personal Documentation
 Welcome to my repository dedicated to all my research and notes on Software Development, DevOps and more! This repository serves as a comprehensive collection of my findings, insights, and resources as I explore various aspects of DevOps practices, tools, and methodologies.
 ## Table of Contents
-
+``` text
 ├── APIs
 │   └── API Orientation - SNA.md
 ├── CICD&&Automation
@@ -451,7 +451,7 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
     │   └── Socks.md
     └── Webb Engg
         └── 7. Request Response Part - 1 - SNA.md
-
+```
 111 directories, 549 files
 ## Introduction
 This repository is a living document of my journey through the world of DevOps. Here, you'll find detailed notes, summaries, and insights on various topics related to DevOps. Whether you are a beginner or an experienced professional, I hope these notes will be helpful for you in understanding and applying DevOps practices.
