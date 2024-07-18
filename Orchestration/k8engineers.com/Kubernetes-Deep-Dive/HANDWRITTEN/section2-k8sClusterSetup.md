@@ -590,12 +590,13 @@ Since i cancelled the process in-between which already bootstrapped half way and
 ```
 kubeadm reset 
 iptables
-ipvsadm -clear #if not, sudo apt install ipvsadm
+
+#if not, sudo apt install ipvsadm
 done!
 ```
 or If you know what you are doing, you can `ignore-preflight-checks= whatever to skip or all`**
 ```sh
-kubeadm init --apiserver-advertise-address=192.168.0.222 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16 --ignore-preflight-checks=all
+kubeadm init --apiserver-advertise-address=192.168.0.143 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16 --ignore-preflight-checks=all
 ```
 voila! Successfully initialized control-plane. must give the output of,
 > [!NOTE] output
@@ -839,8 +840,7 @@ We have only one node. So, the control plane by default will not allow me to run
 ###### What is Taints and Tolerations:
 Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints.
 
- Since our Single node is a control plane node, which also have compute plane components.
- Now we want our control plane node to act as a compute plane node in-order run our pods in ease without any taints and tolerations. For that, we simply have to disable it.
+ Since our Single node is a control plane node, which also have compute plane components. Now we want our control plane node to act as a compute plane node in-order run our pods in ease without any taints and tolerations. For that, we simply have to disable it.
 
 
-  
+ 
