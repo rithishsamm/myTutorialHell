@@ -2,7 +2,7 @@
 ---
 # My Personal Documentation
 Welcome to my repository dedicated to all my research and notes on Software Development, DevOps and more! This repository serves as a comprehensive collection of my findings, insights, and resources as I explore various aspects of DevOps practices, tools, and methodologies.
-## Table of Contents
+## Tree of Contents
 ``` text
 ├── APIs
 │   └── API Orientation - SNA.md
@@ -452,7 +452,7 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
     └── Webb Engg
         └── 7. Request Response Part - 1 - SNA.md
 ```
-111 directories, 549 files
+109 directories, 541 files
 ## Introduction
 This repository is a living document of my journey through the world of DevOps. Here, you'll find detailed notes, summaries, and insights on various topics related to DevOps. Whether you are a beginner or an experienced professional, I hope these notes will be helpful for you in understanding and applying DevOps practices.
 ## Getting Started
@@ -479,8 +479,7 @@ In this section, I explain the importance of a note-taking system. This is the b
 9) And change fonts too if necessary. I use `Segeo UI` for Interface, `Calibri` for Font and `Courier New` for monospace. For customize as per your convenience.
 10) Go to Community Plugins Options
 11) Turn On Community Plugins, Reload if necessary.
-12) Open the same, Click on Browse button in the Community Plugins Option
-13) Search for Style settings
+12) Open the same, Click on Browse button in the Community Plugins Option13) Search for Style settings
 14) Install and Enable it
 15) Reload or close it and reopen,
 16) Looks neat!

@@ -1,4 +1,4 @@
-
+q
 ### Section 2: K8S Setup
 #### 1.  Tools to setup kubernetes cluster and Cloud services
 ###### Cluster setup - [Doc](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fofficial%2FMaster%20Docker%20and%20Kubernetes%2Fsection2%2FTools%20to%20setup%20kubernetes%20cluster%20and%20cloud%20service)
@@ -172,6 +172,7 @@ going to use **containerd** as container runtime interface for K8s (since K8s ca
 4) Disable Taints on control plane node for single node setup. (*no need if you are using multi-node setup*)
 
 #### See all the same in practical session
+*****
 ## 3. Why Containerd not Docker? (k8s dropped support for Docker)
 
 WILL DISCUSS What are all the container runtime that we have?
@@ -370,7 +371,7 @@ all done.
 prerequisite for kubernetes kubeadm single node setup,
 COMPLETED SINGLE NODE KUBEADM VM SETUP WITH SSH COMPATIBILITY.
 Now in this particular machine, will see how to 
-## Setup Single Node having One Control plane + worker node:
+#### ==Setup Single Node having One Control plane + worker node:==
 Steps and Procedures to follow the same - 
 USING KUBEADM TOOL TO SETUP KUBERNETES CLUSTER +  Containerd as Container runtime interface in the backend -> For kubernetes to launch the application.
 
@@ -428,7 +429,6 @@ sysctl --system
 
 **NOW ALL THE MINIMAL REQUIREMENTS ARE DONE! NEXT, WILL CONTINUE WITH THE REST INSTALLING OTHER COMPONENTS**
 
----
 ## `containerd` INSTALLATION
 Will follow all the steps to install containerd package on all nodes. REFER THE SAME OR REFER OFFICIAL DOCKER DOCS. -> since we are installing containerd not docker packages.
 - Set up the repository
@@ -787,14 +787,14 @@ wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/cu
 nano custom-resource.yaml
 ```
 and modify the CIDR by finding it in the spec section, CIDR.
-	cidr:  //in docs,  `10.244.0.0/24` 
+	cidr:  //in docs,  `10.244.0.0/16` 
 since, we've ran `kubectl init` with all the ip, container config and CIDR
 
 Run, To apply the settings:
 ```kubectl
 kubectl apply -f custom-resources.yaml 
 ```
-Output: Tigera.io's Operator of Installation and apiserver/default got created.
+>**Output: Tigera.io's Operator of Installation and apiserver/default got created.**
 
 To check, Run this by watching the running nodes and pods:
 ```kubectl
@@ -817,30 +817,110 @@ telling the role which is obviously `control plane`, time, version, IP for the c
 No experimentation. such testing a real world application on a POD. 
 To do that, follow
 ```kubectl
-kubectl run test-pod --image=node/alpine -t -i 
+kubectl run test-pod --image=nginx -t -i 
 ```
-if you run this, throws
-> error: timed out waiting for  connection
-```
+or whatever image as per your convenience. if you run this, throws
+> error: timed out waiting for the condition
+```kubectl
 kubectl get po
 kubectl get po -o wide
 ```
 shows: **test-pod** status is **Pending** and nothing in all ways.
-WHY?, LETS TROUBLESHOOT.
-```
-kubectl describe test-pod #pod-name
+**WHY?, Why waiting for a condition? How to validate to resolve the same** 
+LETS TROUBLESHOOT.
+```kubectl
+kubeclt get pod #will be in pending status
+kubectl describe po test-pod #pod-name
 ```
 Shows the description,
 in the events section, if notification shows a 
 >Type: Warning, Reason: Failed Scheduling, ,Message: untolerated taint. 
 
-The Reason behind that is Taints. 
-We have only one node. So, the control plane by default will not allow me to run the pod/application. Our objective is to practice kubernetes deploying applications  on the single node. Here, the single node is a control plane node. Now, we need to add that metrics for the compute plane too. So we need convert the compute plane to compute plane in order to launch pods on the same.  We need to remove taints,
+The Reason behind that is **Taints**. 
+>We have only one node which is control plane node. So, the control plane by default will not allow me to run the pod/application.  Our objective is to practice kubernetes deploying applications on the single node.
 
-###### What is Taints and Tolerations:
-Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints.
+Here, the single node is a control plane node. Now, we need to add few metrics to make compute plane work too. So we need to make the control plane node work as compute plane in order to launch pods on the same. 
 
- Since our Single node is a control plane node, which also have compute plane components. Now we want our control plane node to act as a compute plane node in-order run our pods in ease without any taints and tolerations. For that, we simply have to disable it.
+In order to perform such actions.    We need to remove taints. To remove taints, remove taints. By doing,
+```kubectl
+kubectl get no -o wide #kubeadm1n in my case, to get the nodename to edit
+```
+```kubectl
+kubectl edit no kubeadm1n #nodename
+```
+scroll down and go to a block named **TAINTS** in spec section. 
+It will have a parameter called `effect: NoSchedule` This particular metric is the reason that we couldn't able to launch the pods. Means, for trying to deploy an application it is not possible. So
+>Remove the **TAINTS** block. 
 
+> [!What is TAINTS]
+> Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints.
+> 
+>  Since our Single node is a control plane node, which also have compute plane components. Now we want our control plane node to act as a compute plane node in-order run our pods in ease without any taints and tolerations. For that, we simply have to disable it.
 
- 
+NOW, re-check. 
+```kubectl
+kubectl get po -o wide
+```
+Will be resulting in `ContainerCreating` or `Running`. How come now? Because, we have removed the taints to launch the application.
+
+If not, you can't be able to practice doing both compute and control on a same one single node. Since it `kubectl` is tainted.
+
+##### Conclusion
+The reason behind this is that, By default, you can't launch your application, container or an instance in a control plane node, because it is a control plane node.  How to know what node consist what containers. Here, we made it by
+```kubectl
+kubectl get no #check the role of it, finding the node
+kubectl edit no nodename #node-name + edited the TAINT
+kubectl get po -o wide #made it work by removing the taints condition parameter 
+```
+no, we can able to launch the applications. to get the app status, copy the IP by getting info of that pod, 
+```
+curl 10.244.101.71
+```
+
+shows, welcome to nginx homepage output:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+Based on this, i can confirm that i can able to launch my application on the same SETTING UP AND CONFIGURING SINGLE NODE KUBERNETES CLUSTER SETUP WITH KUBEADM WITH CONTAINERD AND CALICO.
+
+#### CONNECTING BACK TO A K8s Cluster after restart.
+No need of anything. Just run it all right away after boot. Make sure you done all the config correct as per instructed.
+
+--- FIN ---
+*****
+## Kubernetes multi-node setup using kubeadm tool(CRI: containerd)
+Setting up multi-node Kube setup to create a cluster infra using Kubeadm tool:
+MEANS, **TWO NODE**! = ONE CONTROL PLANE NODE + ONE WORKER NODE! 🤯
+Previously we ran both control and compute plane on one single node itself combined.
+
+**Now we're covering multi-node setup. Same kubeadm tool, same containerd as container runtime interface, and same Calico as CNI.**
+
+Will look into specs and configurations. 
+
+##### **==EVERYTHING AS SAME CONFIG AS BEFORE. Ditto Copy -> Control Plane Node + Clone the same and tone down 2GB and 2vCPU for worker node==**
+
+Nothing much. Just simply clone. or Start over the same drill. No problem if you start over. If it is a clone, you need to perform some extra mods. such as,
+1) Renam
