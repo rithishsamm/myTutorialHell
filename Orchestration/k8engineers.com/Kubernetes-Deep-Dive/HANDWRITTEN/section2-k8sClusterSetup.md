@@ -433,9 +433,10 @@ sysctl --system
 Will follow all the steps to install containerd package on all nodes. REFER THE SAME OR REFER OFFICIAL DOCKER DOCS. -> since we are installing containerd not docker packages.
 - Set up the repository
 - Install packages to allow apt to use a repository over HTTPS
-```bash
-apt update && apt full-upgrade && apt install -y containerd.io
+```Shell
+sudo apt-get install ca-certificates curl gnupg lsb-releases
 ```
+ 
 or else, refer: 
 [Reference:](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#reference)
 - [Containerd](https://docs.docker.com/engine/install/ubuntu/)
@@ -448,9 +449,7 @@ or search [**==Docker install ubuntu==**](https://docs.docker.com/engine/install
 since we're using docker official docs. WE GOTTA IMPORT THE `GPG key` and store it in the local system. first to create a `dir` and store the same.
 1) and 2) Set up repo + Add Docker's official GPG key:
 ```Shell
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg lsb-releases
-
+sudo mkdir -p /etc/apt/keyrings
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -477,7 +476,7 @@ After then, will install all the essential packages with the `containerd`
 here, in order to install: 
 	in docker docs, we have all the commands which we can install relevant run **Docker**,  but we need only `containerd` , to filter and install that, skip all except `containerd.io`:
 ```
-sudo apt install -y containerd.io 
+sudo apt update && sudo apt upgrade && install -y containerd.io 
 ```
 
   Next,
@@ -683,7 +682,7 @@ kubectl apply -f [podnetwork].yaml #with one of the options listed at:
 
 #Then you can join any number of worker nodes by running the following on each as root:
 
-kubeadm join 192.168.0.143:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd190407253184e717bdeaf80b34e6f95c794f96b
+kubeadm join 192.168.0.143:6443 --token bqflzv.nbb753ji2xawnm6q \ --discovery-token-ca-cert-hash sha256:7b897f575d86f96ac4e3571bd19  0407253184e717bdeaf80b34e6f95c794f96b
 ```
 
 >You can perform the following instructions, if
@@ -923,4 +922,78 @@ Will look into specs and configurations.
 ##### **==EVERYTHING AS SAME CONFIG AS BEFORE. Ditto Copy -> Control Plane Node + Clone the same and tone down 2GB and 2vCPU for worker node==**
 
 Nothing much. Just simply clone. or Start over the same drill. No problem if you start over. If it is a clone, you need to perform some extra mods. such as,
-1) Renam
+
+###### Configuring Control Plane and worker node:
+**Control Plane**:
+1) login as root
+2) `ip a` to check the IP. must be same. 
+3) Configure and modify the static ip address.\
+4) EVERYTHING ALL AS SAME AS WE DID BELOW TO THE PREVIOUS MACHINE
+**Worker Node:**
+1) Rename
+2) Keep NAT MAC, next
+3) Full Clone, Finish
+Further mods after clone: such as changing hostname, IP and more.
+1) su root
+2) changing hostname
+```sh
+hostnamectl set-hostname kubadm2nctrlplane
+```
+3) changing ip address, this is an automatic DHCP IP. I need a **static** one. To do that,
+```
+ip a
+nano /etc/netplan/00-installer-config.yaml
+```
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp0s3:
+      dhcp4: false
+      addresses:
+      - 192.168.0.153/24
+      nameservers:
+        addresses:
+        - 8.8.8.8
+        - 8.8.4.4
+        search: []
+      routes:
+      - to: default
+        via: 192.168.0.1
+  version: 2
+```
+4) Save changes. and Apply,
+```
+netplan apply
+```
+6) and Reboot 
+7) `ip a`  recheck and ensure the ip got changed
+8) ensure swap memory got disabled
+```
+ swapoff -a
+ nano /etc/fstab
+#swp and the whole header
+```
+9) All done, reboot
+```
+init 6
+```
+
+##### RECALLING THE PREVIOUS SETUP TO APPLY THE SAME:
+Referring to the [](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fkubernetes_latest_manifest%2FKubernetes%2F01-kubernetes-architecture-Installation%2F03-k8s-setup-kubeadm-containerd) Document.
+Here, the setup says that
+
+- Setup: ` Single/Two nodes: VirtualBox was used to launch both nodes(Master Hostname: controlplane and Worker Hostname: computeplaneone)`
+	- Network: `Bridge` for Oracle Virtual Box, since the IP can assigned from the router itself.
+APPLYING THE SAME!
+
+###### Lets Configure: EVERYSAME THING AS WE DID THE SAME PREVIOUSLY FOR THE SINGLE NODE SETUP.
+1) Make both the VM readily available
+2) Open Mobaxterm
+3) Open and SSH into both of the VMs as separate sessions
+4) Split Screen and separate both of the nodes
+5) Select Multi-exec
+>==**CHEF'S KISS SETUP ACCESSING BOTH THE MACHINES AT THE TIME SAVING TIME CONFIGURING AND SETTING THINGS UP IN EASE!==**
+
+####### **PREREQUISITES TO CONFIGURE CONTAINERD[](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2FKubernetes-Deep-Dive%2FHANDWRITTEN%2Fsection2-k8sClusterSetup######**PREREQUISITES TO CONFIGURE CONTAINERD:**):**
+everything that we did for the same in single node setup. 
