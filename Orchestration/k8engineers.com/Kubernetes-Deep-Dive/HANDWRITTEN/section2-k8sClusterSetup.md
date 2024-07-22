@@ -997,3 +997,4 @@ APPLYING THE SAME!
 
 ####### **PREREQUISITES TO CONFIGURE CONTAINERD[](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2FKubernetes-Deep-Dive%2FHANDWRITTEN%2Fsection2-k8sClusterSetup######**PREREQUISITES TO CONFIGURE CONTAINERD:**):**
 everything that we did for the same in single node setup. 
+
