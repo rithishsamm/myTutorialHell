@@ -145,7 +145,6 @@ CIVO and all.
 > Plus, https://www.techwithkunal.com/blog/10-years-of-kubernetes?utm_source=hashnode_blog_newsletter&utm_medium=email&utm_campaign=10-years-of-kubernetes
 THESE MIGHT HELP TOO!
 ***
-
 ## 2. Overview on single/multi node setup using kubeadm tool
 
 ###### Setting up K8s Clusters using **Kubeadm** Tool (setting up K8s Clusters on Single or Multi-node) + using containerd and CRI tool for Container creation.
@@ -872,12 +871,12 @@ kubectl edit no nodename #node-name + edited the TAINT
 kubectl get po -o wide #made it work by removing the taints condition parameter 
 ```
 no, we can able to launch the applications. to get the app status, copy the IP by getting info of that pod, 
-```
+```bash
 curl 10.244.101.71
 ```
 
 shows, welcome to nginx homepage output:
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -940,11 +939,11 @@ Further mods after clone: such as changing hostname, IP and more.
 hostnamectl set-hostname kubadm2nctrlplane
 ```
 3) changing ip address, this is an automatic DHCP IP. I need a **static** one. To do that,
-```
+```sh
 ip a
 nano /etc/netplan/00-installer-config.yaml
 ```
-```
+```yaml
 # This is the network config written by 'subiquity'
 network:
   ethernets:
@@ -963,38 +962,145 @@ network:
   version: 2
 ```
 4) Save changes. and Apply,
-```
+```sh
 netplan apply
 ```
 6) and Reboot 
 7) `ip a`  recheck and ensure the ip got changed
 8) ensure swap memory got disabled
-```
- swapoff -a
- nano /etc/fstab
-#swp and the whole header
+```sh
+swapoff -a
+nano /etc/fstab
+#comment out the swp and the whole header
 ```
 9) All done, reboot
-```
+```sh
 init 6
 ```
+for `6. Automount units provide automount capabilities, for on-demand mounting of file systems as well as parallelized boot-up. See systemd.automount(5).`
 
+All good! -> Preflight checks before running kube: 
+- control plane config
+- worker node config
+- swap off
+- hostname change
+- setup config
+- done!!
 ##### RECALLING THE PREVIOUS SETUP TO APPLY THE SAME:
 Referring to the [](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fkubernetes_latest_manifest%2FKubernetes%2F01-kubernetes-architecture-Installation%2F03-k8s-setup-kubeadm-containerd) Document.
 Here, the setup says that
-
 - Setup: ` Single/Two nodes: VirtualBox was used to launch both nodes(Master Hostname: controlplane and Worker Hostname: computeplaneone)`
 	- Network: `Bridge` for Oracle Virtual Box, since the IP can assigned from the router itself.
 APPLYING THE SAME!
-
 ###### Lets Configure: EVERYSAME THING AS WE DID THE SAME PREVIOUSLY FOR THE SINGLE NODE SETUP.
+recalling the kubernetes manifests file setup as we spoke for setting the the single node on the same. [](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fkubernetes_latest_manifest%2FKubernetes%2F01-kubernetes-architecture-Installation%2F03-k8s-setup-kubeadm-containerd)
 1) Make both the VM readily available
 2) Open Mobaxterm
 3) Open and SSH into both of the VMs as separate sessions
 4) Split Screen and separate both of the nodes
-5) Select Multi-exec
->==**CHEF'S KISS SETUP ACCESSING BOTH THE MACHINES AT THE TIME SAVING TIME CONFIGURING AND SETTING THINGS UP IN EASE!==**
+5) Select Multi-exec + make use of multi-paste option for copy-paste
+>==**CHEF'S KISS SETUP ACCESSING BOTH THE M ACHINES AT THE TIME SAVING HOURS  CONFIGURING AND SETTING THINGS UP IN EASE!==**
 
-####### **PREREQUISITES TO CONFIGURE CONTAINERD[](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2FKubernetes-Deep-Dive%2FHANDWRITTEN%2Fsection2-k8sClusterSetup######**PREREQUISITES TO CONFIGURE CONTAINERD:**):**
-everything that we did for the same in single node setup. 
+####### **PREREQUISITES TO CONFIGURE CONTAINERD [](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2FKubernetes-Deep-Dive%2FHANDWRITTEN%2Fsection2-k8sClusterSetup######**PREREQUISITES TO CONFIGURE CONTAINERD:**):** + everything that we did for the same in single node setup. 
+Will see further of the common steps that we have for both the nodes. al are common until we execute `kubeadm init`
+
+apply:
+1) setup config for `containerd`
+```sh
+cat > /etc/modules-load.d/containerd.conf <<EOF
+overlay
+br_netfilter
+EOF
+```
+```sh
+cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+```
+```sh
+sysctl --system
+```
+
+2) installing essentials, `containerd` + adding gpg keys and repo to apt resources [**docker official docs - search: docker engine install**]
+```sh
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg lsb-release
+```
+ ```bash
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+```
+```sh
+sudo apt-get install containerd.io 
+```
+  
+3) Configuring `containerd`
+back to our docs: creating essentials and folders +default containerd config +reboot -> enabling and running systemd cgroup.
+
+```sh
+mkdir -p /etc/containerd
+```
+```containerd
+containerd config default > /etc/containerd/config.toml
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+```
+```
+systemctl restart containerd
+systemctl status containerd
+```
+
+4) `crictl`, ensure we create a configuration file as mentioned below
+```
+cat > /etc/crictl.yaml <<EOF
+runtime-endpoint: unix:///run/containerd/containerd.sock
+image-endpoint: unix:///run/containerd/containerd.sock
+timeout: 2
+EOF
+```
+
+5) installing `k8s` packages + adding `gpg` key + repo + components [**kubeadm official docs**]
+```sh
+apt update 
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+```
+```sh
+sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+```
+```shell
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+```sh
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+```
+sudo systemctl enable --now kubelet
+```
+
+6) Bootstrapping control plane to create `k8s` clusters
+-> On control nodes (k8s master node): [](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#on-control-nodes-k8s-master-node)
+- "--pod-network-cidr" was changes here on local setup. Since my VMs are using same series network.
+- So instead of applying the calico YAML files, first download them and update the CIDR of pod to be used cidr which ever "For example: 10.244.0.0/16 private class".
+```
+kubeadm init --apiserver-advertise-address=IP --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=CLASS-A-pvt-network
+```
+
+```
+kubeadm init --apiserver-advertise-address=192.168.0.153/92.168.0.155 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
+```
+
+*Output: Your Kubernetes control-plane has initialized successfully!*
+> ==**BOOTSTRAPPING CONTROL PLANE IS DONE SUCCESSFULLY ON KUBEADM**==
 
