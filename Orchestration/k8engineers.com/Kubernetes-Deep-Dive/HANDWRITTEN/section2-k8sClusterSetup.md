@@ -1,4 +1,3 @@
-q
 ### Section 2: K8S Setup
 #### 1.  Tools to setup kubernetes cluster and Cloud services
 ###### Cluster setup - [Doc](obsidian://open?vault=tutorialHell&file=Orchestration%2Fk8engineers.com%2Fofficial%2FMaster%20Docker%20and%20Kubernetes%2Fsection2%2FTools%20to%20setup%20kubernetes%20cluster%20and%20cloud%20service)
@@ -588,7 +587,7 @@ Since i cancelled the process in-between which already bootstrapped half way and
 ```
 kubeadm reset 
 iptables
-
+ipvsadm --clear
 #if not, sudo apt install ipvsadm
 done!
 ```
@@ -1090,6 +1089,7 @@ sudo systemctl enable --now kubelet
 ```
 
 6) Bootstrapping control plane to create `k8s` clusters
+## RUN CONTROL PLANE ON ONE AND WORKER ON OTHER SEPERATELY.
 -> On control nodes (k8s master node): [](https://github.com/rithishsamm/myTutorialHell/blob/main/Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/03-k8s-setup-kubeadm-containerd.md#on-control-nodes-k8s-master-node)
 - "--pod-network-cidr" was changes here on local setup. Since my VMs are using same series network.
 - So instead of applying the calico YAML files, first download them and update the CIDR of pod to be used cidr which ever "For example: 10.244.0.0/16 private class".
@@ -1098,9 +1098,73 @@ kubeadm init --apiserver-advertise-address=IP --cri-socket=/run/containerd/conta
 ```
 
 ```
-kubeadm init --apiserver-advertise-address=192.168.0.153/92.168.0.155 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
+kubeadm init --apiserver-advertise-address=192.168.0.153 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
 ```
 
 *Output: Your Kubernetes control-plane has initialized successfully!*
 > ==**BOOTSTRAPPING CONTROL PLANE IS DONE SUCCESSFULLY ON KUBEADM**==
 
+```sh
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+k8s deployed successfully done everything as a super user.. 
+
+## ==!IMPORTANT==
+re-init or keep the session without clear +  there will be `kubeadm join` -> KEEP THIS ASIDE
+- control plane
+```kubeadm
+kubeadm join 192.168.0.153:6443 --token kcouvm.8c1qftekbt92anm0 \
+        --discovery-token-ca-cert-hash sha256:77230416fa024c6eecb42c612bb574098d92af586812d56fc26f7889cb3ae3cd
+
+```
+
+###### Configuring the CRI container network interface: - CALICO CNI -  official docs [](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart#how-to)
+***ONLY ONE THE CONTROL PLANE NODE***
+1) Install the Tigera Calico operator and custom resource definitions.
+```kubectl
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
+```
+```sh
+wget https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
+```
+
+==CHECK IF THE APPROPRIATE **CIDR** APPLIED==
+`cidr: 10.244.0.0/16`
+```kubectl
+kubectl apply -f custom-resources.yaml
+```
+
+## NOW, in the worker node server,
+join the control with kubeadm,
+```kubeadm
+kubeadm init --apiserver-advertise-address=192.168.0.153 --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
+```
+>CIDR MATTERS!
++
+**SUCCESSFULLY CONNECTED KUBEADM WORKER NODE WITH CONTROL PLANE NODE**
+
+Output:
+> [!NOTE]
+> ```
+This node has joined the cluster: 1)  Certificate signing request was sent to apiserver and a response was received. 2) The Kubelet was informed of the new secure connection details.
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
+CHECK BACK ON **CONTROL PLANE NODE**:
+```kubectl
+kubectl get nodes
+```
+
+| NAME               | STATUS | ROLES | AGE    | VERSION |
+| ------------------ | ------ | ----- | ------ | ------- |
+| kubadm2nworkernode | Ready  | none  | 6m52s  | v1.30.3 |
+| kubadm2nctrlplane  | Ready  | none  | 12m52s | v1.30.3 |
+
+not ready, since the container is getting created. To check more about whats happening in the node:
+```
+kubectl get po -A -o wide
+```
+
+==**Multi-node SETUP HAS BEEN DONE SUCCESSFULLY! voila!**==
+*****
