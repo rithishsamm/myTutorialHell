@@ -324,7 +324,7 @@ Become a master in Kubernetes by understanding and implementing the core concept
 7. Network Policy with pod Selector and namespace Selector(Egress type)
 		 pod Selector & namespace Selector – Egress type - [Doc]
 8. Network Policy with ipBlock(Egress type)
-		ipBlock – Egress type - [Doc]
+		ipBlock – Egress type - [Doc
 9. Understanding Default Network Policies
 		Default Network Policies in K8s - [Doc]
 ##### Section 22: K8S Dashboard
