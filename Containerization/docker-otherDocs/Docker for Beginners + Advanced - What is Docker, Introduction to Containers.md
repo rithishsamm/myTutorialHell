@@ -290,7 +290,7 @@ if you want so that's known as docker registry.
 
 example: i want to run ubuntu gonna just say
 ```
-dpocker run -it uuntu
+docker run -it uuntu
 ```
 
 now ubuntu is running  on the right hand side mac is running left hand side ubuntu is running you want to see all the running containers,
