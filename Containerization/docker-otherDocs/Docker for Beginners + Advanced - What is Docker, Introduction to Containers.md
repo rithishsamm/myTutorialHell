@@ -195,12 +195,12 @@ these two things and then i'll do a deep dive later then.
  containers. containers are running  your applications inside it.
 
 e.g.: ANALOGY:
-example: you have a dish,  you are eating a cup bowl of noodles that has that has like vegetables in it and as well and your friend lives in bangalore named sam.  you're bangalore.
+example: you have a dish,  you are eating a cup bowl of noodles that has that has like vegetables in it and as well and your friend lives in bangalore named sam.  you're Bangalore. 
 
-i'm like living in new delhi. different different cities and  states
-so i'm like 
+I'm like living in new Delhi. different different cities and  states
+so I'm like 
 - hey sam this noodle soup is amazing would you like to try it. 
-- someone's like yeah sure but i'm like  you are in bangalore though how can i give you my noodle soup 
+- someone's like yeah sure but i'm like  you are in Bangalore though how can i give you my noodle soup 
 - here take my noodle soup i'll ship it in a box take your noodle soup 
 -does that make sense? n.o 
 because by the time the noodle soup will reach sam. it will be like very bad . and also it's it doesn't make sense to share the running application to my friend.
