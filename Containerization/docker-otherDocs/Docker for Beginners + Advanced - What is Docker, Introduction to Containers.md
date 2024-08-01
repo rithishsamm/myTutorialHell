@@ -208,7 +208,7 @@ because by the time the noodle soup will reach sam. it will be like very bad . a
  instead what we can do is to share instructions or i can share the recipe. i'm like hey here's the recipe make it yourself and then you can also enjoy it
 ---
 Similarly when you're running an application 
-- dude check out this great website i'm running 
+- dude check out this great website I'm running 
 - oh how can i do that 
 - here is the entire instruction with the source code and everything run it and you can do it  
 -so this instruction part when you're following a recipe, this particular thing we  call it like that you follow an instruction and you follow the recipe and the dish will be created. so the dish is the actual application that is running in the servers inside where containers without any problem but what leads us to creating that dish that is known as a docker image or a container image
