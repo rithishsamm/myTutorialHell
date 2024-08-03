@@ -137,7 +137,6 @@ it's also used in the kubernetes runtime.
 docker containers - containerd is also container runtime for kubernetes
 ##### Docker Engine
 the next thing is this docker engine part. 
-
 docker engine -> Docker Daemon as a server
 ![[D2.png]]
 your docker daemon  server is running.
