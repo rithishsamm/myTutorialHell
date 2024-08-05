@@ -248,7 +248,7 @@ will clear when we do the when we do the hands-on of this.
  - rocket rkt(redhat runtime named rocket). 
  - CRI-O
  -so there's so many container runtimes.
-
+ 
 which one should i use? should i use containerd? should i use rkt?
 and
 if i'm using containerd, does it mean that i cannot use rkt? or what is
@@ -329,7 +329,7 @@ example: on cloud, for that you use more of systems/things like
 docker to containerize things,
 operate on it kubernetes,
 ansible for automating build jobs,
-grafana or whatever using it to monitor by dashboards 
+Grafana or whatever using it to monitor by dashboards 
 
 then you again 
 plan it again
@@ -337,7 +337,6 @@ code again over newer versions
 versions keep coming keep coming keep coming 
 
  **let's talk a little bit more about what docker does** 
- 
  so when we're talking about this devops, things over here doing two things
 
 one is example: 
@@ -371,7 +370,7 @@ they are only seeing the final image
 
 THIS HOW OPS SYNCS IN WITH THE TEAMS.
 
- >e learnt about 
+ >we learnt about 
  >1) runtime
  >2) engine
  >3) daemon
