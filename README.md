@@ -4,50 +4,54 @@
 Welcome to my repository dedicated to all my research and notes on Software Development, DevOps and more! This repository serves as a comprehensive collection of my findings, insights, and resources as I explore various aspects of DevOps practices, tools, and methodologies.
 ## Tree of Contents
 ``` text
-├── APIs
-│   └── API Orientation - SNA.md
 ├── CICD&&Automation
 │   ├── ArgoCD
-│   │   └── Argo CD - Documentation.md
+│   │   ├── Argo CD - Documentation.md
+│   │   ├── Argo CD - KK.md
+│   │   ├── Argo CD - RedHat Docs.md
+│   │   └── GitOps with Argo CD overview - KCD Chennai.md
 │   ├── Bash
-│   │   ├── Bash - Shell Scripting - By CODE IS EVERYTHING.md
-│   │   └── shellscript.sh
-│   │       ├── md
-│   │       │   ├── scripts
-│   │       │   │   ├── first.md
-│   │       │   │   ├── first2.md
-│   │       │   │   └── var.md
-│   │       │   └── theories
-│   │       │       ├── 1.README.md
-│   │       │       ├── 2.PHILOSOPHY.md
-│   │       │       └── 3.A First Script.md
-│   │       └── txt+sh
-│   │           ├── scripts
-│   │           │   ├── first.sh
-│   │           │   ├── first2.sh
-│   │           │   └── var.sh
-│   │           └── theories
-│   │               ├── PHILOSOPHY.txt
-│   │               └── README.txt
+│   │   ├── $Scripting-Beg-Adv
+│   │   │   └── Content - Day 1,  Linux Shell Scripting Beginner To Expert Bash Shell Script Course Content - Watch Now 🔥🔥🔥.md
+│   │   └── shell
+│   │       ├── Bash - Shell Scripting - By CODE IS EVERYTHING.md
+│   │       └── shellscript.sh
+│   │           ├── md
+│   │           │   ├── scripts
+│   │           │   │   ├── first.md
+│   │           │   │   ├── first2.md
+│   │           │   │   └── var.md
+│   │           │   └── theories
+│   │           │       ├── 1.README.md
+│   │           │       ├── 2.PHILOSOPHY.md
+│   │           │       └── 3.A First Script.md
+│   │           └── txt+sh
+│   │               ├── scripts
+│   │               │   ├── first.sh
+│   │               │   ├── first2.sh
+│   │               │   └── var.sh
+│   │               └── theories
+│   │                   ├── PHILOSOPHY.txt
+│   │                   └── README.txt
 │   ├── Git & SCM
 │   │   ├── Complete Git and SCM Tutorial - KK.md
 │   │   ├── The guide to Git I might never have..md
 │   │   └── git-LFS
 │   │       ├── GIT LFS.md
-│   │       └── GIT LTS - LARGE FILE SYSTEMS.md
+│   │       ├── GIT LTS - LARGE FILE SYSTEMS.md
+│   │       └── Git LFS Specification.md
 │   ├── GitHub Actions
 │   └── Jenkins
 │       ├── FreeCodeCamp - Jenkins.md
 │       ├── Jenkins -- by Tamil Cloud YT.md
 │       ├── Learn Jenkins Fast! A Simple Jenkins CI Tutorial for Beginners - By Cameron McKenzie.md
 │       └── Media
-│           ├── ALL THE IMAGES
+│           ├── Pasted image 20240305111442.png
+│           ├── Pasted image 20240305111508.png
+│           └── Pasted image 20240305111528.jpg
 ├── Containerization
-│   ├── a-media
-│   │   ├──ALL THE IMAGES
 │   ├── docker-otherDocs
 │   │   ├── Docker for Beginners + Advanced - What is Docker, Introduction to Containers.md
-│   │   ├── Docker-_Hussein_NaseerV1.md
 │   │   ├── Docker-sna.md
 │   │   └── Docker_Networking_-_Hussein_NaseerV1.md
 │   └── k8engineers
@@ -73,15 +77,16 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
 ├── IaC
 │   └── YAML
 │       ├── Complete YAML Course - Beginner to Advanced for DevOps and more!.md
-│       └── media
-│           ├── ALL THE IMAGES
+├── LICENSE
 ├── Networking
 │   ├── Hussein Nasser
 │   │   └── Proxy Series - Hussein NaseerV1.md
 │   ├── Kunal Kushwaha
 │   │   ├── Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md
-│   │   └── media
-│   │       ├── ALL THE IMAGES
+│   ├── OSI_LayerV1.md
+│   ├── Other Networking Docs
+│   │   ├── Networking by Drunk Engineer.md
+│   │   └── Subnet Masking, NAT, DNS, Firewall.md
 ├── Orchestration
 │   ├── K8s - other docs
 │   │   ├── K8s - EDx.md
@@ -103,25 +108,106 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
 │   │   └── setup-tools
 │   │       └── Kubeadm
 │   │           └── Kubeadm - Official K8s Documentation.md
-│   ├── a-media
-│   │   ├──ALL THE IMAGES
+│   │   ├── deploymentYAML.png
+│   │   ├── deploymentYAML2.png
+│   │   ├── eksctl.png
+│   │   ├── how-it-works-k3s-revised.svg
+│   │   ├── k8.jpg
+│   │   ├── k8arch2.png
+│   │   ├── k8s1.png
+│   │   ├── kubernetes-pod-cheatsheet.png
+│   │   └── orcherstator(Kubernetes).png
 │   └── k8engineers.com
 │       ├── Kubernetes-Deep-Dive
 │       │   ├── HANDWRITTEN
 │       │   │   ├── Index.md
-│       │   │   ├── section1-k8sArchitecture.md
-│       │   │   └── section2-k8sClusterSetup.md
-│       │   └── official
-│       │       └── Master Docker and Kubernetes
-│       │           ├── section1
-│       │           │   ├── Common components for Control plane and Compute plane nodes.md
-│       │           │   ├── Introduction to Kubernetes control plane components.md
-│       │           │   └── K8S Architecture.md
-│       │           └── section2
-│       │               ├── Multi-Node Setup.md
-│       │               ├── Overview of Single or Multi node kubernetes setup using kubeadm tool and containerd CRI.md
-│       │               ├── Tools to setup kubernetes cluster and cloud service.md
-│       │               └── Why are we using containerd over docker in kubernetes.md
+│       │   │   ├── section1-k8sArchitecture
+│       │   │   │   ├── 0. Index.md
+│       │   │   │   ├── 00. section1-full-k8sArchitecture.md
+│       │   │   │   ├── 1. High level view of Kubernetes architecture and components.md
+│       │   │   │   ├── 2. Common components for control and compute plane nodes.md
+│       │   │   │   ├── 3. + 4.  Introduction to Kubernetes Control plane (Master Node) components and its Working Principles.md
+│       │   │   │   ├── 4. + 5.  Introduction to Kubernetes compute plane worker node components and its Working Principles.md
+│       │   │   │   └── 6.  Kubernetes Components ports and protocolswe saw K8s, components that exists on both and individual in each of the nodes..md
+│       │   │   ├── section2-k8sClusterSetup
+│       │   │   │   ├── 0. Index.md
+│       │   │   │   ├── 00. section2-full-k8sClusterSetup.md
+│       │   │   │   ├── 1. Tools to setup kubernetes cluster and Cloud services.md
+│       │   │   │   ├── 10.  Part5- Kubernetes HA setup using kubeadm tool(cri-containerd).md
+│       │   │   │   ├── 2. Overview on single+multi node setup using kubeadm tool.md
+│       │   │   │   ├── 3. Why Containerd not Docker (k8s dropped support for Docker).md
+│       │   │   │   ├── 4.  Kubernetes single node setup using kubeadm tool(cri-containerd).md
+│       │   │   │   ├── 5. Kubernetes multi-node setup using kubeadm tool (cri-containerd).md
+│       │   │   │   ├── 6.  Part1- Kubernetes HA setup using kubeadm tool(cri-containerd).md
+│       │   │   │   ├── 7.  Part2- Kubernetes HA setup using kubeadm tool (cri-containerd).md
+│       │   │   │   ├── 8.  Part3- Kubernetes HA setup using kubeadm tool(cri-containerd).md
+│       │   │   │   └── 9.  Part4-Kubernetes HA setup using kubeadm tool(cri-containerd).md
+│       │   │   └── section3-k8sPods
+│       │   │       ├── 0. Index.md
+│       │   │       ├── 00. section3-full-k8sPods.md
+│       │   │       └── 1. Kubernetes Objects overview.md
+│       │   ├── official
+│       │   │   ├── section1-arch
+│       │   │   │   ├── Common components for Control plane and Compute plane nodes.md
+│       │   │   │   ├── Introduction to Kubernetes control plane components.md
+│       │   │   │   └── K8S Architecture.md
+│       │   │   ├── section2-setup
+│       │   │   │   ├── 1.Cluster Setup.md
+│       │   │   │   ├── 2.Overview of Setup.md
+│       │   │   │   ├── 3. Containerd over Docker_.docx.md
+│       │   │   │   └── 4.Multi-Node Setup.md
+│       │   │   └── section3-pods
+│       │   │       ├── 1.Kubernetes Overview & Pod Introduction.md
+│       │   │       ├── 10.Application Deployment using Static Pod.md
+│       │   │       ├── 11.Challenges in Standalone Pod.md
+│       │   │       ├── 2.Integrating Visual Studio Code with kubernetes cluster.md
+│       │   │       ├── 3.Pods creation using imperative approach.md
+│       │   │       ├── 4.Pod Creation Workflow.md
+│       │   │       ├── 5.Creation of Multi container pod with shared volume.md
+│       │   │       ├── 6.Handling containers in Pod using crictl(restart container POD).md
+│       │   │       ├── 7.Access pod application outside cluster using hostport.md
+│       │   │       ├── 8. pod init CONTAINERS.md
+│       │   │       └── 9.Pod Lifecycle Restart Policy.md
+│       │   └── offl-raw-docs
+│       │       ├── docker deepdive
+│       │       │   ├── 01.Network types suppported by Docker.docx
+│       │       │   ├── 1. Docker Storages.docx
+│       │       │   ├── 1. Introduction- Virtualization, Hypervisors, Containers.docx
+│       │       │   ├── 2. Introduction to Docker.docx
+│       │       │   ├── 3. Docker Engine & Docker Desktop.docx
+│       │       │   ├── 4. System Requirements.docx
+│       │       │   ├── 6. Docker Engine Setup using Package Manager.docx
+│       │       │   ├── 7. Docker Engine installation in Ubuntu using convenience script.docx
+│       │       │   ├── 8. Docker default parameters.docx
+│       │       │   ├── Configure static IP address for Docker Host.docx
+│       │       │   ├── Container Creation Workflow.docx
+│       │       │   ├── Container Introduction.docx
+│       │       │   ├── Container Restart Policy.docx
+│       │       │   ├── Container commands rm, exec, run and create.docx
+│       │       │   ├── Docker Containers - Nginx Application.docx
+│       │       │   └── MYSQL Application Deployment_.docx
+│       │       └── kubernetes deepdive
+│       │           ├── sec1-k8s-architecture
+│       │           │   ├── 1. Architecture and Components.docx
+│       │           │   ├── 2. Common Components.docx
+│       │           │   └── 3. Control Plane Componentes.docx
+│       │           ├── sec2-k8-setup
+│       │           │   ├── 1. Cluster setup.docx
+│       │           │   ├── 2. Overview of setup.docx
+│       │           │   ├── 3. Containerd over Docker_.docx
+│       │           │   └── 4. MultiNode Setup.pdf
+│       │           └── sec3-k8s-pods
+│       │               ├── 1.Kubernetes Overview & Pod Introduction.docx
+│       │               ├── 10.Static Pod (Controlled by kubelet).docx
+│       │               ├── 11.Challenges of Standalone Pod.docx
+│       │               ├── 2.Integrating VS code with K8s Cluster.pdf
+│       │               ├── 3.Pods creation using imperative approach.docx
+│       │               ├── 4.Pod Creation Workflow.docx
+│       │               ├── 5.Multicontainer pod with Shared Volume.docx
+│       │               ├── 6.Handling containers in Pod using crictl_.docx
+│       │               ├── 7.Access pod application outside cluster(hostport).docx
+│       │               ├── 8.Pod initContainers.docx
+│       │               └── 9.Pod Lifecycle Restart Policy.docx
 │       └── kubernetes_latest_manifest
 │           ├── CRD
 │           │   ├── README.md
@@ -381,7 +467,23 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
 │           │   │   └── kube-bench.yaml
 │           │   └── src
 │           │       └── images
-│           │           ├── ALL THE IMAGES
+│           │           ├── Ingress-Controller-k8s.png
+│           │           ├── aks-storage.PNG
+│           │           ├── app1-ingress.PNG
+│           │           ├── app2-ingress.PNG
+│           │           ├── azure-network.PNG
+│           │           ├── daemonset.png
+│           │           ├── deployment.png
+│           │           ├── docker_compared.png
+│           │           ├── efk.png
+│           │           ├── fluentbit.png
+│           │           ├── fluentd-elasticsearch.png
+│           │           ├── k8s-ingress.png
+│           │           ├── loadbalancer-k8s.png
+│           │           ├── pod_for_yt.png
+│           │           ├── pv-pvc.png
+│           │           └── services-k8s.png
+│           ├── README.md
 │           ├── TLS certificates
 │           │   ├── README.md
 │           │   └── README1.md
@@ -424,33 +526,30 @@ Welcome to my repository dedicated to all my research and notes on Software Deve
 │           │   └── network_policy
 │           ├── shortcuts
 │           └── syllabus
-├── Personals
-│   ├── Cold Mail Template.md
-│   ├── Medium
-│   │   ├── Intro - Fair draft.md
-│   │   ├── Intro - Rough Draft.md
-│   │   ├── career game.md
-│   │   ├── music.md
-│   │   └── rotting era and reincarnation.md
-│   └── Work
-│       ├── Dwinzo Markdown.md
-│       └── docker compose resolve.md
 ├── README.md
+├── Selfmade Ninja Dev
+│   ├── API
+│   │   └── API Orientation - SNA.md
+│   ├── C
+│   ├── C for Hacking
+│   ├── Full-Stack Web Engineering
+│   │   └── 7. Request Response Part - 1 - SNA.md
+│   ├── LAHTP
+│   ├── Python CLI
+│   ├── Python Marathon
+│   ├── Socket
+│   │   └── Socks.md
+│   └── Web Hacking
 ├── Storage
 │   ├── AWS S3 - Simple Storage Service.md
 │   └── MinIO - Kubernetes native object storage.md
-├── Systems
-│   ├── Linux
-│   │   └── Introduction to Linux & Terminal Commands - Full Course for Beginners.md
-│   └── ssh
-│       ├── SSH Crash Course with Some DevOps.md
-│       ├── SSH Tutorial - Crash Course.md
-│       └── ssh - secure shell.md
-└── learn.selfmade.ninja
-    ├── Adv Socket Programming
-    │   └── Socks.md
-    └── Webb Engg
-        └── 7. Request Response Part - 1 - SNA.md
+└── Systems
+    ├── Linux
+    │   └── Introduction to Linux & Terminal Commands - Full Course for Beginners.md
+    └── ssh
+        ├── SSH Crash Course with Some DevOps.md
+        ├── SSH Tutorial - Crash Course.md
+        └── ssh - secure shell.md
 ```
 109 directories, 541 files
 ## Introduction
