@@ -578,7 +578,8 @@ In this section, I explain the importance of a note-taking system. This is the b
 9) And change fonts too if necessary. I use `Segeo UI` for Interface, `Calibri` for Font and `Courier New` for monospace. For customize as per your convenience.
 10) Go to Community Plugins Options
 11) Turn On Community Plugins, Reload if necessary.
-12) Open the same, Click on Browse button in the Community Plugins Option13) Search for Style settings
+12) Open the same, Click on Browse button in the Community Plugins Option
+13) Search for Style settings
 14) Install and Enable it
 15) Reload or close it and reopen,
 16) Looks neat!
