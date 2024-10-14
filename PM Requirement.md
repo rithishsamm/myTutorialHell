@@ -16,7 +16,9 @@ this is a rough overview about the companies and the projects.
 Here, I am wearing multiple hats doing the DevOps work, managing Developer and Operations relations, Project management adapting Agile DevOps Methodologies to keep the SDLC running, systems and infrastructure (hybrid) and more
 
 #### Context:
-Since we are at an early stage, We are about to build the whole culture from scratch. So far, all the devs are managing all the products using Git for Version Control and Gitea platform for Source Code Management. 
+Since we are at an early stage, We are about to build the whole culture from scratch. So far, all the dev's are managing all the products using Git for Version Control and Gitea platform for Source Code Management. 
+
+Each of the services has been developed and maintained individually. 
 
 ###### *Problem*:
 ###### *Requirement*:
