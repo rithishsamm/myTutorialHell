@@ -108,6 +108,7 @@ one environment to deal with.
 
 2) you work in client-vendor relationships. You have your organization, a so-called performing (own) organization, and you have a client's organization. They operate in completely different ways and that's a real world challenge.
 ![[Pasted image 20241023133709.png]]
+
 You have to take into account the requirements of both organizations to run a project and find common grounds. It includes life cycle, processes, tools, roles, responsibilities and approaches. here, you'll be provided with
 hiring department, templates, project management software's, lessons learned, best practices from other projects and access to subject matter experts. here, 
 **THE ENVIRONEMENT HELP RUNNING THE PROJECT!!** takes off the burden of organizing every aspect of the workplace for your team so you can focus on your project work.
@@ -163,11 +164,12 @@ In the real world, if you work in the company for some time, you should already 
 
 Let's get back into the lecture room. So imagine the client's organization, they have a business need to develop a product or service, but they don't have the expertise and human resources to do that. They start searching for a vendor organization that can help.
 ### **Pre-sale Phase** 
-
 As a result, their representatives contact the sales team in your organization. That's how the pre-sales phase of a project begins. You see, before it gets into the project management reel, the sales team and the client should negotiate the terms and conditions of a contract. As a project manager, you may help the sales team
 to develop realistic terms.
-
 ### **Project Risk Management Framework** 
+ 
+
+
 
 
 ### **Project Contract** 
