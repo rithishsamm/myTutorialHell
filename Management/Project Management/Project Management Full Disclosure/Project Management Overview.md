@@ -127,25 +127,32 @@ in other words, your client, the project owners are your stakeholders,
 but likewise your boss, some team members and subject matter experts are also stakeholders of the project.
 > stakeholders are all possible people and organizations who may gain or lose  because of your project. 
 
+**IDENTIFY:**
 ![[stakeholderPieChart.png]]
 There are many types of stakeholders and many reasons why they care about project and that's why you need to identify them all.
 
 Here, you start using a stakeholder register to capture all the information about stakeholders. 
+**REGISTER:**
 ![[Pasted image 20241023152902.png]]
+
+**ANALYZE**:
 and then you need to perform stakeholder analysis and decide how you want to interact with each of them.
+
 ![[Pasted image 20241023152959.png]]
 
+**STRATEGIZE:**
 **How to strategize the same?**
 ![[stakeholdermanagmenet.drawio.png]]
--  Stakeholders provide requirements
+> **PM is responsible for collecting requirements from various dynamics of stakeholders:** (very critical highlighted point)
+-  *Stakeholders provide requirements* (SERVICE, PRODUCTE, FUNCTION OR FEATURE)
 - Some of them provide requirements towards the product or
-service you need to create, 
-- others provide requirements towards your project management approach, 
-- Some they want you to use in their environment
+service you need to create, (HOW IT HAS TO BE CREATED)
+- others provide requirements towards your project management approach, (WHAT WAY IT HAS TO BE CREATED)
+- Some they want you to use in their environment (DO IT BUT IN MY ENVIRONMENT)
 **And the critical part is it's your responsibility to collect all the requirements from all stakeholders for your project.**
 
 ON THE NEGATIVE SIDE:
-IRL, if you misidentifying important requirements, it'll be your fault.
+*IRL, if you misidentifying important requirements, it'll be your fault.*
 In the worst case scenario, this stakeholder 
 - will use their authority to force you to include the requirements into the project. 
 - You have to change your  project management plan,
@@ -160,14 +167,35 @@ It appeared your house didn't comply with their environmental policies for these
 **That much of a hassle to go through if anything went sideways.**
 >  likewise, you should be on the lookout for other stakeholders throughout the project's lifetime.
 
-In the real world, if you work in the company for some time, you should already know many internal stakeholders. And in fact, you need to continuously build working relationships with them. Not only when your project starts and after that, you need to identify external stakeholders from the client side and those from your industry or niche that may impact your project. Now we have set the stage for a project to start.
 
-Let's get back into the lecture room. So imagine the client's organization, they have a business need to develop a product or service, but they don't have the expertise and human resources to do that. They start searching for a vendor organization that can help.
+In the real world, if you work in the company for some time, you should already know many internal stakeholders. And in fact, you need to continuously build working relationships with them. 
+Not only when your project starts and after that, you need to identify external stakeholders from the client side and those from your industry or niche that may impact your project. 
+###### **Now we have set the stage for a project to start.**
+So imagine the client's organization, 
+![[Pasted image 20241025122551.png]]
+**one** - they have a business need to develop a product or service -> but they don't have the expertise and human resources to do that.
+**two** - They start searching for a vendor organization that can help.
+**WHERE THE SALES TEAM COMES INTO PLACE.**
 ### **Pre-sale Phase** 
-As a result, their representatives contact the sales team in your organization. That's how the pre-sales phase of a project begins. You see, before it gets into the project management reel, the sales team and the client should negotiate the terms and conditions of a contract. As a project manager, you may help the sales team
-to develop realistic terms.
+As a result, their representatives contact the sales team in your organization. That's how the pre-sales phase of a project begins. You see, before it gets into the project management reel, the sales team and the client should negotiate the terms and conditions of a contract.
+![[Pasted image 20241025123412.png]]
+ As a project manager, you may help the sales team to develop realistic terms. So You may need to perform super high level planning here to ensure visibility and identify the duration and the budget for the project.
+
+*Here's a critical point, theoretical books on project management may mislead you. They talk about risk management way too late. In the real world, you start risk management activities in the pre-sales phase.* 
 ### **Project Risk Management Framework** 
- 
+You may have **CRITICAL RISKS** right at the beginning of the project. 
+Moreover, there might be **URGENT RISKS** that you need to resolve right away. 
+
+*Eg: such risks may embed a problem at the start of the project that will fire up late*
+*during the execution, or it may simply kill the project's visibility before it starts because you missed an opportunity.* **That's why you do risk management continuously**. Here is a **SIMPLE FRAMEWORK:**
+![[Pasted image 20241025132307.png]]
+
+1) You continuously apply risk identification techniques in all project activities.
+ *-> simplest is to ask the: team and stakeholders, **do you see any risk here?***
+2) 
+
+
+
 
 
 
