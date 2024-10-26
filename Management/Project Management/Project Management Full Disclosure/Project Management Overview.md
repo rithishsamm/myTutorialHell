@@ -189,10 +189,9 @@ Moreover, there might be **URGENT RISKS** that you need to resolve right away.
 *Eg: such risks may embed a problem at the start of the project that will fire up late*
 *during the execution, or it may simply kill the project's visibility before it starts because you missed an opportunity.* **That's why you do risk management continuously**. Here is a **SIMPLE FRAMEWORK:**
 ![[Pasted image 20241025132307.png]]
-
 1) You continuously apply risk identification techniques in all project activities.
  *-> simplest is to ask the: team and stakeholders, **do you see any risk here?***
-2) 
+
 
 
 
