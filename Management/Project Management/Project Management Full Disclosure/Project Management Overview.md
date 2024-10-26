@@ -189,29 +189,137 @@ Moreover, there might be **URGENT RISKS** that you need to resolve right away.
 *Eg: such risks may embed a problem at the start of the project that will fire up late*
 *during the execution, or it may simply kill the project's visibility before it starts because you missed an opportunity.* **That's why you do risk management continuously**. Here is a **SIMPLE FRAMEWORK:**
 ![[Pasted image 20241025132307.png]]
-1) You continuously apply risk identification techniques in all project activities.
- *-> simplest is to ask the: team and stakeholders, **do you see any risk here?***
-
-
-
-
-
-
-
-
+1) **Risk Identification Techniques:** You continuously apply risk identification techniques in all project activities.
+ -> *simplest is to ask the: team and stakeholders*: **do you see any risk here?** after finding out all that,
+2) **Risk Register**: you log or identify the risks into their risk register.
+3) **Risk Analysis**:
+- *Qualitative Risk Analysis* (!imp)
+- *Quantitative Risk Analysis* 
+-- after analysis, filter out the critical ones by 
+4) **Selecting Risks** ->  **Develop Risk Responses** based on the analysis (PLANNING THE SAME IS !imp)
+5) **Implement Risk Reponses**: if occurs
+6) **Monitor** the same
+7) Risk register and document the logs 
+(cycle continues) More important is to identify the risks. LOOK OUT!
 ### **Project Contract** 
+###### Back to pre-sales phase: (risk is a part of it)
+The outcome of pre-sales should be assigned as contract with the client by concluding the decision with internal stake holders with the preferred project management approach that we tailored included
+- feasibility analysis
+- high - level planning
+- contract negotiations,
+should be contracted!
+![[Pasted image 20241026101833.png]]
+Quite often, clients talk about their real goals for the project during the pre-sales phase. BUT. here's the case! Pre-sales phase will be all fall more into pre-sales engineer or associate. There will be info available only about
+> a contract doesn't include all those details of a project.
+Instead it outlines only the overall business relationships between the organizations.
 
+If you don't participate in this phase, you need to find a way to get access to the notes, emails, and agreements that were made here.
+
+**IT IS OUR DUTY TO MAKE THINGS CLEARED FROM OUR SIDE IN-TERMS OF PROJECT MANAGEMENT and COLLECT AS MANY INFO THAT HAS BEEN DISCUSSED OVER THE Pre-sales phase which will become handy in future.**
+
+ On the other hand, a contract may have a strict deadline or total budget for the project. It's a constraint for you so you should know about it.
+ ![[Pasted image 20241026103751.png]]
+
+NEXT!  you need to **initiate a project.** *a transition from the sales and contract negotiations into project management.*
+we need to identify three things:
+1) Business Objective 
+2) Results (as an outcome)
+3) Boundaries (of the project)
+
+in practice to initiate a project, we use a tool called a **project charter**.
 
 ### **Project Charter** 
+In a nutshell, it is a practice that includes high level information about the project. This information that we accumulated is very important to have before we start planning process.
 
+**Project charter is a simple text document.** can be in word, docs or in email or PM tools and keep them in it. A project charter usually includes
 
+PROJECT CHARTER STRUCTURE:
+1) Title 
+2) Project Description
+3) Authority level
+4) Business Use case
+5) Process Objectives
+6) Pre-assigned resources
+7) Stakeholders
+8) Known requirements from the stakeholders
+9) Product Description / Deliverable - description of the services/product -  major deliverables
+10) assumptions
+11) constraints
+12) Measurable Project Objectives
+13) Project approval requirements
+14) High - level project risks
+15) Signature of authorizing the charter. 
+-- not a comprehensive description of the project but a project charter should be
+no more than five pages long. *The shorter, the better.*
+
+> IRL, you may need to create a formal document, but in most cases, you'll simply collect this information and talk through it with your project owners so you need to develop a common understanding of the project.
+
+IMPORTANT AND CRITICAL! because in the process, you remove lots of miscommunications right at the start and also you begin to control the client's expectations. Helps showing the scope of the project,
+- What are the boundaries of the project? And 
+- whether the constraints look realistic to develop the results that were outlined in the project charter.
+ but what's even more important that you should align all your future efforts with the project charter.
+
+> question everything that doesn't align with the project goal or business case in this charter.
+
+Now let me emphasize why it's so important to have a project charter and how we use all this information.
 ### **Collecting Requirements** 
+After getting a sign off on the project charter, Should take a broader look of the project charter that we ensure we all have things available from all the vectors such as contract your clients, your environment, available tools, process and templates and everything else at your disposal.
 
+ 
+![[Pasted image 20241026112330.png]]
 
-### **Rolling Wave Planning** 
+must decide what project management approach to take and what frameworks to use. **it's all based on the project life cycle**. Doesn't mean that we need to invent something new.
 
+Simply, you need to choose from one, two, maybe three available options that fits and adjust them a bit to the needs of a project for your organization. After that,
 
+**you need to outline a project management plan**, A project plan may be a mandatory document in some industries so it should contain all the details. the majority of projects don't need a fully written plan.
+
+so it's totally fine to keep it all in your head until all stakeholders understand how you manage the project. However, if you have never created a formal project management plan, I recommend doing this exercise at least once.
+
+![[Pasted image 20241026114632.png]]
+
+**Exercise:** Take the major project management knowledge domains that PMI describes:
+- Integration,
+- scope,
+- time,
+- cost,
+- budget,
+- quality,
+- risk,
+- stakeholders,
+- communication,
+- resources and
+- procurement management.
+Now list all the processes, tools, templates, and workflows inside your organization and illustrate how they interact with each other.
+
+==**This exercise will help you identify weak spots and inefficiencies in your project management, approach and knowledge. plus, it will help you systemize your knowledge and understand the whole system. ==
+
+now, planning the planning process abiding with the project management
+approach that we chartered.
+
+### **Project / Rolling Wave Planning** 
+(following the selected project management approach)
+
+There are two fundamental principles to follow: ()
+
+**INTEGRATION PRINCIPLE:**
+1) you plan the project specifically to reach the objective stated in the project charter.
+2) you focus on specifying and digging deeper into the high level information
+you captured in the chapter.
+
+*which will safeguard you from spending resources on something clients didn't ask for. and help you keep your clients expanding demands within the constraints and boundaries of the project*
+
+On the other hand, if clients want to adjust Project objectives, okay
+but should update the charter, which will allow you to renegotiate project budget, timeline, and scope.
+
+ the starting point of planning, we need to 
+ - take high level requirements and
+ - scope of the project from the project charter.
 ### **Scope Management**
+
+
+
+
 
 
 ### **Project Management Software** 
