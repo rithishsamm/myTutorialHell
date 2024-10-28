@@ -312,38 +312,144 @@ you captured in the chapter.
 On the other hand, if clients want to adjust Project objectives, okay
 but should update the charter, which will allow you to renegotiate project budget, timeline, and scope.
 
- the starting point of planning, we need to 
+ the starting point of planning, will debrief the same with the below given diagram,
+ 
+ 1) project charter - 
  - take high level requirements and
  - scope of the project from the project charter.
+2) scope management - 
+We break these requirements into smaller pieces and start to work out the details of each requirement. if needed,
+- we write specifications
+- user stories, 
+- draw mockups, 
+- wire frames and so on.
+
+###### Hierarchy of requirements:
+![[Pasted image 20241028103309.png]]
+- first you need to collect business requirements from the clients.
+- then you need to identify stakeholder requirements from clients and subject matter experts
+of all relevant fields. after that, you need to work with
+- your project team and
+- subject matter experts 
+to produce solutions and specific product or system requirements.
+IT IS A CYCLE OF IDENTIFYING AND COLLECTING REQUIREMENTS FROM ALL THE RESPONSIBILES.  
+
+>your goal here is to ensure that all stakeholders press you, the project's objective in the first place.
+
+MORE ON SCOPE and **requirement traceability matrix** after getting all the input from all the responsible.
+
 ### **Scope Management**
+![[Pasted image 20241028110512.png]]
+To help you manage stakeholder requirements, you can use 
+REQUIREMENTS TRACEABILITY MATRIX -  a spreadsheet that maps 
+- all the project requirements to stakeholders who requested them,
+- project objectives that these requirements help to achieve,
+- work breakdown, 
+- structure elements and
+- any other aspects of a project
+![[Pasted image 20241028111039.png]]
+Responsible for collecting requirements:
+I believe you should not collect requirements yourself.
+Business analyst is a dedicated role on a project specifically trained to collect requirements professionally.
 
+When defining requirements: QUALITY MANAGEMENT PLAN is a thing - ==QA & QC== the quality of the product is the part of the project scope.
+>you will need to identify specific tasks and make resources of time and resources so that your team can ensure quality and fix defects.
 
+IRL, you can start implementing the product or service before you have collected
+all the requirements and finished planning called **Rolling wave planning technique(progressive elaboration planning technique)**.
+![[Pasted image 20241028112631.png]]
 
+requirement1: in which you plan for the imminent requirements in all the details,
+ requirement2: but requirements that are logical in the future can remain on a high level.
 
+Nevertheless, you do plan for these future requirements on a high level in all terms of project management like project scope, budget, schedule, risks, and other, doing it at the very right at the start of the project.
 
+And the goal is to allocate enough time and resources so that you can implement
+these requirements considering all the uncertainties you have at the moment.
 
+Instead of wasting time planning out the whole project in for example, waterfall methodology or any other planned driven methodologies. 
+
+**You plan for the next few weeks of work in all the details and you keep the rest on a high level, but then during the execution, you elaborate on your project man piece by piece.**
+![[Pasted image 20241028113650.png]]
+**So keep this specific technique in mind because your overall project management approach should allow for additional efforts required to operate your project management plan. And if you apply the rolling wave planning technique, then all the processes and tools that you use will be impacted by this decision.**
+
+No matter what planning technique you use, the next step is vital.
+>**==Abstracting the overall project's scope (there is no step by step instructions or techniques available for this rollout ) ==**. 
+>- From one side, your industry and the nature of the project will dictate the most common deliverables.
+>- you need to decide which deliverables will include which 
+>- sets of requirements and
+>- the requirement's traceability matrix combined with the word breakdown structure
+may help you map requirements to specific deliverables
+
+this way you can ensure you don't forget about this requirements in the process. It's another critical checkpoint in project management.
+
+###### project scope statement:
+![[Pasted image 20241028114631.png]]
+don't assume that your clients have the same industry knowledge and understanding as you do. You need to explain what they will get as the result of the project. So 
+**WHAT IS A PROJECT SCOPE STATEMENT?**
+> **the project scope statement describes all project deliverables and how you will create them in simple language and the clients should understand what you'll do even in a technical industry.
+
+It's critical because next you'll put a lot of time and effort into creating a plan to implement those exact deliverables which what the clients need.
+
+>Moreover, they should be confident that these deliverables will help them reach the project's business objectives where they put a signature on this scope statement.
+
+##### WORK BREAKDOWN STRUCTURE: step of translating requirements -> to task and deliverables as tangible results which the team creates:
+
+**We need to transfer deliverables that clients signed off from scope statement into work breakdown structure.**
+![[Pasted image 20241028120606.png]]
+The work breakdown structure is the tool that helps you break down the whole project scope and identify 100% of it.
+
+> project scope is simply the description of all the work that your project team needs to do to create these deliverables. Usually we describe them as tasks. From a practical standpoint, I recommend that you keep the naming of  deliverables and the meaning that comes from clients.
+
+To do all these, available tools and software's to manage the same:
 ### **Project Management Software** 
 
+As you already understand, there will be hundreds of tasks. These tasks will have lots of attributes and then you'll assign dependencies and line them up on a gun chart.
+
+So tracking all these attributes manually, for example, in Excel is a waste of your time and effort. Making a change in the project management plan like that will be painful as hell. That's exactly why creating a work breakdown structure is the common starting point for all these project management software applications.
+
+So the decomposition of deliverables and the rest of the steps, I will explain further should happen in the dedicated PM software. And in general, you should try to keep
+all project information in one tool right from the start.
+A word of warning though, any project management application is dumb. It's just a fancy calculator so it does what you tell it to do. So if you use incorrect
+project management principles, 
+
+for example, the principles of creating a high quality work breakdown structure. Your software will give you a misleading picture. Therefore, you must understand the underlying project management principles used in these apps. That's why we are going back and will discuss the decomposition technique in project management
+
+and here are the key principles. WBS consists of big pieces of tangible results that we call deliverables and small pieces called work packages. This all have unique identifiers that clearly state their position in the structure.
 
 ### **Decomposition Technique** 
 
 
-### **How to Estimate Tasks** 
+
+
+### **Ho w to Estimate Tasks** 
+
+
 
 
 ### **Software PM Estimation** 
 
 
+
+
 ### **Risk Response Plans**
+
+
 
 
 ### **Project Baselines** 
 
 
+
+
 ### **Project Execution** 
 
 
+
+
 ### **5 Daily Routines of a PM** 
+
+
 
 
 ### **#1 Project Management Resource**
