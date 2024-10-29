@@ -488,17 +488,16 @@ However, if you don't have any team members, you should ask for a preassigned ex
 So always consider the average productivity of a role based on the experience level you identified, not the knowledge level of an expert who does the estimates.
 
 
-With all this information, we can assign dependencies between tasks and create a draft of the project schedule. 
+**With all this information, we can assign dependencies between tasks and create a draft of the project schedule.** 
 ![[Pasted image 20241028180758.png]]
 
-You have to play around to create a final and realistic version of this schedule so here is a step by step instruction on how to do it.
+You have to play around to create a final and realistic version of this schedule, so here is a step by step instruction on how to do it.
 ![[Pasted image 20241028180935.png]]
-
-You can pause now and read through this. Next we can also find average prices for the materials and hourly rates for the type and level of labor we need so we can easily calculate the total cost of a task. The idea is to perform the bottom up estimate.
-
-First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
+Next we can also find average prices for the materials and hourly rates for the type and level of labor we need so we can easily calculate the total cost of a task. 
+![[Pasted image 20241029102257.png]]
+The idea is to perform the bottom up estimate. First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
 draft of the project budget. 
-
+![[Pasted image 20241029102350.png]]
 Another critical note here, what I've just described is a generic way of estimating task, but if you work in the software development industry, for example, you have a prepared team for the next few months, or if you work in a company that uses only in-house resources, there is no need to do it this way. So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
 
 Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
