@@ -503,8 +503,6 @@ Another critical note here, what I've just described is a generic way of estimat
 Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
 ### **Software PM Estimation** 
 
-
-
 ### **Risk Response Plans**
 Now we need to run dedicated risk identification sessions based on the draft of our
 project management plan. Then we need to finalize the analysis, select the risk we need to address and develop risk response plans, but what does it mean to create a risk response plan? First, it means that you come up with a specific action plan.
@@ -514,12 +512,10 @@ and other resources to do that. So in essence, it means you need to add tasks. A
 
 In this case, you must ensure that these new processes will work well with other processes and tools. Also, you need to ensure that stakeholders are okay with these changes. After all these updates to the project management plan, it will change. 
 
-
 ### **Project Baselines** 
 You need to validate that it's still feasible so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far. The last critical step here is to create project baselines. A baseline is nothing more than the final approved version of project scope, schedule and budget.
 
 Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.
-
 
 
 Let me try to explain the importance of this project management concept. Imagine you are a captain of a ship. You need to sail from port A to port B. In the real world, a single vessel can leave a port without plotted route, it's not allowed. The idea is that you have a plotted path and you continuously track your progress along this path.
