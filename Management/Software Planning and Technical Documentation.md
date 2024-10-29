@@ -7,3 +7,4 @@ To have a chance at success, you need clear communication, elaborate planning, a
 - **Product documentation** 
 - **Process documentation**
 - **Why do we need documentation in agile?**
+

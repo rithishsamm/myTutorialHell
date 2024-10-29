@@ -404,54 +404,247 @@ The work breakdown structure is the tool that helps you break down the whole pro
 To do all these, available tools and software's to manage the same:
 ### **Project Management Software** 
 
-As you already understand, there will be hundreds of tasks. These tasks will have lots of attributes and then you'll assign dependencies and line them up on a gun chart.
+As you already understand, there will be hundreds of tasks. 
+These tasks will have lots of attributes and then you'll assign dependencies and line them up on a Gantt chart.
+![[Pasted image 20241028145829.png]]
+So tracking all these attributes manually, for example, in Excel is a waste of your time and effort. Making a change in the project management plan like that will be painful as hell.
 
-So tracking all these attributes manually, for example, in Excel is a waste of your time and effort. Making a change in the project management plan like that will be painful as hell. That's exactly why creating a work breakdown structure is the common starting point for all these project management software applications.
+That's exactly why creating a work breakdown structure is the common starting point for all these project management software applications.
+![[Pasted image 20241028145947.png]]
 
 So the decomposition of deliverables and the rest of the steps, I will explain further should happen in the dedicated PM software. And in general, you should try to keep
 all project information in one tool right from the start.
-A word of warning though, any project management application is dumb. It's just a fancy calculator so it does what you tell it to do. So if you use incorrect
-project management principles, 
 
-for example, the principles of creating a high quality work breakdown structure. Your software will give you a misleading picture. Therefore, you must understand the underlying project management principles used in these apps. That's why we are going back and will discuss the decomposition technique in project management
+A word of warning though, any project management application is dumb. just a fancy calculator so it does what you tell it to do. 
 
-and here are the key principles. WBS consists of big pieces of tangible results that we call deliverables and small pieces called work packages. This all have unique identifiers that clearly state their position in the structure.
+So if you use incorrect project management principles, 
+for example, the principles of creating a high quality work breakdown structure: Your software will give you a misleading picture. Therefore, you must understand the underlying project management principles used in these apps.
 
+We have to do Work Breakdown Structure:
 ### **Decomposition Technique** 
+That's why we are going back and will discuss the decomposition technique in project management and here are the key principles. 
+
+![[Pasted image 20241028150149.png]]
+WBS(Work Breakdown Structure) consists of big pieces of tangible results that we call deliverables and small pieces called work packages. This all have unique identifiers that clearly state their position in the structure.
+
+1) So we put deliverables from the scope statement on the first level of decomposition.
+ ![[Pasted image 20241028151154.png]]
+
+2) **The idea is that we first list all the major pieces of the project.**
+![[Pasted image 20241028151219.png]]
+
+3) Then we need to decompose each deliverable into smaller components, the work packages.
+![[Pasted image 20241028151324.png]]
+Again, **work packages** should also be finished, tangible and testable pieces of the project, but smaller.
+
+at this point in planning, you need to outsource some project deliverables. It's called **make or buy decisions.**
+![[Pasted image 20241028152425.png]]
+The major one is whether your organization has the required resources and expertise to implement all these deliverables, but let's move on. This is optional and flexible based on your capability too.
+
+The rule of thumb from he practical standpoint is to make work packages small  enough to fit within reporting period
+![[Pasted image 20241028151538.png]]
+> If something is not in the work breakdown structure, it's not a part of the project.
+> 
+> You see, it means that if you can't logically put a piece of work under one of the  major deliverables, you most likely fail to identify 100% of the project scope in the beginning. **It's a warning sign of scope creek.**
+
+4) Next we go one step further.  We decompose and breakdown all the work packages into **tasks**.
+![[Pasted image 20241028152130.png]]
+Ideally again, from practical standpoint, one team member should be able to finish a task. from start to finish and from experience, I prefer tasks no longer than three working days. **Such level of decomposition provides better accuracy.** BUT IT IS FLEXIBLE AS PER INDIVIDUALS CONVENIENCE.
+
+5) We have decomposed the work packages into tasks. Now our goal is to estimate each task. 
+### **How to Estimate Tasks** 
+![[Pasted image 20241028152905.png]]
+
+###### Activities:
+1) **Description:**
+Usually we start by assessing what kind of resources we need to finish this task.
+You need to think about people, their skill set and their level of expertise. if you have a team already, you can assign people to the tasks at once.
+
+![[Pasted image 20241028174556.png]]
+On the other hand, we need to analyze what equipment, materials and tools we need for these tasks. So then we need to plan to acquire all these resources.
 
 
+Sometimes a company has 
+- a pool of people we can take for our project, so we'll need to negotiate internally, but 
+- likewise, we may need to hire these people. 
+- From an equipment and materials perspective, we have the same situation. The company may have the stock that we can use.
+- It may have a list of vendors that we can contract, 
+- or we may need to find all these vendors from scratch. 
+- 
+These analysis of required resources will result in two separate documents. 
+
+1) The first one is the human resources acquisition plan. Nothing scary here, it's just the list of vacant roles on your project and the dates when you need them to join the team. 
+![[Pasted image 20241028175941.png]]
+3) The second document is the procurement management plan. Again, you need to plan how you will acquire equipment, tools and materials, and when you expect it. So here you may need to engage with the procurement department or procurement manager of your organization.
+
+In any case, these two plans will impact your schedule because we can't hire people the next day when we need them, it may take months. The same goes for equipment and materials. Your project schedule will have due dates for all those resources.
 
 
-### **Ho w to Estimate Tasks** 
+Now we need to estimate the duration it takes for the assigned roles or real people to finish each task. And a critical side note here, you as a project manager should not estimate task yourself.
+
+If you have the team already, obviously they do it.
+However, if you don't have any team members, you should ask for a preassigned expert to help you out here.
+
+So always consider the average productivity of a role based on the experience level you identified, not the knowledge level of an expert who does the estimates.
 
 
+With all this information, we can assign dependencies between tasks and create a draft of the project schedule. 
+![[Pasted image 20241028180758.png]]
 
+You have to play around to create a final and realistic version of this schedule so here is a step by step instruction on how to do it.
+![[Pasted image 20241028180935.png]]
 
+You can pause now and read through this. Next we can also find average prices for the materials and hourly rates for the type and level of labor we need so we can easily calculate the total cost of a task. The idea is to perform the bottom up estimate.
+
+First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
+draft of the project budget. 
+
+Another critical note here, what I've just described is a generic way of estimating task, but if you work in the software development industry, for example, you have a prepared team for the next few months, or if you work in a company that uses only in-house resources, there is no need to do it this way. So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
+
+Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
 ### **Software PM Estimation** 
 
 
 
-
 ### **Risk Response Plans**
+Now we need to run dedicated risk identification sessions based on the draft of our
+project management plan. Then we need to finalize the analysis, select the risk we need to address and develop risk response plans, but what does it mean to create a risk response plan? First, it means that you come up with a specific action plan.
 
+Then someone needs to execute the plan. Moreover, they may need money 
+and other resources to do that. So in essence, it means you need to add tasks. Also you can allocate additional time or money to overcome negative effects of a risk if it happens. So each risk response plan should become a part of the project scope schedule and budget. By the way, sometimes you'll also introduce new processes and tools to overcome a risk or even a group of risks.
 
+In this case, you must ensure that these new processes will work well with other processes and tools. Also, you need to ensure that stakeholders are okay with these changes. After all these updates to the project management plan, it will change. 
 
 
 ### **Project Baselines** 
+You need to validate that it's still feasible so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far. The last critical step here is to create project baselines. A baseline is nothing more than the final approved version of project scope, schedule and budget.
+
+Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.
 
 
+
+Let me try to explain the importance of this project management concept. Imagine you are a captain of a ship. You need to sail from port A to port B. In the real world, a single vessel can leave a port without plotted route, it's not allowed. The idea is that you have a plotted path and you continuously track your progress along this path.
+
+If you deviate from this path, you adjust course to get back to this line, you don't change the whole route. Now imagine you don't have this plotted path. You only have direction.
+
+In this example, even following straight north, you may end up in a completely different world after a slight deviation. So I want you to remember that you don't merely manage the work on the project. You execute the project management plan you created. I can't stress enough how important it is. The plan gives you planned values of all aspects of the project.
+
+That in the 
+- process of executing the project,
+- you collect the actual values and in the real world,
+nothing goes as planned.
+
+Now, if we talk about professional project management, you need to track all aspects
+of the project the same way,
+- quality,
+- communication,
+- stakeholder engagement,
+- motivation of the team,
+- acquiring resources,
+- everything.
+
+If you see deviation, you start applying
+- productivity techniques,
+- motivation, 
+- leadership tricks and
+- maybe even a bit of micromanagement
+to get back to the initial plan.
+
+Only if the deviation is too big, you need to start negotiating to make a change in the project plan, specifically in project baselines.
+
+These are changes in 
+- deadlines,
+- budget, and
+- scope of work,
+
+but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, you won't be asking for
+another change request for the same problem in a week or two.
+
+Finally, we are now getting into the execution of your project. I have finished planning the project, so it will go smoothly now.
+
+
+Now this project manager can take a rest, but for some reason I have a bad feeling.
+So jokes aside, your project management plan simply outlines the work, but it doesn't have all the detailed instructions for technical problems. It doesn't solve conflicts and of course your plan doesn't motivate people to act.
+
+So you need to encourage and facilitate interactions between team members, stakeholders, and subject matter experts on daily basis.
+
+You need to motivate them to search for solutions to technical problems and implement them according to your project management plan. Then you need to 
+- resolve conflicts,
+- remove impediments,
+- track progress,
+- interviews,
+- performance reviews,
+- one-on-one meetings,
+- trainings,
+- discussions and 
+- so on and on and on.
+
+All these activities transform into some sort of communication. Most likely it will be
+additional meetings, emails, phone calls, documentation, and things like that. And overall, you will communicate about 80% of your work day. So your goal is to ensure
+that the team works on the tasks they need to work on today and additionally, you look a few days ahead to ensure that there are no blockers.
+
+
+In any case, as I see it, you have only two options here. Number one, you try to get through it on your own, and you are in the same place this time next year, with lots of wasted effort and no further promotion and option number two, you 100% commit to mastering practical project management framework in the next 30 days using a proven roadmap.
+You are going to make this decision right now. That's why I'm so excited to let you know that my practical project management online course is exactly what you need.
 
 
 ### **Project Execution** 
 
-
-
-
 ### **5 Daily Routines of a PM** 
+
+So you see, planning was an intensive period, but it's relatively short compared to upcoming execution and execution of the project is a daily grind. That is why I recommend that you establish daily project routines. They will help you to keep
+your sanity and control over the project.
+
+So here are the routines I recommend to have. 
+- First of all, project information maintenance routine. You must dedicate up to half an hour a day to ensure that all team members report their progress, log their time, expenses, risks, and other performance data in the project management software. It's better to do it daily rather than scramble all this information late in the Fridays evening when you need to send a progress report. 
+- Second, a daily sync up meeting with the team. It's a short meeting where team members report on their daily progress and problems and it's your opportunity to correct the team's work if needed.
+- Third, daily sync up with clients and project owners. Ideally you want to keep project owners up to date and engaged on daily basis. 
+- Fourth, daily motivational routine. Dedicate 30 minutes per day to motivate one or two team members. Don't wait for a special event to connect with these people. These small meaningful interactions have a great effect.
+- Fifth is the communication routine. Specifically, I'm talking about writing emails and reports. I recommend that you reply to emails at specific times.
+Pick two, three or maybe four times slots per day, and be intentional to clean up your inbox and answer all important emails. Also, you can put meetings in batches.
+
+It will give you free time slots for deeper work. And again, remember that you must continuously dedicate time to enrolling wave planning.
+
+
+You need to work with the team to collect requirements, vacant polls and estimate future tasks, add details to your schedule and budget. Let's get back. I have one more critical thing to share with you. So here's the problem as I see it.
+
+In this video, I've just scratched the surface. You can try and search all these processes, tools and techniques on YouTube, but then you still need to find a way to make it all work together as a whole.
+
+So instead, let me ask you this. 
+Do you want me to explain this whole project management framework in all the details?
+I'm asking because you watch this long video, even though you are extremely busy for a reason.
+
+
+Maybe 
+- you want to become a project manager, 
+- but you don't know where to start,
+- what to learn and how to get your first project management job or
+- you are a junior project manager 
+who struggles with mastering all this 
+- risk management, 
+- leadership, 
+- stakeholders and
+- how to manage an experienced team, 
+- or maybe you are a mid-level PM already,
+and you want to become a great project manager and leader, but you already know that PMP or PRINCE2 won't help you in the real world.
 
 
 
 
 ### **#1 Project Management Resource**
 
+I've used my 10 years of experience as a software project manager and created a framework that anyone can use in the real world.
+
+Hundreds of students proved that. As a result, you get a comprehensive course on project management with about 15 hours of educational videos like this one, but broken down into smaller digestible pieces and all these videos cover all the details that we outlined today.
+
+It literally contains everything you need to know about project management
+for the rest of your career.
+
+And the best thing about this course is that you get lifetime access. It means you can learn at your own pace, but also it means you can get back to the course whenever you need to refresh your knowledge because your career will get a serious boost, you will start running more significant and more complex projects and I know you might be thinking right now, okay, Dmytro, that's a unique and profound course, show me what I need to pay for it and actually I might have charged you $1,000.
+
+The program is that good. There is a lot of value that you don't get from any other online course because this one comes from my practical experience, not from theory,
+but I am really passionate about my profession.
+
+I believe that if I train you, there will be one more great leader in the world. So I made the course as affordable as possible. That's why go check the
+details of the course and all its bonuses, then compare it with the price tag and your decision should be a no brainer.
 
