@@ -493,34 +493,67 @@ So always consider the average productivity of a role based on the experience le
 
 You have to play around to create a final and realistic version of this schedule, so here is a step by step instruction on how to do it.
 ![[Pasted image 20241028180935.png]]
+
+
+### **Software PM Estimation** 
 Next we can also find average prices for the materials and hourly rates for the type and level of labor we need so we can easily calculate the total cost of a task. 
 ![[Pasted image 20241029102257.png]]
 The idea is to perform the bottom up estimate. First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
 draft of the project budget. 
 ![[Pasted image 20241029102350.png]]
-Another critical note here, what I've just described is a generic way of estimating task, but if you work in the software development industry, for example, you have a prepared team for the next few months, or if you work in a company that uses only in-house resources, there is no need to do it this way. 
-
 So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
-
-
-### **Software PM Estimation** 
 
 ### **Risk Response Plans**
 
-Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
+Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. 
 
-Now we need to run dedicated risk identification sessions based on the draft of our
-project management plan. Then we need to finalize the analysis, select the risk we need to address and develop risk response plans, but what does it mean to create a risk response plan? First, it means that you come up with a specific action plan.
+We've been identifying and analyzing risks since the start of the project.
+> (IDENTIFICATION )RISK REGISTER -> from
+> 1) List of Activities (duration, cost, dependencies and assign resources)
+> 2) Resource Management Plan
+> 3) Project Schedule
+> 4) Project Budget
+Which is derived from
+>1) Project Charter
+>2) Project management
+>3) Quality Management Plan
+>4) Procurement Documentation
+>5) and other risk finds
 
-Then someone needs to execute the plan. Moreover, they may need money 
-and other resources to do that. So in essence, it means you need to add tasks. Also you can allocate additional time or money to overcome negative effects of a risk if it happens. So each risk response plan should become a part of the project scope schedule and budget. By the way, sometimes you'll also introduce new processes and tools to overcome a risk or even a group of risks.
+Now we need to run dedicated risk identification sessions on each based on the draft of our project management plan. 
+![[Pasted image 20241030100349.png]]
 
-In this case, you must ensure that these new processes will work well with other processes and tools. Also, you need to ensure that stakeholders are okay with these changes. After all these updates to the project management plan, it will change. 
+Then 
+- we need to finalize the analysis,
+- select the risk we need to address and 
+- develop risk response plans,
+
+but what does it mean to create a risk response plan? 
+- First, it means that you come up with a specific action plan. 
+- Then someone needs to execute the plan
+![[Pasted image 20241030100441.png]]
+
+. Moreover, they may need money and other resources to do that. 
+So in essence, it means you need to add tasks. Also you can allocate additional time or money to overcome negative effects of a risk if it happens.
+
+![[Pasted image 20241030101125.png]]
+
+So each risk response plan should become a part of the project scope schedule and budget. 
+
+By the way, sometimes you'll also introduce new processes and tools to overcome a risk or even a group of risks. In this case, you must ensure that these new processes will work well with other processes and tools. 
+
+**Also, you need to ensure that stakeholders are okay with these changes.** After all these updates to the project management plan, it will change. 
+![[Pasted image 20241030101225.png]]
+You need to validate that it's still feasible so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far.
 
 ### **Project Baselines** 
-You need to validate that it's still feasible so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far. The last critical step here is to create project baselines. A baseline is nothing more than the final approved version of project scope, schedule and budget.
+ The last critical step here is to create project baselines. 
+==**A baseline is nothing more than the final approved version of 
+-Project Scope
+-Schedule and
+-Budget
 
-Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.
+==**Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.**==
 
 
 Let me try to explain the importance of this project management concept. Imagine you are a captain of a ship. You need to sail from port A to port B. In the real world, a single vessel can leave a port without plotted route, it's not allowed. The idea is that you have a plotted path and you continuously track your progress along this path.
@@ -559,6 +592,7 @@ These are changes in
 
 but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, you won't be asking for
 another change request for the same problem in a week or two.
+
 
 Finally, we are now getting into the execution of your project. I have finished planning the project, so it will go smoothly now.
 
