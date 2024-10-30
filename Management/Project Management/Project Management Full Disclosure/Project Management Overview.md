@@ -498,12 +498,17 @@ Next we can also find average prices for the materials and hourly rates for the 
 The idea is to perform the bottom up estimate. First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
 draft of the project budget. 
 ![[Pasted image 20241029102350.png]]
-Another critical note here, what I've just described is a generic way of estimating task, but if you work in the software development industry, for example, you have a prepared team for the next few months, or if you work in a company that uses only in-house resources, there is no need to do it this way. So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
+Another critical note here, what I've just described is a generic way of estimating task, but if you work in the software development industry, for example, you have a prepared team for the next few months, or if you work in a company that uses only in-house resources, there is no need to do it this way. 
 
-Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
+So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
+
+
 ### **Software PM Estimation** 
 
 ### **Risk Response Plans**
+
+Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. We've been identifying and analyzing risks since the start of the project.
+
 Now we need to run dedicated risk identification sessions based on the draft of our
 project management plan. Then we need to finalize the analysis, select the risk we need to address and develop risk response plans, but what does it mean to create a risk response plan? First, it means that you come up with a specific action plan.
 
