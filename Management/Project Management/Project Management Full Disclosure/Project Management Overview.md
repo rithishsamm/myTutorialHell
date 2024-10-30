@@ -555,7 +555,6 @@ You need to validate that it's still feasible so you literally go to the beginni
 
 ==**Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.**==
 
-
 Let me try to explain the importance of this project management concept. Imagine you are a captain of a ship. You need to sail from port A to port B. In the real world, a single vessel can leave a port without plotted route, it's not allowed. The idea is that you have a plotted path and you continuously track your progress along this path.
 
 If you deviate from this path, you adjust course to get back to this line, you don't change the whole route. Now imagine you don't have this plotted path. You only have direction.
@@ -589,13 +588,10 @@ These are changes in
 - deadlines,
 - budget, and
 - scope of work,
-
 but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, you won't be asking for
 another change request for the same problem in a week or two.
 
-
 Finally, we are now getting into the execution of your project. I have finished planning the project, so it will go smoothly now.
-
 
 Now this project manager can take a rest, but for some reason I have a bad feeling.
 So jokes aside, your project management plan simply outlines the work, but it doesn't have all the detailed instructions for technical problems. It doesn't solve conflicts and of course your plan doesn't motivate people to act.
@@ -661,9 +657,6 @@ who struggles with mastering all this
 - how to manage an experienced team, 
 - or maybe you are a mid-level PM already,
 and you want to become a great project manager and leader, but you already know that PMP or PRINCE2 won't help you in the real world.
-
-
-
 
 ### **#1 Project Management Resource**
 
