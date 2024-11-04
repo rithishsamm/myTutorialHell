@@ -586,8 +586,8 @@ Only if the deviation is too big, you need to start negotiating to make a change
 
 These are changes in 
 - deadlines,
-- budget, and
-- scope of work,
+- budget and
+- scope of work 
 but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, you won't be asking for
 another change request for the same problem in a week or two.
 
@@ -613,10 +613,8 @@ All these activities transform into some sort of communication. Most likely it w
 additional meetings, emails, phone calls, documentation, and things like that. And overall, you will communicate about 80% of your work day. So your goal is to ensure
 that the team works on the tasks they need to work on today and additionally, you look a few days ahead to ensure that there are no blockers.
 
-
 In any case, as I see it, you have only two options here. Number one, you try to get through it on your own, and you are in the same place this time next year, with lots of wasted effort and no further promotion and option number two, you 100% commit to mastering practical project management framework in the next 30 days using a proven roadmap.
 You are going to make this decision right now. That's why I'm so excited to let you know that my practical project management online course is exactly what you need.
-
 
 ### **Project Execution** 
 
