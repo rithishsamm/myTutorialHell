@@ -493,22 +493,23 @@ So always consider the average productivity of a role based on the experience le
 
 You have to play around to create a final and realistic version of this schedule, so here is a step by step instruction on how to do it.
 ![[Pasted image 20241028180935.png]]
-
-
 ### **Software PM Estimation** 
 Next we can also find average prices for the materials and hourly rates for the type and level of labor we need so we can easily calculate the total cost of a task. 
 ![[Pasted image 20241029102257.png]]
-The idea is to perform the bottom up estimate. First, you estimate all tasks, then summarize them to the work package level. Then you summarize work packages to the deliverables level. As a result, you can create a
-draft of the project budget. 
+***The idea is to perform the bottom up estimate.*** 
+First, 
+- you estimate all tasks, then
+- you summarize them to the work package level. Then
+- you summarize work packages to the deliverables level. As a result, 
+- ==**you can create a draft of the project budget.==** 
 ![[Pasted image 20241029102350.png]]
-So rather than assigning resources, estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
+For larger enterprise budget rather than assigning resources estimating the duration and calculating the cost of the task, you directly estimated in efforts in person hours for an average role that you will have on your team. So in this case, you are more interested in leveling resources and ensuring that you are using all the available efforts.
 
 ### **Risk Response Plans**
-
-Let's get back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. 
+back to planning process. I keep telling you that you have created the draft version of the schedule and budget. That's because we need to perform risk management activities before we can finalize the project plan. 
 
 We've been identifying and analyzing risks since the start of the project.
-> (IDENTIFICATION )RISK REGISTER -> from
+> (IDENTIFICATION) RISK REGISTER -> from
 > 1) List of Activities (duration, cost, dependencies and assign resources)
 > 2) Resource Management Plan
 > 3) Project Schedule
@@ -532,8 +533,7 @@ but what does it mean to create a risk response plan?
 - First, it means that you come up with a specific action plan. 
 - Then someone needs to execute the plan
 ![[Pasted image 20241030100441.png]]
-
-. Moreover, they may need money and other resources to do that. 
+Moreover, they may need money and other resources to do that. 
 So in essence, it means you need to add tasks. Also you can allocate additional time or money to overcome negative effects of a risk if it happens.
 
 ![[Pasted image 20241030101125.png]]
@@ -542,9 +542,10 @@ So each risk response plan should become a part of the project scope schedule an
 
 By the way, sometimes you'll also introduce new processes and tools to overcome a risk or even a group of risks. In this case, you must ensure that these new processes will work well with other processes and tools. 
 
-**Also, you need to ensure that stakeholders are okay with these changes.** After all these updates to the project management plan, it will change. 
+**Also, you need to ensure that stakeholders are okay with these changes.** 
+After all these updates to the project management plan, it will change. 
 ![[Pasted image 20241030101225.png]]
-You need to validate that it's still feasible so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far.
+You need to validate that it's still feasible, so you literally go to the beginning of the process and quickly run all the checks that we have discussed so far.
 
 ### **Project Baselines** 
  The last critical step here is to create project baselines. 
@@ -555,19 +556,23 @@ You need to validate that it's still feasible so you literally go to the beginni
 
 ==**Baselines are critical for any project management approach. They will help you to track progress towards the initial goal.**==
 
-Let me try to explain the importance of this project management concept. Imagine you are a captain of a ship. You need to sail from port A to port B. In the real world, a single vessel can leave a port without plotted route, it's not allowed. The idea is that you have a plotted path and you continuously track your progress along this path.
+the importance of this project management concept. 
+eg: a PM who want to take things from A to B. In the real world, how does he know he can that the state from A to B. With a plan from here to there. 
+**The idea is that you have a plotted path and you continuously track your progress along this path.**
 
-If you deviate from this path, you adjust course to get back to this line, you don't change the whole route. Now imagine you don't have this plotted path. You only have direction.
+If you deviate from this path, you adjust course to get back to this line, you don't change the whole route. 
 
-In this example, even following straight north, you may end up in a completely different world after a slight deviation. So I want you to remember that you don't merely manage the work on the project. You execute the project management plan you created. I can't stress enough how important it is. The plan gives you planned values of all aspects of the project.
+Now imagine you don't have this plotted path. You only have direction. In this example, even following straight north, you may end up in a completely different world after a slight deviation. such mis directions can occur as boss commands which often deviates from the path and doesn't align with the same leaving us on a completely different path. 
 
-That in the 
+So I want you to remember that you don't merely manage the work on the project. You execute the project management plan you created. I can't stress enough how important it is. 
+
+**The plan gives you planned values of all aspects of the project.** That in the 
 - process of executing the project,
-- you collect the actual values and in the real world,
-nothing goes as planned.
+- you collect the actual values 
+and in the real world, nothing goes as planned. 
 
-Now, if we talk about professional project management, you need to track all aspects
-of the project the same way,
+Now, if we talk about professional project management, you need to track all aspects of the project the same way. On all these departments, course plan has to be set to be managed from A to B with,
+![[Pasted image 20241104110408.png]]
 - quality,
 - communication,
 - stakeholder engagement,
@@ -579,26 +584,37 @@ If you see deviation, you start applying
 - productivity techniques,
 - motivation, 
 - leadership tricks and
-- maybe even a bit of micromanagement
-to get back to the initial plan.
+- maybe even a bit of micromanagement to get back to the initial plan.
 
-Only if the deviation is too big, you need to start negotiating to make a change in the project plan, specifically in project baselines.
-
-These are changes in 
+Only if the deviation is too big, 
+![[Pasted image 20241104110734.png]]
+you need to start negotiating to make a change in the project plan, specifically in project baselines. These are changes in 
 - deadlines,
 - budget and
-- scope of work 
-but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, you won't be asking for
-another change request for the same problem in a week or two.
+- scope of work
+but you need to ensure that after this change, you'll be able to finish the project with the updated baselines and most importantly, **you won't be asking for**
+**another change request for the same problem in a week or two.**
 
-Finally, we are now getting into the execution of your project. I have finished planning the project, so it will go smoothly now.
+Finally, we are now getting into the execution of your project. 
 
-Now this project manager can take a rest, but for some reason I have a bad feeling.
-So jokes aside, your project management plan simply outlines the work, but it doesn't have all the detailed instructions for technical problems. It doesn't solve conflicts and of course your plan doesn't motivate people to act.
+### **Project Execution** 
+So, you have finished planning the project, so it will go smoothly now.
+Now the project manager can rest, but that's not the case IRL. 
+The project management plan simply outlines the work, but 
+- it doesn't have all the detailed instructions for technical problems.
+- It doesn't solve conflicts and of course 
+- it doesn't motivate people to act.
+So you need to encourage and facilitate interactions between
+- team members,
+- stakeholders, and 
+- subject matter experts
+on daily basis.
 
-So you need to encourage and facilitate interactions between team members, stakeholders, and subject matter experts on daily basis.
+You need to motivate them to 
+- search for solutions to technical problems and 
+- implement them according to your project management plan. 
 
-You need to motivate them to search for solutions to technical problems and implement them according to your project management plan. Then you need to 
+Then you need to 
 - resolve conflicts,
 - remove impediments,
 - track progress,
@@ -607,69 +623,61 @@ You need to motivate them to search for solutions to technical problems and impl
 - one-on-one meetings,
 - trainings,
 - discussions and 
-- so on and on and on.
+- **so on and on and on.**
+**All these activities transform into some sort of communication.** Most likely it will be 
+- additional meetings, 
+- emails, 
+- phone calls, 
+- documentation, 
+- and things like that. 
+And overall, a project manager communicate about 80% of the time. 
+So your goal is to 
+- ensure that the team works on the tasks they need to work on today and additionally, 
+- you look a few days ahead to ensure that there are no blockers.
 
-All these activities transform into some sort of communication. Most likely it will be
-additional meetings, emails, phone calls, documentation, and things like that. And overall, you will communicate about 80% of your work day. So your goal is to ensure
-that the team works on the tasks they need to work on today and additionally, you look a few days ahead to ensure that there are no blockers.
+![[Pasted image 20241104114532.png]]
+The first two step of these project lifecycle 
+- initiation - where you acquire and analyze a project 
+- planning - after getting some, you plot and set courses getting things from A to B for all metrics concerned. 
+
+Planning was an intensive period, but,
+
+**Execution is a daily grind with daily project routines where you gain visibility and control of the project where you take things further scrumming and sprinting getting this project done executing within committed deadline with all these plans for each metrics.** 
 
 In any case, as I see it, you have only two options here. Number one, you try to get through it on your own, and you are in the same place this time next year, with lots of wasted effort and no further promotion and option number two, you 100% commit to mastering practical project management framework in the next 30 days using a proven roadmap.
 You are going to make this decision right now. That's why I'm so excited to let you know that my practical project management online course is exactly what you need.
 
-### **Project Execution** 
-
 ### **5 Daily Routines of a PM** 
-
-So you see, planning was an intensive period, but it's relatively short compared to upcoming execution and execution of the project is a daily grind. That is why I recommend that you establish daily project routines. They will help you to keep
-your sanity and control over the project.
-
 So here are the routines I recommend to have. 
-- First of all, project information maintenance routine. You must dedicate up to half an hour a day to ensure that all team members report their progress, log their time, expenses, risks, and other performance data in the project management software. It's better to do it daily rather than scramble all this information late in the Fridays evening when you need to send a progress report. 
-- Second, a daily sync up meeting with the team. It's a short meeting where team members report on their daily progress and problems and it's your opportunity to correct the team's work if needed.
-- Third, daily sync up with clients and project owners. Ideally you want to keep project owners up to date and engaged on daily basis. 
-- Fourth, daily motivational routine. Dedicate 30 minutes per day to motivate one or two team members. Don't wait for a special event to connect with these people. These small meaningful interactions have a great effect.
-- Fifth is the communication routine. Specifically, I'm talking about writing emails and reports. I recommend that you reply to emails at specific times.
-Pick two, three or maybe four times slots per day, and be intentional to clean up your inbox and answer all important emails. Also, you can put meetings in batches.
+![[Pasted image 20241104144613.png]]
 
-It will give you free time slots for deeper work. And again, remember that you must continuously dedicate time to enrolling wave planning.
+First of all, 
+###### 1) Project Information Maintenance Routine:
+project information maintenance routine. You must dedicate up to half an hour a day to ensure that 
+- all team members report their progress, 
+- log their time, 
+- expenses, 
+- risks, and 
+- other performance data 
+in the project management software. 
+It's better to do it daily rather than scramble all this information late in the Fridays evening when you need to send a progress report. 
+###### 2) Daily follow-up/sprint/standup - Team Members:
+a daily sync up meeting with the Project team members. It's a short meeting where team members report on their daily progress and problems and it's your opportunity to correct the team's work if needed.
+###### 3) Daily follow-up/sprint/standup - Project Owners (Clients):
+daily sync up with clients and project owners for up to date updates and engaged on daily basis ideally.
+###### 4) Daily Motivational routine
+Dedicate 30 minutes per day to motivate one or two team members. 
+**Event where you solve or consult to delivered problems raised or received on stand ups from team members and enlighten them the purpose or motivate to move forward.** Don't wait for a special event to connect with these people. These small meaningful interactions have a great effect. 
+###### 5) Daily communication routine - writing emails and reports
+Specifically, writing emails and reports. I recommend that you reply to emails at specific times. Pick two, three or maybe four times slots per day, and be intentional to clean up your inbox and answer all important emails. 
 
+Also, you can put meetings in batches. It will give you free time slots for deeper work. Plus,
 
-You need to work with the team to collect requirements, vacant polls and estimate future tasks, add details to your schedule and budget. Let's get back. I have one more critical thing to share with you. So here's the problem as I see it.
+![[Pasted image 20241104141245.png]]
+remember that you must continuously dedicate time to enrolling wave planning.
 
-In this video, I've just scratched the surface. You can try and search all these processes, tools and techniques on YouTube, but then you still need to find a way to make it all work together as a whole.
+You need to work with the team to collect requirements, vacant polls and estimate future tasks, add details to your schedule and budget. 
 
-So instead, let me ask you this. 
-Do you want me to explain this whole project management framework in all the details?
-I'm asking because you watch this long video, even though you are extremely busy for a reason.
+THATS IT SO FAR!!
 
-
-Maybe 
-- you want to become a project manager, 
-- but you don't know where to start,
-- what to learn and how to get your first project management job or
-- you are a junior project manager 
-who struggles with mastering all this 
-- risk management, 
-- leadership, 
-- stakeholders and
-- how to manage an experienced team, 
-- or maybe you are a mid-level PM already,
-and you want to become a great project manager and leader, but you already know that PMP or PRINCE2 won't help you in the real world.
-
-### **#1 Project Management Resource**
-
-I've used my 10 years of experience as a software project manager and created a framework that anyone can use in the real world.
-
-Hundreds of students proved that. As a result, you get a comprehensive course on project management with about 15 hours of educational videos like this one, but broken down into smaller digestible pieces and all these videos cover all the details that we outlined today.
-
-It literally contains everything you need to know about project management
-for the rest of your career.
-
-And the best thing about this course is that you get lifetime access. It means you can learn at your own pace, but also it means you can get back to the course whenever you need to refresh your knowledge because your career will get a serious boost, you will start running more significant and more complex projects and I know you might be thinking right now, okay, Dmytro, that's a unique and profound course, show me what I need to pay for it and actually I might have charged you $1,000.
-
-The program is that good. There is a lot of value that you don't get from any other online course because this one comes from my practical experience, not from theory,
-but I am really passionate about my profession.
-
-I believe that if I train you, there will be one more great leader in the world. So I made the course as affordable as possible. That's why go check the
-details of the course and all its bonuses, then compare it with the price tag and your decision should be a no brainer.
-
+---
