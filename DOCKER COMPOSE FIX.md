@@ -1,4 +1,4 @@
-This error occurs because Docker is looking for TLS certificates that don't exist. There are several ways to fix this:
+**This error occurs because Docker is looking for TLS certificates that don't exist. There are several ways to fix this:**
 
 1. **Simple Solution** - Disable TLS verification for this pipeline:
 ```groovy
