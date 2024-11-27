@@ -247,3 +247,75 @@ README.md
 .env
 ```
 
+**Kerala Trip Itinerary:**
+
+**MGR CHENNAI CTL (MAS) -> TRIVANDRUM CNTL (TVC) Departure* 3:20 27-Dec-2024 -> Arrival* 07:45 28-Dec-2024**
+
+**Day1: (28/12/2023)**
+**TVM - VATTAPARA**
+- TVM Arrival@07:45 A.M
+- Breakfast /Shopping - Morning (optional) @09.00 A.M
+- TVM -> connecting bus -> VATTAPARA (arrival) - @10.15 A.M
+- VATTAPARA to Giri nigga home (walk) - @11.30 A.M
+- FRESH UP + CLEAN UP + COOK -> Lunch
+- (Rest and Chill, Eve Tea and Snack, Plan for next day, Movie night + stargaze)
+- chill for the day
+
+**Day2: (29/12/2023)**
+
+1) Breakfast 
+VATTAPARA to TVM - Morning @10.A.M
+TVM - Vehicle rental @ 11.A.M
+Bike Checkin - Check out = 11.A.M - 7.P.M.
+
+Ride 1: places
+1) TVM -> Aruvikkara Dam (10mins) - 36 min/15.2 km  (via Aruvikkara Rd )  => 11.40 A.M 
+2) Aruvikkara Dam -> Psychopark, Vellanad (5mins) - 13 min/4.7 km (via Vellanad - Aruvikkara Rd) (OPTIONAL) => 11. 55 A.M 
+3) Lunch (20mins) @12.15 P.M (forest route) 
+4) Psychopark -> Peppara Wildlife Sanctuary (30mins) - 35 min/18.7 km (via Aryanad -Vellanad, Parandode Rd) @1.45 P.M 
+5) Peppara Wildlife Sanctuary ->  Switzerland of Peppara (15mins), 4 min/1.8 km (via Peppara Dam Rd) @2.00 P.M.
+6) Switzerland of Peppara -> Thavakkal Stream (30mins) , 22 min/10.7 km via Peppara Dam Rd @2.30.P.M
+7) Thavakkal Stream -> Vazhvanthol Waterfalls (1.30Hour+trek), 36 min/15.0 km via Vithura Bonacaud Rd @3.10.P.M
+8) Vazhvanthol Waterfalls -> Chittipara  Sunset (1hrs(possible trek)), 42 min/19.5 km Malayadi,via Vithura Bonacaud TVM Rd @3.45P.M
+9) Chittipara -> TVM -> 1 hour/31 km @5.45.P.M
+10) TVM -> Locals -> Vattappara @7.PM
+11) Chill
+
+or 
+
+1) Courtallam : TVM -> Courtallam -> TVM,
+2 hr 56 min (108 km) + 2 hr 56 min (108 km) = 6HRS/216kms 
+via Thiruvananthapuram - Thenmala Rd and NH 744
+
+**Day 3 (30/12/2023)**  - **Ponmudi**
+VATTAPARA to TVM - Morning @10.A.M
+TVM - Vehicle rental @ 11.A.M
+Bike Checkin - Check out = 11.A.M - 7.P.M.
+
+TVM -> Thirichittoor Rock
+
+
+
+
+
+Day 4 (31/12/2023)
+- Varkala
+PLACES:
+-
+- 
+-
+
+
+Day 5 (01/12/2023)
+- Trivandrum 
+PLACES:
+-
+- 
+-
+
+Day 6 (02/12/2023)
+
+
+Train: 
+NAGERCOIL JN (NCJ) - >  TAMBARAM (TBM)
+Departure* 4:30 P.M 02-Jan-2025 -> Arrival* 04:10 A.M 03-Jan-2025
