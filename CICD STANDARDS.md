@@ -268,7 +268,6 @@ VATTAPARA to TVM - Morning @10.A.M
 TVM - Vehicle rental @ 11.A.M
 Bike Checkin - Check out = 11.A.M - 7.P.M.
 
-Ride 1: places
 1) TVM -> Aruvikkara Dam (10mins) - 36 min/15.2 km  (via Aruvikkara Rd )  => 11.40 A.M 
 2) Aruvikkara Dam -> Peppara Wildlife Sanctuary (30mins) - 35 min/18.7 km (via Aryanad -Vellanad, Parandode Rd) @1.45 P.M 
 5) Peppara Wildlife Sanctuary ->  Switzerland of Peppara (15mins), 4 min/1.8 km (via Peppara Dam Rd) @2.00 P.M.
@@ -291,8 +290,8 @@ TVM - Vehicle rental @ 11.A.M
 Bike Checkin - Check out = 11.A.M - 7.P.M.
 
 TVM -> Thirichittoor Rock
-Thirichittoor Rock to Thavakkal Stream (30mins) , 22 min/10.7 km via Peppara Dam Rd @2.30.P.M
-7) Thavakkal Stream -> Ponmudi
+2) Thirichittoor Rock to Thavakkal Stream (30mins) , 22 min/10.7 km via Peppara Dam Rd @2.30.P.M
+3) Thavakkal Stream -> Varayadu motta  or Ponmudi
 
 
 
