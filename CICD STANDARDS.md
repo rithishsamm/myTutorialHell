@@ -273,8 +273,8 @@ Bike Checkin - Check out = 11.A.M - 7.P.M.
 5) Peppara Wildlife Sanctuary ->  Switzerland of Peppara (15mins), 4 min/1.8 km (via Peppara Dam Rd) @2.00 P.M.
 6) Switzerland of Peppara -> Vazhvanthol Waterfalls 
 7) Vazhvanthol Waterfalls (1.30Hour+trek), 36 min/15.0 km via Vithura Bonacaud Rd @3.10.P.M
-8) Vazhvanthol Waterfalls -> Bonacaud
-9) Bonacaud -> TVM -> 1 hour/31 km @5.45.P.M
+8) Vazhvanthol Waterfalls -> Bonacaud - 20mins/7kms
+9) Bonacaud Sunset -> TVM -> 1 hour/31 km @5.45.P.M
 10) TVM -> Locals -> Vattappara @7.PM
 11) Chill
 
@@ -289,30 +289,61 @@ VATTAPARA to TVM - Morning @10.A.M
 TVM - Vehicle rental @ 11.A.M
 Bike Checkin - Check out = 11.A.M - 7.P.M.
 
-TVM -> Thirichittoor Rock
-2) Thirichittoor Rock to Thavakkal Stream (30mins) , 22 min/10.7 km via Peppara Dam Rd @2.30.P.M
-3) Thavakkal Stream -> Varayadu motta  or Ponmudi
+1) TVM -> Thirichittoor Rock (optional) (15min climb) - 42mins/18kms @11.A.M 
+2) Thirichittoor Rock  ->  Thavakkal Stream (MUST) - 42min/21kms @ 11.40 .A.M
+3) Thavakkal Stream -> Varayadu motta (FOREST optional) + Mankaya + Braemore Waterfalls (half day + ponmudi) - 1.10hr/26km. @1. P.M
+4) Thavakkal Stream -> Ponmudi Whole day @1.30.PM
+5) Ponmudi -> Chittipara - 1hr/26kms +1 hrtime
+6) Chittipara -> TVM - 1hr/ 31kms +1hrtime
 
+**Day 4 (31/12/2023)**
+VATTAPARA to TVM - Morning @10.A.M
+TVM - Vehicle rental @ 11.A.M
+Bike Checkin - Check out = (31/12 - 01/02)
 
+1) TVM -> Kollam (Thirumullavaram Beach) 
+2) Thirumullavaram -> Thangassery Park and Backwaters(2hrs)
+3) Thangassery -> Adventure Park (25rs)
+4) Adventure Park -> Sambranikodi River View - 32mins/14kms - (150boating) (opt) + mangrove-rs400
+5) Sambranikodi -> Kollam Beach - 32mins/14kms  or Mundakkal Beach (+7km from kollam  beach) 
+6) Mundakkal (via eravipuram beach side) -> Thanni Beach 12mins/5kms
+7) Thanni -> Pozhikkara - 5mins/2kms
+8) Pozhikkara -> Kapil Beach - 17mins/8.3kms
+9) Kapil to Edava Cliff beach (sunset) - 6mins / 2.5kms
+10) Edava -> Odayam Beach, Varkala - 10mins/3kms (Evening)
 
+Varkala Walk :
+ Odayam Beach Varkala - Aaliyirakkm Beach (5kms walk)
+- black sand beach
+- varkala cliff sea view
+- lost with us
+- beach side cliff
+- zostel
+- varkala mangrove
+- varkala beach
+- shiva mural art
+- sunset point
+- aaliyirakkam beach
+- local eateries, party and chill
 
-Day 4 (31/12/2023)
-- Varkala
-PLACES:
--
-- 
--
+**Day 5 (01/12/2023)**
+Morning Varkala to TVM (01/01/2025)
+TVM to Kovalam - 1.30hrs
+1) Golden Island boating
+2) Anjuthengu Fort
+3) Thazhampally Muthalapozhi beach
+4) Perumathura Beach
+5) Puthenthope
+6) St Andrews
+7) Thumba
+8) Kovalam Sea view
+Checkout
+TVM to Vattappara
+New Year Celebration
 
-
-Day 5 (01/12/2023)
-- Trivandrum 
-PLACES:
--
-- 
--
-
-Day 6 (02/12/2023)
-
+**Day 6 (02/12/2023)**
+**packup**
+VATTAPARA -> TVM -> Nagercoil
 
 Train: 
 NAGERCOIL JN (NCJ) - >  TAMBARAM (TBM)
