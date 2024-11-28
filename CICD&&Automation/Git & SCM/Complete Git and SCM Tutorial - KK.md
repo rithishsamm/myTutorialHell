@@ -83,7 +83,10 @@ Why GitHub:
 -- any project ->  check commits -> Refer the history of the project.
 that's basically the idea of what we're gonna cover later on.
 ##### Downloading Git
-git-scm => download
+```
+git-scm
+```
+=> download
 ##### Structure of the Tutorial
 Manipulating structures of files and folders on the file system using GIT to manage project and source files.
 Terminal on left and file system on right.
@@ -92,53 +95,115 @@ in terms of file management such as ls, mkdir, cd, touch, cat
 GIT:
 where is the entire history of the changes, adding, deleting,   Code has been stored!?,  in an another that git provides us as a repository and does all the GIT's actions here locally.
 ###### *Initializing a Git Repository*
->1) **git init** - initiates git on that dir (remains hidden in .dot)
->2) ls -a (or) ls .git -> shows contents
+>1) 
+```sh
+git init
+```
+ - initiates git on that dir (remains hidden in .dot)
+>2) 
+```sh
+ls -a
+```
+(or) 
+```sh
+ls .git
+```
+-> shows contents
+```sh
 touch name.txt
+```
 
 now we will be able to maintain the history of the project. 
 ###### *Making the first change*
 ANY CHANGES WILL BE MADE IN THIS PROJECT NOW WILL BE TRACED AND TRACKED BY GIT.
 > if there has some changes been made and if you want to find out which and which aren't will be shown in  
-**git status** -> *untraced file* - untracked content will be shown (colors in red)
+```sh
+git status
+```
+-> *untraced file* - untracked content will be shown (colors in red)
 > (shows all the updated changes been made of the git that just initiated)
 ###### *Staging the first change*
 TO SAVE/TRACK SUCH CHANGES?
 what to do if we want to track and maintain changes with the help of git? e.g.: imagine a wedding function, 
-> **git add .** (or) **git add filename** name,txt-> (. current pwd's content or individual declaration to maintain one at a time)
-**git status** - *new file added* - to check the tracked in contents (colors in green)
+```sh
+git add . 
+```
+>  (or)
+```sh
+git add filename
+```
+>  name,txt-> (. current pwd's content or individual declaration to maintain one at a time)
+```sh
+git status
+```
+- *new file added* - to check the tracked in contents (colors in green)
 ###### *Committing the first change*
-> **git commit -m "(message)"** - commits changes to GIT
+```sh
+git commit -m "(message)"
+```
+-- commits changes to GIT
  **git status** - all good, no changes exist to commit, the tree is clean
-
-~~~
 GIT RITUAL: 
+~~~sh
 - git add .
 - git commit 
 - git status
 ~~~
 ###### *Adding data to files*
 make extra changes by adding some context inside a file. name.txt -> names -> save
-> 
-**git status** : modified -text
-> **git add .** (adds changes to git)
-> **git commit** (commits changes to staged area)
-**git status** - added (color in green)
+
+```sh
+git status
+```
+: modified -text
+```sh
+git add  .
+```
+> (adds changes to git)
+```sh
+git commit .
+```
+>  (commits changes to staged area)
+```sh
+git status
+```
+-- added (color in green)
 ###### *Removing changes from stage*
 incase if you want to revert back a change from git,
-> **git restore --staged . (or) filename**
-**git status** : modified: back to unchanged (color in red) 
+```sh
+git restore --staged . (or) filename
+```
+```sh
+git status
+```
+: modified: back to unchanged (color in red) 
 ##### Viewing the overall history of the project
 the entire history of you!
-> **git log** -> shows all the commits of what has been add or removed
+```sh
+git log
+```
+> -> shows all the commits of what has been add or removed
 ##### Making few more commits
 MORE COMMITS:
 imagine deleting a file. that we've been working on. 
-> **rm -rf filename** (name.txt) - removes corresponding file
-> **git status**: file deleted (color in red)
-> **git add .** or filename,txt
-> **git commit -m "the file has been deleted"**
-> **git log** -> filename.txt gets deleted  among the history of changes
+```sh
+rm -rf filename** (name.txt)
+```
+>  - removes corresponding file
+```sh
+git status
+```
+> -> file deleted (color in red)
+```sh
+git add .** or filename,txt
+```
+```sh
+git commit -m "the file has been deleted"
+```
+```sh
+git log 
+```
+> -> filename.txt gets deleted  among the history of changes
 
  but, Like, Unfortunately, imagine you **deleted the project** by mistake. WHAT YOU CAN DO? like simply i want to remove that one action on my history of the project. HOW DO I OD THAT!?
  > you cannot remove as one such log in that middle commit of that particular project.
@@ -148,27 +213,53 @@ imagine deleting a file. that we've been working on.
 ##### Removing a commit from the history of a projectTO DO THAT!?
 >  You can unstage the commits and revert it back to its previous state. to acheive that, 
 
->**git reset commitID** -> reverts back to that stage and keep the committed files remains unadded BACK TO UNSTAGED AREA
+```sh
+git reset commitID
+```
+> -> reverts back to that stage and keep the committed files remains unadded BACK TO UNSTAGED AREA
 
 TO RESTORE THE FILES,
->**git restore filename** - to discard the changes happened over git
+```sh
+git restore filename
+```
+> - to discard the changes happened over git
 
 THAT WE ID GETS REMOVED AND REVERTED!!
 ##### Stashing changes
 to archive files later to be staged to added in git/ keeping it all backstage to commit later.
 ***I DONT WANT TO COMMIT THIS FOR NOW + ALSO I DONT WANT TO LOOSE THIS CHANGES*** - like a new alias 
 to put this into perspective where, if you'd like to try out something new with a clean codebase of not affecting the current progress, Stash in a place where keep it all archived and work on a new clean codebase for experimentation and get back after a failed and successful implementation.
-> **git add .**
-> **git status** - files deleted
-> **git stash** - stashes the changes that has been added and shown in the status
-git status - clean, work it all in new
-git log - going back to project
+```sh
+git add .
+```
+```sh
+git status
+```
+>  - files deleted
+```sh
+git stash
+```
+> - stashes the changes that has been added and shown in the status
+```sh
+git status 
+```
+- clean, work it all in new
+```sh
+git log 
+```
+- going back to project
 ##### Popping Stash
 to pop the stash which has been archived (getting the added stashed changes back)
-> **git stash pop** - changes which has been made previously has been restored 
+```sh
+git stash pop
+```
+>  - changes which has been made previously has been restored 
 ##### Clearing Stash
 incase, the experiment has been successful that u don't even want the stash, (clearing/deleting a stash which is not required anymore)
-> **git stash clear** - clear stash
+```sh
+git stash clear
+```
+>  - clear stash
 ##### Starting GitHub
 basics has been covered, NOW GETTING STARTED WITH GITHUB,
 Objectives:
@@ -179,20 +270,34 @@ and ..
 3) URL -> the URL of the project/repository
 ##### Connecting Remote Repository to Local Repository
 to ATTACH THE REMOTE REPO TO THE WORKING PROJECT,
->**git remote add origin** - to connect a tunnel between the local git repo and the remote GitHub repo
+```sh
+git remote add origin
+```
+>- to connect a tunnel between the local git repo and the remote GitHub repo
 >dissecting the cmd - git - calls git, remote - working with url, add - adding what URL, origin - what is the url name which you're going to add on 
->**git remote -v** -> shows all the URL origin exists in the git
+```sh
+git remote -v
+```
+>-> shows all the URL origin exists in the git
 
 now the local project has been connect to the url.
 ##### Pushing local changes to remote repository
 PUSHING CHANGES TO THE REPO,
-> **git push origin master(or any branch)** - current changes got pushed and all the stats can be seen over GITHUB
+```sh
+git push origin master(or any branch)
+```
+> - current changes got pushed and all the stats can be seen over GITHUB
 ##### What are branches?
+```sh
 touch name.txt
+```
 BRANCH - Imagine you are making commits. 
 eg: make few commits for example, 
 change, add, commit with message x4
-git log -> each has its own id + shows the branch(origin/master). 
+```sh
+git log 
+```
+-> each has its own id + shows the branch(origin/master). 
 EACH git commit as mentioned, it lies on top of each other + linked to each other on top of one one step at a time - (programmatic method of stacking this one on another named **directed acyclic graph**)  . LIKE A BRANCH STRUCTURE.
 namely here, master. OKAY? WHAT IS THE USE OF IT?
 ##### Use of branches
@@ -203,54 +308,96 @@ You should never commit on a main branch unless, the branch of it gets approval 
 ##### Making a new branch and switching to it (Learn Git Branching)
 As mention, should commit this and that, one feature and the other. keep it all in separate separate branch and work over it,.
 TO CREATE A NEW BRANCH:
-> **git branch feature** (branchName) - a branch named feature gets created.
+```sh
+git branch feature (branchName)
+```
+> - a branch named feature gets created.
 branch gets created
 
 to work on that branch,
-> **git checkout feature (branchName)** - HEAD that point towards and work the pointed branch
+```sh
+git checkout feature (branchName)
+```
+>  - HEAD that point towards and work the pointed branch
 > now the main lies, gets seperated from it as feature
 
 *HEAD - ?  a pointer, where all the changes will be made will gety committed towards Head, where the pwd git is pointing towards to / lies on.*
->**git checkout** - is to swap between branches
+```sh
+git checkout
+```
+>- is to swap between branches
 ##### Merging branch to main (Learn Git Branching)
  LETS SAY, ALL THE CHANGES HAS BEEN FINALIZED ON THE CURRENT BRANCH (feature) 
  to merge all the changes to the main branch (where all the people are contributing and collaborating)
- >**git merge feature -** now the working branch is part of the main branch
+```sh
+ git merge feature 
+```
+ >- now the working branch is part of the main branch
  
  people can see all these code now.
 ##### Pushing new changes to master branch
 Push new changes (All the commits that hasn't been added) to the Remote repo.
->**git push origin master** -> to push all the locally committed changes to the repo 
+```sh
+git push origin master
+```
+-> to push all the locally committed changes to the repo 
 
 check SCM. done!
 all the project has been shipped to GitHub with all the commit histories
->**git log** + commits of the project = equalizes
+```sh
+git log
+```
+>+ commits of the project = equalizes
 ##### Working with Existing Projects
 what is the way if there is an up and running projects on GitHub that has been developing and how do i take a part of it?
 ##### Why Fork and How to Fork? 
 WHY, -> You should not, must be claustrophobic t manage such cases.
 HOW? -> To fork it to the account -> username/project. (will see further how we can commit the same contributing to the project by pushing it all in)
 ##### Cloning the forked project to local
->**git clone url** - clones the project in local (personal)
+```sh
+git clone url
+```
+>- clones the project in local (personal)
 ##### What is Upstream and adding it to local
 from where you've forked this project on top of the core project. cloning a forked project:
->**git remote add upstream url** (forked)
+```sh
+git remote add upstream url (forked)
+```
 ##### What is a Pull Request?
 Pull request? - lets say making a few commits.
-> **git status** -> shows content modified (color red)
+```sh
+git status
+```
+>  -> shows content modified (color red)
 
 // a new branch and hopped in to work on it.
->**git branch rithish** -  New branch has been created
-**git checkout rithish** - now the head has been pointed towards the declared branch (namely rithish)
+```sh
+git branch rithish
+```
+>-  New branch has been created
+```sh
+git checkout rithish
+```
+- now the head has been pointed towards the declared branch (namely rithish)
 
  now all the commit will be gets into the new branch (rithish)
-> **git add .**
-> **git commit -m "added a message"**
-> **git log -**> shows the added changes has been happened in the pointed branch. has the extra commit
+```sh
+git add .
+git commit -m "added a message
+git log
+```
+>  -**> shows the added changes has been happened in the pointed branch. has the extra commit
 
 **PUSHING A BRANCH TO GITHUB**
-git push upstream rithish -> you have permission to do so and throws error. you dont have access to the main but you have access to the origin url
->**git push origin rithish** - (since origin is your own account)
+```sh
+git push upstream rithish
+```
+-> you have permission to do so and throws error. you dont have access to the main but you have access to the origin url
+```sh
+git push origin rithish
+```
+> - (since origin is your own account)
+
 BACK TO GITHUB:
 
 origin repo -> receives the push (says Compare and pull request) -> says whos push to where and what has been pushing. 
@@ -260,9 +407,15 @@ Confirm to merge it with the project
 
 LETS SAY MAKING ANOTHER CHANGES:
 changes,
->**git add**
->**git commit -m "message"** (check head or if not to the corresponding branch, git checkout branch name)
->**git push origin rithish**
+```sh
+git add
+git commit -m "message"
+```
+>(check head or if not to the corresponding branch, git checkout branch name)
+
+```sh
+git push origin rithish
+```
 >THIS ISNT A GOOD PRACTICE.
 
 WHY?
@@ -280,12 +433,26 @@ NEW BRANCH! NEW BRANCH! NEW BRANCH! For every single feature to get added. & NEW
 ##### Removing a commit from the pull request by force pushing to it
 removing an extra commit. 
 Just like resetting the same. here too.
-git status -> stats of the git
-git log -> shows all the commit
-git stash or make changes to revert
-> **git reset id**
+```sh
+git status
+```
+-> stats of the git
+```sh
+git log 
+```
+-> shows all the commit
+```sh
+git stash 
+```
+or make changes to revert
+```sh
+git reset id
+```
 > check log -> essentials & review all the unstaged contents (pushes commit here)
-> **git push origin rithish -f** //sine the content has to be removed from the repo.
+```sh
+git push origin rithish -f
+```
+> //sine the content has to be removed from the repo.
 > refresh
 > commit gets removed.
 /- commit got changed, done. TO merge the changes made on the code to the repo
@@ -301,17 +468,32 @@ How do we keep ourselves updated with the continuously developing project.?
 Two ways:
 1) Manual updates: 
 Step1:
-**git checkout main** (HEAD), - since there is no update and the branch is clean, git log and check commits. but irl, all the main branches changes has been updated (namely 3 for e.g.) commits has been made in the main project. 
+```sh
+git checkout main (HEAD)
+```
+, - since there is no update and the branch is clean, git log and check commits. but irl, all the main branches changes has been updated (namely 3 for e.g.) commits has been made in the main project. 
 - need to do is, fetch all the changes to our branch
-> **git fetch --all --prune** - gets all the changes has been made previously  will get restored in in the main branch from the main project.
+```sh
+git fetch --all --prune
+```
+> - gets all the changes has been made previously  will get restored in in the main branch from the main project.
 changes are updated in the main branch
 
 Step2: setting up the main branch HEAD directly to the fork repo hardened to push all the changes to the forked project.
->**git reset --hard upstream/main** - changes has been updated from main branch of upstream main branch since the changes are someone's work.
+```sh
+git reset --hard upstream/main
+```
+>- changes has been updated from main branch of upstream main branch since the changes are someone's work.
 everything has been done here are updated locally but not in remote repo.
 
->**git pull upstream main** - will also pull changes happened in the upstream main to the local git.
-**git push origin main** - changes pulled from main project to local now to fork.
+```sh
+git pull upstream main
+```
+>- will also pull changes happened in the upstream main to the local git.
+```sh
+git push origin main
+```
+- changes pulled from main project to local now to fork.
 
 1) Fetch upstream, (Fetch and merge) -> changes will be updated in the forked repo.
 the previous changes has been updated in the fork but not in the main which it will know that there are some changes has been made in the forked. There will be an option that gets enabled namely FETCH UPSTREAM(works like a git reset to update unfinished changes)
@@ -329,29 +511,55 @@ so
 >before that make sure that all the commits and changes updated on all those branchese especially Main and master.
 ##### Using the Rebase command
 -- squashing into multiple commits into one.
->-- **git branch newBranch** or **git checkout branchName**
---> do all the multiple commits all the git add . & git commit -m "message" xNo.of times
+```sh
+ git branch newBranch 
+ git checkout branchName
+```
+--> do all the multiple commits all the 
+```sh
+git add .
+git commit -m "message" 
+```
+xNo.of times
+```sh
 git log
+```
 
 one, we can git reset and stash and restore the same.
 other one is to squash, we can use rebase command for that.
-> **git rebase -i commitIDofTheCommitToSquash**
+```sh
+git rebase -i commitIDofTheCommitToSquash**
+```
 > :x
 > xxx //commit message
 > :x
-**git log - check all the squashed commits**
+```sh
+git log
+```
+- check all the squashed commits
 
 now all the commits above it will be shown in the interactive terminal that  YOU CAN EITHER PICK OR SQUASH EACH COMMITS. (pick / s). 
 pick the commits that are below commits and squash the rest to the following commits.
-
+```
 pick dfsf98fa msg1
 s fdsdjs098 msg2
 s fkj09fwjff msg3
-pick fkibvs83c msg4 // squashes will fall under the following commit.
+pick fkibvs83c msg4
+```
+// squashes will fall under the following commit.
 ##### Using the hard flag to reset
-**git push origin temp** - can be pushed to the project.
-**git reset --hard commitID** - RESETS
-**git log** - multiple branches has the same squashed commit
+```sh
+git push origin temp
+```
+-- can be pushed to the project.
+```sh
+git reset --hard commitID
+```
+-- RESETS
+```sh
+git log
+```
+- multiple branches has the same squashed commit
 ##### Merge conflicts and how to resolve them?
 Merge conflicts - if I am making a change on line number 4 + some other person is also makin g a change on the same line number 4 means = git will get confused on which one to pick and proceed further in.
 
