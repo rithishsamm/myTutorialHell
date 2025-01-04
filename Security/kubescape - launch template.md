@@ -16,7 +16,6 @@ Control: C-0026 100% | (47/47, 21 it/s)
  ✅  Done scanning. Cluster: kubernetes-admin-kubernetes
  ✅  Done aggregating results
 
-
 **Security posture overview for cluster: `kubernetes-admin-kubernetes`**
 
 In this overview, Kubescape shows you a summary of your cluster security posture, including the number of users who can perform administrative actions. For each result greater than 0, you should evaluate its need, and then define an exception to allow it. This baseline can be used to detect drift in future.
@@ -76,7 +75,6 @@ In this overview, Kubescape shows you a summary of your cluster security posture
 
 **Highest-stake workloads:**
 ───────────────────────
-
 High-stakes workloads are defined as those which Kubescape estimates would have the highest impact if they were to be exploited.
 
 1. namespace: calico-system, name: calico-node, kind: DaemonSet
@@ -92,12 +90,9 @@ kubescape scan workload DaemonSet/csi-node-driver --namespace calico-system
 kubescape scan workload Deployment/tigera-operator --namespace tigera-operator
 ```
 
-
 Compliance Score
 ────────────────
-
 The compliance score is calculated by multiplying control failures by the number of failures against supported compliance frameworks. Remediate controls, or configure your cluster baseline with exceptions, to improve this score.
-
 * MITRE: 75.49%
 * NSA: 62.69%
 
