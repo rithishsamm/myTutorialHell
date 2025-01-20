@@ -7,3 +7,5 @@ This script is available at [https://get.k3s.io](https://get.k3s.io/). To insta
 ```
 curl -sfL https://get.k3s.io | sh -
 ```
+
+
