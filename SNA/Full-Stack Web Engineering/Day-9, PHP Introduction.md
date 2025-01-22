@@ -16,11 +16,64 @@ Here, we will be using more of Version:7.4 since it is very stable comparably. W
 
 
 > [!NOTE] What is PHP? 
-> PHP - 
+> PHP - HyperText Preprocess
 > A **popular general-purpose scripting language** that is especially suited to web development.  
 Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.
 
+We know what hyper-text is. A type format that prints text like any other but more for Web and browsers.
 
+> Likewise PHP, a preprocessor. processes its input data to produce output (server-side rendering) to print that data which that is used as input in another program.
 
+To understand this statement above in brief from the PHP's context:
+==**PHP - Hypertext's Preprocessor.**
+**To a webpage or other hypertext to get it rendered, somewhere in the backend has to pick that hypertext file and serve it in the browser for us is the key point. WE SAW THAT IN BRIEF BY LEARNING `HTTP` right?**==
 
+Where we right this `php` file? - **in a server.** 
+What that `php` will give us? - **an Output, processes the request to provide the hypertext and that processed output get throwed as output.**
+
+We saw more of these hypertext as in `html`, `xhtml` and more. Here, for PHP to render the output, will get started here by setting up and get going:
+
+In vscode or CLI:
+```
+mkdir htdocs/projectname
+cd htdocs/projectname
+touch hello.php
+```
+
+In `hello.php`
+```
+Hello World
+```
+save and open that file in your browser.
+
+Simply prints ==Hello world==. Will be getting started from here.
+
+Seems like a simple task but under the hood, there will be a server which serves this from the local filesystem -> to us on browser (`http` servers such as `Apache`, `nginx`) 
+> serves relevant file which we request 
+> with the help of `http` protocol by doing `GET` and `POST` Methods. Provisions content this way. We all know that.
+
+So far, it is all basic like any other program. 
+
+> ==**Now, we will be diving deep into `PHP`, its capabilities and what it can do for us.** ==
+
+#### PHP BASICS
+to get started and understand in brief: it is mandatory for us to refer the documentation (cheat sheets works too).
+
+For that we have,
+- [learnxinyminutes](https://learnxinyminutes.com/), Take a whirlwind tour of your next favorite language. Community-driven!
+- [devdocs](https://devdocs.io/), DevDocs combines multiple API documentations in a fast, organized, and searchable interface.
+
+Okay!.
+Simply, how web works by `http` which we already know is,
+- there will be a system/server
+- as user, we will send a `http` request to that system/server
+- that request will look like
+```http
+GET/index.html-v1.1
+<headers>
+...
+..
+.
+</headers>
+```
 
