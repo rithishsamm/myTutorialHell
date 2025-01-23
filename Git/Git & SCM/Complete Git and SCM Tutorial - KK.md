@@ -7,54 +7,56 @@ NOTE:
 >**Here, will use Github as the SCM Platform here for reference. Doesn't matter and mostly the rest of the SCM will be the same as we do all things here.**
 > 
 Windows users can use git bash, all the commands will work. - When using git for the first time, set the global configs using the commands: 
+```
 $ git config --global user.name "your_name"
-$ git config --global user.email your_email
+$ git config --global user.email "your_email"
+```
 
 Git/GitHub cheat sheet: [https://education.github.com/git-chea...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbmxLVXhzOFJmWHo5TkhtY2NGaWgtaDllcjJCUXxBQ3Jtc0tseHJHcXBKMlVOeGJuVFhRX1dINGROaDQxYUJsQkg4YTFhV1NwNnpfSGdYenA4R0ZwS254SGVuTTd6Zm5xV2M1RjhyaDZVWUx1T1pJNXN6OXJWcEJ6cEpGZ2R3MEFCUXF6VnlNNlhyQzVta2JWWWhoUQ&q=https%3A%2F%2Feducation.github.com%2Fgit-cheat-sheet-education.pdf&v=apGV9Kg7ics) 
 Download Git: [https://git-scm.com/downloads](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2hhX0FJTWVjT2JBTUVfcTFYUW9SLTMxeFB0d3xBQ3Jtc0tsYkttNGczQmlGOF9zN1JxdVFEcEpicDF2TGpSakt0emtMcEN0MzFUSlVYQldxQWtrTE1IYWY5emZaVXRtdThpUnd0Zk84WFc4T2tkWXUwRWxkMlhGb09uRk5scWFoNHBIOEFkU1R2TXM5dEhkV1lvdw&q=https%3A%2F%2Fgit-scm.com%2Fdownloads&v=apGV9Kg7ics)
 Table of contents:
 ========================================= 
 Timestamps:
-Introduction
-What is Git and GitHub?
-Why are we using Git and GitHub?
-Downloading Git
-Structure of the Tutorial
-Some basic Linux commands
-Initializing a Git Repository
-Making the first change
-Staging the first change
-Committing the first change
-Adding data to files
-Removing changes from stage
-Viewing the overall history of the project
-Making few more commits
-Removing a commit from the history of a project
-Stashing changes
-Popping Stash
-Clearing Stash
-Starting GitHub
-Creating a new repository on GitHub
-Connecting Remote Repository to Local Repository
-Pushing local changes to remote repository
-What are branches?
-Use of branches
-Making a new branch and switching to it (Learn Git Branching)
-Merging branch to main (Learn Git Branching)
-Pushing new changes to master branch
-Working with Existing Projects
-Why Fork and How to Fork? 
-Cloning the forked project to local
-What is Upstream and adding it to local
-What is a Pull Request?
-Never commit on main branch & creating our first pull request
-Removing a commit from the pull request by force pushing to it
-Merging a Pull Request
-Making forked project even with main project
-Instructions on how to try doing these on your own
-Squashing commits 
-Using the hard flag to reset
-Merge conflicts and how to resolve them?
+- Introduction
+- What is Git and GitHub?
+- Why are we using Git and GitHub?
+- Downloading Git
+- Structure of the Tutorial
+- Some basic Linux commands
+- Initializing a Git Repository
+- Making the first change
+- Staging the first change
+- Committing the first change
+- Adding data to files
+- Removing changes from stage
+- Viewing the overall history of the project
+- Making few more commits
+- Removing a commit from the history of a project
+- Stashing changes
+- Popping Stash
+- Clearing Stash
+- Starting GitHub
+- Creating a new repository on GitHub
+- Connecting Remote Repository to Local Repository
+- Pushing local changes to remote repository
+- What are branches?
+- Use of branches
+- Making a new branch and switching to it (Learn Git Branching)
+- Merging branch to main (Learn Git Branching)
+- Pushing new changes to master branch
+- Working with Existing Projects
+- Why Fork and How to Fork? 
+- Cloning the forked project to local
+- What is Upstream and adding it to local
+- What is a Pull Request?
+- Never commit on main branch & creating our first pull request
+- Removing a commit from the pull request by force pushing to it
+- Merging a Pull Request
+- Making forked project even with main project
+- Instructions on how to try doing these on your own
+- Squashing commits 
+- Using the hard flag to reset
+- Merge conflicts and how to resolve them?
 
 ##### Introduction
 Complete Git and GitHub 101.
@@ -139,10 +141,11 @@ git status
 - *new file added* - to check the tracked in contents (colors in green)
 ###### *Committing the first change*
 ```sh
-git commit -m "(message)"
+git commit -m "message"
 ```
 -- commits changes to GIT
  **git status** - all good, no changes exist to commit, the tree is clean
+ 
 GIT RITUAL: 
 ~~~sh
 - git add .
