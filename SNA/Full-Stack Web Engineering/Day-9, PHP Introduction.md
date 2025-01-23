@@ -56,6 +56,7 @@ So far, it is all basic like any other program.
 
 > ==**Now, we will be diving deep into `PHP`, its capabilities and what it can do for us.** ==
 
+---
 #### PHP BASICS
 to get started and understand in brief: it is mandatory for us to refer the documentation (cheat sheets works too).
 
@@ -76,5 +77,6 @@ GET/index.html-v1.1
 .
 </headers>
 ```
+
 
 
