@@ -16,10 +16,13 @@ Basics and Fundamentals: *
 - Unit Testing (Java) - Tool: Junit
 - Automating Functional Testing - Tool: Selenium
 *SQL (Basic)*
+**Resources:** https://youtu.be/HXV3zeQKqGY?si=A_BtsGeardWGNfPW
 - DQL (Query extraction) 
 - DML , DDL (Query creation)
 
+---
 #### 2.Application Testing (manual/automation) 
+**Resources:** Any java basics course and Testing with java tools - Maven, Gradle
 
 ***White box testing and types* (testing all the code, application internals)** 
 > *CODE - (Jest- all stack, Junit - java, React Unit - react for Unit Testing), -API - Postman, JMeter, Junit*
@@ -51,6 +54,7 @@ and a lot more
 - I18N (International) - (*(!MANUAL)*) - language, culture and race relevance. 
 - i10n (regional/domestic) - *(!MANUAL)* same as above but regional 
 
+---
 #### 3) ****Unit Testing
 all of these tools can be used for Unit testing, just the platform and the language differs:
 - Code related specify unit test
@@ -59,11 +63,13 @@ all of these tools can be used for Unit testing, just the platform and the langu
 ###### 2) *JUnit* (java - .jar)
 ###### 3) *React Testing Library* (React Script) 
 
-
+---
 #### 4)  ***API Testing*** 
-###### 1) *Postman (Create & Test APIs )* 
+###### 1) *Postman (Create, work and test APIs )* 
+**Resources:**
 link - https://www.youtube.com/watch?v=vCJVFnepECc&list=PLUDwpEzHYYLs3DYFqm79fIj2QOzPke_fW (Beginner)
 link - https://www.youtube.com/watch?v=CGX6DRNfS-E  (Soo many diff of execution)
+
 *Pros:*
 - Functional Testing
 -get , post , put , delete  (Viewing - Request/response )
@@ -79,6 +85,7 @@ link - https://www.youtube.com/watch?v=CGX6DRNfS-E  (Soo many diff of execution)
 
 
 ###### 2) *JMeter (only For Testing)*
+**Resources:**
 link - https://www.youtube.com/watch?v=817zU_bXh9Y&list=PLUDwpEzHYYLs33uFHeIJo-6eU92IoiMZ7
 *Pros:* 
 - Functional Testing
@@ -92,7 +99,7 @@ link - https://www.youtube.com/watch?v=817zU_bXh9Y&list=PLUDwpEzHYYLs33uFHeIJo-6
 - No live report (gui but viable
 - can create APIs, only can test. 
 
-
+---
 #### 5) *Automation Testing*
 these are all the testing concept which can be performed using automation testing. 
 - Automated Functional Testing
@@ -109,13 +116,19 @@ these are all the testing concept which can be performed using automation testin
 
 ###### *Tools:* (used for automation testing)
 ###### 1) *Selenium*(java) (!IMP)
+**Resources:**
+Selenium
+https://youtube.com/playlist?list=PLacgMXFs7kl8e8xIdMDQEi2c6eQnO1toK&si=Vp-ie0nJNL6afBhl
+Selenium - In depth 
+https://www.youtube.com/live/9p6NNapsUvQ?si=LpoaAeFgz7J2ZnO7
+
 - Headed mode only 
 - specify the browser
 - parallel testing (TestNG)
 - WebDriver(Download Driver)
 
 ###### 2) *Playwright* (java APIs ,JS & TS officially support for web automation)
-
+**Resources:**
 link - https://www.youtube.com/watch?v=yOuElUSfAs8&list=PLUDwpEzHYYLsw33jpra65LIvX1nKWpp7- (Early pickup  for JS)
 link - https://www.youtube.com/watch?v=EfRAjmsEQ3k&list=PL6flErFppaj0pscPIPA_Cxhil6ZDeFuJJ (Java)
 link - https://www.youtube.com/watch?v=zF3ftXEj5Aw&list=PL6flErFppaj0iQG2_Dd72Jz0bfrzZwMZH (Java Script)
@@ -127,7 +140,7 @@ link -
 - Api automation 
 
 ###### 3) *Cypress* (Js) (!optional)
-
+**Resources:**
 link - https://www.youtube.com/watch?v=69SFwgWHUig&list=PLUDwpEzHYYLvA7QFkC1C0y0pDPqYS56iU
 link - https://www.youtube.com/watch?v=bpuEAzYDTy4&list=PLL34mf651faP_cOOErNUi33GeRHhr2QsP
  -  Headless mode  
@@ -135,7 +148,7 @@ link - https://www.youtube.com/watch?v=bpuEAzYDTy4&list=PLL34mf651faP_cOOErNUi33
  - Runs inside the browser
  
 ###### 4) *TestNG Framework* 
-
+**Resources:**
 link - https://www.youtube.com/watch?v=K6ET456rQnQ&list=PL699Xf-_ilW4VpISC5etvNNbHquV5ZrKu
 - Annotations
 - TestNG XML Configuration
@@ -147,8 +160,9 @@ link - https://www.youtube.com/watch?v=K6ET456rQnQ&list=PL699Xf-_ilW4VpISC5etvNN
 - TestNG Reports (HTML) (imp)
 Mainly some people are using TestNG For Flexible Execution ,Reports and Logging
 
+---
 #### 6) *Report Generation :*  
-
+**Resources:**
 link - https://www.youtube.com/watch?v=ZcdJP0cos8o&list=PL6SXxvjnlkaRA2S2t9NTWIFrYIjEx3FJt
    - Detailed Test Information
    - Test Organization
@@ -159,5 +173,6 @@ link - https://www.youtube.com/watch?v=ZcdJP0cos8o&list=PL6SXxvjnlkaRA2S2t9NTWIF
 ###### *Tools:*
  - *Allure Report*  (!VERY VERY IMPORTANT)
 ---
+
 
 
