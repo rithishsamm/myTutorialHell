@@ -196,6 +196,8 @@
   },
   "active": "38d5837ec9ab962e",
   "lastOpenFiles": [
+    "README.md",
+    "LICENSE",
     "Excalidraw/Nodeport-workflow-brief.excalidraw.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Excalidraw/Nodeport-workflow.excalidraw.md",
@@ -232,7 +234,6 @@
     "Untitled Diagram.svg",
     "Git forking, branching, PR, MR.md",
     "Automation",
-    "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/official/section3-pods/Pod Lifecycle Restart Policy.docx",
@@ -240,7 +241,6 @@
     "oss-contribution-apache/testing/unit_tests.rst",
     "oss-contribution-apache/testing/testing_packages.rst",
     "oss-contribution-apache/testing/system_tests.rst",
-    "oss-contribution-apache/testing/README.rst",
-    "oss-contribution-apache/testing/python_client_tests.rst"
+    "oss-contribution-apache/testing/README.rst"
   ]
 }
