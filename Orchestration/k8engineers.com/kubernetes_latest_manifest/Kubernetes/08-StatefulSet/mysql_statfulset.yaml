@@ -1,0 +1,248 @@
+/var/nfs 192.168.0.0/24(rw,sync,no_subtree_check,no_root_squash)
+
+root@containerdmanager:~# ls -l /var/nfs
+total 12
+drwxr-xr-x 5 nobody nogroup 4096 Aug 16 14:25 data0
+drwxr-xr-x 5 nobody nogroup 4096 Aug 16 14:24 data1
+drwxr-xr-x 5 nobody nogroup 4096 Aug 16 14:24 data2
+root@containerdmanager:~#
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-data0
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.200
+    path: "/var/nfs/data0"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-data1
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.200
+    path: "/var/nfs/data1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-data2
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 192.168.0.200
+    path: "/var/nfs/data2"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-server
+  labels:
+    app: mysqldb
+spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
+    name: db
+  clusterIP: None
+  selector:
+    db: mysql
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      db: mysql # has to match .spec.template.metadata.labels
+  serviceName: "mysql-server"
+  #podManagementPolicy: Parallel #(default: Ordered)
+  replicas: 3 # by default is 1
+  template:
+    metadata:
+      labels:
+        db: mysql # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        ports:
+        - containerPort: 3306
+          name: db
+        volumeMounts:
+        - name: db-data
+          mountPath: /var/lib/mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysqldb-secret
+              key: mysql_root_passwd
+        - name: MYSQL_ROOT_HOST
+          value: '%'
+        livenessProbe:
+          exec:
+            command:
+              - bash
+              - "-c"
+              - mysqladmin -uroot -p$MYSQL_ROOT_PASSWORD ping
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        readinessProbe:
+          exec:
+            # Check we can execute queries over TCP (skip-networking is off).
+            command:
+              - bash
+              - "-c"
+              - mysql -hlocalhost -uroot -p$MYSQL_ROOT_PASSWORD -e "SELECT 1"
+          initialDelaySeconds: 5
+          periodSeconds: 2
+          timeoutSeconds: 1
+  volumeClaimTemplates:
+  - metadata:
+      name: db-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: manual
+      resources:
+        requests:
+          storage: 1Gi
+```
+root@controlplane:~/statefulset# kubectl get all -o wide
+NAME                                          READY   STATUS              RESTARTS       AGE   IP               NODE              NOMINATED NODE   READINESS GATES
+pod/mysql-0                                   1/1     Running             0              14s   192.168.101.65   computeplaneone   <none>           <none>
+pod/mysql-1                                   0/1     ContainerCreating   0              2s    <none>           computeplaneone   <none>           <none>
+pod/nfs-server-provisioner-79d64c49bc-5q6jt   1/1     Running             18 (27m ago)   21d   192.168.101.68   computeplaneone   <none>           <none>
+
+NAME                   TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/kubernetes     ClusterIP   10.96.0.1    <none>        443/TCP    29d   <none>
+service/mysql-server   ClusterIP   None         <none>        3306/TCP   14s   db=mysql
+
+NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS               IMAGES                                                   SELECTOR
+deployment.apps/nfs-server-provisioner   1/1     1            1           21d   nfs-client-provisioner   quay.io/external_storage/nfs-client-provisioner:latest   app=nfs-server-provisioner
+
+NAME                                                DESIRED   CURRENT   READY   AGE   CONTAINERS               IMAGES                                                   SELECTOR
+replicaset.apps/nfs-server-provisioner-79d64c49bc   1         1         1       21d   nfs-client-provisioner   quay.io/external_storage/nfs-client-provisioner:latest   app=nfs-server-provisioner,pod-template-hash=79d64c49bc
+
+NAME                     READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/mysql   1/3     14s   mysql        mysql:5.7
+root@controlplane:~/statefulset#
+NAME                   TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/kubernetes     ClusterIP   10.96.0.1    <none>        443/TCP    29d   <none>
+service/mysql-server   ClusterIP   None         <none>        3306/TCP   45s   db=mysql
+
+NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS               IMAGES                                                   SELECTOR
+deployment.apps/nfs-server-provisioner   1/1     1            1           21d   nfs-client-provisioner   quay.io/external_storage/nfs-client-provisioner:latest   app=nfs-server-provisioner
+
+NAME                                                DESIRED   CURRENT   READY   AGE   CONTAINERS               IMAGES                                                   SELECTOR
+replicaset.apps/nfs-server-provisioner-79d64c49bc   1         1         1       21d   nfs-client-provisioner   quay.io/external_storage/nfs-client-provisioner:latest   app=nfs-server-provisioner,pod-template-hash=79d64c49bc
+
+NAME                     READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/mysql   3/3     45s   mysql        mysql:5.7
+root@controlplane:~/statefulset# kubectl run test-pod --rm -ti --image=dubareddy/utils -- bash
+If you don't see a command prompt, try pressing enter.
+root@test-pod:/# 
+root@test-pod:/# nslookup mysql-server
+Server:         10.96.0.10
+Address:        10.96.0.10#53
+
+Name:   mysql-server.default.svc.cluster.local
+Address: 192.168.101.127
+Name:   mysql-server.default.svc.cluster.local
+Address: 192.168.101.71
+Name:   mysql-server.default.svc.cluster.local
+Address: 192.168.101.67
+
+root@test-pod:/# exit
+exit
+Session ended, resume using 'kubectl attach test-pod -c test-pod -i -t' command when the pod is running
+pod "test-pod" deleted
+root@controlplane:~/statefulset# 
+```
+
+
+Inside mysql pod:
+
+root@mysql-0:/# cat /etc/hosts
+# Kubernetes-managed hosts file.
+127.0.0.1 localhost
+::1 localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+fe00::0 ip6-mcastprefix
+fe00::1 ip6-allnodes
+fe00::2 ip6-allrouters
+10.244.155.88 mysql-0.mysql-server.default.svc.cluster.local  mysql-0
+root@mysql-0:/# 
+
+root@mysql-0:/# env
+KUBERNETES_SERVICE_PORT_HTTPS=443
+KUBERNETES_SERVICE_PORT=443
+MYSQL_MAJOR=5.7
+HOSTNAME=mysql-0
+PWD=/
+MYSQL_ROOT_PASSWORD=test1234
+HOME=/root
+KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443
+MYSQL_VERSION=5.7.31-1debian10
+GOSU_VERSION=1.12
+TERM=xterm
+MYSQL_ROOT_HOST=%
+SHLVL=1
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1
+KUBERNETES_SERVICE_HOST=10.96.0.1
+KUBERNETES_PORT=tcp://10.96.0.1:443
+KUBERNETES_PORT_443_TCP_PORT=443
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+_=/usr/bin/env
+root@mysql-0:/#
+
+#kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
+
+root@containerdmanager:~# kubectl run -it --rm --image=mysql:5.7 --restart=Never mysql-client -- mysql -h mysql-server -ptest1234
+If you don't see a command prompt, try pressing enter.
+
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> \q
+Bye
+pod "mysql-client" deleted

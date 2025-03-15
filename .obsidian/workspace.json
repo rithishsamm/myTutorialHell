@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "549ba9ae199c3969",
+        "id": "4afbaaa2b8df3f53",
         "type": "tabs",
         "children": [
           {
-            "id": "8e015eb8854b2972",
+            "id": "7cff75fde5419d08",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -152,8 +156,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -188,59 +192,59 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": true,
-      "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
+      "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-git:Open Git source control": false
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ed6661fe103edd81",
+  "active": "7cff75fde5419d08",
   "lastOpenFiles": [
-    "Untitled",
-    "Ops/Incident/Pagerduty/PagerDuty 1.md",
-    "Untitled Diagram.svg",
-    "Ops/Incident/Pagerduty/PagerDuty.md",
-    "Orchestration/Kubernetes/K8s 1.md",
-    "Ops/Incident",
-    "Ops/Monitoring",
-    "Ops/Incident/Pagerduty",
-    "Containerization/Container Registry",
-    "Orchestration/Kubernetes/K8s.md",
-    "Orchestration/K3s/K3s 1.md",
-    "Orchestration/K3s/K3s.md",
+    "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
+    "CICD/boilerplate-CICD STANDARDS.md",
+    "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
+    "Automation/Bash/$Scripting-Beg-Adv/Content - Day 1,  Linux Shell Scripting Beginner To Expert Bash Shell Script Course Content - Watch Now🔥🔥🔥.md",
     "README.md",
-    "Orchestration/K3s",
-    "Orchestration/Kubernetes",
-    "Containerization/System/Virtualization.md",
-    "IaC/Terraform/Terraform.md",
-    "IaC/IaC - Overview.md",
-    "Ops/Monitoring/Graphana/Graphana.md",
-    "Ops/Monitoring/Graphana/Graphana 1.md",
-    "Containerization/Docker/Docker 1.md",
-    "Networking/OSI.md",
-    "Networking/Computer Networking.md",
-    "Containerization/Docker/Docker.md",
-    "Ops/Monitoring/Splunk/Splunk 1.md",
-    "Ops/Monitoring/Splunk/Splunk.md",
-    "Ops/Monitoring/Prometheus/Prometheus 1.md",
-    "Ops/Monitoring/Prometheus/Prometheus.md",
-    "Ops/Monitoring/Splunk",
-    "Ops/Monitoring/Graphana",
-    "Monitoring/Incident/Pagerduty.md",
-    "Monitoring/Incident",
-    "Ops/Monitoring/Prometheus",
-    "IaC/Terragrunt/Terragrunt 1.md",
-    "IaC/Terragrunt/Terragrunt.md",
-    "IaC/Terraform/Terraform 1.md",
-    "Containerization/System/Containerization.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Excalidraw/Nodeport-workflow-brief.excalidraw.md",
+    "Excalidraw/Nodeport-workflow.excalidraw.md",
+    "Notetaking/5. Zettelkasten improving Productivity -  UNIX inspired Note-taking & its Philosophy.md",
+    "202503141100.md",
+    "Excalidraw/ClusterIP-FE2BEUnderTheHood.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow-brief.excalidraw.md",
+    "Excalidraw/FE2svc2backendPODs.excalidraw.md",
+    "Excalidraw/svc-nodeport.excalidraw.md",
     "Excalidraw/svc-nodeport.excalidraw.png",
+    "Excalidraw/svc.excalidrawYaml.md",
+    "Excalidraw/svc.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-14 10.31.32.excalidraw.md",
+    "_ZettelFlowMdTemplates/Daily Note Template.md",
+    "_ZettelFlowMdTemplates",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/20-Monitoring/EFK/README.md",
+    "202503141019.md",
+    "202503141020.md",
+    "202503141018.md",
+    "Excalidraw/Drawing 2025-03-14 10.16.29.excalidraw.md",
+    "Automation/Workflow/tools.md",
+    "Automation/Workflow",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 1.svg",
+    "2025-03-10.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 7.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 6.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 4.svg",
+    "Untitled Diagram.svg",
+    "Automation",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg"
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/official/section3-pods/Pod Lifecycle Restart Policy.docx",
+    "oss-contribution-apache/testing/images/pycharm",
+    "oss-contribution-apache/testing/unit_tests.rst",
+    "oss-contribution-apache/testing/testing_packages.rst",
+    "oss-contribution-apache/testing/system_tests.rst",
+    "oss-contribution-apache/testing/README.rst",
+    "oss-contribution-apache/testing/python_client_tests.rst"
   ]
 }

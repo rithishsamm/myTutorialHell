@@ -1,0 +1,20 @@
+- AthenaOS - https://github.com/kyegomez/AthenaOS
+- OpenDAN : Your Personal AIOS - https://github.com/fiatrete/OpenDAN-Personal-AI-OS#opendan--your-personal-aios
+- LLM OS Guide: Understanding AI Operating Systems - https://www.datacamp.com/blog/llm-os
+- AI Operating Systems Guide: What They Do and Tools to Help - https://topapps.ai/blog/ai-operating-systems-guide/
+- ElizaOS - The Operating System for AI Agents. - https://elizaos.ai/ +  https://github.com/elizaOS
+- Nvidia Project Digits: A Linux-powered desktop for AI developers  - https://www.zdnet.com/article/nvidia-project-digits-a-linux-powered-desktop-for-ai-developers/
+- Artificial Intelligence Operating System (AIOS): The Complete Guide - https://www.techjockey.com/blog/artificial-intelligence-operating-system-aios-the-complete-guide
+- How AI as an Operating System is Shaping Our Digital Future - https://hatchworks.com/blog/gen-ai/ai-driven-operating-systems/
+- eva. The AI Operating System -  https://eva.space/
+- AIOS: LLM Agent Operating System - https://arxiv.org/abs/2403.16971
+- Integrating Artificial Intelligence into Operating Systems: A Comprehensive Survey on Techniques, Applications, and Future Directions - https://arxiv.org/abs/2407.14567#
+- opendan.ai - Open-source Private AI OS - Consolidating various AI modules in one place for your private use.-  https://www.opendan.ai/
+- The world’s first AI Operating System, Breaking the Barriers of Data Acquisition and Data Monetisation for Data Intensive Organisation - https://www.blackswantechnologies.ai/ai-os/
+- LLM as OS, Agents as Apps: Envisioning AIOS, Agents and the AIOS-Agent Ecosystem - https://arxiv.org/pdf/2312.03815
+- Kuwa GenAI OS -An open, free, secure, and privacy-focused Generative-AI Orchestrating System - https://github.com/kuwaai/genai-os
+- AI-Powered Operating System — A Race to Global Dominance - https://medium.com/@ayushojha010/ai-powered-operating-system-a-race-to-global-dominance-c1af25d26a95
+- AI: The Next Operating System? - https://medium.com/@chaplainhogan/ai-the-next-operating-system-117f17678f7c
+- Kaba, AI-powered OS for the future of computing -  https://theresanaiforthat.com/ai/kaba/ + https://www.youtube.com/watch?v=uvfJDW9HpPs
+- CosmOSThe OS for the Intelligence Age - https://humane.com/cosmos + https://www.youtube.com/watch?v=fsnysAHD2CU
+- The Future of Operating Systems: Integrating Artificial Intelligence - https://christianbaghai.medium.com/the-future-of-operating-systems-integrating-artificial-intelligence-3eea587dd07a
