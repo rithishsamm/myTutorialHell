@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "56eb7d47f31686e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e4ef53a81c94290",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "38d5837ec9ab962e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "276c081ad66c23a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "92c226f029e7870d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed6661fe103edd81",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "dff5a3d8a833063a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e05c4154a7c0527e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "b6e1abf680f4b2cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "46559fd236aed3f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa9a5da37a661c62",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 00.Section11-K8sServices"
+            }
+          },
+          {
+            "id": "928ec57bccf1cf02",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 00.Section11-K8sServices"
+            }
+          },
+          {
+            "id": "cfd4648f055dd4d0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "9c029f0568102425",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 00.Section11-K8sServices"
+            }
+          },
+          {
+            "id": "7330a47c3b20f94f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "2fda788e74c9ac9a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "publish:Publish changes...": true,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "38d5837ec9ab962e",
+  "lastOpenFiles": [
+    "Excalidraw/Nodeport-workflow-brief.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Excalidraw/Nodeport-workflow.excalidraw.md",
+    "Notetaking/5. Zettelkasten improving Productivity -  UNIX inspired Note-taking & its Philosophy.md",
+    "202503141100.md",
+    "Excalidraw/ClusterIP-FE2BEUnderTheHood.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow-brief.excalidraw.md",
+    "Excalidraw/FE2svc2backendPODs.excalidraw.md",
+    "Excalidraw/svc-nodeport.excalidraw.md",
+    "Excalidraw/svc-nodeport.excalidraw.png",
+    "Excalidraw/svc.excalidrawYaml.md",
+    "Excalidraw/svc.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-14 10.31.32.excalidraw.md",
+    "_ZettelFlowMdTemplates/Daily Note Template.md",
+    "_ZettelFlowMdTemplates",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/20-Monitoring/EFK/README.md",
+    "202503141019.md",
+    "202503141020.md",
+    "202503141018.md",
+    "Excalidraw/Drawing 2025-03-14 10.16.29.excalidraw.md",
+    "Automation/Workflow/tools.md",
+    "Automation/Workflow",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 1.svg",
+    "2025-03-10.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 7.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 6.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 4.svg",
+    "Excalidraw/gitFork,branch,PR,MR.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
+    "CICD/boilerplate-CICD STANDARDS.md",
+    "Untitled Diagram.svg",
+    "Git forking, branching, PR, MR.md",
+    "Automation",
+    "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/official/section3-pods/Pod Lifecycle Restart Policy.docx",
+    "oss-contribution-apache/testing/images/pycharm",
+    "oss-contribution-apache/testing/unit_tests.rst",
+    "oss-contribution-apache/testing/testing_packages.rst",
+    "oss-contribution-apache/testing/system_tests.rst",
+    "oss-contribution-apache/testing/README.rst",
+    "oss-contribution-apache/testing/python_client_tests.rst"
+  ]
+}
