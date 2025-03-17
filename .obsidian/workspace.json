@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -200,8 +201,8 @@
   },
   "active": "cf77763ba02cc335",
   "lastOpenFiles": [
-    "IaC/Pulumi/Pulumi.md",
     "README.md",
+    "IaC/Pulumi/Pulumi.md",
     "IaC/Pulumi",
     "Systems/Linux.md",
     "Systems/NixOS.md",
