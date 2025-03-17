@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e326580a7ba3baf6",
+        "id": "4afbaaa2b8df3f53",
         "type": "tabs",
         "children": [
           {
-            "id": "cf77763ba02cc335",
+            "id": "7cff75fde5419d08",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "README.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -157,8 +156,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -193,59 +192,59 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": true,
-      "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
+      "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-git:Open Git source control": false
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "cf77763ba02cc335",
+  "active": "7cff75fde5419d08",
   "lastOpenFiles": [
+    "rough.md",
     "README.md",
-    "IaC/Pulumi/Pulumi.md",
-    "IaC/Pulumi",
-    "Systems/Linux.md",
-    "Systems/NixOS.md",
-    "Systems/Linux",
-    "Security/Wireshark/Wireshark.md",
-    "Security/Portswigger/BurpSuite.md",
-    "Security/OWASP/TOP10.md",
-    "Security/SonarQube/SonarQubeServer.md",
-    "Security/Kube/KubeLint.md",
-    "Security/OWASP/ZAP.md",
-    "Security/Portswigger",
-    "Security/netmon/tcpdump",
-    "Security/netmon",
-    "Security/netmon/nmap",
-    "Security/Wireshark",
-    "Security/OWASP",
-    "Security/Kube/KubeBench.md",
-    "Security/Kube",
-    "Security/SonarQube/SonarQubeCloud.md",
-    "Security/SonarQube/SonarQubeIDE.md",
-    "Security/SonarQube",
-    "Orchestration/HA/HA 1.md",
-    "Orchestration/HA/HA.md",
-    "Orchestration/K0s/K0s 1.md",
-    "Orchestration/K0s/K0s.md",
-    "Ops/Incident/Pagerduty/PagerDuty 1.md",
-    "Untitled Diagram.svg",
-    "Ops/Incident/Pagerduty/PagerDuty.md",
-    "Orchestration/Kubernetes/K8s 1.md",
-    "Orchestration/Kubernetes/K8s.md",
-    "Orchestration/K3s/K3s 1.md",
-    "Orchestration/K3s/K3s.md",
-    "Containerization/System/Virtualization.md",
-    "IaC/Terraform/Terraform.md",
-    "IaC/IaC - Overview.md",
+    "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
+    "CICD/boilerplate-CICD STANDARDS.md",
+    "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
+    "Automation/Bash/$Scripting-Beg-Adv/Content - Day 1,  Linux Shell Scripting Beginner To Expert Bash Shell Script Course Content - Watch Now🔥🔥🔥.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Excalidraw/Nodeport-workflow-brief.excalidraw.md",
+    "Excalidraw/Nodeport-workflow.excalidraw.md",
+    "Notetaking/5. Zettelkasten improving Productivity -  UNIX inspired Note-taking & its Philosophy.md",
+    "202503141100.md",
+    "Excalidraw/ClusterIP-FE2BEUnderTheHood.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow-brief.excalidraw.md",
+    "Excalidraw/FE2svc2backendPODs.excalidraw.md",
+    "Excalidraw/svc-nodeport.excalidraw.md",
     "Excalidraw/svc-nodeport.excalidraw.png",
+    "Excalidraw/svc.excalidrawYaml.md",
+    "Excalidraw/svc.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow.excalidraw.md",
+    "Excalidraw/Drawing 2025-03-14 10.31.32.excalidraw.md",
+    "_ZettelFlowMdTemplates/Daily Note Template.md",
+    "_ZettelFlowMdTemplates",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/20-Monitoring/EFK/README.md",
+    "202503141019.md",
+    "202503141020.md",
+    "202503141018.md",
+    "Excalidraw/Drawing 2025-03-14 10.16.29.excalidraw.md",
+    "Automation/Workflow/tools.md",
+    "Automation/Workflow",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 1.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 7.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 6.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 4.svg",
+    "Untitled Diagram.svg",
+    "Automation",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg"
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/official/section3-pods/Pod Lifecycle Restart Policy.docx",
+    "oss-contribution-apache/testing/images/pycharm",
+    "oss-contribution-apache/testing/unit_tests.rst",
+    "oss-contribution-apache/testing/testing_packages.rst",
+    "oss-contribution-apache/testing/system_tests.rst",
+    "oss-contribution-apache/testing/README.rst",
+    "oss-contribution-apache/testing/python_client_tests.rst"
   ]
 }

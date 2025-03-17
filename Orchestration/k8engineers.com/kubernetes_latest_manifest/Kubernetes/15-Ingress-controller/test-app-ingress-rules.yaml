@@ -1,0 +1,90 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sudheerdevops-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: app1.sudheerdevops.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app1-nginx
+            port:
+              number: 80
+  - host: app2.sudheerdevops.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app2-nginx
+            port:
+              number: 80
+---
+
+
+apiVersion: networking.k8s.io/v1 #extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-resource-app1
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: app-nginx
+            port:
+              number: 80
+---
+#or we call follow below yaml file
+apiVersion: networking.k8s.io/v1 #extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-resource-1
+spec:
+  tls:
+  - hosts:
+    - app.sudheerdevops.tld
+    secretName: sudheer-client-certs
+  rules:
+  - host: app.sudheerdevops.tld
+    http:
+      paths:
+      - backend:
+          serviceName: app-nginx
+          servicePort: 80
+---
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-app2
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    #alb.ingress.kubernetes.io/target-type: instance
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            pathType: Prefix
+            backend:
+              service:
+                name: app2-nginx
+                port:
+                  number: 80
