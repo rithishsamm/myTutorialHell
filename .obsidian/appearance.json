@@ -6,6 +6,6 @@
   "monospaceFontFamily": "Courier New",
   "baseFontSizeAction": true,
   "nativeMenus": true,
-  "baseFontSize": 12,
+  "baseFontSize": 14,
   "theme": "obsidian"
 }
