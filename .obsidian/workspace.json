@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "9ee9552f465e9a2f",
+        "id": "4b8729d0204a5d58",
         "type": "tabs",
         "children": [
           {
@@ -201,8 +201,8 @@
   },
   "active": "7b3829c8bdd80ea0",
   "lastOpenFiles": [
-    "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
     "README.md",
     "rough.md",
     "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
