@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -200,6 +201,14 @@
   },
   "active": "7b3829c8bdd80ea0",
   "lastOpenFiles": [
+    "IaC/Pulumi",
+    "IaC/Vagrant",
+    "IaC/Puppet",
+    "IaC/Chef",
+    "IaC/Ansible",
+    "IaC/Terragrunt",
+    "IaC/Nix",
+    "IaC/Terraform",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
     "README.md",
@@ -227,7 +236,6 @@
     "202503141019.md",
     "202503141020.md",
     "202503141018.md",
-    "Excalidraw/Drawing 2025-03-14 10.16.29.excalidraw.md",
     "Automation/Workflow",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
@@ -238,13 +246,6 @@
     "Untitled Diagram.svg",
     "Automation",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/official/section3-pods/Pod Lifecycle Restart Policy.docx",
-    "oss-contribution-apache/testing/images/pycharm",
-    "oss-contribution-apache/testing/unit_tests.rst",
-    "oss-contribution-apache/testing/testing_packages.rst",
-    "oss-contribution-apache/testing/system_tests.rst",
-    "oss-contribution-apache/testing/README.rst",
-    "oss-contribution-apache/testing/python_client_tests.rst"
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg"
   ]
 }
