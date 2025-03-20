@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section11-K8sServices"
+              "title": "README"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -201,6 +200,7 @@
   },
   "active": "7b3829c8bdd80ea0",
   "lastOpenFiles": [
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "IaC/Pulumi",
     "IaC/Vagrant",
     "IaC/Puppet",
@@ -209,7 +209,6 @@
     "IaC/Terragrunt",
     "IaC/Nix",
     "IaC/Terraform",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
     "README.md",
     "rough.md",
@@ -244,7 +243,6 @@
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 6.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 4.svg",
     "Untitled Diagram.svg",
-    "Automation",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg"
   ]
