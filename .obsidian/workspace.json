@@ -6,7 +6,6 @@
       {
         "id": "4b8729d0204a5d58",
         "type": "tabs",
-        "dimension": 64.97175141242938,
         "children": [
           {
             "id": "0ef6aa27221da009",
@@ -23,56 +22,35 @@
             }
           },
           {
-            "id": "c6f32a6fa5fc1014",
+            "id": "2d3e3d46790ee4be",
             "type": "leaf",
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://www.youtube.com/watch?v=xN1-2p06Urc&list=PLp3qkYQbU5kexG03Z79eU7SpoWtTv7Ww3",
-                "title": "Never* use git pull - YouTube",
+                "url": "https://www.youtube.com/watch?v=e9lnsKot_SQ",
+                "title": "How Git Works: Explained in 4 Minutes - YouTube",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Never* use git pull - YouTube"
+              "title": "How Git Works: Explained in 4 Minutes - YouTube"
             }
           },
           {
-            "id": "4b8c7d62dbc19fa8",
+            "id": "f15075c722d5bd3f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
+                "file": "Automation/Workflow/business-automation/Automating Life with AI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1Philomatics - git rebase - Why, When & How to fix conflicts"
+              "title": "Automating Life with AI"
             }
           }
         ],
-        "currentTab": 1
-      },
-      {
-        "id": "c0581ac0aacb9d4a",
-        "type": "tabs",
-        "dimension": 35.02824858757062,
-        "children": [
-          {
-            "id": "186626084870f862",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1Philomatics - git rebase - Why, When & How to fix conflicts"
-            }
-          }
-        ]
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -250,8 +228,14 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c6f32a6fa5fc1014",
+  "active": "f15075c722d5bd3f",
   "lastOpenFiles": [
+    "Automation/Workflow/business-automation/Automating business with AI.md",
+    "Automation/Workflow/business-automation/Automating Life with AI.md",
+    "Automation/Workflow/business-automation",
+    "Automation/Workflow/tools.md",
+    "Automation/Workflow/n8n",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
     "Git-revision/Index.md",
     "Git-revision/Full/TheModernCoder.md",
@@ -264,15 +248,12 @@
     "Git-revision/xtras",
     "Untitled.md",
     "Git-revision",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "README.md",
     "IaC/Pulumi",
     "IaC/Vagrant",
     "IaC/Puppet",
     "IaC/Chef",
     "IaC/Ansible",
-    "IaC/Terragrunt",
-    "IaC/Nix",
     "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
     "rough.md",
     "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
@@ -285,10 +266,7 @@
     "202503141100.md",
     "Excalidraw/ClusterIP-FE2BEUnderTheHood.excalidraw.md",
     "Excalidraw/ClusterIP-workflow-brief.excalidraw.md",
-    "Excalidraw/FE2svc2backendPODs.excalidraw.md",
-    "Excalidraw/svc-nodeport.excalidraw.md",
     "Excalidraw/svc-nodeport.excalidraw.png",
-    "Excalidraw/svc.excalidrawYaml.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 1.svg",
