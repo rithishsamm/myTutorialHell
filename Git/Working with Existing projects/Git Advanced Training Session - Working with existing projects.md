@@ -13,108 +13,76 @@ Where we have covered (more of an introductory like session of Git), topic such 
 - Working with branches
 - All the `git` commands, the essentials that are relevant to what we have covered
 - and much more
-These has been more personal working with projects all by themselves an such.   But
+These has been more personal working with projects all by themselves an such.  But
 
----
-
-## Git Advanced - Working with existing projects
+++
 
 Here in this session, we will be covering a lot more on Working with others/existing projects.  
 	Resources: 
-	1) https://learngitbranching.js.org/
-	2) https://git-school.github.io/visualizing-git/#free-remote
-
-![[Complete Git and SCM Tutorial - KK#21) ***Merging branch to main (Learn Git Branching)***]]
-
-![[Complete Git and SCM Tutorial - KK#22) ***Pushing new changes to master branch***]]
-
-![[Complete Git and SCM Tutorial - KK#23) ***Working with Existing Projects***]]
-
-![[Complete Git and SCM Tutorial - KK#24) ***Why Fork and How to Fork?***]]
-
-![[Complete Git and SCM Tutorial - KK#25) ***Cloning the forked project to local***]]
-
-![[Complete Git and SCM Tutorial - KK#26) ***What is Upstream and adding it to local***]]
-
-![[Complete Git and SCM Tutorial - KK#27) ***What is a Pull Request?***]]
-
-![[Complete Git and SCM Tutorial - KK#28) ***PUSHING A BRANCH TO GITHUB***]]
-
-![[Complete Git and SCM Tutorial - KK#29) ***Never commit on main branch & creating our first pull request***]]
-
-![[Complete Git and SCM Tutorial - KK#30) ***Removing a commit from the pull request by force pushing to it***]]
-
-![[Complete Git and SCM Tutorial - KK#31) ***Merging a Pull Request***]]
-
-![[Complete Git and SCM Tutorial - KK#32) ***Making forked project even with main project***]]
-
-![[Complete Git and SCM Tutorial - KK#33) ***Instructions on how to try doing these on your own***]]
-
-![[Complete Git and SCM Tutorial - KK#34) Squashing commits]]
-
-![[Complete Git and SCM Tutorial - KK#35) ***Using the Rebase command***]]
-
-![[Complete Git and SCM Tutorial - KK#36) ***Merge conflicts and how to resolve them?***]]
-
-
-+Practicing all these with [Learn Git Branching](https://learngitbranching.js.org/), [git-school](https://git-school.github.io/visualizing-git/#free-remote) and [git-flashcards](https://www.knowledgize.com/en/d/git-cli/learn/flash-cards) We are here to cover about Extended version of these topics given above.
+	1) [Learn Git Branching](https://learngitbranching.js.org/)
+	2) , [git-school](https://git-school.github.io/visualizing-git/#free-remote) and
+	3) [git-flashcards](https://www.knowledgize.com/en/d/git-cli/learn/flash-cards) 
+We are here to cover about Extended version of these topics given above.
 
 ---
-### Contents:
-
-##### Merging branch to main (Learn Git Branching)
-
-
-
-##### Pushing new changes to master branch
+## Git Advanced - Working with existing projects
+#### Contents:
+##### 1) Merging branch to main (Learn Git Branching) - [[Complete Git and SCM Tutorial - KK#21) ***Merging branch to main (Learn Git Branching)***]]
 
 
 
-##### Working with Existing Projects
+##### 2) Pushing new changes to master branch - [[Complete Git and SCM Tutorial - KK#22) ***Pushing new changes to master branch***]]
 
 
 
-##### Why Fork and How to Fork?
+##### Working with Existing Projects -  [[Complete Git and SCM Tutorial - KK#23) ***Working with Existing Projects***]]
 
 
 
-##### Cloning the forked project to local
+##### Why Fork and How to Fork? -  [[Complete Git and SCM Tutorial - KK#24) ***Why Fork and How to Fork?***]]
 
 
 
-##### What is Upstream and adding it to local
+##### Cloning the forked project to local - [[Complete Git and SCM Tutorial - KK#25) ***Cloning the forked project to local***]]
 
 
 
-##### What is a Pull Request?
+##### What is Upstream and adding it to local - [[Complete Git and SCM Tutorial - KK#26) ***What is Upstream and adding it to local***]]
 
 
 
-##### Never commit on main branch & creating our first pull request
+##### What is a Pull Request? - [[Complete Git and SCM Tutorial - KK#27) ***What is a Pull Request?***]]
 
 
 
-##### Removing a commit from the pull request by force pushing to it
+##### Never commit on main branch & creating our first pull request - [[Complete Git and SCM Tutorial - KK#28) ***PUSHING A BRANCH TO GITHUB***]]
 
 
 
-##### Merging a Pull Request 
+##### Removing a commit from the pull request by force pushing to it - [[Complete Git and SCM Tutorial - KK#29) ***Never commit on main branch & creating our first pull request***]]
 
 
 
-##### Making forked project even with main project
+##### Merging a Pull Request - [[Complete Git and SCM Tutorial - KK#30) ***Removing a commit from the pull request by force pushing to it***]]
 
 
 
-##### Instructions on how to try doing these on your own
+##### Making forked project even with main project - [[Complete Git and SCM Tutorial - KK#31) ***Merging a Pull Request***]]
 
 
 
-##### Squashing commits
+##### Instructions on how to try doing these on your own - [[Complete Git and SCM Tutorial - KK#32) ***Making forked project even with main project***]]
 
 
 
-##### Using the Rebase command 
+##### Squashing commits - - [[Complete Git and SCM Tutorial - KK#34) Squashing commits]]
+
+
+
+
+
+
+##### Using the Rebase command - [[Complete Git and SCM Tutorial - KK#35) ***Using the Rebase command***]]
 
 
 
@@ -122,11 +90,13 @@ Here in this session, we will be covering a lot more on Working with others/exis
 
 
 
-##### Merge conflicts and how to resolve them?
+##### Merge conflicts and how to resolve them? - [[Complete Git and SCM Tutorial - KK#36) ***Merge conflicts and how to resolve them?***]]
 
 
 
-##### What to do next?
+##### What to do next? [[Complete Git and SCM Tutorial - KK#33) ***Instructions on how to try doing these on your own***]]
+
+
 
 
 
