@@ -25,3 +25,5 @@ and such
 Routines such as
 Waking up in the morning checking mail, keeping up with the project's updates, projects' and team's progress, tasks, 
 
+
+

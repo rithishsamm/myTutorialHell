@@ -4,53 +4,52 @@
     "type": "split",
     "children": [
       {
-        "id": "4b8729d0204a5d58",
+        "id": "907a6420d84a6c39",
         "type": "tabs",
         "children": [
           {
-            "id": "0ef6aa27221da009",
+            "id": "d3148e7491978bdc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git-revision/Index.md",
+                "file": "Git/Working with Existing projects/Git Advanced Training Session - Working with existing projects.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Index"
+              "title": "Git Advanced Training Session - Working with existing projects"
             }
           },
           {
-            "id": "2d3e3d46790ee4be",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.youtube.com/watch?v=e9lnsKot_SQ",
-                "title": "How Git Works: Explained in 4 Minutes - YouTube",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "How Git Works: Explained in 4 Minutes - YouTube"
-            }
-          },
-          {
-            "id": "f15075c722d5bd3f",
+            "id": "3cec0c1bdf02b6b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Automation/Workflow/business-automation/Automating Life with AI.md",
-                "mode": "source",
+                "file": "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Automating Life with AI"
+              "title": "Complete Git and SCM Tutorial - KK"
+            }
+          },
+          {
+            "id": "64ae80bcc93c8ca0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Complete Git and SCM Tutorial - KK"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -228,34 +227,36 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "f15075c722d5bd3f",
+  "active": "d3148e7491978bdc",
   "lastOpenFiles": [
-    "Automation/Workflow/business-automation/Automating business with AI.md",
+    "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
+    "Git/Working with Existing projects/Git Advanced Training Session - Working with existing projects.md",
     "Automation/Workflow/business-automation/Automating Life with AI.md",
-    "Automation/Workflow/business-automation",
     "Automation/Workflow/tools.md",
-    "Automation/Workflow/n8n",
+    "Automation/Workflow/business-automation/Automating business with AI.md",
+    "AIML/I Made a Machine Learning Cheat Sheet to Save You HOURS (Here’s How).md",
+    "Git/Git-revision/Index.md",
+    "Git/Working with Existing projects",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
-    "Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
-    "Git-revision/Index.md",
-    "Git-revision/Full/TheModernCoder.md",
-    "Git-revision/Full/boot.dev git.md",
-    "Git-revision/Full/So You Think You Know Git - FOSDEM 2024 Part 1 and 2.md",
-    "Git-revision/Full/Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git.md",
-    "Git-revision/Full/Git it - fireship.md",
-    "Git-revision/Full/git - bytebytego.md",
-    "Git-revision/Full",
-    "Git-revision/xtras",
-    "Untitled.md",
-    "Git-revision",
+    "AIML/MLcheatSheet.pdf",
+    "AIML",
+    "rough.md",
+    "Automation/Workflow/business-automation",
+    "Automation/Workflow/n8n",
+    "Git/Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
+    "Git/Git-revision/Full/TheModernCoder.md",
+    "Git/Git-revision/Full/boot.dev git.md",
+    "Git/Git-revision/Full/So You Think You Know Git - FOSDEM 2024 Part 1 and 2.md",
+    "Git/Git-revision/Full/Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git.md",
+    "Git/Git-revision/Full/Git it - fireship.md",
+    "Git/Git-revision/Full/git - bytebytego.md",
+    "Git/Git-revision/Full",
+    "Git/Git-revision/xtras",
+    "Git/Git-revision",
     "README.md",
     "IaC/Pulumi",
     "IaC/Vagrant",
-    "IaC/Puppet",
-    "IaC/Chef",
-    "IaC/Ansible",
     "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
-    "rough.md",
     "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
     "CICD/boilerplate-CICD STANDARDS.md",
     "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
@@ -264,8 +265,6 @@
     "Excalidraw/Nodeport-workflow.excalidraw.md",
     "Notetaking/5. Zettelkasten improving Productivity -  UNIX inspired Note-taking & its Philosophy.md",
     "202503141100.md",
-    "Excalidraw/ClusterIP-FE2BEUnderTheHood.excalidraw.md",
-    "Excalidraw/ClusterIP-workflow-brief.excalidraw.md",
     "Excalidraw/svc-nodeport.excalidraw.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
