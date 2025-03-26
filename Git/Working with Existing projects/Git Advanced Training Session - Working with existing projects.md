@@ -27,6 +27,30 @@ We are here to cover about Extended version of these topics given above.
 ---
 ## Git Advanced - Working with existing projects
 
+For Hexr Starters: (forking and be in syn with the project)
+1) Fork the project
+2) add to connect the new remote (upstream) which you forked from to the local repo.
+```
+git remote add upstream parent-repo.git
+```
+3) fetch all the updates UpToDate: (fetches all the changes from the upstream repo)
+```
+git fetch upstream
+```
+4) merge all those changes to your local project
+```
+git merge upstream/branch branch
+git merge upstream/main main
+```
+=> equivalent to (git pull) but it replaces your unsaved uncommitted changes. 
+To remediate that, do 
+```
+git pull --rebase
+```
+which pulls all the update commits from upstream/origin to local but  puts all that under your commit first and does the rest. 
+
+---
+In brief: (Source: ChatGPT)
 ##### Options to be in sync with existing projects
 ###### **Key Concepts**
 1) **Forking**
@@ -155,6 +179,7 @@ git push origin main
 By following these steps, you can efficiently contribute to open-source projects or collaborate on shared repositories. 🚀
 
 ---
+(Source: ChatGPT)
 ## **Handling Merge Conflicts in Git**
 When working with Git, merge conflicts occur when two commits modify the same part of a file, and Git cannot automatically resolve the differences. Resolving merge conflicts properly ensures smooth collaboration and project integrity.
 
@@ -278,15 +303,28 @@ git stash pop
 By following these practices, you can efficiently handle and prevent merge conflicts in Git. 🚀
 
 ---
-Recap:
+Recap: (Source: [YT](https://youtu.be/apGV9Kg7ics?si=fHDRJXMrM0bxl0VI))
 #### Contents:
-Branches: 
 
+Terminologies to be familiar with:
+**Branches:**  
+We do make commits. 
+Its gets saved in form of a branch like sequence. We can save all these commit in this multiple sequence in the name of a branch.*(based out of directed acyclic graph)*. 
 
+**Why Branches:** (Use of a branch)
+whenever we are working on a new feature out of the project, KEEP A HISTORIC RECORD OF TIMELINE TO IT (code, resolving a bug, updating it to a new feature and such). ALWAYS CREATE A SEPERATE BRNCH WHEN YOU ARE WORKING ON SOMETHING NEW.
 
+**Quick note**: avoid committing on main branch. 
+Always keep the code separated on multiple branch based on these updates and feature that you are working on. 
+and keep merging all these commits from branch to branch. 
+DO NOT COMMIT ON `MAIN` BRANCH, INSTEAD MERGE THE `FEATURE` BRANCHES WITH `MAIN` BRANCH UPTO DATE. 
+ 
+**HEAD**:
+Here, HEAD is nothing but in which branch is our project is headed/pointed to.*
 
-
+## CONTENT:
 ##### 1) Merging branch to main (Learn Git Branching) - [[Complete Git and SCM Tutorial - KK#21) ***Merging branch to main (Learn Git Branching)***]]
+
 
 
 
