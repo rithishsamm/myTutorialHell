@@ -27,497 +27,364 @@ We are here to cover about Extended version of these topics given above.
 ---
 ## Git Advanced - Working with existing projects
 
-For Hexr Starters: (forking and be in syn with the project)
-1) Fork the project
-2) add to connect the new remote (upstream) which you forked from to the local repo.
+In this document, I have enclosed information about how to work and collaborate with existing projects. Content including which explains in brief about forking, fetching, merging, pulling, pushing, pull requests, merge requests, branching and much more.
+
+**For Hexr Starters: (forking and be in sync with the project)**
+
+1. Fork the project
+2. Add to connect the new remote (upstream) that you forked from to the local repo.
 ```
 git remote add upstream parent-repo.git
 ```
-3) fetch all the updates UpToDate: (fetches all the changes from the upstream repo)
+3. fetch all the updates UpToDate: (fetches all the changes from the upstream repo)
 ```
 git fetch upstream
 ```
-4) merge all those changes to your local project
+4. Merge all those changes to your local project. ensure you are on the main branch before merging the feature branch with `main`
+```
+git checkout -b main #if you are new or
+git switch main
+git merge feature
+```
+
+```
+git merge upstream/branch branch
+```
+
+=> Equivalent to (`git pull`), but it replaces your unsaved, uncommitted changes.  
+To remediate that, do
+```
+git pull --rebase
+```
+
+which pulls all the update commits from upstream/origin to local but puts all that under your commit first and does the rest.
+
+---
+# Working and Collaborating with others/existing project
+
+##### Terminologies
+**Branches:**  
+We do make commits.  
+It gets saved in the form of a branch-like sequence. We can save all these commits in this multiple sequence in the name of a branch. _(based on a directed acyclic graph)_.
+
+1. **Why Branches:** (Use of a branch)  
+Whenever we are working on a new feature out of the project, KEEP A HISTORIC RECORD OF TIMELINE TO IT (code, resolving a bug, updating it to a new feature, and such). ALWAYS CREATE A SEPARATE BRANCH WHEN YOU ARE WORKING ON SOMETHING NEW.
+> **Quick note**: avoid committing on main branch.  
+> Always keep the code separated on multiple branch based on these updates and feature that you are working on.  
+> and keep merging all these commits from branch to branch.  
+> DO NOT COMMIT ON `MAIN` BRANCH, INSTEAD MERGE THE `FEATURE` BRANCHES WITH `MAIN` BRANCH UPTO DATE.
+
+2. **HEAD**:  
+Here, `HEAD` is nothing but the direction in which our project is headed/pointed.*. Telling all the commits that we are making will get added in this HEAD-pointed branch.
+
+
+3. **Merge**
+Merge is if you are working on a `feature` branch out of the `main` project.
+
+Now the feature is ready, and you want to merge it into the `main` for the app to be `main`. to merge `feature` to `main`
+```
+git switch main
+git merge feature
+```
+
+Merge all those changes to your local project; ensure you are on the `main` branch before merging the feature branch with `main` .
+> Note: When you create a branch. Make sure that you are aware of the HEAD which from which branch that you are creating a new branch from.
+
+And much more will be covered later in this page.
+
+---
+
+# Main Content:
+##### 1) Merging branch to main (Learn Git Branching) - [[Complete Git and SCM Tutorial - KK#21) ***Merging branch to main (Learn Git Branching)***]]
+If the feature is ready on `feature branch` and you want to merge it into the `main` for the application to be updated on the `main` branch, merge `feature` into `main`
+
+Local:
+
+```
+git switch main
+git merge feature 
+```
+
+Upstream:
+
 ```
 git merge upstream/branch branch
 git merge upstream/main main
 ```
-=> equivalent to (git pull) but it replaces your unsaved uncommitted changes. 
-To remediate that, do 
-```
-git pull --rebase
-```
-which pulls all the update commits from upstream/origin to local but  puts all that under your commit first and does the rest. 
 
----
-In brief: (Source: ChatGPT)
-##### Options to be in sync with existing projects
-###### **Key Concepts**
-1) **Forking**
-- Forking means creating a copy of an existing repo in your SCM.
-- This allows you to freely modify and experiment with the project without affecting the original repo.
-Eg: 
-- original:  `http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git`, 
-- forked: `http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git`
-
-To **Synchronize changes** (Local) - In sync of your local repo with the remote repo 
-2) **Fetch:**
-```
-git fetch
-```
-Downloads all history from the remote tracking branches.
-3) **merge:**
-```
-git merge
-```
-Combines remote tracking branch into current local branch 
-4) **Push:**
-```
-git push 
-```
-Uploads all local branch commits to GitHub 
-5) **Pull:**
-```
-git pull 
-```
-Updates your current local working branch with all new commits from the corresponding remote branch on GitHub. git pull is a combination of git fetch and git merge
-
-6) **Pulling from Upstream**
-Before that, `pull` Updates your current local working branch with all new commits from the corresponding remote branch on GitHub. git pull is a combination of git fetch and git merge
-
-Here in the upstream project, - The upstream repo is the original repo from which you forked. Since the upstream repo continues to evolve (as other contributors make changes), you need to keep your fork updated. 
-Command to sync your fork with the latest upstream changes,
-```
-# Add upstream (only once)
-git remote add upstream https://github.com/org/repo.git  
-
-# Fetch changes
-git fetch upstream                                       
-# Switch to main branch
-git checkout main                                        
-# Merge upstream changes
-git merge upstream/main                                  
-# Push to your fork
-git push origin main
-```
-
-After doing this, In the original repo, 
-7) **Pull Request (PR) / Merge Request (MR)**
-- After making changes in your fork, you propose merging them back into the original (upstream) repository.
-- **GitHub calls it a Pull Request (PR)**, while **GitLab calls it a Merge Request (MR)**.
-- PR/MR helps maintainers review your code before accepting it.****
-
-To **Synchronize changes** (Remote and Parent repo) Contribute to an Existing Project
-After merging, sync your fork to avoid conflicts:
-```bash
-git checkout main
-git fetch upstream
-git merge upstream/main
-git push origin main
-```
-
-###### Steps to Contribute to an Existing Project
-**Step 1: Fork the Repository**
-- Go to the GitHub/GitLab repository and click **Fork**.
-- This creates a copy under your account.
-
- **Step 2: Clone Your Fork**
-```bash
-git clone https://github.com/your-username/repo.git
-cd repo
-```
-
-**Step 3: Set Upstream Remote**
-- Add the original repository as an **upstream** remote:
-```bash
-git remote add upstream https://github.com/org/repo.git
-git remote -v  # Verify remotes
-```
-
-**Step 4: Create a New Branch for Your Work**
-```bash
-git checkout -b feature-branch
-```
-
-**Step 5: Make Your Changes and Commit**
-```bash
-git add .
-git commit -m "Added a new feature"
-```
-
-**Step 6: Push Changes to Your Fork**
-```bash
-git push origin feature-branch
-```
-
-**Step 7: Open a Pull Request (PR)**
-- Go to your forked repository on GitHub.
-- Click **"Compare & pull request"**.
-- Add a title and description, and submit the PR.
-
-**Step 8: Review and Merge**
-- Wait for maintainers to review your PR.
-- If approved, the changes get merged.
-- If changes are requested, update your PR accordingly.
-
-**Step 9: Sync with Upstream**
-- After merging, sync your fork to avoid conflicts:
-```bash
-git checkout main
-git fetch upstream
-git merge upstream/main
-git push origin main
-```
-
-**Best Practices**
-✅ Keep your fork updated by regularly fetching upstream changes.  
-✅ Create feature branches instead of working directly on `main`.  
-✅ Write meaningful commit messages.  
-✅ Follow the repository’s contribution guidelines.  
-✅ Engage in PR discussions and resolve feedback.
-
-By following these steps, you can efficiently contribute to open-source projects or collaborate on shared repositories. 🚀
-
----
-(Source: ChatGPT)
-## **Handling Merge Conflicts in Git**
-When working with Git, merge conflicts occur when two commits modify the same part of a file, and Git cannot automatically resolve the differences. Resolving merge conflicts properly ensures smooth collaboration and project integrity.
-
-**1. Types of Merge Conflicts**
-1. **Local Conflicts** - Occur when merging branches in your local repository.
-2. **Remote Conflicts** - Occur when pushing to a remote repository but conflicting changes exist.
-3. **Upstream Conflicts** - Happen when your changes conflict with updates made in the original (upstream) repository.
-
-**2. Resolving Merge Conflicts Locally**
-When you pull changes from `upstream` or merge branches, you might see:
-```
-CONFLICT (content): Merge conflict in <filename>
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-**Step 1: Identify Conflicted Files**
-Run:
-```bash
-git status
-```
-It will show files with conflicts.
-
-**Step 2: Manually Resolve Conflicts**
-Open the conflicting file in an editor. You’ll see:
-```plaintext
-<<<<<<< HEAD
-Your changes here
-=======
-Upstream or branch changes here
->>>>>>> branch-name
-```
-- Keep the desired changes and remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
-- Example of a resolved file:
-```Text
-Final merged content with necessary changes.
-```
-
-**Step 3: Mark the Conflict as Resolved**
-```bash
-git add <filename>
-```
-
-**Step 4: Complete the Merge**
-```bash
-git commit -m "Resolved merge conflict in <filename>"
-```
-
-**Step 5: Push the Changes**
-
-```bash
-git push origin <branch>
-```
-
-## **Resolving Merge Conflicts While Pushing to a Remote Repository**
-If you try pushing changes and see:
-```
-error: failed to push some refs to 'origin'
-```
-It means someone else pushed conflicting changes.
-
-**Step 1: Fetch and Rebase**
-```bash
-git fetch origin
-git rebase origin/main
-```
-- If conflicts occur, manually resolve them as in Step 2 above.
-- Continue the rebase:
-```bash
-git rebase --continue
-```
-- Push the resolved branch:
-```bash
-git push origin <branch> --force
-```
-⚠️ **Use `--force` carefully**, as it overwrites history.
-
-## **Resolving Merge Conflicts with Upstream**
-When syncing with an upstream repository, conflicts may arise.
-
-**Step 1: Fetch Upstream**
-```bash
-git fetch upstream
-```
-
- **Step 2: Merge Upstream Changes**
-```bash
-git checkout main
-git merge upstream/main
-```
-- If conflicts occur, resolve them manually.
-- Commit and push the changes:
-```bash
-git add .
-git commit -m "Resolved merge conflicts from upstream"
-git push origin main
-```
-
-### **Rebase Instead of Merge (Alternative)**
-For a cleaner history:
-```bash
-git rebase upstream/main
-```
-- Resolve conflicts if any, then:
-```bash
-git rebase --continue
-git push origin main --force
-```
-
-**Best Practices for Avoiding Merge Conflicts**
-✅ **Pull changes regularly** (`git pull --rebase origin main`).  
-✅ **Work in feature branches**, not directly on `main`.  
-✅ **Commit frequently and in small chunks** to minimize conflicts.  
-✅ **Use meaningful commit messages** to explain changes clearly.  
-✅ **Always review PRs before merging** to catch potential conflicts early.  
-✅ **Use `git stash` before pulling** if you have local uncommitted changes:
-```bash
-git stash
-git pull --rebase upstream main
-git stash pop
-```
-By following these practices, you can efficiently handle and prevent merge conflicts in Git. 🚀
-
----
-Recap: (Source: [YT](https://youtu.be/apGV9Kg7ics?si=fHDRJXMrM0bxl0VI))
-#### Contents:
-
-Terminologies to be familiar with:
-**Branches:**  
-We do make commits. 
-Its gets saved in form of a branch like sequence. We can save all these commit in this multiple sequence in the name of a branch.*(based out of directed acyclic graph)*. 
-
-**Why Branches:** (Use of a branch)
-whenever we are working on a new feature out of the project, KEEP A HISTORIC RECORD OF TIMELINE TO IT (code, resolving a bug, updating it to a new feature and such). ALWAYS CREATE A SEPERATE BRNCH WHEN YOU ARE WORKING ON SOMETHING NEW.
-
-**Quick note**: avoid committing on main branch. 
-Always keep the code separated on multiple branch based on these updates and feature that you are working on. 
-and keep merging all these commits from branch to branch. 
-DO NOT COMMIT ON `MAIN` BRANCH, INSTEAD MERGE THE `FEATURE` BRANCHES WITH `MAIN` BRANCH UPTO DATE. 
- 
-**HEAD**:
-Here, HEAD is nothing but in which branch is our project is headed/pointed to.*
-
-## CONTENT:
-##### 1) Merging branch to main (Learn Git Branching) - [[Complete Git and SCM Tutorial - KK#21) ***Merging branch to main (Learn Git Branching)***]]
-
+After the merge, all the history of commits can be seen, and all these changes have been merged. This happens via `PR`.
 
 
 
 ##### 2) Pushing new changes to master branch - [[Complete Git and SCM Tutorial - KK#22) ***Pushing new changes to master branch***]]
+and as usual.
+```
+git push origin main
+```
 
+All these update changes have been sent to the remote repo.
 
 
 ##### Working with Existing Projects -  [[Complete Git and SCM Tutorial - KK#23) ***Working with Existing Projects***]]
+Now the real deal. WORKING WITH EXISTING PROJECTS: **FORK**
 
+==Have a copy of it by forking that project under your alias/account.==
 
 
 ##### Why Fork and How to Fork? -  [[Complete Git and SCM Tutorial - KK#24) ***Why Fork and How to Fork?***]]
 
+Why: Like contributing to an OSS project or collaborating with an existing project and such. To do all that, this is how you do it. by forking a project.
 
+How to fork: By clicking the fork icon and creating a repo under your account. _This way, you can be a part of a joint project, collaborating on a bigger project. And you pay your contribution to it. This way, other code will not conflict with your code and vice versa for others._ Without these practices, if an intruder or expected error gets pushed to critical projects, it will be messed up pretty bad.
+
+_**So, fork to your own account.**_
 
 ##### Cloning the forked project to local - [[Complete Git and SCM Tutorial - KK#25) ***Cloning the forked project to local***]]
 
+After forking, the main repo will be called the `upstream` repo, and the forked one is our `origin` repo. Here in your repo. Do whatever you want. Which doesn't affect the `upstream` parent or main project.
 
+This way, you cannot directly make changes in anyone’s account. To make it, fork it and apply changes, push and make a `PR` from your account from branch to branch. That `PR` will be validated by the maintainers and merged to main after approval.
 
 ##### What is Upstream and adding it to local - [[Complete Git and SCM Tutorial - KK#26) ***What is Upstream and adding it to local***]]
+As we previously mentioned, the main repo will be called the `upstream` repo. To add it to our local repo in our system to `fetch`, `merge` or `pull` from. To add upstream. JUST LIKE WHAT WE DO WITH `ORIGIN`.
+```
+git remote add upstream upstream-repo-url.git
+```
 
+to check,
+```
+git remote -v
+```
+
+Now the local repo is connected to both `URLs`, as in `origin` and `upstream`.
+
+OK. We `fetch` and `merge` branches and make our repo updated by `pushing` our changes to the `origin`. HOW DO WE PUSH THIS UPSTREAM? by making a `PR`.
 
 
 ##### What is a Pull Request? - [[Complete Git and SCM Tutorial - KK#27) ***What is a Pull Request?***]]
+Pull request - a request that we make to `pull` all the changes from `origin` to `upstream` from a specific `branch` to `main` or a specific `feature` branch that can be merged by maintainers, namely a `pull request`. PR. How do we perform this?
 
+*to push to origin via a branch*
+```
+git push origin main
+```
+and which gets pushed to `origin`, which is your username/reponame under your SCM.
+
+Make a few more commits locally without pushing to origin. and check
+```
+git log
+```
+
+There you can see a flag to a commit like _(origin/main)_ and on the other side, which is _(HEAD → main, feature branches, … n). means,_
+
+- _(origin/main)_ is the commit that was pushed to the `origin` at the latest.
+- _(HEAD → main) is the latest and which branch it was pointed to._
+- If you `git push origin main`, that label will be up here with HEAD too.
+
+**HOW TO MAKE A PULL REQUEST?**
+Say, you keep your thing on a branch committed to origin. Now, the objective is to create a `PR` to get our code from `origin` to `upstream` via a `branch` to a `branch`.
+1. Go to `origin/repo`
+2. Click the `pull` request button.
+3. Click Create a `Pull Request`
+4. Specify from which `branch` of `origin` to which `branch` of `upstream` has to be merged.
+5. Now the maintainer will review your `PR`, and if all is good, the maintainer will proceed to `Merge Request`.
+6. There, there will be a `commits` tab and a conversations tab to make your review easier.
+7. And the `PR` will be successful in getting your `origin` branch changes merged to the `upstream` branch.
+8. IF THERE ARE CONFLICTS IN THOSE, THEY CAN'T MERGE. Close PR, fix the conflicts and create a new `PR`.
+Refer to the `branching` docs that I have enclosed above.
+
+**tldr:**
+- All these commits get stacked as a branch-like structure.
+- can have multiple stacks of branches of commits for different phases and features of development.
+- Keep separate branches for separate phases, features or cases. It means never keeping your commits directly in your `main` but keep on merging it into main from feature branches.
+- Keep an eye on `HEAD`.
+- To merge from feature to main, use `git switch main` + `git merge feature`.
+- and push.
 
 
 ##### Never commit on main branch & creating our first pull request - [[Complete Git and SCM Tutorial - KK#28) ***PUSHING A BRANCH TO GITHUB***]]
+PRESSING THIS AGAIN AND AGAIN.
+===Maintain your versions of the application on separate, different branches===
 
+Since we are not able to push changes to the upstream but to the `origin`. From there we can make our stuff.
+==ONE BRANCH = ONE PULL REQUEST. One branch allows only one pull request.==
+
+Make all your code distributed this way, and you are fine!
+
+For this instance, let’s say that we did a PR from Origin’s feature to `Upstream`’s main. As in, that PR contains commits. Before the merge happens, if you commit within the merge. The PR is open still, and the commits will be added again.
+> Before merging, do not commit and push which gets added to it too.
+
+_IT WILL NOT ALLOW US TO CREATE A_ `PR` _OR THE SAME_ `PR` _AS WE DID BEFORE. But the commit gets added until it gets merged._ **Just create a branch just to add, and you will be fine.**
 
 
 ##### Removing a commit from the pull request by force pushing to it - [[Complete Git and SCM Tutorial - KK#29) ***Never commit on main branch & creating our first pull request***]]
+Okay. Everything depends on the commits we do and some `PR` that we need to be aware of.
 
+Let's say you made a commit by mistake. You don't want the commit to exist in the history of our project.
+```
+git reset commitID
+git status
+git log
+```
+Now the commit is reverted, and all the changes will be unstaged.
+
+To keep this fresh, clear out the changes made, which will not be tracked. since, it is not tracked, we can do
+```
+git add .
+git stash #instead of commit
+```
+Now it is all clear.
+
+To pull all that back, simple `git stash pop` or to clear them `git stash clear`. To view all stashes that we do, we use `git stash ls`.
+
+NOW THE STRUCTURE IS EXACTLY LIKE WE WISHED OR HOW IT WAS BEFORE. This way, it gets removed from commit history.
 
 
 ##### Merging a Pull Request - [[Complete Git and SCM Tutorial - KK#30) ***Removing a commit from the pull request by force pushing to it***]]
+OKAY!? This works locally. How about upstream or at the origin? The structure is conflicting with the things that we have pushed for. Origins have something that we don't have. But to push.
 
-
+To perform this (clearing cleared commits) since it is stacked and on an interlinked sequence, WE HAVE TO FORCE PUSH THIS ONE.
+```
+git push origin main/feature -f
+```
+Commit gets gone, and the same goes for files that are changed under that commit.
 
 ##### Making forked project even with main project - [[Complete Git and SCM Tutorial - KK#31) ***Merging a Pull Request***]]
+`MR`. Simple. There will be a button after `PR`. After reviewing that `PR`. Merge that `PR` by clicking the `Merge Pull Request` button to confirm.
 
+CHANGES THAT ARE MADE IN OUR PROJECT ARE NOW BEING REPRESENTED AND MERGED IN THE MAIN UPSTREAM PROJECT.
 
 
 ##### Instructions on how to try doing these on your own - [[Complete Git and SCM Tutorial - KK#32) ***Making forked project even with main project***]]
+To be in sync with the main project. _**Making a forked project even with the main project**_. It means KEEPING UP WITH THE MAIN PROJECT.
 
+OK. Now the local is updated. That update has been pushed to origin via a feature branch, and that got merged in the `main` branch of the `upstream`. but ==not the origin==. How to resolve this.
+
+(Same logic that if the `origin` cannot update the `upstream` directly, how can the `upstream` update the `origin` directly?). Exactly.
+
+There are two ways to perform this.
+1. **fetch upstream button** (only on GitHub)—there will be a button to fetch from `upstream`.
+2. **Manual**
+_Step 1: Upstream setup_
+```
+git checkout main
+git remote -v #check upstream
+git remote add upstream upstream-repo-url.git
+```
+
+_Step 2: Fetch changes_
+```
+git fetch --all --prune
+#safer that pull
+```
+
+_Step 3:_
+1st method: (to merge branch by branch)
+```
+git fetch upstream #as we did that before
+git merge upstream/branch branch
+git push origin main
+```
+
+2nd method: (to pull from upstream)
+```
+git pull upstream main
+git push origin main
+```
+
+3rd method: (to replicate the local as same as the upstream)
+```
+git reset --hard upstream/main
+git push origin main
+```
+
+means, reset to what upstream’s main branch is having. Now the head will be pointed to what the Fork is having.
+*safer than `git pull.*`
+
+NOW THE FORK IS EVEN WITH THE UPSTREAM.
+
+> **ALL ABOUT** `FORK`, `BRANCHES`, `PR`, `MR`,`FETCH`, `MERGE`,`PULL`,`PUSH`,`UPSTREAM`, `ORIGIN`.
+
+**FROM HERE ON, LETS DIVE DEEP INTO MERGE CONFLICTS AND OTHER INTERMEDIATE TOPICS.**
 
 
 ##### Squashing commits - - [[Complete Git and SCM Tutorial - KK#34) Squashing commits]]
+sqaush - merging multiple commits to just one commit - FOR CONVENIENCE.
 
+```
+git checkout branch #or
+git switch branch
+```
+which may consist of mutiple commits. HOW TO MERGE IT.
 
+**Method1: (reset and commit all to just one)**
+If multiple commits that you didn’t push means, you simply `reset` these commits and commit to one single commit
 
+**Method2: rebase** (from the commit that you want restack and merge to)
+```
+git rebase -i commitIDofStart
+```
 
+NOW, WE CAN EITHER **PICK** OR **SQUASH.**
+replace `pick` to `s` means squash the commits you want to commit. and that will work.
 
+`s` - merge it into previous commit above.
+PERFORM YOUR EDIT. and enter
+> :x
+
+and add the message
 
 ##### Using the Rebase command - [[Complete Git and SCM Tutorial - KK#35) ***Using the Rebase command***]]
 
 
 
-##### Using the hard flag to reset
+##### 14) Using the hard flag to reset to revert back from squash or deleting a commit or sum
+To revert back, (commit below the squash)
+```
+git reset --hard  commitID 
+```
+and commit again.
 
+THIS HAS BEEN A GREAT SAIL. WHAT IF WE GET CONFLICTS AND HOW TO RESOLVE THEM IF WE HAPPENED TO MEET ONE???
 
 
 ##### Merge conflicts and how to resolve them? - [[Complete Git and SCM Tutorial - KK#36) ***Merge conflicts and how to resolve them?***]]
+**What are Merge Conflicts?**
+means nothing but like,
+You made a change, you made a file and been up and running on the repo.
 
+For instance. `app.js` is written by you to code for the **Log In** functionality you wrote like 15lines for the page to be rendered. and after pushing. Someone will be having this and writing **Sign Up**, what if?
+
+The person that writing that **Sign up** modified your code in the app.js file changing that some of that `5lines of code?
+
+THIS IS KNOWN AS **CONFLICTS,**
+> GIT WILL BE CONFUSED OF WHICH CHANGE SHOULD I TAKE FOR THIS? the one from **sign up** or **log in** for `app.js`
+
+Git will be asking back that which change should be taken to into consideration and such since both have modified the same line number. HOW TO REMEDIATE THIS?
+
+Say if you pushed and made a PR which wasn’t successful due to conflicts - Close the PR and revert back the conflicts and push again.
+
+IF YOU GET A MERGE CONFLICT.
+This conflict is generally indicated with the
+```
+<<<<< current change
+...
+====== end of the change
+...
+>>>>> incoming change
+```
+changes can be seen even from branch to branch.
 
 
 ##### What to do next? [[Complete Git and SCM Tutorial - KK#33) ***Instructions on how to try doing these on your own***]]
+Just work as you are with the practices that I have just presented. And you will able to face all this and learn back by referring this document.
 
+YOU WILL LEARN ONCE YOU FACE ALL THESE CHANGES WHILE WORKING!
 
-
-
+WISHING YOU ALL THE BEST AND GOOD LUCK!
 
 ---
-### RECAP with some extra fresh content: (using  [Learn Git Branching](https://learngitbranching.js.org/))
-
-##### Welcome to Learn Git Branching  [Learn Git Branching](https://learngitbranching.js.org/)
-
-Interested in learning Git? Well you've come to the right place! "Learn Git Branching" is the most visual and interactive way to learn Git on the web; you'll be challenged with exciting levels, given step-by-step demonstrations of powerful features, and maybe even have a bit of fun along the way.
-
-After this dialog you'll see the variety of levels we have to offer. If you're a beginner, just go ahead and start with the first. If you already know some Git basics, try some of our later more challenging levels.
-
-You can see all the commands available with `show commands` at the terminal.
-
-PS: Want to go straight to a sandbox next time? Try out [this special link](https://pcottle.github.io/learnGitBranching/?NODEMO)
-
-PPS: GitHub has started naming the default branch `main` instead of `master` to migrate away from biased terminology [(more details available here)](https://github.com/github/renaming). In accordance with this industry-wide movement, we have also updated "Learn Git Branching" to use `main` instead of `master` in our lessons. This rename should be fairly consistent by now but if you notice any errors, feel free to submit a PR (or open an issue).
-
-## MAIN / LOCAL / PERSONAL
-
-### Introduction Sequence
-A nicely paced introduction to the majority of git commands
-
-**1: Introduction to Git Commits**
-## Git Commits
-A commit in a git repo records a snapshot of all the (tracked) files in your directory. It's like a giant copy and paste, but even better!
-
-Git wants to keep commits as lightweight as possible though, so it doesn't just blindly copy the entire directory every time you commit. It can (when possible) compress a commit as a set of changes, or a "delta", from one version of the repo to the next.
-
-Git also maintains a history of which commits were made when. That's why most commits have ancestor commits above them -- we designate this with arrows in our visualization. Maintaining history is great for everyone working on the project!
-
-It's a lot to take in, but for now you can think of commits as snapshots of the project. Commits are very lightweight and switching between them is wicked fast!
-
-Let's see what this looks like in practice. On the right we have a visualization of a (small) git repo. There are two commits right now -- the first initial commit, `C0`, and one commit after that `C1` that might have some meaningful changes.
-
-Hit the button below to make a new commit.
-
-```
-git commit
-```
-it just commits.
-
-There we go! Awesome. We just made changes to the repo and saved them as a commit. The commit we just made has a parent, `C1`, which references which commit it was based off of.
-
-> Would you like to move on to _"Branching in Git"_, the next level?
-
-## Git Branches
-
-Branches in Git are incredibly lightweight as well. They are simply pointers to a specific commit -- nothing more. This is why many Git enthusiasts chant the mantra:
-
-==**branch early, and branch often**==
-
-Because there is no storage / memory overhead with making many branches, it's easier to logically divide up your work than have big beefy branches.
-
-When we start mixing branches and commits, we will see how these two features combine. For now though, just remember that a branch essentially says "I want to include the work of this commit and all parent commits."
-
-Let's see what branches look like in practice. Here we will create a new branch named `newImage`.
-
-```
-git branch newImage
-```
-
-There, that's all there is to branching! The branch `newImage` now refers to commit `C1`.
-
-Let's try to put some work on this new branch. Hit the button below.
-```
-git commit
-```
-
-Oh no! The `main` branch moved but the `newImage` branch didn't! That's because we weren't "on" the new branch, which is why the asterisk (*) was on `main`.
-
-Let's tell git we want to checkout the branch with
-
-```
-git checkout <name>
-```
-
-This will put us on the new branch before committing our changes.
-
-```
-git checkout newImage
-;
-git commit
-```
-There we go! Our changes were recorded on the new branch.
-
->   **Note**: In Git version 2.23, a new command called `git switch` was introduced to eventually replace `git checkout`, which is somewhat overloaded (it does a bunch of different things depending on the arguments). The lessons here will still use `checkout` instead of `switch` because the `switch` command is still considered experimental and the syntax may change in the future. However you can still try out the new `switch` command in this application, and also [learn more here](https://git-scm.com/docs/git-switch)._
-
-Ok! You are all ready to get branching. Once this window closes, make a new branch named `bugFix` and switch to that branch.
-
-By the way, here's a shortcut: if you want to create a new branch AND check it out at the same time, you can simply type `git checkout -b [yourbranchname]`.
-
-> Would you like to move on to _"Merging in Git"_, the next level?
-
-
-## Branches and Merging
-
-Great! We now know how to commit and branch. Now we need to learn some kind of way of combining the work from two different branches together. This will allow us to branch off, develop a new feature, and then combine it back in.
-
-The first method to combine work that we will examine is `git merge`. Merging in Git creates a special commit that has two unique parents. A commit with two parents essentially means "I want to include all the work from this parent over here and this one over here, _and_ the set of all their parents."
-
-It's easier with visuals, let's check it out in the next view.
-
-Here we have two branches; each has one commit that's unique. This means that neither branch includes the entire set of "work" in the repo that we have done. Let's fix that with merge.
-
-We will `merge` the branch `bugFix` into `main`.
-```
-git merge bugFix
-```
-
-Woah! See that? First of all, `main` now points to a commit that has two parents. If you follow the arrows up the commit tree from `main`, you will hit every commit along the way to the root. This means that `main` contains all the work in the repo now.
-
-Also, see how the colors of the commits changed? To help with learning, I have included some color coordination. Each branch has a unique color. Each commit turns a color that is the blended combination of all the branches that contain that commit.
-
-So here we see that the `main` branch color is blended into all the commits, but the `bugFix` color is not. Let's fix that...
-
-Let's merge `main` into `bugFix`:
-```
-git checkout bugFix; git merge main
-```
-
-Since `bugFix` was an ancestor of `main`, git didn't have to do any work; it simply just moved `bugFix` to the same commit `main` was attached to.
-
-Now all the commits are the same color, which means each branch contains all the work in the repo! Woohoo!
+some extra fresh content: (using  [Learn Git Branching](https://learngitbranching.js.org/))
 
 To complete this level, do the following steps:
 - Make a new branch called `bugFix`
@@ -529,6 +396,5 @@ To complete this level, do the following steps:
 
 _Remember, you can always re-display this dialog with "objective"!_
 
-.
-
 ---
+
