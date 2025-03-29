@@ -6,50 +6,7 @@
       {
         "id": "2eaa5db730ef643d",
         "type": "tabs",
-        "dimension": 64.26553672316385,
         "children": [
-          {
-            "id": "c9522c60143f178b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00.Section11-K8sServices"
-            }
-          },
-          {
-            "id": "563ceabb7191e750",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://k8sengineers.com/",
-                "title": "Docker and Kubernetes: Complete Guide",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Docker and Kubernetes: Complete Guide"
-            }
-          },
-          {
-            "id": "2aa2309ec3177479",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://metallb.io/installation/",
-                "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes"
-            }
-          },
           {
             "id": "ecd141ac0c2226f0",
             "type": "leaf",
@@ -79,52 +36,21 @@
             }
           },
           {
-            "id": "8822f676ef36e955",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ]
-      },
-      {
-        "id": "9cfbd9a59717d559",
-        "type": "tabs",
-        "dimension": 35.73446327683616,
-        "children": [
-          {
-            "id": "43c236c6dbf2bdd5",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://metallb.io/installation/",
-                "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes"
-            }
-          },
-          {
-            "id": "901077eb599d5e50",
+            "id": "ba27163065dd82e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section11-K8sServices"
+              "title": "00. section1-full-k8sArchitecture"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -301,53 +227,53 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c9522c60143f178b",
+  "active": "ba27163065dd82e6",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/2.Introduction to k8s Service and Types.md",
+    "Orchestration/a-media/Pasted image 20240626155742.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
+    "Orchestration/a-media/Pasted image 20240626145730.png",
+    "Excalidraw/k8sArchitecture/trafficDemystified.excalidraw.excalidraw",
+    "Excalidraw/k8sArchitecture/trafficDemystified.md",
+    "Excalidraw/k8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
+    "Orchestration/a-media/Pasted image 20240626141922.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg.md",
+    "Excalidraw/k8sArchitecture/CRIoutOfTheBox.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg",
+    "Orchestration/a-media/Pasted image 20240626113111.png",
+    "Excalidraw/k8sArchitecture/Containerdv2.excalidraw 1.md",
+    "pas.md",
+    "Pasted image 20240626113111.png.md",
+    "Excalidraw/k8sArchitecture/Containerdv1.excalidraw.md",
+    "Orchestration/a-media/Pasted image 20240626110430.png",
+    "Excalidraw/k8sArchitecture/dockerCRI.excalidraw.md",
+    "Excalidraw/k8sArchitecture/dockerCRIvsContainerd.excalidraw.md",
+    "Excalidraw/k8sArchitecture/containerd.excalidraw.md",
+    "Orchestration/a-media/Pasted image 20240626110358.png",
+    "Orchestration/a-media/Pasted image 20240625184914.png",
+    "Excalidraw/k8sArchitecture/highlevel-kubeapiUnderTheHood.excalidraw.md",
+    "Excalidraw/k8sArchitecture/k8sArchitecture3.excalidraw.md",
+    "Orchestration/a-media/Pasted image 20240625165735.png",
+    "Excalidraw/k8sArchitecture/k8sArchitecture1.excalidraw.md",
+    "Excalidraw/k8sArchitecture/k8sArchitecture2.excalidraw.md",
+    "Orchestration/a-media/Pasted image 20240625114137.png",
+    "Excalidraw/k8sArchitecture/highlevel-k8sArchitecture.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/1. High level view of Kubernetes architecture and components.md",
+    "Orchestration/a-media/Pasted image 20240624121327.png",
+    "Screenshot 2024-06-24 110726.png.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/17.Deploying MetalLB on cluster(On-premises).md",
+    "Excalidraw/k8sArchitecture",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/0. Index.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/1.When to learn Statefulset workload resource.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/3. CronJobs auto-cleanup.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/2.Jobs auto-cleanup.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/1.Introduction to Auto-cleanup of finished Jobs.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/00.Section10-K8sCronJobs.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/4.CronJob Job history limits.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/0.index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/3.CronJob concurrency policy.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/2.CronJob workflow (restartPolicy).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/1.Introduction to CronJobs(cj).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/3.Jobs termination and cleanup.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/00.Section9-K8sJobs.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/2.Jobs workflow(restartPolicy).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/1.Introduction to Jobs.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/2.Daemonset workflow(Declarative approach).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/1.Introduction to Daemon Set(ds).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/00.Section8-K8sDaemonSet.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/5.Daemonset controller revision resource.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/4.Daemonset rollout and rollback(strategy type; OnDelete).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/3.Daemonset rollout and rollback(strategy type ; RollingUpdate).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section7-k8sDeployment/5. Deployment - Rollout and Rollback(Strategy Type-Recreate).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/16.Introduction to MetalLB for On-premises k8s cluster.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/15.LoadBalancer service;Introduction.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/14.Advanaced; Traffic flow from external to node to service to POD.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/13.Customize service NodePort range and IP addresses range.md",
     "Git/Working with Existing projects",
     "AIML/MLcheatSheet.pdf",
     "AIML",
     "Automation/Workflow/business-automation",
     "Automation/Workflow/n8n",
     "Git/Git-revision/Full",
-    "Git/Git-revision/xtras",
-    "Git/Git-revision",
-    "IaC/Pulumi",
-    "IaC/Vagrant",
-    "Excalidraw/svc-nodeport.excalidraw.png",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 1.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 7.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 6.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 4.svg",
-    "Untitled Diagram.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 3.svg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 2.svg"
+    "Git/Git-revision/xtras"
   ]
 }
