@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e5903b68e6907ace",
+        "id": "2eaa5db730ef643d",
         "type": "tabs",
         "children": [
           {
-            "id": "004c18ab627f7988",
+            "id": "c9522c60143f178b",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -194,7 +195,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "004c18ab627f7988",
+  "active": "c9522c60143f178b",
   "lastOpenFiles": [
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Git/Working with Existing projects/Git Advanced Training Session - Working with existing projects.md",
