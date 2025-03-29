@@ -6,9 +6,80 @@
       {
         "id": "2eaa5db730ef643d",
         "type": "tabs",
+        "dimension": 64.26553672316385,
         "children": [
           {
             "id": "c9522c60143f178b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "00.Section11-K8sServices"
+            }
+          },
+          {
+            "id": "563ceabb7191e750",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://k8sengineers.com/",
+                "title": "Docker and Kubernetes: Complete Guide",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Docker and Kubernetes: Complete Guide"
+            }
+          },
+          {
+            "id": "2aa2309ec3177479",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://metallb.io/installation/",
+                "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes"
+            }
+          },
+          {
+            "id": "ecd141ac0c2226f0",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#Preface",
+                "title": "The GNU C Reference Manual",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "The GNU C Reference Manual"
+            }
+          },
+          {
+            "id": "dc000c2cfe3dacb2",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/",
+                "title": "Top (Using the GNU Compiler Collection (GCC))",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Top (Using the GNU Compiler Collection (GCC))"
+            }
+          },
+          {
+            "id": "8822f676ef36e955",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -18,6 +89,42 @@
             }
           }
         ]
+      },
+      {
+        "id": "9cfbd9a59717d559",
+        "type": "tabs",
+        "dimension": 35.73446327683616,
+        "children": [
+          {
+            "id": "43c236c6dbf2bdd5",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://metallb.io/installation/",
+                "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Installation :: MetalLB, bare metal load-balancer for Kubernetes"
+            }
+          },
+          {
+            "id": "901077eb599d5e50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "00.Section11-K8sServices"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -197,42 +303,42 @@
   },
   "active": "c9522c60143f178b",
   "lastOpenFiles": [
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/2.Introduction to k8s Service and Types.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
-    "Git/Working with Existing projects/Git Advanced Training Session - Working with existing projects.md",
-    "Git/Git & SCM/Complete Git and SCM Tutorial - KK.md",
-    "].md",
-    "Automation/Workflow/business-automation/Automating Life with AI.md",
-    "Automation/Workflow/tools.md",
-    "Automation/Workflow/business-automation/Automating business with AI.md",
-    "AIML/I Made a Machine Learning Cheat Sheet to Save You HOURS (Here’s How).md",
-    "Git/Git-revision/Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/1.When to learn Statefulset workload resource.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/3. CronJobs auto-cleanup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/2.Jobs auto-cleanup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/1.Introduction to Auto-cleanup of finished Jobs.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/00.Section10-K8sCronJobs.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/4.CronJob Job history limits.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/0.index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/3.CronJob concurrency policy.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/2.CronJob workflow (restartPolicy).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/1.Introduction to CronJobs(cj).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/3.Jobs termination and cleanup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/00.Section9-K8sJobs.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/2.Jobs workflow(restartPolicy).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/1.Introduction to Jobs.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section9-k8sJobs/0.Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/2.Daemonset workflow(Declarative approach).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/1.Introduction to Daemon Set(ds).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/00.Section8-K8sDaemonSet.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/5.Daemonset controller revision resource.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/4.Daemonset rollout and rollback(strategy type; OnDelete).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/3.Daemonset rollout and rollback(strategy type ; RollingUpdate).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section8-k8sDemonSet/0.Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section7-k8sDeployment/5. Deployment - Rollout and Rollback(Strategy Type-Recreate).md",
     "Git/Working with Existing projects",
     "AIML/MLcheatSheet.pdf",
     "AIML",
-    "rough.md",
     "Automation/Workflow/business-automation",
     "Automation/Workflow/n8n",
-    "Git/Git-revision/xtras/1Philomatics - git rebase - Why, When & How to fix conflicts.md",
-    "Git/Git-revision/Full/TheModernCoder.md",
-    "Git/Git-revision/Full/boot.dev git.md",
-    "Git/Git-revision/Full/So You Think You Know Git - FOSDEM 2024 Part 1 and 2.md",
-    "Git/Git-revision/Full/Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git.md",
-    "Git/Git-revision/Full/Git it - fireship.md",
-    "Git/Git-revision/Full/git - bytebytego.md",
     "Git/Git-revision/Full",
     "Git/Git-revision/xtras",
     "Git/Git-revision",
-    "README.md",
     "IaC/Pulumi",
     "IaC/Vagrant",
-    "Management/Project Management/Atlassian/Jira/1.Jira for Beginners (FREE COURSE!) - Alvin the PM.md",
-    "Networking/Kunal Kushwaha/Computer Networking Full Course - OSI Model Deep Dive with Real Life Examples by Kunal Kushwaha.md",
-    "CICD/boilerplate-CICD STANDARDS.md",
-    "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
-    "Automation/Bash/$Scripting-Beg-Adv/Content - Day 1,  Linux Shell Scripting Beginner To Expert Bash Shell Script Course Content - Watch Now🔥🔥🔥.md",
-    "Excalidraw/Nodeport-workflow-brief.excalidraw.md",
-    "Excalidraw/Nodeport-workflow.excalidraw.md",
-    "Notetaking/5. Zettelkasten improving Productivity -  UNIX inspired Note-taking & its Philosophy.md",
     "Excalidraw/svc-nodeport.excalidraw.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram 5.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/Untitled Diagram.svg",
