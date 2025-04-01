@@ -10,6 +10,7 @@
           {
             "id": "ecd141ac0c2226f0",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "webviewer",
               "state": {
@@ -17,38 +18,39 @@
                 "title": "The GNU C Reference Manual",
                 "mode": "webview"
               },
+              "pinned": true,
               "icon": "globe-2",
               "title": "The GNU C Reference Manual"
             }
           },
           {
-            "id": "dc000c2cfe3dacb2",
+            "id": "27d3750093c9170e",
             "type": "leaf",
             "state": {
-              "type": "webviewer",
+              "type": "markdown",
               "state": {
-                "url": "https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/",
-                "title": "Top (Using the GNU Compiler Collection (GCC))",
-                "mode": "webview"
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "globe-2",
-              "title": "Top (Using the GNU Compiler Collection (GCC))"
+              "icon": "lucide-file",
+              "title": "00.Section11-K8sServices"
             }
           },
           {
-            "id": "ba27163065dd82e6",
+            "id": "941021d924d68c1b",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/k8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw"
+                "file": "Excalidraw/ClusterIP-workflow.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "CRIoutOfTheBox.excalidraw"
+              "title": "ClusterIP-workflow.excalidraw"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5086555480957
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -222,11 +225,16 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "local-backup:Run local backup": false
     }
   },
-  "active": "ba27163065dd82e6",
+  "active": "27d3750093c9170e",
   "lastOpenFiles": [
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Excalidraw/svc.excalidraw.md",
+    "Excalidraw/ClusterIP-workflow.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
     "Excalidraw/k8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
     "Orchestration/a-media/Pasted image 20240626155742.png",
@@ -260,11 +268,8 @@
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/17.Deploying MetalLB on cluster(On-premises).md",
     "Excalidraw/k8sArchitecture",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/0. Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/16.Introduction to MetalLB for On-premises k8s cluster.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/15.LoadBalancer service;Introduction.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/14.Advanaced; Traffic flow from external to node to service to POD.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/13.Customize service NodePort range and IP addresses range.md",
     "Git/Working with Existing projects",
     "AIML/MLcheatSheet.pdf",
     "AIML",

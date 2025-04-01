@@ -2,5 +2,10 @@
   "obsidian-style-settings",
   "obsidian-excalidraw-plugin",
   "drawio-obsidian",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-auto-link-title",
+  "automatic-table-of-contents",
+  "colored-tags",
+  "auto-card-link",
+  "local-backup"
 ]

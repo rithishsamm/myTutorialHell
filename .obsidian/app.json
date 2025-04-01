@@ -7,9 +7,10 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "readableLineLength": false,
+  "readableLineLength": true,
   "alwaysUpdateLinks": true,
   "defaultViewMode": "preview",
   "livePreview": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "showLineNumber": false
 }
