@@ -36,9 +36,19 @@
               "icon": "lucide-file",
               "title": "00.Section11-K8sServices"
             }
+          },
+          {
+            "id": "b23940b3b365522d",
+            "type": "leaf",
+            "state": {
+              "type": "full-calendar-view",
+              "state": {},
+              "icon": "calendar-glyph",
+              "title": "Calendar"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -95,8 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -194,6 +203,22 @@
             }
           }
         ]
+      },
+      {
+        "id": "dd645854a54e3a66",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cdc25d27eb583721",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "stacked-levels",
+              "title": "Map of Content"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -214,11 +239,13 @@
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
       "workspaces:Manage workspace layouts": false,
-      "local-backup:Run local backup": false
+      "local-backup:Run local backup": false,
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "245e96a92b7e88a5",
+  "active": "cdc25d27eb583721",
   "lastOpenFiles": [
+    "Untitled.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/19.ExternalIP service; Introduction.md",
@@ -263,7 +290,6 @@
     "Orchestration/a-media/Pasted image 20240625184914.png",
     "Excalidraw/K8sArchitecture/highlevel-kubeapiUnderTheHood.excalidraw.md",
     "Excalidraw/K8sArchitecture/k8sArchitecture3.excalidraw.md",
-    "Orchestration/a-media/Pasted image 20240625165735.png",
-    "Excalidraw/K8sArchitecture/k8sArchitecture1.excalidraw.md"
+    "Orchestration/a-media/Pasted image 20240625165735.png"
   ]
 }
