@@ -4,21 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "8155b7f03b83d1b5",
+        "id": "fec34db9ca62130f",
         "type": "tabs",
         "children": [
           {
-            "id": "bc6bb7c3e1d23941",
+            "id": "52f55de55c130628",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "00.Section11-K8sServices"
+            }
+          },
+          {
+            "id": "d6299a143d5a865b",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/K8sSVC/headless/withHeadless.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "withHeadless.excalidraw"
             }
           }
         ]
@@ -212,12 +224,16 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "map-of-content:Update Map of Content": false
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "bc6bb7c3e1d23941",
+  "active": "52f55de55c130628",
   "lastOpenFiles": [
+    "Excalidraw/K8sSVC/headless/withHeadless.excalidraw.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
+    "Excalidraw/K8sSVC/headless/withoutHeadless.excalidraw.md",
+    "Excalidraw/K8sSVC/headless/withoutHeadless.excalidraw",
+    "Excalidraw/K8sSVC/headless",
     "rough/qwen2 - Apology Letter.md",
     "rough/chatgpt - Apology Letter.md",
     "rough/claude - Apology Letter.md",
@@ -225,13 +241,10 @@
     "rough/Concised Final Draft.md",
     "rough/Prompts-.md",
     "rough/qwen old - Apology Letter.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section11-K8sServices.md",
     "rough",
     "x.md",
     "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/19.ExternalIP service; Introduction.md",
-    "Excalidraw/K8sSVC/ExternalIP/headless.excalidraw.md",
-    "Excalidraw/K8sSVC/ExternalIP/headless.excalidraw.excalidraw",
     "Git/Git-revision/Index.md",
     "moss.jpeg",
     "Excalidraw/K8sSVC/ExternalIP/externalIP.excalidraw.excalidraw",
@@ -246,7 +259,6 @@
     "Excalidraw/K8sSVC/ClusterIP",
     "Excalidraw/K8sSVC/NodePort/Nodeport-workflow-brief.excalidraw.md",
     "Excalidraw/K8sSVC/LB/TrafficFlowWhileUsingLBSvc.excalidraw.excalidraw",
-    "Excalidraw/K8sSVC",
     "Excalidraw/K8sSVC/ClusterIP/ClusterIP-workflow.excalidraw.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
@@ -255,11 +267,8 @@
     "Excalidraw/K8sArchitecture/trafficDemystified.md",
     "Orchestration/a-media/Pasted image 20240626141922.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg.md",
-    "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg",
     "Orchestration/a-media/Pasted image 20240626113111.png",
-    "Excalidraw/K8sArchitecture/Containerdv2.excalidraw.md",
-    "pas.md",
     "Orchestration/a-media/Pasted image 20240626110430.png",
     "Orchestration/a-media/Pasted image 20240626110358.png",
     "Orchestration/a-media/Pasted image 20240625184914.png",
