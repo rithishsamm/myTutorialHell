@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00. section2-full-k8sClusterSetup"
+              "title": "00.Section13-K8sStorage(Volumes)"
             }
           }
         ]
@@ -212,16 +212,16 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "map-of-content:Update Map of Content": false
+      "workspaces:Manage workspace layouts": false
     }
   },
   "active": "6725aa5f545324e1",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section12-K8sServices.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/0.Index.md",
     "Excalidraw/K8sSVC/headless/withHeadless.excalidraw.md",
     "Excalidraw/K8sSVC/headless/withoutHeadless.excalidraw.md",
@@ -253,7 +253,6 @@
     "Excalidraw/K8sSVC/NodePort/Nodeport-workflow-brief.excalidraw.md",
     "Excalidraw/K8sSVC/LB/TrafficFlowWhileUsingLBSvc.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ClusterIP/ClusterIP-workflow.excalidraw.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
     "Orchestration/a-media/Pasted image 20240626155742.png",
     "Orchestration/a-media/Pasted image 20240626145730.png",
