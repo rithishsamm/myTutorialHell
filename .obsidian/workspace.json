@@ -237,7 +237,8 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "map-of-content:Update Map of Content": false
     }
   },
   "active": "6725aa5f545324e1",
