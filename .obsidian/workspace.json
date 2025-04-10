@@ -22,15 +22,15 @@
             }
           },
           {
-            "id": "17ce59299f47a9d6",
+            "id": "245908de6cabaa86",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/K8sStorage/PodvsContainerStorage.md"
+                "file": "Excalidraw/K8sStorage/emptyDir().md"
               },
               "icon": "excalidraw-icon",
-              "title": "PodvsContainerStorage"
+              "title": "emptyDir()"
             }
           }
         ]
@@ -237,18 +237,18 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "map-of-content:Update Map of Content": false
+      "workspaces:Manage workspace layouts": false
     }
   },
   "active": "6725aa5f545324e1",
   "lastOpenFiles": [
-    "Excalidraw/K8sStorage/PodvsContainerStorage.md",
+    "Excalidraw/K8sStorage/emptyDir().md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Excalidraw/K8sStorage/PodvsContainerStorage.md",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/07-Storage/azure_disk.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
     "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
     "Excalidraw/K8sStorage",
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/07-Storage/azure_disk.md",
     "Storage/AWS S3 - Simple Storage Service.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section12-K8sServices.md",
@@ -276,7 +276,6 @@
     "Excalidraw/K8sSVC/ExternalIP/externalIP.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ExternalIP/Drawing 2025-04-01 17.28.32.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ExternalIP",
-    "Excalidraw/K8sSVC/LB/TrafficFlowWhileUsingLBSvc.excalidraw.md",
     "Excalidraw/K8sSVC/LB",
     "Excalidraw/K8sSVC/NodePort",
     "Excalidraw/K8sSVC/ClusterIP",
