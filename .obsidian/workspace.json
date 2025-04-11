@@ -22,18 +22,21 @@
             }
           },
           {
-            "id": "245908de6cabaa86",
+            "id": "81b9fa08ca5f472f",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/K8sStorage/emptyDir().md"
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "emptyDir()"
+              "icon": "lucide-file",
+              "title": "00. section2-full-k8sClusterSetup"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -237,13 +240,15 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "map-of-content:Update Map of Content": false
     }
   },
-  "active": "6725aa5f545324e1",
+  "active": "81b9fa08ca5f472f",
   "lastOpenFiles": [
-    "Excalidraw/K8sStorage/emptyDir().md",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/02-k8s-setup-kubeadm-docker.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Excalidraw/K8sStorage/emptyDir().md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
     "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/07-Storage/azure_disk.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
@@ -271,7 +276,6 @@
     "x.md",
     "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/19.ExternalIP service; Introduction.md",
-    "Git/Git-revision/Index.md",
     "moss.jpeg",
     "Excalidraw/K8sSVC/ExternalIP/externalIP.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ExternalIP/Drawing 2025-04-01 17.28.32.excalidraw.excalidraw",
