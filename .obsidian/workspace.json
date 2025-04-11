@@ -22,21 +22,30 @@
             }
           },
           {
-            "id": "81b9fa08ca5f472f",
+            "id": "52cb950e1bad4e2e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00. section2-full-k8sClusterSetup"
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "c917b5d20a2a02ec",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,8 +102,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -244,10 +252,14 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "81b9fa08ca5f472f",
+  "active": "6725aa5f545324e1",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/02-k8s-setup-kubeadm-docker.md",
+    "Untitled.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "moss.jpeg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+    "Pasted image 20250411152910.png",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/02-k8s-setup-kubeadm-docker.md",
     "Excalidraw/K8sStorage/emptyDir().md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
     "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/07-Storage/azure_disk.md",
@@ -258,7 +270,6 @@
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section12-K8sServices.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/0.Index.md",
     "Excalidraw/K8sSVC/headless/withHeadless.excalidraw.md",
@@ -274,9 +285,6 @@
     "rough/qwen old - Apology Letter.md",
     "rough",
     "x.md",
-    "Automation/Bash/shell/Bash - Shell Scripting - By CODE IS EVERYTHING.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/19.ExternalIP service; Introduction.md",
-    "moss.jpeg",
     "Excalidraw/K8sSVC/ExternalIP/externalIP.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ExternalIP/Drawing 2025-04-01 17.28.32.excalidraw.excalidraw",
     "Excalidraw/K8sSVC/ExternalIP",
@@ -290,7 +298,6 @@
     "Orchestration/a-media/Pasted image 20240626113111.png",
     "Orchestration/a-media/Pasted image 20240626110430.png",
     "Orchestration/a-media/Pasted image 20240626110358.png",
-    "Orchestration/a-media/Pasted image 20240625184914.png",
-    "Orchestration/a-media/Pasted image 20240625165735.png"
+    "Orchestration/a-media/Pasted image 20240625184914.png"
   ]
 }
