@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-                "mode": "source",
+                "file": "Welcome.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section13-K8sStorage(Volumes)"
+              "title": "Welcome"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -157,8 +156,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           },
           {
@@ -201,6 +200,22 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f315de79f0299a95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fcf752c0e379227b",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -222,10 +237,11 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": true,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "map-of-content:Update Map of Content": false
     }
   },
   "active": "c5bd77cca048e26e",

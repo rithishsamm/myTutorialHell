@@ -1,0 +1,35 @@
+{
+  "palette": {
+    "seed": 0,
+    "selected": "adaptive-bright",
+    "custom": "e12729-f37324-f8cc1b-72b043-007f4e"
+  },
+  "mixColors": true,
+  "transition": true,
+  "accessibility": {
+    "highTextContrast": true
+  },
+  "knownTags": {
+    "engrabhishekroshan": 1,
+    "excalidraw": 2,
+    "table": 3,
+    "docker": 4,
+    "ip": 5,
+    "systemctl": 6,
+    "free": 7,
+    "swapoff": 8,
+    "": 9,
+    "etc": 1,
+    "etc/fstab": 1,
+    "init": 9,
+    "kubectl": 10,
+    "MetalLB": 11,
+    "we": 12,
+    "download": 13,
+    "https": 14,
+    "After": 15,
+    "Role": 16,
+    "a": 17
+  },
+  "_version": 3
+}
