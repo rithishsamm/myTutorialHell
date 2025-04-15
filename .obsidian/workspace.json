@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f53a13e699ada134",
+        "id": "9ca1165099a9aa43",
         "type": "tabs",
         "children": [
           {
-            "id": "6725aa5f545324e1",
+            "id": "c5bd77cca048e26e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "00.Section13-K8sStorage(Volumes)"
             }
-          },
-          {
-            "id": "88dbc1fabc1eeb44",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00. section2-full-k8sClusterSetup"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -243,45 +228,46 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "88dbc1fabc1eeb44",
+  "active": "c5bd77cca048e26e",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Untitled.md",
-    "moss.jpeg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
-    "Pasted image 20250411152910.png",
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/01-kubernetes-architecture-Installation/02-k8s-setup-kubeadm-docker.md",
     "Excalidraw/K8sStorage/emptyDir().md",
-    "Excalidraw/K8sStorage/PodvsContainerStorage.md",
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/07-Storage/azure_disk.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
-    "Excalidraw/K8sStorage",
-    "Storage/AWS S3 - Simple Storage Service.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section12-K8sServices.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section11-k8sAutoCleanup/00.Section11-K8sAutoCleanup.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/0.Index.md",
-    "Excalidraw/K8sSVC/headless/withHeadless.excalidraw.md",
-    "Excalidraw/K8sSVC/headless/withoutHeadless.excalidraw.md",
-    "Excalidraw/K8sSVC/headless/withoutHeadless.excalidraw",
-    "Excalidraw/K8sSVC/headless",
-    "rough/qwen2 - Apology Letter.md",
-    "rough/chatgpt - Apology Letter.md",
-    "rough/claude - Apology Letter.md",
-    "rough/REF - OLD.md",
-    "rough/Concised Final Draft.md",
-    "rough/Prompts-.md",
-    "rough/qwen old - Apology Letter.md",
-    "rough",
-    "x.md",
-    "Excalidraw/K8sSVC/ExternalIP/externalIP.excalidraw.excalidraw",
-    "Excalidraw/K8sSVC/ExternalIP/Drawing 2025-04-01 17.28.32.excalidraw.excalidraw",
-    "Excalidraw/K8sSVC/ExternalIP",
-    "Excalidraw/K8sSVC/LB",
-    "Excalidraw/K8sSVC/NodePort",
-    "Excalidraw/K8sSVC/ClusterIP",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Demo - Change CNI.md",
+    "Orchestration/K3s/rancher/K3sNetworking/8Advanced/Advanced Topics.md",
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/End of Lab.md",
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Change CNI.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/End Of Labs.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/End Of Labs.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 4 - Demo - Migrate from ServiceLB to MetalLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 2 - Demo - Install k3s without ServiceLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 1 - Install k3s without ServiceLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 4 - Demo - Migrate from Traefik to Nginx.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 3 - Migrate Traefik for Nginx.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 2 - Demo - Install k3s without Traefik.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 1 - Install k3s without Traefik.md",
+    "Orchestration/K3s/rancher/K3sNetworking/4LabSetup/Lab Setup.md",
+    "Orchestration/K3s/rancher/K3sNetworking/3K3sNetworking/K3s Networking Concepts and Defaults.md",
+    "Orchestration/K3s/rancher/K3sNetworking/2KubernetesNetworking/Kubernetes Networking Concepts.md",
+    "Orchestration/K3s/rancher/K3sNetworking/1Introduction/Introduction - Lesson.md",
+    "Orchestration/K3s/rancher-K3sBasics/K3sNetworking/Conclusion.md",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading Overview - Lesson.md",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading - Demo.md",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/K3sUpgrading-Lab.md",
+    "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app.md",
+    "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app - lab.md",
+    "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController",
+    "Orchestration/K3s/rancher/K3sNetworking/4LabSetup",
+    "moss.jpeg",
+    "Pasted image 20250411152910.png",
     "Orchestration/a-media/Pasted image 20240626155742.png",
     "Orchestration/a-media/Pasted image 20240626145730.png",
     "Orchestration/a-media/Pasted image 20240626141922.png",
