@@ -1,0 +1,154 @@
+#Also a Stateless Application using deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  revisionHistoryLimit: 5
+  strategy:
+    type: Recreate
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp-nginx
+  template:
+    metadata:
+      labels:
+        app: temp-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2 #1.16.1
+        ports:
+        - containerPort: 80
+---
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19.0
+        ports:
+        - containerPort: 80
+        volumeMounts:
+         - mountPath: /usr/share/nginx/html/index.html
+           name: www
+           subPath: index.html
+      volumes:
+        - name: www
+          downwardAPI:
+            items:
+              - path: "index.html"
+                fieldRef:
+                  fieldPath: metadata.name
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp-nginx
+  template:
+    metadata:
+      labels:
+        app: temp-nginx
+    spec:
+      volumes:
+      - name: shared-date-logs  # Creating a shared volume for my containers
+        emptyDir: {}
+      containers:
+      - name: container-writing-dates # Name of first container
+        image: alpine # Image to use for first container
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do date >> /var/log/index.html; sleep 10;done"] # writing date every 10secs
+        volumeMounts:
+        - name: shared-date-logs
+          mountPath: /var/log # Mounting log dir so app can write to it.
+      - name: container-serving-dates # Name of second container
+        image: nginx:1.19.0 # Image for second container
+        ports:
+        - containerPort: 80 # Defining what port to use.
+        volumeMounts:
+        - name: shared-date-logs
+          mountPath: /usr/share/nginx/html # Where nginx will serve the written file
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp-nginx
+  template:
+    metadata:
+      labels:
+        app: temp-nginx
+    spec:
+      volumes:
+      - name: html  # Creating a shared volume for my containers
+        emptyDir: {}
+      containers:
+      - name: 1st
+        image: nginx
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+        ports:
+        - name: http
+          hostPort: 8090
+          containerPort: 80
+      - name: 2nd
+        image: debian
+        volumeMounts:
+        - name: html
+          mountPath: /html
+          command: ["/bin/sh", "-c"]
+          args:
+            - while true; do
+                date >> /html/index.html;
+                sleep 5;
+              done
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp-nginx
+  template:
+    metadata:
+      labels:
+        app: temp-nginx
+    spec:
+      containers:
+      - name: 1st
+        image: nginx
+        command: ["/bin/bash", "-c", "nginx -g 'daemon off;' && while true;do hostname -f > /usr/share/nginx/html/index.html; sleep 10; done"]

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
-                "mode": "preview",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
+              "title": "00.Section13-K8sStorage(Volumes)"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -156,8 +157,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -200,22 +201,6 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          }
-        ]
-      },
-      {
-        "id": "f315de79f0299a95",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "fcf752c0e379227b",
-            "type": "leaf",
-            "state": {
-              "type": "map-of-content",
-              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -237,17 +222,17 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": true,
-      "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "map-of-content:Update Map of Content": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
   "active": "c5bd77cca048e26e",
   "lastOpenFiles": [
-    "Excalidraw/K8sStorage/emptyDir().md",
+    "Pasted image 20250411152910.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Excalidraw/K8sStorage/emptyDir().md",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Demo - Change CNI.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced/Advanced Topics.md",
@@ -276,14 +261,12 @@
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading - Demo.md",
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/K3sUpgrading-Lab.md",
     "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app.md",
-    "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app - lab.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
     "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController",
     "Orchestration/K3s/rancher/K3sNetworking/4LabSetup",
     "moss.jpeg",
-    "Pasted image 20250411152910.png",
     "Orchestration/a-media/Pasted image 20240626155742.png",
     "Orchestration/a-media/Pasted image 20240626145730.png",
     "Orchestration/a-media/Pasted image 20240626141922.png",
