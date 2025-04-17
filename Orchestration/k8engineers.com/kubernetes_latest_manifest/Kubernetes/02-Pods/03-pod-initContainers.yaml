@@ -1,0 +1,52 @@
+# In this example, initContainer will fetch index.html file for nginx container to serve the data
+# initContainer will show status as completed once job/task was successful done. So these initContainers should be assigned with any restart policy with Always
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent   #Always, Never
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: workdir
+      mountPath: /usr/share/nginx/html
+  # These containers are run during pod initialization
+  initContainers:
+  - name: install
+    image: alpine
+    command:
+    - wget
+    - "-O"
+    - "/work-dir/index.html"
+    - https://github.com/dubareddy/testcode/blob/master/index.html?raw=true
+    volumeMounts:
+    - name: workdir
+      mountPath: "/work-dir"
+  dnsPolicy: Default
+  volumes:
+  - name: workdir
+    emptyDir: {}  #emtryDir data will be stored on worker node under /var/lib/kubelet/pods/ with ID which can be picked from pod description
+---
+# Another example, which is simple to understand for basic scenario
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp-container
+    image: busybox:1.28
+    command: ['sh', '-c', 'while true;do echo The app is running!!; sleep 10;done']
+  initContainers:
+  - name: init-myservice
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo Success from init-myservice']
+  - name: init-mydb
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo Success from init-mydb']

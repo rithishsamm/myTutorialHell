@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d22475b786ceaccf",
+        "id": "9ca1165099a9aa43",
         "type": "tabs",
         "children": [
           {
-            "id": "d6a0615dc2cef885",
+            "id": "c5bd77cca048e26e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CPNGO-Update/P2-Rebuild/CPActive - WordPress Elementor Project Documentation.md",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CPActive - WordPress Elementor Project Documentation"
+              "title": "00.Section13-K8sStorage(Volumes)"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -156,8 +157,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -200,22 +201,6 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          }
-        ]
-      },
-      {
-        "id": "f315de79f0299a95",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "fcf752c0e379227b",
-            "type": "leaf",
-            "state": {
-              "type": "map-of-content",
-              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -237,60 +222,59 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "publish:Publish changes...": true,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
       "workspaces:Manage workspace layouts": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-git:Open Git source control": false
+      "map-of-content:Update Map of Content": false
     }
   },
-  "active": "d6a0615dc2cef885",
+  "active": "c5bd77cca048e26e",
   "lastOpenFiles": [
-    "CPNGO-Update.zip",
-    "CPNGO-Update/P2-Rebuild/Requirements - World CP Day website.docx.md",
-    "CPNGO-Update/P1-NewSite/P1 - New- CPActive - WordPress Elementor Project Documentation.md",
-    "CPNGO-Update/info/docs/CP360_Brand Guidelines (3) (1).pdf",
-    "Project CPNGO - Book of Record.md",
-    "CPNGO-Update/P2-Rebuild/CPActive - WordPress Elementor Project Documentation.md",
-    "CPNGO-Update/P1-NewSite/Content/6SignThePetition/Sign the Petition.md",
-    "CPNGO-Update/P1-NewSite/Content/otherPages/Contact.md",
-    "CPNGO-Update/P1-NewSite/Content/otherPages/Privacy Policy.md",
-    "CPNGO-Update/P1-NewSite/Content/otherPages",
-    "CPNGO-Update/P1-NewSite/Content/5Resources/Resources.md",
-    "CPNGO-Update/P1-NewSite/Content/4Events/Events.md",
-    "CPNGO-Update/P1-NewSite/Content/3Changemakers/Changemakers.md",
-    "CPNGO-Update/P1-NewSite/Content/2About/5Share-story.md",
-    "CPNGO-Update/P1-NewSite/Content/2About/4Video-gallery.md",
-    "CPNGO-Update/P1-NewSite/Content/2About/3CPActive_Champions.md",
-    "CPNGO-Update/P1-NewSite/Content/2About/2News.md",
-    "CPNGO-Update/P1-NewSite/Content/2About/1about-home.md",
-    "CPNGO-Update/P1-NewSite/Content/1Home/1HomePage.md",
-    "CPNGO-Update/P1-NewSite/Content/6SignThePetition",
-    "CPNGO-Update/P1-NewSite/Content/5Resources",
-    "CPNGO-Update/P1-NewSite/Content/Untitled.canvas",
-    "CPNGO-Update/P1-NewSite/Content/4Events",
-    "CPNGO-Update/P1-NewSite/Content/3Changemakers",
-    "CPNGO-Update/P1-NewSite/Content/1Home",
-    "CPNGO-Update/P1-NewSite/Content/2About",
-    "Pasted image 20250415153546.png",
-    "CPNGO-Update/info/media/p1-Content'sMedia",
-    "CPNGO-Update/P1-New/Pages/Homepage.md",
-    "CPNGO-Update/info/media/p2-requirements",
-    "CPNGO-Update/P2-Rebuild/Requirements - Rebuilding worldcpday.org.md",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152551.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152247.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152216.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152129.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152109.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415152024.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415151940.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415151835.png",
-    "CPNGO-Update/info/media/p2-requirements/Pasted image 20250415151804.png",
-    "Excalidraw/K8sStorage/emptyDir().md",
+    "Pasted image 20250411152910.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Excalidraw/K8sStorage/emptyDir().md",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Demo - Change CNI.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced/Advanced Topics.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/End of Lab.md",
-    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Change CNI.md"
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Change CNI.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/End Of Labs.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/End Of Labs.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 4 - Demo - Migrate from ServiceLB to MetalLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 2 - Demo - Install k3s without ServiceLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 1 - Install k3s without ServiceLB.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 4 - Demo - Migrate from Traefik to Nginx.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 3 - Migrate Traefik for Nginx.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 2 - Demo - Install k3s without Traefik.md",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 1 - Install k3s without Traefik.md",
+    "Orchestration/K3s/rancher/K3sNetworking/4LabSetup/Lab Setup.md",
+    "Orchestration/K3s/rancher/K3sNetworking/3K3sNetworking/K3s Networking Concepts and Defaults.md",
+    "Orchestration/K3s/rancher/K3sNetworking/2KubernetesNetworking/Kubernetes Networking Concepts.md",
+    "Orchestration/K3s/rancher/K3sNetworking/1Introduction/Introduction - Lesson.md",
+    "Orchestration/K3s/rancher-K3sBasics/K3sNetworking/Conclusion.md",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading Overview - Lesson.md",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading - Demo.md",
+    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/K3sUpgrading-Lab.md",
+    "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app.md",
+    "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
+    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
+    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
+    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController",
+    "Orchestration/K3s/rancher/K3sNetworking/4LabSetup",
+    "moss.jpeg",
+    "Orchestration/a-media/Pasted image 20240626155742.png",
+    "Orchestration/a-media/Pasted image 20240626145730.png",
+    "Orchestration/a-media/Pasted image 20240626141922.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg",
+    "Orchestration/a-media/Pasted image 20240626113111.png",
+    "Orchestration/a-media/Pasted image 20240626110430.png",
+    "Orchestration/a-media/Pasted image 20240626110358.png",
+    "Orchestration/a-media/Pasted image 20240625184914.png"
   ]
 }
