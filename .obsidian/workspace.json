@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "9ca1165099a9aa43",
+        "id": "3201a66bda37484f",
         "type": "tabs",
         "children": [
           {
@@ -19,6 +19,22 @@
               },
               "icon": "lucide-file",
               "title": "00.Section13-K8sStorage(Volumes)"
+            }
+          },
+          {
+            "id": "ccb5ea5698a49f00",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KCD Chennai 2025 - Record.md",
+                "mode": "preview",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "KCD Chennai 2025 - Record"
             }
           }
         ]
@@ -225,13 +241,14 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "map-of-content:Update Map of Content": false
     }
   },
-  "active": "c5bd77cca048e26e",
+  "active": "ccb5ea5698a49f00",
   "lastOpenFiles": [
-    "KCD Chennai 2025 - Record.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "KCD Chennai 2025 - Record.md",
     "Pasted image 20250411152910.png",
     "Excalidraw/K8sStorage/emptyDir().md",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",

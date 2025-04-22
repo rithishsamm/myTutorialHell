@@ -10,7 +10,6 @@
 Keynote: Key to Harmonic Convergence: Kubernetes as the Foundation for Modern App Workloads by Balachander Natarajan
 
 
-
 ### Speakers List and Questions:
 ###### 1 ) Balachandar Natarajan
 Platform Engineering Manager, Ford
