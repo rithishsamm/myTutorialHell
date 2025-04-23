@@ -69,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "empty",
+                "query": "crictl",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -241,12 +241,12 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "map-of-content:Update Map of Content": false
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ccb5ea5698a49f00",
+  "active": "c5bd77cca048e26e",
   "lastOpenFiles": [
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "KCD Chennai 2025 - Record.md",
     "Pasted image 20250411152910.png",
@@ -278,7 +278,6 @@
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading Overview - Lesson.md",
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading - Demo.md",
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/K3sUpgrading-Lab.md",
-    "Orchestration/K3s/rancher/K3sBasics/5Advanced/Deploying an app.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
