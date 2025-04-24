@@ -48,19 +48,19 @@
             }
           },
           {
-            "id": "ef52bd0deaf5c909",
+            "id": "849ce6abcaf129d7",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "excalidraw",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "Excalidraw/K8sStorage/hostpath.md"
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "icon": "excalidraw-icon",
+              "title": "hostpath"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -264,18 +264,19 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false,
-      "map-of-content:Update Map of Content": false
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ef52bd0deaf5c909",
+  "active": "c5bd77cca048e26e",
   "lastOpenFiles": [
+    "Excalidraw/K8sStorage/hostpath.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
     "KCD Chennai 2025 - Record.md",
+    "Excalidraw/K8sStorage/emptyDir().md",
+    "Excalidraw/K8sStorage/PodvsContainerStorage.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
     "Pasted image 20250411152910.png",
-    "Excalidraw/K8sStorage/emptyDir().md",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Demo - Change CNI.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced/Advanced Topics.md",
@@ -301,7 +302,6 @@
     "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
     "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading Overview - Lesson.md",
-    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading - Demo.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
