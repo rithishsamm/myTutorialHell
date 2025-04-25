@@ -24,24 +24,14 @@
             }
           },
           {
-            "id": "c5bd77cca048e26e",
+            "id": "9c7ca7edb9e353a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
                 "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "source": false
               },
               "icon": "lucide-file",
               "title": "00.Section13-K8sStorage(Volumes)"
@@ -267,10 +257,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c5bd77cca048e26e",
+  "active": "9c7ca7edb9e353a1",
   "lastOpenFiles": [
     "Excalidraw/K8sStorage/hostpath.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "KCD Chennai 2025 - Record.md",
     "Excalidraw/K8sStorage/emptyDir().md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
@@ -301,7 +292,6 @@
     "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
-    "Orchestration/K3s/rancher/K3sBasics/6UpgradingK3s/Upgrading Overview - Lesson.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",

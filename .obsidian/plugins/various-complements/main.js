@@ -4136,6 +4136,14 @@ var AutoCompleteSuggest = class _AutoCompleteSuggest extends import_obsidian5.Ed
             return;
           }
         }
+        if (this.settings.excludeSelfInternalLink) {
+          words = words.filter(
+            (x) => {
+              var _a;
+              return x.type !== "internalLink" || x.createdPath !== ((_a = this.appHelper.getActiveFile()) == null ? void 0 : _a.path);
+            }
+          );
+        }
         cb(
           uniqWith(words, suggestionUniqPredicate).slice(
             0,
@@ -4833,6 +4841,7 @@ var DEFAULT_SETTINGS = {
   enableInternalLinkComplement: true,
   suggestInternalLinkWithAlias: false,
   excludeInternalLinkPathPrefixPatterns: "",
+  excludeSelfInternalLink: false,
   updateInternalLinksOnSave: true,
   insertAliasTransformedFromDisplayedInternalLink: {
     enabled: false,
@@ -5418,6 +5427,13 @@ var VariousComplementsSettingTab = class extends import_obsidian7.PluginSettingT
           async (value) => {
             this.plugin.settings.updateInternalLinksOnSave = value;
             await this.plugin.saveSettings({ internalLink: true });
+          }
+        );
+      });
+      new import_obsidian7.Setting(containerEl).setName("Exclude self internal link").addToggle((tc) => {
+        tc.setValue(this.plugin.settings.excludeSelfInternalLink).onChange(
+          async (value) => {
+            this.plugin.settings.excludeSelfInternalLink = value;
           }
         );
       });
