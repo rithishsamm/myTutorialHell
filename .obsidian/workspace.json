@@ -264,11 +264,13 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "map-of-content:Update Map of Content": false
     }
   },
   "active": "9c7ca7edb9e353a1",
   "lastOpenFiles": [
+    "catzbak-website-quote.pdf",
     "Excalidraw/K8sStorage/hostpath.md",
     "KCD Chennai 2025 - Record.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
@@ -296,7 +298,6 @@
     "Orchestration/K3s/rancher/K3sNetworking/3K3sNetworking/K3s Networking Concepts and Defaults.md",
     "Orchestration/K3s/rancher/K3sNetworking/2KubernetesNetworking/Kubernetes Networking Concepts.md",
     "Orchestration/K3s/rancher/K3sNetworking/1Introduction/Introduction - Lesson.md",
-    "Orchestration/K3s/rancher-K3sBasics/K3sNetworking/Conclusion.md",
     "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
