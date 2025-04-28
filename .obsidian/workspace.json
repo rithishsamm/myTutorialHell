@@ -15,7 +15,7 @@
               "type": "markdown",
               "state": {
                 "file": "KCD Chennai 2025 - Record.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "pinned": true,
@@ -47,6 +47,16 @@
               },
               "icon": "excalidraw-icon",
               "title": "hostpath"
+            }
+          },
+          {
+            "id": "9921d5eda4322c97",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ],
@@ -260,9 +270,9 @@
   "active": "9c7ca7edb9e353a1",
   "lastOpenFiles": [
     "Excalidraw/K8sStorage/hostpath.md",
+    "KCD Chennai 2025 - Record.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
-    "KCD Chennai 2025 - Record.md",
     "Excalidraw/K8sStorage/emptyDir().md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
