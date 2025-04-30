@@ -4,53 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3201a66bda37484f",
+        "id": "ff85fb57285bb97a",
         "type": "tabs",
         "children": [
           {
-            "id": "ccb5ea5698a49f00",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KCD Chennai 2025 - Record.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "KCD Chennai 2025 - Record"
-            }
-          },
-          {
-            "id": "9c7ca7edb9e353a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00.Section13-K8sStorage(Volumes)"
-            }
-          },
-          {
-            "id": "849ce6abcaf129d7",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/K8sStorage/hostpath.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "hostpath"
-            }
-          },
-          {
-            "id": "9921d5eda4322c97",
+            "id": "4475921ddf569b00",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -59,8 +17,7 @@
               "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -267,12 +224,13 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "9c7ca7edb9e353a1",
+  "active": "4475921ddf569b00",
   "lastOpenFiles": [
-    "catzbak-website-quote.pdf",
     "Excalidraw/K8sStorage/hostpath.md",
     "KCD Chennai 2025 - Record.md",
+    "moss.jpeg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "catzbak-website-quote.pdf",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "Excalidraw/K8sStorage/emptyDir().md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
@@ -306,8 +264,6 @@
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
     "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController",
-    "Orchestration/K3s/rancher/K3sNetworking/4LabSetup",
-    "moss.jpeg",
     "Orchestration/a-media/Pasted image 20240626155742.png",
     "Orchestration/a-media/Pasted image 20240626145730.png",
     "Orchestration/a-media/Pasted image 20240626141922.png",
