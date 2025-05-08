@@ -1,11 +1,11 @@
 {
   "accentColor": "",
   "cssTheme": "Prism",
-  "interfaceFontFamily": "Segoe UI",
+  "interfaceFontFamily": "Helvetica",
   "textFontFamily": "Calibri",
-  "monospaceFontFamily": "Courier New",
+  "monospaceFontFamily": "Courier New,Source Code Pro",
   "baseFontSizeAction": true,
   "nativeMenus": true,
-  "baseFontSize": 15,
+  "baseFontSize": 19,
   "theme": "obsidian"
 }
