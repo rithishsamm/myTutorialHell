@@ -2,7 +2,6 @@
   "obsidian-style-settings",
   "obsidian-excalidraw-plugin",
   "drawio-obsidian",
-  "obsidian-git",
   "obsidian-auto-link-title",
   "automatic-table-of-contents",
   "colored-tags",
@@ -10,5 +9,6 @@
   "heatmap-calendar",
   "easy-typing-obsidian",
   "map-of-content",
-  "various-complements"
+  "various-complements",
+  "obsidian-git"
 ]
