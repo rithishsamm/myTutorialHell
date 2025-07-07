@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ed02358417029f94",
+        "id": "56df6e0210b02721",
         "type": "tabs",
         "children": [
           {
-            "id": "407d63ed89fd59c5",
+            "id": "95a18ca75405035f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/talos/installation.md",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "installation"
+              "title": "00.Section13-K8sStorage(Volumes)"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "crictl",
+                "query": "force recreate",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -238,6 +239,38 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "7a3b9e849c00da97",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c3fd879182da617",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ea51b6d0672965f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1fad050ab0ac7355",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -266,23 +299,32 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "407d63ed89fd59c5",
+  "active": "95a18ca75405035f",
   "lastOpenFiles": [
+    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Attapadi itinerary.md",
+    "moss.jpeg",
+    "moss 1.jpeg",
+    "Security/kubescape - launch template.md",
+    "epfo.md",
+    "Pasted image 20250527103556.png",
+    "Pasted image 20250527103445.png",
+    "Pasted image 20250527103514.png",
+    "Security/DevSecOps Practice.md",
+    "Excalidraw/Drawing 2025-05-19 12.49.06.md",
+    "Excalidraw/K8sStorage/hostpath.md",
+    "Excalidraw/K8sStorage/emptyDir().md",
+    "Excalidraw/Drawing 2025-05-16 11.08.09.md",
     "Orchestration/talos/installation.md",
     "Orchestration/talos",
-    "moss.jpeg",
     "Excalidraw/K8sStorage/nfs.md",
     "Excalidraw/K8sStorage/Drawing 2025-05-14 12.06.49.md",
-    "Excalidraw/K8sStorage/emptyDir().md",
-    "Excalidraw/K8sStorage/hostpath.md",
     "Excalidraw/K8sStorage/PodvsContainerStorage.md",
     "Excalidraw/Drawing 2025-05-14 12.07.52.md",
     "Excalidraw/Drawing 2025-05-14 12.07.30.md",
     "Excalidraw/K8sStorage/Untitled Diagram.svg",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
-    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
-    "Untitled.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/1. High level view of Kubernetes architecture and components.md",
     "KCD Chennai 2025 - Record.md",
     "catzbak-website-quote.pdf",
@@ -295,11 +337,6 @@
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/End of Lab.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Change CNI.md",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/End Of Labs.md",
-    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/End Of Labs.md",
-    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 4 - Demo - Migrate from ServiceLB to MetalLB.md",
-    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 2 - Demo - Install k3s without ServiceLB.md",
-    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 1 - Install k3s without ServiceLB.md",
-    "Orchestration/K3s/rancher/K3sNetworking/5ChangeIngressController/Lab 4 - Demo - Migrate from Traefik to Nginx.md",
     "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
@@ -309,10 +346,6 @@
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
     "Orchestration/a-media/Pasted image 20240626155742.png",
-    "Orchestration/a-media/Pasted image 20240626145730.png",
-    "Orchestration/a-media/Pasted image 20240626141922.png",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/Untitled Diagram.svg",
-    "Orchestration/a-media/Pasted image 20240626113111.png",
-    "Orchestration/a-media/Pasted image 20240626110430.png"
+    "Orchestration/a-media/Pasted image 20240626145730.png"
   ]
 }
