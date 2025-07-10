@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3d00576693dfd052",
+        "id": "b944a603814a12b7",
         "type": "tabs",
         "children": [
           {
-            "id": "bee8b362c48b24c1",
+            "id": "e7690db221885baa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "00.Section13-K8sStorage(Volumes)"
+              "title": "New tab"
             }
           }
         ]
@@ -298,13 +294,14 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "bee8b362c48b24c1",
+  "active": "e7690db221885baa",
   "lastOpenFiles": [
+    "Security/DevSecOps Practice.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Systems/ssh/easy ssh-keygen and copy.md",
     "Automation/Ansible/Ansible - Quick Note.md",
     "Automation/Ansible",
     "Systems/ssh/archive/SSH Crash Course with Some DevOps.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Systems/ssh/archive",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "Attapadi itinerary.md",
@@ -315,7 +312,6 @@
     "Pasted image 20250527103556.png",
     "Pasted image 20250527103445.png",
     "Pasted image 20250527103514.png",
-    "Security/DevSecOps Practice.md",
     "Excalidraw/Drawing 2025-05-19 12.49.06.md",
     "Excalidraw/K8sStorage/hostpath.md",
     "Excalidraw/K8sStorage/emptyDir().md",
