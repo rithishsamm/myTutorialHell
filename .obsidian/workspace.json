@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "56df6e0210b02721",
+        "id": "3d00576693dfd052",
         "type": "tabs",
         "children": [
           {
-            "id": "95a18ca75405035f",
+            "id": "bee8b362c48b24c1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -299,10 +298,15 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "95a18ca75405035f",
+  "active": "bee8b362c48b24c1",
   "lastOpenFiles": [
-    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
+    "Systems/ssh/easy ssh-keygen and copy.md",
+    "Automation/Ansible/Ansible - Quick Note.md",
+    "Automation/Ansible",
+    "Systems/ssh/archive/SSH Crash Course with Some DevOps.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Systems/ssh/archive",
+    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "Attapadi itinerary.md",
     "moss.jpeg",
     "moss 1.jpeg",
@@ -334,17 +338,12 @@
     "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/Lab 3 - Migrate from ServiceLB to MetalLB.md",
     "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Demo - Change CNI.md",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced/Advanced Topics.md",
-    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/End of Lab.md",
-    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI/Lab - Change CNI.md",
-    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB/End Of Labs.md",
     "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
-    "Orchestration/K3s/rancher/K3sNetworking/7ChangeCNI",
-    "Orchestration/K3s/rancher/K3sNetworking/6ChangeTheServiceLB",
     "Orchestration/a-media/Pasted image 20240626155742.png",
     "Orchestration/a-media/Pasted image 20240626145730.png"
   ]
