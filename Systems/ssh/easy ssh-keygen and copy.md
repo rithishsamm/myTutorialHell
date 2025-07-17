@@ -33,11 +33,17 @@ ssh-copy-id -i .ssh/path username@machine3IP
 ```
 ssh-copy-id -i .ssh/path username@machine4IP
 ```
-
-
 ```
 ssh -i /.ssh/key username@machine1IP
 ```
+``
+If permission exists, pass
+```
+chmod 600 ~/.ssh/k8s
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/k8s
+```
+
 ---
 
 ### Ansible 
@@ -80,6 +86,7 @@ nfs ansible_host=192.168.0.126 ansible_user=rithishsamm ansible_connection=ssh a
 ansible-inventory -i ./inventory/hosts --list
 ansible all -m ping
 ```
+
 
 
 #### Playbooks/Tasks
