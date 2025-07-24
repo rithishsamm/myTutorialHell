@@ -46,7 +46,7 @@ ssh-add ~/.ssh/k8s
 
 ---
 
-### Ansible 
+### Ansible:
 #### Basics
 
 **Ansible Structure:**
