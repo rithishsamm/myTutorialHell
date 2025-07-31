@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "59ea4434fb5997de",
+            "id": "d53e51a09806d1af",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -313,13 +314,14 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "59ea4434fb5997de",
+  "active": "d53e51a09806d1af",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+    "Systems/ssh/easy ssh-keygen and copy.md",
+    "Pasted image 20250728181306.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/10.NFS volume type.md",
     "Untitled.md",
-    "Systems/ssh/easy ssh-keygen and copy.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/1.Introduction to Persistent Storage.md",
@@ -348,7 +350,6 @@
     "Excalidraw/Drawing 2025-05-16 11.08.09.md",
     "Orchestration/talos/installation.md",
     "Orchestration/talos",
-    "Excalidraw/K8sStorage/nfs.md",
     "Excalidraw/K8sStorage/Untitled Diagram.svg",
     "catzbak-website-quote.pdf",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
@@ -359,7 +360,6 @@
     "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
     "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
-    "Orchestration/a-media/Pasted image 20240626155742.png",
-    "Orchestration/a-media/Pasted image 20240626145730.png"
+    "Orchestration/a-media/Pasted image 20240626155742.png"
   ]
 }
