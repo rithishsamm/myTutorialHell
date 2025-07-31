@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "319ad7a0516555f5",
+        "id": "7b569d4d823c61b1",
         "type": "tabs",
         "children": [
           {
-            "id": "d53e51a09806d1af",
+            "id": "17faea5437f8c11f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -314,12 +314,12 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "d53e51a09806d1af",
+  "active": "17faea5437f8c11f",
   "lastOpenFiles": [
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "Systems/ssh/easy ssh-keygen and copy.md",
     "Pasted image 20250728181306.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Systems/ssh/easy ssh-keygen and copy.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/10.NFS volume type.md",
     "Untitled.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
