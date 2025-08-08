@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7b569d4d823c61b1",
+        "id": "8ef5d489ce545a2e",
         "type": "tabs",
         "children": [
           {
-            "id": "17faea5437f8c11f",
+            "id": "deb5d6ea961c0fc0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+                "file": "SNA/AI-Agents/2. First AI Agent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section14-K8sStorage(PV, PVC)"
+              "title": "2. First AI Agent"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -314,10 +313,22 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "17faea5437f8c11f",
+  "active": "deb5d6ea961c0fc0",
   "lastOpenFiles": [
-    "Pasted image 20250728181306.png",
+    "SNA/AI-Agents/2. First AI Agent.md",
+    "SNA/AI-Agents/1. Prompt Engg.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+    "SNA/AI-Agents/0. Orientation.md",
+    "SNA/AI-Agents/7. Database - Vector Store.md",
+    "SNA/AI-Agents/6. Database - MongoDB.md",
+    "SNA/AI-Agents/8..md",
+    "SNA/AI-Agents/5. Telegram Voice Agent.md",
+    "SNA/AI-Agents/4. HTTP introduction and Internet Search API.md",
+    "SNA/AI-Agents/3. N8n nodes and Telegram Bots.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/0.index.md",
+    "SNA/AI-Agents",
+    "SNA/How system executes programs.md",
+    "Pasted image 20250728181306.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Systems/ssh/easy ssh-keygen and copy.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/10.NFS volume type.md",
@@ -333,22 +344,12 @@
     "Security/DevSecOps Practice.md",
     "Automation/Ansible/Ansible - Quick Note.md",
     "Automation/Ansible",
-    "Systems/ssh/archive/SSH Crash Course with Some DevOps.md",
     "Systems/ssh/archive",
-    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
-    "Attapadi itinerary.md",
     "moss.jpeg",
     "moss 1.jpeg",
-    "Security/kubescape - launch template.md",
-    "epfo.md",
     "Pasted image 20250527103556.png",
     "Pasted image 20250527103445.png",
     "Pasted image 20250527103514.png",
-    "Excalidraw/Drawing 2025-05-19 12.49.06.md",
-    "Excalidraw/K8sStorage/hostpath.md",
-    "Excalidraw/K8sStorage/emptyDir().md",
-    "Excalidraw/Drawing 2025-05-16 11.08.09.md",
-    "Orchestration/talos/installation.md",
     "Orchestration/talos",
     "Excalidraw/K8sStorage/Untitled Diagram.svg",
     "catzbak-website-quote.pdf",
@@ -359,7 +360,6 @@
     "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
     "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
-    "Orchestration/K3s/rancher/K3sNetworking/8Advanced",
     "Orchestration/a-media/Pasted image 20240626155742.png"
   ]
 }
