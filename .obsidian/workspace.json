@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "00.Section14-K8sStorage(PV, PVC)"
             }
-          },
-          {
-            "id": "0a4024aefd47b756",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/cloudInfra.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "cloudInfra"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -359,7 +346,7 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "0a4024aefd47b756",
+  "active": "ed6661fe103edd81",
   "lastOpenFiles": [
     "Pasted Image 20250820173408_822.png",
     "Pasted Image 20250820173401_760.png",
