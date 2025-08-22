@@ -4,24 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "8ef5d489ce545a2e",
+        "id": "ada5e6fc4dbf64f0",
         "type": "tabs",
         "children": [
           {
-            "id": "deb5d6ea961c0fc0",
+            "id": "d00bc93a69a98ce1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SNA/AI-Agents/2. First AI Agent.md",
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2. First AI Agent"
+              "title": "00.Section14-K8sStorage(PV, PVC)"
+            }
+          },
+          {
+            "id": "0a4024aefd47b756",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/cloudInfra.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "cloudInfra"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lifecycle",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -189,8 +202,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -205,8 +218,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -221,8 +234,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -237,8 +250,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -253,8 +266,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -269,8 +282,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "stacked-levels",
-              "title": "Map of Content"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -281,6 +294,38 @@
         "children": [
           {
             "id": "e68bb1e2742fbfab",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2de2a8256783bc48",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a921327b97612637",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "96d143a47458e2ec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "014e5e00f830e233",
             "type": "leaf",
             "state": {
               "type": "map-of-content",
@@ -298,6 +343,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -313,53 +359,52 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "deb5d6ea961c0fc0",
+  "active": "0a4024aefd47b756",
   "lastOpenFiles": [
-    "SNA/AI-Agents/2. First AI Agent.md",
-    "SNA/AI-Agents/1. Prompt Engg.md",
+    "Pasted Image 20250820173408_822.png",
+    "Pasted Image 20250820173401_760.png",
+    "Pasted Image 20250820173254_377.png",
+    "Pasted Image 20250820173246_794.png",
+    "Pasted Image 20250820173238_273.png",
+    "Pasted Image 20250820173201_431.png",
+    "Excalidraw/cloudInfra.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "SNA/AI-Agents/0. Orientation.md",
-    "SNA/AI-Agents/7. Database - Vector Store.md",
-    "SNA/AI-Agents/6. Database - MongoDB.md",
-    "SNA/AI-Agents/8..md",
-    "SNA/AI-Agents/5. Telegram Voice Agent.md",
-    "SNA/AI-Agents/4. HTTP introduction and Internet Search API.md",
-    "SNA/AI-Agents/3. N8n nodes and Telegram Bots.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section10-k8sCronJobs/0.index.md",
-    "SNA/AI-Agents",
-    "SNA/How system executes programs.md",
-    "Pasted image 20250728181306.png",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Systems/ssh/easy ssh-keygen and copy.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/10.NFS volume type.md",
-    "Untitled.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/1.Introduction to Persistent Storage.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/7.Introduction to AccessModes for PV and PVC.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/5.Static PV and PVC (volume plugin; nfs).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/3.Static PV and PVC (volume plugin; hostPath).md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/2.Understanding Persistent Volume Access Modes.md",
+    "Excalidraw/Drawing 2025-08-18 16.05.05.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/0.Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/1.Introduction to Statefulset Object.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/14. resourceFieldRef  downwardAPI - Demo and overview.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/13 . fieldRef downwardAPI - Demo and overview.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/12. downwardAPI overview (refs).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/11 . NFS - Jenkins CICD Deployment Object with active and passive mode (NFS volume type).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/10. NFS - Demo for volume type.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/9.Setup NFS server for Kubernetes Volume Demo.md",
-    "Security/DevSecOps Practice.md",
-    "Automation/Ansible/Ansible - Quick Note.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/8.Working principle of nfs volume type.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/7 . hostPath - Demo for hostPath volume type (File and FileOrCreate).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/6. hostPath - Demo for hostPath volume type (Directory and DirectoryOrCreate).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/5. `hostPath` - Working principle of hostPath volume type.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/4 . EmptyDir() - Demo for emptyDir() volume type (Disk and Memory).md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/3.Working principle of emptyDir volume type.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/2.Overview on Kubernetes Volumes.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/1.Introduction to Kubernetes Storage types.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/00.Section12-K8sServices.md",
+    "others/media/Pasted Image 20250812175425_644.png",
+    "others/media/Pasted Image 20250812162904_158.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section12-k8sServices/2.Introduction to k8s Service and Types.md",
+    "Excalidraw/ClusterEnvironment-Confluence",
+    "others/media/Pasted Image 20250812145447_273.png",
+    "others/media",
+    "Untitled",
+    "SNA/AI-Agents",
     "Automation/Ansible",
     "Systems/ssh/archive",
-    "moss.jpeg",
-    "moss 1.jpeg",
-    "Pasted image 20250527103556.png",
-    "Pasted image 20250527103445.png",
-    "Pasted image 20250527103514.png",
     "Orchestration/talos",
-    "Excalidraw/K8sStorage/Untitled Diagram.svg",
     "catzbak-website-quote.pdf",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/Untitled Diagram.svg",
-    "Pasted image 20250411152910.png",
     "Orchestration/K3s/rancher/K3sBasics/pdf/5K3sInstallationLab.pdf",
-    "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf",
-    "Orchestration/K3s/rancher/K3sBasics/pdf/3k3sarchitecture.pdf",
-    "Orchestration/K3s/rancher/K3sBasics/pdf/2labsetup.pdf",
-    "Orchestration/K3s/rancher/K3sBasics/pdf/1introduction.pdf",
-    "Orchestration/a-media/Pasted image 20240626155742.png"
+    "Orchestration/K3s/rancher/K3sBasics/pdf/4k3sinstallation.pdf"
   ]
 }
