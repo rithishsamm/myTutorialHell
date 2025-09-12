@@ -7,5 +7,6 @@
   "baseFontSizeAction": true,
   "nativeMenus": true,
   "baseFontSize": 20,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "showRibbon": true
 }
