@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -348,6 +349,8 @@
   },
   "active": "963fbf01a10155c4",
   "lastOpenFiles": [
+    "others/media/Pasted Image 20250911153615_812.png",
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Excalidraw/lib/microsoft-azure-cloud-icons.excalidrawlib",
     "Excalidraw/lib/azure-network.excalidrawlib",
     "Excalidraw/lib/azure-compute.excalidrawlib",
@@ -357,10 +360,8 @@
     "Excalidraw/lib/aws-architecture-icons.excalidrawlib",
     "Excalidraw/lib",
     "Excalidraw/🧩 Centralized VirtualBox Management Dashboard – Architecture Overview.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "Pasted Image 20250911154112_991.png",
-    "Pasted Image 20250911153811_933.png",
-    "Pasted Image 20250911153615_812.png",
+    "others/media/Pasted Image 20250911154112_991.png",
+    "others/media/Pasted Image 20250911153811_933.png",
     "rough/Pasted Image 20250905184334_559.png",
     "Application and Deployment's Performance Optimization Best Practices - RITH & RAMK.md",
     "Excalidraw/jenkinsArch.md",
@@ -392,7 +393,6 @@
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/1.Introduction to Statefulset Object.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/14. resourceFieldRef  downwardAPI - Demo and overview.md",
     "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/13 . fieldRef downwardAPI - Demo and overview.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/12. downwardAPI overview (refs).md",
-    "Excalidraw/ClusterEnvironment-Confluence"
+    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/12. downwardAPI overview (refs).md"
   ]
 }
