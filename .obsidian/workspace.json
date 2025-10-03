@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8b07817e77d7125f",
+        "id": "65eaa044a5ff4dd3",
         "type": "tabs",
         "children": [
           {
-            "id": "963fbf01a10155c4",
+            "id": "ec4a2216d1acaabc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-                "mode": "source",
+                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -172,10 +171,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md"
+                "file": "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md"
               },
               "icon": "lucide-info",
-              "title": "File properties for 00.Section13-K8sStorage(Volumes)"
+              "title": "File properties for 00.Section14-K8sStorage(PV, PVC)"
             }
           }
         ]
@@ -190,8 +189,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -206,8 +205,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -222,8 +221,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -238,8 +237,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -254,8 +253,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -270,8 +269,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -286,8 +285,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -302,8 +301,8 @@
             "state": {
               "type": "map-of-content",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
             }
           }
         ]
@@ -314,6 +313,38 @@
         "children": [
           {
             "id": "014e5e00f830e233",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "6daf6e6731f4d7ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6de66334d93351b",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "51fca9c733db50a6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34e1d4e3931213f9",
             "type": "leaf",
             "state": {
               "type": "map-of-content",
@@ -347,52 +378,52 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "963fbf01a10155c4",
+  "active": "ed6661fe103edd81",
   "lastOpenFiles": [
+    "Untitled.base",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+    "Networking/DNS/Multitenant subdomain based DNS routing - legacy.md",
+    "cv/0.0-final.md",
+    "rithish_resume.md",
+    "cv/0.1-coverLetter.md",
+    "Systems/vboxwebsrv system setup.md",
+    "cv",
+    "haK8sCluster.png",
+    "moss.jpeg",
+    "Pasted Image 20250929165857_386.png",
+    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
+    "whatIsFullStack.png",
+    "Networking/DNS/V.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
+    "Networking/DNS/V.2.0 - Cluster based.md",
+    "Networking/DNS/v.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
+    "Networking/DNS",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
+    "trips/northeastTrip-Itinerary.md",
+    "cv/taglines.md",
+    "cv/claude-absoluteGeneric.md",
+    "cv/qwen-ATS Friendly-plainText.md",
+    "cv/qwen-generic.md",
+    "cv/qwen-onePager.md",
+    "cv/coverLetter-startup-focused.md",
+    "cv/coverLetter-generic.md",
+    "cv",
+    "trips/Untitled",
+    "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
+    "Excalidraw/K8sArchitecture/Containerdv2.excalidraw.md",
+    "Excalidraw/ClusterEnvironment-Confluence/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.md",
+    "Excalidraw/ClusterEnvironment-Confluence/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.md",
+    "Networking/Wireguard/technotim-wg0.md",
+    "image-1.png",
+    "Networking/Wireguard/wg0.md",
+    "Networking/Wireguard",
+    "packaging and delivery/app.exe and .msi.md",
+    "packaging and delivery",
+    "trips",
     "others/media/Pasted Image 20250911153615_812.png",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Excalidraw/lib/microsoft-azure-cloud-icons.excalidrawlib",
-    "Excalidraw/lib/azure-network.excalidrawlib",
-    "Excalidraw/lib/azure-compute.excalidrawlib",
-    "Excalidraw/lib/azure-cloud-services.excalidrawlib",
-    "Excalidraw/lib/aws-simple-icons.excalidrawlib",
-    "Excalidraw/lib/aws-serverless.excalidrawlib",
-    "Excalidraw/lib/aws-architecture-icons.excalidrawlib",
-    "Excalidraw/lib",
-    "Excalidraw/🧩 Centralized VirtualBox Management Dashboard – Architecture Overview.md",
     "others/media/Pasted Image 20250911154112_991.png",
     "others/media/Pasted Image 20250911153811_933.png",
     "rough/Pasted Image 20250905184334_559.png",
-    "Application and Deployment's Performance Optimization Best Practices - RITH & RAMK.md",
-    "Excalidraw/jenkinsArch.md",
-    "Excalidraw/Drawing 2025-09-05 18.38.47.md",
-    "Excalidraw/Drawing 2025-09-05 15.54.31.md",
-    "Pasted Image 20250905155605_316.png",
-    "Pasted Image 20250905155550_113.png",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits/HAsetup/📚 Kubernetes HA Cluster Setup - Full Documentation.md",
-    "valapari+athirappalli (3days2nightsTrip).md",
-    "README.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits/HAsetup/swap issues.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits/Others - Disk Space Cleanup - Memory Exhaustion During Image Processing.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits/HAsetup/Kubernetes HAProxy Configuration Errors.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/titbits/HAsetup",
-    "moss.jpeg",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
-    "DIY Linux Privacy Hardening Manual.md",
-    "Excalidraw/cloudInfra.md",
-    "Pasted Image 20250820173408_822.png",
-    "Pasted Image 20250820173401_760.png",
-    "Pasted Image 20250820173254_377.png",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Orchestration/k8engineers.com/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
-    "Excalidraw/Drawing 2025-08-18 16.05.05.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/0.Index.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/1.Introduction to Statefulset Object.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/14. resourceFieldRef  downwardAPI - Demo and overview.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/13 . fieldRef downwardAPI - Demo and overview.md",
-    "Orchestration/k8engineers.com/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/12. downwardAPI overview (refs).md"
+    "Pasted Image 20250905155605_316.png"
   ]
 }
