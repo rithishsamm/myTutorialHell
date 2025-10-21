@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "65eaa044a5ff4dd3",
+        "id": "26f1445df7aa5ef2",
         "type": "tabs",
         "children": [
           {
-            "id": "ec4a2216d1acaabc",
+            "id": "b28454e88e8bfc38",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+                "file": "README.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section14-K8sStorage(PV, PVC)"
+              "title": "README"
             }
           }
         ]
@@ -349,6 +349,22 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d19b883f2cd8f8be",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b418954b698f2f8",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -380,16 +396,30 @@
   },
   "active": "ed6661fe103edd81",
   "lastOpenFiles": [
-    "Untitled.base",
+    "README.md",
+    "moss.jpeg",
+    "haK8sCluster.png",
+    "trips/valapari+athirappalli (3days2nightsTrip).md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S Stateful set.md",
+    "Excalidraw/PXE Setup.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "Networking/DNS/Multitenant subdomain based DNS routing - legacy.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/0.Index.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
+    "Orchestration/K8s-HolyGrail/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
+    "Excalidraw/🧩 Centralized VirtualBox Management Dashboard – Architecture Overview.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/1. Kubernetes Objects overview.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
     "cv/0.0-final.md",
-    "rithish_resume.md",
     "cv/0.1-coverLetter.md",
+    "rithish_resume.md",
+    "Untitled.base",
+    "Networking/DNS/Multitenant subdomain based DNS routing - legacy.md",
     "Systems/vboxwebsrv system setup.md",
     "cv",
-    "haK8sCluster.png",
-    "moss.jpeg",
     "Pasted Image 20250929165857_386.png",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "whatIsFullStack.png",
@@ -397,26 +427,13 @@
     "Networking/DNS/V.2.0 - Cluster based.md",
     "Networking/DNS/v.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
     "Networking/DNS",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
     "trips/northeastTrip-Itinerary.md",
     "cv/taglines.md",
-    "cv/claude-absoluteGeneric.md",
-    "cv/qwen-ATS Friendly-plainText.md",
-    "cv/qwen-generic.md",
-    "cv/qwen-onePager.md",
-    "cv/coverLetter-startup-focused.md",
-    "cv/coverLetter-generic.md",
     "cv",
     "trips/Untitled",
     "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
-    "Excalidraw/K8sArchitecture/Containerdv2.excalidraw.md",
-    "Excalidraw/ClusterEnvironment-Confluence/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.md",
-    "Excalidraw/ClusterEnvironment-Confluence/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.md",
-    "Networking/Wireguard/technotim-wg0.md",
     "image-1.png",
-    "Networking/Wireguard/wg0.md",
     "Networking/Wireguard",
-    "packaging and delivery/app.exe and .msi.md",
     "packaging and delivery",
     "trips",
     "others/media/Pasted Image 20250911153615_812.png",

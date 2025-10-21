@@ -612,18 +612,21 @@ var LineFormater = class {
             let reg2 = /([\u4e00-\u9fa5])([A-Za-z])/gi;
             [content, curCh] = insertSpace(content, reg1, prevCh, curCh, offset);
             [content, curCh] = insertSpace(content, reg2, prevCh, curCh, offset);
+            lineParts[i].content = content;
           }
           if (settings.ChineseNumberSpace) {
             let reg2 = /([0-9])([\u4e00-\u9fa5])/g;
             let reg1 = /([\u4e00-\u9fa5])([0-9])/g;
             [content, curCh] = insertSpace(content, reg2, prevCh, curCh, offset);
             [content, curCh] = insertSpace(content, reg1, prevCh, curCh, offset);
+            lineParts[i].content = content;
           }
           if (settings.EnglishNumberSpace) {
             let reg2 = /([A-Za-z])(\d)/g;
             let reg1 = /(\d)([A-Za-z])/g;
             [content, curCh] = insertSpace(content, reg2, prevCh, curCh, offset);
             [content, curCh] = insertSpace(content, reg1, prevCh, curCh, offset);
+            lineParts[i].content = content;
           }
           if (settings.ChineseNoSpace) {
             let reg2 = /([\u4e00-\u9fa5，。、！；‘’《》]+)(\s+)([\u4e00-\u9fa5，。、！；‘’《》]+)/g;
@@ -1172,9 +1175,7 @@ function splitTextWithLinkAndUserDefined(text, regExps) {
         let regTemp = new RegExp(regItem, "g");
       } catch (error) {
         isValidReg = false;
-        if (this.settings.debug) {
-          new import_obsidian.Notice("EasuTyping: Bad RegExp:\n" + regItem);
-        }
+        console.error("EasyTyping: Invalid RegExp:", regItem, error);
       }
       if (isValidReg) {
         regExpList.push(new RegExp(regItem, "g"));
@@ -1411,7 +1412,7 @@ var locale = {
       name: "Capitalize the first letter of every sentence",
       desc: "Capitalize the first letter of each sentence in English."
     },
-    smartInsertSpace: {
+    textPunctuationSpace: {
       name: "Smartly insert space between text and punctuation",
       desc: "Insert space between text and punctuation intelligently."
     },
@@ -1615,8 +1616,8 @@ var locale2 = {
       name: "\u53E5\u9996\u5B57\u6BCD\u5927\u5199",
       desc: "\u82F1\u6587\u6BCF\u4E2A\u53E5\u9996\u5B57\u6BCD\u5927\u5199\uFF0C\u53EF\u64A4\u9500"
     },
-    smartInsertSpace: {
-      name: "\u667A\u80FD\u63D2\u5165\u7A7A\u683C",
+    textPunctuationSpace: {
+      name: "\u6587\u672C\u548C\u6807\u70B9\u95F4\u7A7A\u683C",
       desc: "\u5728\u6587\u672C\u548C\u6807\u70B9\u4E4B\u95F4\u667A\u80FD\u63D2\u5165\u7A7A\u683C"
     },
     spaceStrategyInlineCode: {
@@ -1819,7 +1820,7 @@ var locale3 = {
       name: "\u0417\u0430\u0433\u043B\u0430\u0432\u043D\u0430\u044F \u0431\u0443\u043A\u0432\u0430 \u0432 \u043D\u0430\u0447\u0430\u043B\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F",
       desc: "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u0435\u0440\u0432\u043E\u0439 \u0431\u0443\u043A\u0432\u044B \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0432 \u0430\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u043E\u043C \u0432 \u0437\u0430\u0433\u043B\u0430\u0432\u043D\u0443\u044E."
     },
-    smartInsertSpace: {
+    textPunctuationSpace: {
       name: "\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442\u0443\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u0441\u0442\u0430\u0432\u043A\u0430 \u043F\u0440\u043E\u0431\u0435\u043B\u0430 \u043C\u0435\u0436\u0434\u0443 \u0442\u0435\u043A\u0441\u0442\u043E\u043C \u0438 \u043F\u0443\u043D\u043A\u0442\u0443\u0430\u0446\u0438\u0435\u0439",
       desc: "\u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442\u0443\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u0441\u0442\u0430\u0432\u043A\u0430 \u043F\u0440\u043E\u0431\u0435\u043B\u0430 \u043C\u0435\u0436\u0434\u0443 \u0442\u0435\u043A\u0441\u0442\u043E\u043C \u0438 \u043F\u0443\u043D\u043A\u0442\u0443\u0430\u0446\u0438\u0435\u0439."
     },
@@ -2023,8 +2024,8 @@ var locale4 = {
       name: "\u53E5\u9996\u5B57\u6BCD\u5927\u5BEB",
       desc: "\u82F1\u6587\u6BCF\u500B\u53E5\u9996\u5B57\u6BCD\u5927\u5BEB\uFF0C\u53EF\u53D6\u6D88"
     },
-    smartInsertSpace: {
-      name: "\u667A\u80FD\u63D2\u5165\u7A7A\u683C",
+    textPunctuationSpace: {
+      name: "\u6587\u672C\u548C\u6A19\u9EDE\u9593\u7A7A\u683C",
       desc: "\u5728\u6587\u672C\u548C\u6A19\u9EDE\u4E4B\u9593\u667A\u80FD\u63D2\u5165\u7A7A\u683C"
     },
     spaceStrategyInlineCode: {
@@ -2348,7 +2349,7 @@ var EasyTypingSettingTab = class extends import_obsidian2.PluginSettingTab {
         await this.plugin.saveSettings();
       });
     });
-    new import_obsidian2.Setting(containerEl).setName(locale5.settings.smartInsertSpace.name).setDesc(locale5.settings.smartInsertSpace.desc).addDropdown((dropdown) => {
+    new import_obsidian2.Setting(containerEl).setName(locale5.settings.textPunctuationSpace.name).setDesc(locale5.settings.textPunctuationSpace.desc).addDropdown((dropdown) => {
       dropdown.addOption("typing" /* OnlyWhenTyping */, locale5.dropdownOptions.onlyWhenTyping);
       dropdown.addOption("global" /* Globally */, locale5.dropdownOptions.globally);
       dropdown.setValue(this.plugin.settings.PunctuationSpaceMode);
@@ -3008,7 +3009,7 @@ function getMarkerDecoration(from, to) {
   if (from == to) {
     return import_view2.Decoration.widget({
       widget: new CursorWidget(),
-      side: 1
+      side: 0
     }).range(from);
   }
   return import_view2.Decoration.mark({
@@ -3106,7 +3107,7 @@ var CursorWidget = class extends import_view2.WidgetType {
   toDOM(view) {
     const cursorEl = document.createElement("span");
     cursorEl.className = `${CURSOR_WIDGET_CLASS}`;
-    cursorEl.textContent = "|";
+    cursorEl.textContent = "";
     return cursorEl;
   }
 };
@@ -3128,11 +3129,11 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
       let selected = tr.startState.selection.asSingle().main.anchor != tr.startState.selection.asSingle().main.head;
       let changeTypeStr = getTypeStrOfTransac(tr);
       tr.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         let changedStr = tr.startState.sliceDoc(fromA, toA);
         let changestr_ = changedStr.replace(/\s/g, "0");
         let insertedStr = inserted.sliceString(0);
-        if (this.settings.debug) {
+        if ((_a = this.settings) == null ? void 0 : _a.debug) {
           console.log("[TransactionFilter] type, fromA, toA, changed, fromB, toB, inserted");
           console.log(changeTypeStr, fromA, toA, changedStr, fromB, toB, insertedStr);
         }
@@ -3141,8 +3142,8 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
         if (this.settings.SelectionEnhance) {
           if ((changeTypeStr == "input.type" || changeTypeStr == "input.type.compose") && fromA != toA && (fromB + 1 === toB || insertedStr == "\u2014\u2014" || insertedStr == "\u2026\u2026")) {
             if (this.SelectionReplaceMap.has(insertedStr)) {
-              changes.push({ changes: { from: fromA, insert: (_a = this.SelectionReplaceMap.get(insertedStr)) == null ? void 0 : _a.left }, userEvent: "EasyTyping.change" });
-              changes.push({ changes: { from: toA, insert: (_b = this.SelectionReplaceMap.get(insertedStr)) == null ? void 0 : _b.right }, userEvent: "EasyTyping.change" });
+              changes.push({ changes: { from: fromA, insert: (_b = this.SelectionReplaceMap.get(insertedStr)) == null ? void 0 : _b.left }, userEvent: "EasyTyping.change" });
+              changes.push({ changes: { from: toA, insert: (_c = this.SelectionReplaceMap.get(insertedStr)) == null ? void 0 : _c.right }, userEvent: "EasyTyping.change" });
               tr = tr.startState.update(...changes);
               return tr;
             }
@@ -3151,7 +3152,7 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
         if (this.settings.BetterCodeEdit && changeTypeStr.contains("paste") && fromA == fromB && isCodeBlockInPos(tr.startState, fromA)) {
           print("\u68C0\u6D4B\u5230\u5728\u4EE3\u7801\u5757\u4E2D\u7C98\u8D34");
           let line = tr.startState.doc.lineAt(fromB).text;
-          let base_indent_num = (_c = getCodeBlockInfoInPos(tr.startState, fromA)) == null ? void 0 : _c.indent;
+          let base_indent_num = (_d = getCodeBlockInfoInPos(tr.startState, fromA)) == null ? void 0 : _d.indent;
           let base_indent = base_indent_num == 0 ? "" : " ".repeat(base_indent_num);
           let inserted_lines = insertedStr.split("\n");
           if (inserted_lines.length > 1) {
@@ -3528,9 +3529,10 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
       let tr = update.transactions[0];
       let changeType = getTypeStrOfTransac(tr);
       tr.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
+        var _a;
         let insertedStr = inserted.sliceString(0);
         let changedStr = tr.startState.doc.sliceString(fromA, toA);
-        if (this.settings.debug) {
+        if ((_a = this.settings) == null ? void 0 : _a.debug) {
           console.log("[ViewUpdate] type, fromA, toA, changed, fromB, toB, inserted");
           console.log(changeType, fromA, toA, changedStr, fromB, toB, insertedStr);
           console.log("==>[Composing]", update.view.composing);
@@ -3799,10 +3801,11 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
       return false;
     };
     this.handleModA = (view) => {
+      var _a;
       let selection = view.state.selection.main;
-      let line = view.state.doc.lineAt(selection.head);
-      let line_type = getPosLineType2(view.state, selection.head);
-      let is_in_code_block = isCodeBlockInPos(view.state, selection.head);
+      let line = view.state.doc.lineAt(selection.anchor);
+      let line_type = getPosLineType2(view.state, selection.anchor);
+      let is_in_code_block = isCodeBlockInPos(view.state, selection.anchor);
       if (this.settings.EnhanceModA && line_type == "text" /* text */ && !is_in_code_block) {
         let [block_start, block_end] = this.getBlockLinesInPos(view.state, selection.head);
         if (selection.anchor <= view.state.doc.line(block_start).from && selection.head >= view.state.doc.line(block_end).to) {
@@ -3846,6 +3849,88 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
         }
       }
       if (this.settings.EnhanceModA && line_type == "list" /* list */) {
+        const reg_list = /^(\s*)([-*+] \[[^\]]\]|[-*+]|\d+\.)\s/;
+        let reg_code_block = /^\s+```/;
+        const listMatch = line.text.match(reg_list);
+        if (!listMatch) {
+          if (!reg_code_block.test(line.text)) {
+            let cur_indent = ((_a = line.text.match(/^\s*/)) == null ? void 0 : _a[0].length) || 0;
+            let selection_list = [];
+            selection_list.push({ anchor: line.from + cur_indent, head: line.to });
+            let list_start_line = line.number;
+            for (let i = line.number - 1; i >= 1; i--) {
+              const prevLine = view.state.doc.line(i);
+              if (getPosLineType2(view.state, prevLine.from) == "list" /* list */) {
+                list_start_line = i;
+                break;
+              }
+            }
+            let list_s_match = view.state.doc.line(list_start_line).text.match(reg_list);
+            let list_s_start_idx = (list_s_match == null ? void 0 : list_s_match[0].length) || 0;
+            selection_list.push({ anchor: view.state.doc.line(list_start_line).from + list_s_start_idx, head: line.to });
+            if (selection.anchor <= selection_list[0].anchor && selection.head >= selection_list[0].head) {
+              view.dispatch({ selection: selection_list[1], userEvent: "EasyTyping.handleModA" });
+              return true;
+            } else {
+              view.dispatch({ selection: selection_list[0], userEvent: "EasyTyping.handleModA" });
+              return true;
+            }
+          }
+        } else {
+          const cur_indent = listMatch[1].length;
+          let selection_list = [];
+          const contentStart = line.from + listMatch[0].length;
+          selection_list.push({ anchor: contentStart, head: line.to });
+          let endLine = line.number;
+          for (let i = line.number + 1; i <= view.state.doc.lines; i++) {
+            const nextLine = view.state.doc.line(i);
+            const nextMatch = nextLine.text.match(/^(\s*)/);
+            if (!nextMatch || nextMatch[0].length <= cur_indent)
+              break;
+            endLine = i;
+          }
+          let list_block_selection = { anchor: line.from, head: view.state.doc.line(endLine).to };
+          selection_list.push(list_block_selection);
+          let list_start_line = line.number;
+          for (let i = line.number - 1; i >= 1; i--) {
+            const prevLine = view.state.doc.line(i);
+            const prevMatch = prevLine.text.match(/^(\s*)/);
+            if (getPosLineType2(view.state, prevLine.from) == "list" /* list */ || prevMatch && prevMatch[0].length >= 2) {
+              list_start_line = i;
+            } else {
+              break;
+            }
+          }
+          let list_end_line = line.number;
+          for (let i = line.number + 1; i <= view.state.doc.lines; i++) {
+            const nextLine = view.state.doc.line(i);
+            const nextMatch = nextLine.text.match(/^(\s*)/);
+            if (getPosLineType2(view.state, nextLine.from) == "list" /* list */ || nextMatch && nextMatch[0].length >= 2) {
+              list_end_line = i;
+            } else {
+              break;
+            }
+          }
+          let list_all_selection = { anchor: view.state.doc.line(list_start_line).from, head: view.state.doc.line(list_end_line).to };
+          if (list_all_selection.anchor != list_block_selection.anchor || list_all_selection.head != list_block_selection.head) {
+            selection_list.push(list_all_selection);
+          }
+          selection_list.push({ anchor: 0, head: view.state.doc.length });
+          let hit_idx = -1;
+          for (let i = selection_list.length - 1; i >= 0; i--) {
+            const sel = selection_list[i];
+            if (selection.anchor <= sel.anchor && selection.head >= sel.head) {
+              hit_idx = i;
+              break;
+            }
+          }
+          hit_idx += 1;
+          if (hit_idx < selection_list.length) {
+            view.dispatch({ selection: selection_list[hit_idx], userEvent: "EasyTyping.handleModA" });
+            return true;
+          }
+          return false;
+        }
       }
       if (!this.settings.BetterCodeEdit)
         return false;
@@ -3853,7 +3938,8 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
       return selectCodeBlockInPos(view, mainSelection);
     };
     this.onKeyup = (event, view) => {
-      if (this.settings.debug) {
+      var _a;
+      if ((_a = this.settings) == null ? void 0 : _a.debug) {
         console.log("Keyup:", event.key);
       }
       this.handleEndComposeTypeKey(event, view);
@@ -4043,7 +4129,8 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
       return [newLine, newCh];
     };
     this.deleteBlankLines = (editor) => {
-      if (this.settings.debug) {
+      var _a;
+      if ((_a = this.settings) == null ? void 0 : _a.debug) {
         console.log("config.strictLineBreaks", this.app.vault.getConfig("strictLineBreaks"));
       }
       let strictLineBreaks = this.app.vault.config.strictLineBreaks || false;
@@ -4239,6 +4326,10 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
     this.compose_need_handle = false;
     this.Formater = new LineFormater();
     this.onFormatArticle = false;
+    if (!this.settings) {
+      console.error("EasyTyping: Settings not loaded properly, using defaults");
+      this.settings = Object.assign({}, DEFAULT_SETTINGS);
+    }
     setDebug(this.settings.debug);
     this.registerEditorExtension([
       import_state3.EditorState.transactionFilter.of(this.transactionFilterPlugin),
@@ -4375,11 +4466,12 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
     });
     this.addSettingTab(new EasyTypingSettingTab(this.app, this));
     this.registerEvent(this.app.workspace.on("active-leaf-change", (leaf) => {
+      var _a;
       if (leaf.view.getViewType() == "markdown") {
         let file = this.app.workspace.getActiveFile();
         if (file != null && this.CurActiveMarkdown != file.path) {
           this.CurActiveMarkdown = file.path;
-          if (this.settings.debug)
+          if ((_a = this.settings) == null ? void 0 : _a.debug)
             new import_obsidian3.Notice("new md-file open: " + file.path);
         }
       }
@@ -4401,10 +4493,11 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
     console.log("Easy Typing Plugin unloaded.");
   }
   async normalPaste(editor) {
+    var _a;
     let clipboardText = await navigator.clipboard.readText();
     if (clipboardText === null || clipboardText === "")
       return;
-    if (this.settings.debug)
+    if ((_a = this.settings) == null ? void 0 : _a.debug)
       console.log("Normal Paste!!");
     const editorView = editor.cm;
     let mainSelection = editorView.state.selection.asSingle().main;
@@ -4824,7 +4917,8 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
     new import_obsidian3.Notice("EasyTyping: Autoformat is " + status + "!");
   }
   convert2CodeBlock(editor) {
-    if (this.settings.debug)
+    var _a;
+    if ((_a = this.settings) == null ? void 0 : _a.debug)
       console.log("----- EasyTyping: insert code block-----");
     if (editor.somethingSelected && editor.getSelection() != "") {
       let selected = editor.getSelection();
@@ -4990,7 +5084,13 @@ var EasyTypingPlugin = class extends import_obsidian3.Plugin {
     this.refreshUserConvertRule();
   }
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    try {
+      const userData = await this.loadData();
+      this.settings = Object.assign({}, DEFAULT_SETTINGS, userData || {});
+    } catch (error) {
+      console.error("EasyTyping: Failed to load settings, using defaults:", error);
+      this.settings = Object.assign({}, DEFAULT_SETTINGS);
+    }
   }
   async saveSettings() {
     await this.saveData(this.settings);
