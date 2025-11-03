@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "26f1445df7aa5ef2",
+        "id": "acc204712fd8e7d3",
         "type": "tabs",
         "children": [
           {
-            "id": "b28454e88e8bfc38",
+            "id": "25fedbb0c9f485c2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "preview",
+                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S Stateful set.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "00.Section 15 - K8S Stateful set"
             }
           }
         ]
@@ -365,6 +365,22 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "21d20c2887e135ad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7977742a7e6cb349",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -394,15 +410,19 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "ed6661fe103edd81",
+  "active": "25fedbb0c9f485c2",
   "lastOpenFiles": [
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S Stateful set.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
+    "Excalidraw/VirtualBox Network Adapters - Complete Guide.md",
+    "haK8sCluster.png",
+    "RealFullStack.png",
+    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
+    "rithish_resume.md",
     "README.md",
     "moss.jpeg",
-    "haK8sCluster.png",
     "trips/valapari+athirappalli (3days2nightsTrip).md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S Stateful set.md",
     "Excalidraw/PXE Setup.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/0.Index.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
@@ -415,20 +435,16 @@
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
     "cv/0.0-final.md",
     "cv/0.1-coverLetter.md",
-    "rithish_resume.md",
     "Untitled.base",
     "Networking/DNS/Multitenant subdomain based DNS routing - legacy.md",
     "Systems/vboxwebsrv system setup.md",
     "cv",
     "Pasted Image 20250929165857_386.png",
-    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
-    "whatIsFullStack.png",
     "Networking/DNS/V.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
     "Networking/DNS/V.2.0 - Cluster based.md",
     "Networking/DNS/v.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
     "Networking/DNS",
     "trips/northeastTrip-Itinerary.md",
-    "cv/taglines.md",
     "cv",
     "trips/Untitled",
     "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
