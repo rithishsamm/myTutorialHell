@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "acc204712fd8e7d3",
+        "id": "b228c07dceb94d14",
         "type": "tabs",
         "children": [
           {
-            "id": "25fedbb0c9f485c2",
+            "id": "b00709724fce0250",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/VirtualBox Network Adapters - Complete Guide.md"
+                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "VirtualBox Network Adapters - Complete Guide"
+              "icon": "lucide-file",
+              "title": "00.Section 16 - K8S Configuration"
             }
           }
         ]
@@ -76,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b6e1abf680f4b2cf",
@@ -380,6 +381,86 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5abeb6ed720de0ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "493cbb39f88a80d2",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4a3dd5305bc56105",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2400c99dc91a3044",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "3ab5f7ed699798c9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "efa736177ba4b688",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "c20c01755bc96178",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7213fbc7a0559e00",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8fd2b8822259c170",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba04903536f604ff",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -409,13 +490,30 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "25fedbb0c9f485c2",
+  "active": "ba04903536f604ff",
   "lastOpenFiles": [
+    "Docker compose update mandation.md",
+    "link-to-your-repo.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/1.Introduction to Kubernetes Configuration.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/0.index.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/4.Handling ConfigMap using Declarative approach(environment variables).md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/3.Handling ConfigMap using Imperative approach(environment variables).md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/2.Introduction to Kubernetes ConfigMap.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S StatefulSet.md",
+    "Storage/MinIO - Kubernetes native object storage.md",
+    "Excalidraw/Drawing 2025-11-14 14.48.49.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section18-k8sAuthetication&Authorization/1.Introduction to Kubernetes Authentication and Authorization stratagies.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/2. Understanding Kubernetes application deployment stratagies.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/1. Difference between Imperative and Declarative approach.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/0.Introduction.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm",
+    "Untitled",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm",
+    "Excalidraw/VirtualBox Network Adapters - Complete Guide.md",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.png",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.png",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S Stateful set.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
-    "Excalidraw/VirtualBox Network Adapters - Complete Guide.md",
     "haK8sCluster.png",
     "RealFullStack.png",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
@@ -428,34 +526,17 @@
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
-    "Orchestration/K8s-HolyGrail/kubernetes_latest_manifest/Kubernetes/02-Pods/00-workflow.md",
-    "Excalidraw/🧩 Centralized VirtualBox Management Dashboard – Architecture Overview.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/00. section3-full-k8sPods.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section3-k8sPods/1. Kubernetes Objects overview.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section1-k8sArchitecture/00. section1-full-k8sArchitecture.md",
-    "cv/0.0-final.md",
-    "cv/0.1-coverLetter.md",
     "Untitled.base",
-    "Networking/DNS/Multitenant subdomain based DNS routing - legacy.md",
-    "Systems/vboxwebsrv system setup.md",
     "cv",
     "Pasted Image 20250929165857_386.png",
-    "Networking/DNS/V.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
-    "Networking/DNS/V.2.0 - Cluster based.md",
-    "Networking/DNS/v.1.0 - Wildcard, multi-tenant domain config guide - generic setup.md",
     "Networking/DNS",
     "cv",
     "trips/Untitled",
     "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
     "image-1.png",
     "Networking/Wireguard",
-    "packaging and delivery",
-    "trips",
     "others/media/Pasted Image 20250911153615_812.png",
-    "Excalidraw/lib/microsoft-azure-cloud-icons.excalidrawlib",
     "others/media/Pasted Image 20250911154112_991.png",
-    "others/media/Pasted Image 20250911153811_933.png",
-    "rough/Pasted Image 20250905184334_559.png"
+    "others/media/Pasted Image 20250911153811_933.png"
   ]
 }
