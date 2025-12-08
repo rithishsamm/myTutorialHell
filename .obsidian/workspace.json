@@ -490,11 +490,11 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "ba04903536f604ff",
+  "active": "b00709724fce0250",
   "lastOpenFiles": [
     "Docker compose update mandation.md",
-    "link-to-your-repo.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+    "link-to-your-repo.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/1.Introduction to Kubernetes Configuration.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/0.index.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/4.Handling ConfigMap using Declarative approach(environment variables).md",
