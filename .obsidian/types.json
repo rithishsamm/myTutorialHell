@@ -24,6 +24,7 @@
     "excalidraw-iframe-theme": "text",
     "excalidraw-open-md": "checkbox",
     "excalidraw-embeddable-theme": "text",
-    "excalidraw-embed-md": "checkbox"
+    "excalidraw-embed-md": "checkbox",
+    "excalidraw-export-internal-links": "checkbox"
   }
 }

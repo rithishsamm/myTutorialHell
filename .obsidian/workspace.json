@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+                "file": "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00.Section 16 - K8S Configuration"
+              "title": "0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!"
             }
           }
         ]
@@ -461,6 +461,38 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "03a8efaf95011a9b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b53035209fcfac3c",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d2fcc3eebda378cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1728cca018bb4b39",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -492,8 +524,25 @@
   },
   "active": "b00709724fce0250",
   "lastOpenFiles": [
-    "Docker compose update mandation.md",
+    "Orchestration/archives",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/1. Intro to K3s - Lightweight Kubernetes.md",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
+    "Orchestration/K3s/archive/K3s-HomeBuild.md",
+    "Orchestration/Kubevirt/references.md",
+    "Orchestration/talos/others/media/image.png",
+    "Orchestration/talos/others/Selfhost Deployment Strategies.md",
+    "Orchestration/Kubevirt",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/0. Index.md",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/Drawing 2025-12-16 14.22.55.md",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/Untitled",
+    "Orchestration/K3s/K3s-HolyGrail/PDFs/ARM-White-Paper-V3.pdf",
+    "Orchestration/K3s/K3s-HolyGrail/PDFs/introduction-230807-083212.pdf",
+    "Orchestration/K3s/K3s-HolyGrail/PDFs",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten",
+    "Orchestration/K3s/K3s-HolyGrail",
+    "Orchestration/K3s/archive",
+    "Docker compose update mandation.md",
     "link-to-your-repo.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/1.Introduction to Kubernetes Configuration.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/0.index.md",
@@ -509,7 +558,6 @@
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/0.Introduction.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm",
     "Untitled",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm",
     "Excalidraw/VirtualBox Network Adapters - Complete Guide.md",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.png",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.png",
@@ -517,26 +565,10 @@
     "haK8sCluster.png",
     "RealFullStack.png",
     "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
-    "rithish_resume.md",
-    "README.md",
     "moss.jpeg",
-    "trips/valapari+athirappalli (3days2nightsTrip).md",
-    "Excalidraw/PXE Setup.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/0.Index.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/0.Index.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/00.Section13-K8sStorage(Volumes).md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section13-k8sStorage(Volumes)/0.Index.md",
-    "Untitled.base",
-    "cv",
     "Pasted Image 20250929165857_386.png",
-    "Networking/DNS",
-    "cv",
-    "trips/Untitled",
-    "Excalidraw/K8sArchitecture/CRIoutOfTheBox.excalidraw.excalidraw",
     "image-1.png",
-    "Networking/Wireguard",
-    "others/media/Pasted Image 20250911153615_812.png",
-    "others/media/Pasted Image 20250911154112_991.png",
-    "others/media/Pasted Image 20250911153811_933.png"
+    "Orchestration/talos/others/media/Pasted Image 20250911153615_812.png",
+    "Orchestration/talos/others/media/Pasted Image 20250911154112_991.png"
   ]
 }

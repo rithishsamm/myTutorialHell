@@ -36,6 +36,129 @@ var import_obsidian3 = require("obsidian");
 
 // src/ColoredClassApplierPlugin.ts
 var import_view = require("@codemirror/view");
+
+// src/tag-appliers/TagApplier.ts
+var COLORED_TAG_PREFIX = "colored-tag-";
+function normalizeTagText(text) {
+  if (!text) {
+    return null;
+  }
+  const trimmed = text.trim();
+  const normalized = trimmed.replace(/^#/, "");
+  return normalized.length ? normalized.toLowerCase() : null;
+}
+function buildColoredTagClass(tagName) {
+  return `${COLORED_TAG_PREFIX}${tagName}`;
+}
+function cleanupColoredTagClasses(targets, newClassName) {
+  for (const el of targets) {
+    for (const cls of Array.from(el.classList)) {
+      if (cls.startsWith(COLORED_TAG_PREFIX) && cls !== newClassName) {
+        el.classList.remove(cls);
+      }
+    }
+  }
+}
+function applyColoredTagClass(targets, tagText) {
+  const normalizedTag = normalizeTagText(tagText);
+  if (!normalizedTag) {
+    return;
+  }
+  const className = buildColoredTagClass(normalizedTag);
+  cleanupColoredTagClasses(targets, className);
+  for (const el of targets) {
+    if (!el.classList.contains(className)) {
+      el.classList.add(className);
+    }
+  }
+}
+var defaultTagTextGetter = (el) => {
+  const text = el.textContent;
+  return text ? text.trim() : null;
+};
+function applyColoredTagClassesInRoot(root, selector, getTagText = defaultTagTextGetter, getTagTargets = (el) => [el]) {
+  const candidates = [];
+  if (root instanceof HTMLElement && root.matches(selector)) {
+    candidates.push(root);
+  }
+  root.querySelectorAll(selector).forEach((el) => {
+    candidates.push(el);
+  });
+  for (const el of candidates) {
+    applyColoredTagClass(getTagTargets(el), getTagText(el));
+  }
+}
+var TagApplier = class {
+  constructor(options) {
+    this.pendingNodes = /* @__PURE__ */ new Set();
+    this.flushHandle = null;
+    var _a, _b;
+    this.selector = options.selector;
+    this.getTagText = (_a = options.getTagText) != null ? _a : defaultTagTextGetter;
+    this.getTagTargets = (_b = options.getTagTargets) != null ? _b : (el) => [el];
+  }
+  apply(root = document.body) {
+    applyColoredTagClassesInRoot(
+      root,
+      this.selector,
+      this.getTagText,
+      this.getTagTargets
+    );
+  }
+  start(root = document.body) {
+    this.stop();
+    this.apply(root);
+    this.observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        this.handleMutation(mutation);
+      }
+    });
+    this.observer.observe(root, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+  }
+  stop() {
+    var _a;
+    (_a = this.observer) == null ? void 0 : _a.disconnect();
+    this.observer = void 0;
+  }
+  handleMutation(mutation) {
+    if (mutation.type === "characterData") {
+      const parent = mutation.target.parentNode;
+      if (parent) {
+        this.scheduleApply(parent);
+      }
+      return;
+    }
+    mutation.addedNodes.forEach((node) => {
+      if (node instanceof HTMLElement || node instanceof DocumentFragment) {
+        this.scheduleApply(node);
+      }
+    });
+  }
+  scheduleApply(target) {
+    this.pendingNodes.add(target);
+    if (this.flushHandle !== null) {
+      return;
+    }
+    const requestId = window.requestAnimationFrame(() => {
+      this.flushHandle = null;
+      const nodes = Array.from(this.pendingNodes);
+      this.pendingNodes.clear();
+      for (const node of nodes) {
+        this.apply(node);
+      }
+    });
+    this.flushHandle = requestId;
+    if (this.pendingNodes.size === 0) {
+      this.flushHandle = null;
+    }
+  }
+};
+
+// src/ColoredClassApplierPlugin.ts
 function applyColoredClasses(domElement) {
   const nodes = Array.from(
     domElement.getElementsByClassName("cm-hashtag")
@@ -50,23 +173,10 @@ function applyColoredClasses(domElement) {
     if (!currentHashEl) {
       continue;
     }
-    const className = `colored-tag-${text.toLowerCase()}`;
-    cleanupOldClasses(el, currentHashEl, className);
-    applyClassName(el, currentHashEl, className);
-  }
-}
-function cleanupOldClasses(el, hashEl, newClassName) {
-  for (const cls of Array.from(el.classList)) {
-    if (cls.startsWith("colored-tag-") && cls !== newClassName) {
-      el.classList.remove(cls);
-      hashEl.classList.remove(cls);
+    if (!normalizeTagText(text)) {
+      continue;
     }
-  }
-}
-function applyClassName(el, hashEl, className) {
-  if (!el.classList.contains(className)) {
-    el.classList.add(className);
-    hashEl.classList.add(className);
+    applyColoredTagClass([el, currentHashEl], text);
   }
 }
 var coloredClassApplierPlugin = import_view.ViewPlugin.fromClass(
@@ -79,6 +189,30 @@ var coloredClassApplierPlugin = import_view.ViewPlugin.fromClass(
     }
   }
 );
+
+// src/tag-appliers/BaseViewTagApplier.ts
+var BASE_TAG_SELECTOR = ".bases-table a.tag, .bases-table-container a.tag, .value-list-container a.tag";
+function getTagNameFromElement(el) {
+  return normalizeTagText(el.textContent);
+}
+var singleUseApplier = new TagApplier({
+  selector: BASE_TAG_SELECTOR,
+  getTagText: getTagNameFromElement
+});
+var BaseViewTagApplier = class {
+  constructor() {
+    this.applier = new TagApplier({
+      selector: BASE_TAG_SELECTOR,
+      getTagText: getTagNameFromElement
+    });
+  }
+  start(root = document.body) {
+    this.applier.start(root);
+  }
+  stop() {
+    this.applier.stop();
+  }
+};
 
 // src/ColoredTagsPluginSettingTab.ts
 var import_obsidian2 = require("obsidian");
@@ -96,7 +230,8 @@ var DEFAULT_SETTINGS = {
     highTextContrast: false
   },
   knownTags: {},
-  _version: 3
+  tagColors: {},
+  _version: 4
 };
 
 // src/i18n/de.json
@@ -106,8 +241,8 @@ var de_default = {
       heading: "Palette",
       description: "Palette ausw\xE4hlen",
       options: {
-        adaptiveSoft: "\u{1F338} Adaptive weich",
-        adaptiveBright: "\u{1F33A} Adaptive kr\xE4ftig",
+        adaptiveSoft: "\u{1F338} Adaptiv (weich)",
+        adaptiveBright: "\u{1F33A} Adaptiv (kr\xE4ftig)",
         custom: "Benutzerdefiniert"
       },
       shift: {
@@ -123,8 +258,8 @@ var de_default = {
           description: "Hier findest du Paletten aus der GitHub-Diskussion. Klicke auf eine Karte, um sie sofort zu \xFCbernehmen oder {{communityLinkStart}}teile deine eigene{{communityLinkEnd}}.",
           loading: "Paletten werden geladen\u2026",
           error: "Paletten konnten nicht geladen werden. \xD6ffne die Diskussion, um sie manuell anzusehen.",
-          empty: "Noch keine Community-Paletten vorhanden. Teile eine!",
-          applyHint: "Klicke, um diese Palette zu verwenden"
+          empty: "Noch keine Community-Paletten vorhanden. Sei der Erste, der eine teilt!",
+          applyHint: "Klicke, um diese Palette anzuwenden"
         }
       }
     },
@@ -145,6 +280,14 @@ var de_default = {
       },
       gradientTransition: {
         name: "Gradienten\xFCbergang"
+      },
+      tagColors: {
+        name: "Farbzuweisungen",
+        description: "W\xE4hle eine Farbe aus der aktuellen Palette. Beim Wechsel der Palette passt sich der Tag automatisch an.",
+        placeholder: "Tag eingeben",
+        clear: "Farbe zur\xFCcksetzen",
+        empty: "Noch keine Farbzuweisungen",
+        applyHint: "Farbe anwenden"
       },
       reset: {
         name: "Konfiguration zur\xFCcksetzen",
@@ -207,6 +350,14 @@ var en_default = {
       gradientTransition: {
         name: "Gradient transition"
       },
+      tagColors: {
+        name: "Tag assignments",
+        description: "Choose a color from the current palette. If you change the palette, the tag adapts to the nearest color.",
+        placeholder: "Start typing a tag",
+        clear: "Reset color",
+        empty: "No tag overrides yet",
+        applyHint: "Apply color"
+      },
       reset: {
         name: "Reset config",
         description: "\u{1F6A8} All colors of all tags will be recalculated as if it was the first launch of the plugin. Requires restart of Obsidian.",
@@ -218,6 +369,351 @@ var en_default = {
     updateAvailable: "\u2B06\uFE0F {{pluginName}}: a new version is available",
     resetDone: "\u2705 Reset is done\nPlease restart Obsidian",
     communityPaletteApplied: "\u{1F3A8} Applied community palette by {{author}}"
+  }
+};
+
+// src/i18n/es.json
+var es_default = {
+  settings: {
+    palette: {
+      heading: "Paleta",
+      description: "Seleccionar paleta",
+      options: {
+        adaptiveSoft: "\u{1F338} Suave adaptable",
+        adaptiveBright: "\u{1F33A} Brillante adaptable",
+        custom: "Personalizada"
+      },
+      shift: {
+        name: "Desplazamiento de paleta",
+        description: "Si los colores de algunas etiquetas no encajan, puedes desplazar la paleta."
+      },
+      custom: {
+        name: "Paleta personalizada",
+        placeholder: "Pegar paleta",
+        description: "El formato es <code>XXXXXX-XXXXXX-XXXXXX</code> para cada color RGB.",
+        community: {
+          heading: "Paletas de la comunidad",
+          description: "A continuaci\xF3n hay paletas recopiladas de la discusi\xF3n en GitHub. Haz clic en cualquier tarjeta para aplicarla al instante o {{communityLinkStart}}comparte la tuya{{communityLinkEnd}}.",
+          loading: "Cargando paletas\u2026",
+          error: "No se pueden cargar las paletas en este momento. Si\xE9ntete libre de abrir la discusi\xF3n para explorarlas manualmente.",
+          empty: "A\xFAn no hay paletas compartidas. \xA1S\xE9 el primero en publicar una!",
+          applyHint: "Haz clic para aplicar esta paleta"
+        }
+      }
+    },
+    accessibility: {
+      heading: "\u{1F9BE} Accesibilidad",
+      description: "Mostrar opciones de accesibilidad",
+      highTextContrast: {
+        name: "Alto contraste de texto",
+        description: "Usar solo colores blanco y negro para los textos"
+      }
+    },
+    experimental: {
+      heading: "\u{1F9EA} Experimental",
+      description: "Acciones peligrosas u opciones inestables que podr\xEDan cambiarse o eliminarse en cualquier momento",
+      mixColors: {
+        name: "Mezclar colores",
+        description: "Ayuda a hacer el texto legible"
+      },
+      gradientTransition: {
+        name: "Transici\xF3n de degradado"
+      },
+      tagColors: {
+        name: "Asignaciones de etiquetas",
+        description: "Elige un color de la paleta actual. Si cambias la paleta, la etiqueta se adapta al color m\xE1s cercano.",
+        placeholder: "Empieza a escribir una etiqueta",
+        clear: "Restablecer color",
+        empty: "A\xFAn no hay anulaciones de etiquetas",
+        applyHint: "Aplicar color"
+      },
+      reset: {
+        name: "Restablecer configuraci\xF3n",
+        description: "\u{1F6A8} Todos los colores de todas las etiquetas se recalcular\xE1n como si fuera el primer lanzamiento del plugin. Requiere reiniciar Obsidian.",
+        button: "Restablecer"
+      }
+    }
+  },
+  notices: {
+    updateAvailable: "\u2B06\uFE0F {{pluginName}}: hay una nueva versi\xF3n disponible",
+    resetDone: "\u2705 Restablecimiento completado\nPor favor, reinicia Obsidian",
+    communityPaletteApplied: "\u{1F3A8} Paleta de la comunidad aplicada por {{author}}"
+  }
+};
+
+// src/i18n/fr.json
+var fr_default = {
+  settings: {
+    palette: {
+      heading: "Palette",
+      description: "S\xE9lectionner une palette",
+      options: {
+        adaptiveSoft: "\u{1F338} Doux adaptatif",
+        adaptiveBright: "\u{1F33A} Vif adaptatif",
+        custom: "Personnalis\xE9e"
+      },
+      shift: {
+        name: "D\xE9calage de palette",
+        description: "Si les couleurs de certaines \xE9tiquettes ne conviennent pas, vous pouvez d\xE9caler la palette."
+      },
+      custom: {
+        name: "Palette personnalis\xE9e",
+        placeholder: "Coller une palette",
+        description: "Le format est <code>XXXXXX-XXXXXX-XXXXXX</code> pour chaque couleur RVB.",
+        community: {
+          heading: "Palettes communautaires",
+          description: "Ci-dessous se trouvent des palettes collect\xE9es depuis la discussion GitHub. Cliquez sur une carte pour l'appliquer instantan\xE9ment ou {{communityLinkStart}}partagez la v\xF4tre{{communityLinkEnd}}.",
+          loading: "Chargement des palettes\u2026",
+          error: "Impossible de charger les palettes pour le moment. N'h\xE9sitez pas \xE0 ouvrir la discussion pour les parcourir manuellement.",
+          empty: "Aucune palette partag\xE9e pour l'instant. Soyez le premier \xE0 en publier une !",
+          applyHint: "Cliquez pour appliquer cette palette"
+        }
+      }
+    },
+    accessibility: {
+      heading: "\u{1F9BE} Accessibilit\xE9",
+      description: "Afficher les options d'accessibilit\xE9",
+      highTextContrast: {
+        name: "Contraste de texte \xE9lev\xE9",
+        description: "Utiliser uniquement le blanc et le noir pour les textes"
+      }
+    },
+    experimental: {
+      heading: "\u{1F9EA} Exp\xE9rimental",
+      description: "Actions dangereuses ou options instables qui pourraient \xEAtre modifi\xE9es ou supprim\xE9es \xE0 tout moment",
+      mixColors: {
+        name: "M\xE9langer les couleurs",
+        description: "Cela aide \xE0 rendre le texte lisible"
+      },
+      gradientTransition: {
+        name: "Transition de d\xE9grad\xE9"
+      },
+      tagColors: {
+        name: "Affectations d'\xE9tiquettes",
+        description: "Choisissez une couleur de la palette actuelle. Si vous changez la palette, l'\xE9tiquette s'adapte \xE0 la couleur la plus proche.",
+        placeholder: "Commencez \xE0 taper une \xE9tiquette",
+        clear: "R\xE9initialiser la couleur",
+        empty: "Aucune substitution d'\xE9tiquette pour l'instant",
+        applyHint: "Appliquer la couleur"
+      },
+      reset: {
+        name: "R\xE9initialiser la config",
+        description: "\u{1F6A8} Toutes les couleurs de toutes les \xE9tiquettes seront recalcul\xE9es comme lors du premier lancement du plugin. N\xE9cessite le red\xE9marrage d'Obsidian.",
+        button: "R\xE9initialiser"
+      }
+    }
+  },
+  notices: {
+    updateAvailable: "\u2B06\uFE0F {{pluginName}} : une nouvelle version est disponible",
+    resetDone: "\u2705 R\xE9initialisation termin\xE9e\nVeuillez red\xE9marrer Obsidian",
+    communityPaletteApplied: "\u{1F3A8} Palette communautaire appliqu\xE9e par {{author}}"
+  }
+};
+
+// src/i18n/it.json
+var it_default = {
+  settings: {
+    palette: {
+      heading: "Tavolozza",
+      description: "Seleziona tavolozza",
+      options: {
+        adaptiveSoft: "\u{1F338} Adattiva tenue",
+        adaptiveBright: "\u{1F33A} Adattiva vivace",
+        custom: "Personalizzata"
+      },
+      shift: {
+        name: "Spostamento tavolozza",
+        description: "Se i colori di alcune etichette non vanno bene, puoi spostare la tavolozza."
+      },
+      custom: {
+        name: "Tavolozza personalizzata",
+        placeholder: "Incolla tavolozza",
+        description: "Il formato \xE8 <code>XXXXXX-XXXXXX-XXXXXX</code> per ogni colore RGB.",
+        community: {
+          heading: "Tavolozze della comunit\xE0",
+          description: "Di seguito sono riportate le tavolozze raccolte dalla discussione su GitHub. Clicca su qualsiasi scheda per applicarla istantaneamente o {{communityLinkStart}}condividi la tua{{communityLinkEnd}}.",
+          loading: "Caricamento tavolozze\u2026",
+          error: "Impossibile caricare le tavolozze al momento. Sentiti libero di aprire la discussione per sfogliarle manualmente.",
+          empty: "Nessuna tavolozza condivisa ancora. Sii il primo a pubblicarne una!",
+          applyHint: "Clicca per applicare questa tavolozza"
+        }
+      }
+    },
+    accessibility: {
+      heading: "\u{1F9BE} Accessibilit\xE0",
+      description: "Mostra opzioni di accessibilit\xE0",
+      highTextContrast: {
+        name: "Alto contrasto del testo",
+        description: "Usa solo bianco e nero per i testi"
+      }
+    },
+    experimental: {
+      heading: "\u{1F9EA} Sperimentale",
+      description: "Azioni pericolose o opzioni instabili che potrebbero essere modificate o rimosse in qualsiasi momento",
+      mixColors: {
+        name: "Mescola colori",
+        description: "Aiuta a rendere leggibile il testo"
+      },
+      gradientTransition: {
+        name: "Transizione gradiente"
+      },
+      tagColors: {
+        name: "Assegnazioni etichette",
+        description: "Scegli un colore dalla tavolozza corrente. Se cambi la tavolozza, l'etichetta si adatta al colore pi\xF9 vicino.",
+        placeholder: "Inizia a digitare un'etichetta",
+        clear: "Reimposta colore",
+        empty: "Nessuna sovrascrittura etichetta ancora",
+        applyHint: "Applica colore"
+      },
+      reset: {
+        name: "Reimposta configurazione",
+        description: "\u{1F6A8} Tutti i colori di tutte le etichette verranno ricalcolati come se fosse il primo avvio del plugin. Richiede il riavvio di Obsidian.",
+        button: "Reimposta"
+      }
+    }
+  },
+  notices: {
+    updateAvailable: "\u2B06\uFE0F {{pluginName}}: \xE8 disponibile una nuova versione",
+    resetDone: "\u2705 Reimpostazione completata\nSi prega di riavviare Obsidian",
+    communityPaletteApplied: "\u{1F3A8} Tavolozza della comunit\xE0 applicata da {{author}}"
+  }
+};
+
+// src/i18n/ja.json
+var ja_default = {
+  settings: {
+    palette: {
+      heading: "\u30D1\u30EC\u30C3\u30C8",
+      description: "\u30D1\u30EC\u30C3\u30C8\u3092\u9078\u629E",
+      options: {
+        adaptiveSoft: "\u{1F338} \u30A2\u30C0\u30D7\u30C6\u30A3\u30D6\u30BD\u30D5\u30C8",
+        adaptiveBright: "\u{1F33A} \u30A2\u30C0\u30D7\u30C6\u30A3\u30D6\u30D6\u30E9\u30A4\u30C8",
+        custom: "\u30AB\u30B9\u30BF\u30E0"
+      },
+      shift: {
+        name: "\u30D1\u30EC\u30C3\u30C8\u30B7\u30D5\u30C8",
+        description: "\u4E00\u90E8\u306E\u30BF\u30B0\u306E\u8272\u304C\u5408\u308F\u306A\u3044\u5834\u5408\u306F\u3001\u30D1\u30EC\u30C3\u30C8\u3092\u30B7\u30D5\u30C8\u3067\u304D\u307E\u3059\u3002"
+      },
+      custom: {
+        name: "\u30AB\u30B9\u30BF\u30E0\u30D1\u30EC\u30C3\u30C8",
+        placeholder: "\u30D1\u30EC\u30C3\u30C8\u3092\u8CBC\u308A\u4ED8\u3051",
+        description: "\u5F62\u5F0F\u306F\u5404RGB\u30AB\u30E9\u30FC\u306B\u3064\u304D <code>XXXXXX-XXXXXX-XXXXXX</code> \u3067\u3059\u3002",
+        community: {
+          heading: "\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3\u30D1\u30EC\u30C3\u30C8",
+          description: "\u4EE5\u4E0B\u306FGitHub\u306E\u30C7\u30A3\u30B9\u30AB\u30C3\u30B7\u30E7\u30F3\u304B\u3089\u53CE\u96C6\u3055\u308C\u305F\u30D1\u30EC\u30C3\u30C8\u3067\u3059\u3002\u30AB\u30FC\u30C9\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u5373\u5EA7\u306B\u9069\u7528\u3059\u308B\u304B\u3001{{communityLinkStart}}\u81EA\u5206\u306E\u3082\u306E\u3092\u5171\u6709{{communityLinkEnd}}\u3057\u3066\u304F\u3060\u3055\u3044\u3002",
+          loading: "\u30D1\u30EC\u30C3\u30C8\u3092\u8AAD\u307F\u8FBC\u307F\u4E2D\u2026",
+          error: "\u73FE\u5728\u30D1\u30EC\u30C3\u30C8\u3092\u8AAD\u307F\u8FBC\u3081\u307E\u305B\u3093\u3002\u30C7\u30A3\u30B9\u30AB\u30C3\u30B7\u30E7\u30F3\u3092\u958B\u3044\u3066\u624B\u52D5\u3067\u95B2\u89A7\u3057\u3066\u304F\u3060\u3055\u3044\u3002",
+          empty: "\u5171\u6709\u3055\u308C\u305F\u30D1\u30EC\u30C3\u30C8\u306F\u307E\u3060\u3042\u308A\u307E\u305B\u3093\u3002\u6700\u521D\u306B\u6295\u7A3F\u3057\u307E\u3057\u3087\u3046\uFF01",
+          applyHint: "\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u3053\u306E\u30D1\u30EC\u30C3\u30C8\u3092\u9069\u7528"
+        }
+      }
+    },
+    accessibility: {
+      heading: "\u{1F9BE} \u30A2\u30AF\u30BB\u30B7\u30D3\u30EA\u30C6\u30A3",
+      description: "\u30A2\u30AF\u30BB\u30B7\u30D3\u30EA\u30C6\u30A3\u30AA\u30D7\u30B7\u30E7\u30F3\u3092\u8868\u793A",
+      highTextContrast: {
+        name: "\u9AD8\u30C6\u30AD\u30B9\u30C8\u30B3\u30F3\u30C8\u30E9\u30B9\u30C8",
+        description: "\u30C6\u30AD\u30B9\u30C8\u306B\u767D\u3068\u9ED2\u306E\u8272\u306E\u307F\u3092\u4F7F\u7528"
+      }
+    },
+    experimental: {
+      heading: "\u{1F9EA} \u5B9F\u9A13\u7684",
+      description: "\u3044\u3064\u3067\u3082\u5909\u66F4\u307E\u305F\u306F\u524A\u9664\u3055\u308C\u308B\u53EF\u80FD\u6027\u306E\u3042\u308B\u5371\u967A\u306A\u30A2\u30AF\u30B7\u30E7\u30F3\u307E\u305F\u306F\u4E0D\u5B89\u5B9A\u306A\u30AA\u30D7\u30B7\u30E7\u30F3",
+      mixColors: {
+        name: "\u8272\u3092\u6DF7\u305C\u308B",
+        description: "\u30C6\u30AD\u30B9\u30C8\u3092\u8AAD\u307F\u3084\u3059\u304F\u3059\u308B\u306E\u306B\u5F79\u7ACB\u3061\u307E\u3059"
+      },
+      gradientTransition: {
+        name: "\u30B0\u30E9\u30C7\u30FC\u30B7\u30E7\u30F3\u9077\u79FB"
+      },
+      tagColors: {
+        name: "\u30BF\u30B0\u306E\u5272\u308A\u5F53\u3066",
+        description: "\u73FE\u5728\u306E\u30D1\u30EC\u30C3\u30C8\u304B\u3089\u8272\u3092\u9078\u629E\u3057\u307E\u3059\u3002\u30D1\u30EC\u30C3\u30C8\u3092\u5909\u66F4\u3059\u308B\u3068\u3001\u30BF\u30B0\u306F\u6700\u3082\u8FD1\u3044\u8272\u306B\u9069\u5FDC\u3057\u307E\u3059\u3002",
+        placeholder: "\u30BF\u30B0\u306E\u5165\u529B\u3092\u958B\u59CB",
+        clear: "\u8272\u3092\u30EA\u30BB\u30C3\u30C8",
+        empty: "\u30BF\u30B0\u306E\u30AA\u30FC\u30D0\u30FC\u30E9\u30A4\u30C9\u306F\u307E\u3060\u3042\u308A\u307E\u305B\u3093",
+        applyHint: "\u8272\u3092\u9069\u7528"
+      },
+      reset: {
+        name: "\u8A2D\u5B9A\u3092\u30EA\u30BB\u30C3\u30C8",
+        description: "\u{1F6A8} \u3059\u3079\u3066\u306E\u30BF\u30B0\u306E\u3059\u3079\u3066\u306E\u8272\u304C\u3001\u30D7\u30E9\u30B0\u30A4\u30F3\u306E\u521D\u56DE\u8D77\u52D5\u6642\u306E\u3088\u3046\u306B\u518D\u8A08\u7B97\u3055\u308C\u307E\u3059\u3002Obsidian\u306E\u518D\u8D77\u52D5\u304C\u5FC5\u8981\u3067\u3059\u3002",
+        button: "\u30EA\u30BB\u30C3\u30C8"
+      }
+    }
+  },
+  notices: {
+    updateAvailable: "\u2B06\uFE0F {{pluginName}}: \u65B0\u3057\u3044\u30D0\u30FC\u30B8\u30E7\u30F3\u304C\u5229\u7528\u53EF\u80FD\u3067\u3059",
+    resetDone: "\u2705 \u30EA\u30BB\u30C3\u30C8\u304C\u5B8C\u4E86\u3057\u307E\u3057\u305F\nObsidian\u3092\u518D\u8D77\u52D5\u3057\u3066\u304F\u3060\u3055\u3044",
+    communityPaletteApplied: "\u{1F3A8} {{author}} \u306B\u3088\u308B\u30B3\u30DF\u30E5\u30CB\u30C6\u30A3\u30D1\u30EC\u30C3\u30C8\u304C\u9069\u7528\u3055\u308C\u307E\u3057\u305F"
+  }
+};
+
+// src/i18n/pt.json
+var pt_default = {
+  settings: {
+    palette: {
+      heading: "Paleta",
+      description: "Selecionar paleta",
+      options: {
+        adaptiveSoft: "\u{1F338} Suave adapt\xE1vel",
+        adaptiveBright: "\u{1F33A} Brilhante adapt\xE1vel",
+        custom: "Personalizada"
+      },
+      shift: {
+        name: "Deslocamento de paleta",
+        description: "Se as cores de algumas etiquetas n\xE3o se ajustarem, voc\xEA pode deslocar a paleta."
+      },
+      custom: {
+        name: "Paleta personalizada",
+        placeholder: "Colar paleta",
+        description: "O formato \xE9 <code>XXXXXX-XXXXXX-XXXXXX</code> para cada cor RGB.",
+        community: {
+          heading: "Paletas da comunidade",
+          description: "Abaixo est\xE3o paletas coletadas da discuss\xE3o no GitHub. Clique em qualquer cart\xE3o para aplic\xE1-la instantaneamente ou {{communityLinkStart}}compartilhe a sua{{communityLinkEnd}}.",
+          loading: "Carregando paletas\u2026",
+          error: "N\xE3o foi poss\xEDvel carregar as paletas agora. Sinta-se \xE0 vontade para abrir a discuss\xE3o para naveg\xE1-las manualmente.",
+          empty: "Nenhuma paleta compartilhada ainda. Seja o primeiro a postar uma!",
+          applyHint: "Clique para aplicar esta paleta"
+        }
+      }
+    },
+    accessibility: {
+      heading: "\u{1F9BE} Acessibilidade",
+      description: "Mostrar op\xE7\xF5es de acessibilidade",
+      highTextContrast: {
+        name: "Alto contraste de texto",
+        description: "Usar apenas cores branca e preta para textos"
+      }
+    },
+    experimental: {
+      heading: "\u{1F9EA} Experimental",
+      description: "A\xE7\xF5es perigosas ou op\xE7\xF5es inst\xE1veis que podem ser alteradas ou removidas a qualquer momento",
+      mixColors: {
+        name: "Misturar cores",
+        description: "Ajuda a tornar o texto leg\xEDvel"
+      },
+      gradientTransition: {
+        name: "Transi\xE7\xE3o de gradiente"
+      },
+      tagColors: {
+        name: "Atribui\xE7\xF5es de etiquetas",
+        description: "Escolha uma cor da paleta atual. Se voc\xEA mudar a paleta, a etiqueta se adapta \xE0 cor mais pr\xF3xima.",
+        placeholder: "Comece a digitar uma etiqueta",
+        clear: "Redefinir cor",
+        empty: "Nenhuma substitui\xE7\xE3o de etiqueta ainda",
+        applyHint: "Aplicar cor"
+      },
+      reset: {
+        name: "Redefinir configura\xE7\xE3o",
+        description: "\u{1F6A8} Todas as cores de todas as etiquetas ser\xE3o recalculadas como se fosse o primeiro lan\xE7amento do plugin. Requer reinicializa\xE7\xE3o do Obsidian.",
+        button: "Redefinir"
+      }
+    }
+  },
+  notices: {
+    updateAvailable: "\u2B06\uFE0F {{pluginName}}: uma nova vers\xE3o est\xE1 dispon\xEDvel",
+    resetDone: "\u2705 Redefini\xE7\xE3o conclu\xEDda\nPor favor, reinicie o Obsidian",
+    communityPaletteApplied: "\u{1F3A8} Paleta da comunidade aplicada por {{author}}"
   }
 };
 
@@ -234,7 +730,7 @@ var ru_default = {
       },
       shift: {
         name: "\u0421\u0434\u0432\u0438\u0433 \u043F\u0430\u043B\u0438\u0442\u0440\u044B",
-        description: "\u0415\u0441\u043B\u0438 \u0446\u0432\u0435\u0442 \u043A\u0430\u043A\u0438\u0445-\u0442\u043E \u0442\u0435\u0433\u043E\u0432 \u043D\u0435 \u043F\u043E\u0434\u0445\u043E\u0434\u0438\u0442, \u043C\u043E\u0436\u043D\u043E \u0441\u0434\u0432\u0438\u043D\u0443\u0442\u044C \u043F\u0430\u043B\u0438\u0442\u0440\u0443."
+        description: "\u0415\u0441\u043B\u0438 \u0446\u0432\u0435\u0442\u0430 \u043A\u0430\u043A\u0438\u0445-\u0442\u043E \u0442\u0435\u0433\u043E\u0432 \u043D\u0435 \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0442, \u043C\u043E\u0436\u043D\u043E \u0441\u0434\u0432\u0438\u043D\u0443\u0442\u044C \u043F\u0430\u043B\u0438\u0442\u0440\u0443."
       },
       custom: {
         name: "\u0421\u0432\u043E\u044F \u043F\u0430\u043B\u0438\u0442\u0440\u0430",
@@ -267,6 +763,14 @@ var ru_default = {
       },
       gradientTransition: {
         name: "\u041F\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0440\u0430\u0434\u0438\u0435\u043D\u0442"
+      },
+      tagColors: {
+        name: "\u041D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 \u0446\u0432\u0435\u0442\u043E\u0432",
+        description: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0446\u0432\u0435\u0442 \u0438\u0437 \u0442\u0435\u043A\u0443\u0449\u0435\u0439 \u043F\u0430\u043B\u0438\u0442\u0440\u044B. \u041F\u0440\u0438 \u0441\u043C\u0435\u043D\u0435 \u043F\u0430\u043B\u0438\u0442\u0440\u044B \u0442\u0435\u0433 \u0430\u0434\u0430\u043F\u0442\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u043A \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u043C\u0443 \u0446\u0432\u0435\u0442\u0443.",
+        placeholder: "\u041D\u0430\u0447\u043D\u0438\u0442\u0435 \u0432\u0432\u043E\u0434\u0438\u0442\u044C \u0442\u0435\u0433",
+        clear: "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u0446\u0432\u0435\u0442",
+        empty: "\u041F\u043E\u043A\u0430 \u043D\u0435\u0442 \u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0445 \u0446\u0432\u0435\u0442\u043E\u0432",
+        applyHint: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0446\u0432\u0435\u0442"
       },
       reset: {
         name: "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u043A\u043E\u043D\u0444\u0438\u0433",
@@ -329,6 +833,14 @@ var zh_default = {
       gradientTransition: {
         name: "\u6E10\u53D8\u8FC7\u6E21"
       },
+      tagColors: {
+        name: "\u6807\u7B7E\u989C\u8272\u5206\u914D",
+        description: "\u8BF7\u4ECE\u5F53\u524D\u8C03\u8272\u677F\u4E2D\u9009\u62E9\u989C\u8272\u3002\u66F4\u6362\u8C03\u8272\u677F\u65F6\uFF0C\u6807\u7B7E\u4F1A\u81EA\u52A8\u9002\u914D\u6700\u63A5\u8FD1\u7684\u989C\u8272\u3002",
+        placeholder: "\u5F00\u59CB\u8F93\u5165\u6807\u7B7E",
+        clear: "\u91CD\u7F6E\u989C\u8272",
+        empty: "\u8FD8\u6CA1\u6709\u5206\u914D\u6807\u7B7E\u989C\u8272",
+        applyHint: "\u5E94\u7528\u989C\u8272"
+      },
       reset: {
         name: "\u91CD\u7F6E\u914D\u7F6E",
         description: "\u{1F6A8} \u6240\u6709\u6807\u7B7E\u7684\u989C\u8272\u90FD\u4F1A\u91CD\u65B0\u8BA1\u7B97\uFF0C\u5C31\u50CF\u7B2C\u4E00\u6B21\u542F\u52A8\u63D2\u4EF6\u4E00\u6837\u3002\u9700\u8981\u91CD\u65B0\u542F\u52A8 Obsidian\u3002",
@@ -361,7 +873,12 @@ var locales = {
   en: en_default,
   ru: ru_default,
   de: de_default,
-  zh: zh_default
+  zh: zh_default,
+  es: es_default,
+  fr: fr_default,
+  it: it_default,
+  pt: pt_default,
+  ja: ja_default
 };
 var I18n = class {
   static t(key, params) {
@@ -387,7 +904,8 @@ var I18n = class {
     let result = translations;
     if (params) {
       Object.entries(params).forEach(([key2, value]) => {
-        result = result.replace(`{{${key2}}}`, value);
+        const placeholder = new RegExp(`{{${key2}}}`, "g");
+        result = result.replace(placeholder, value);
       });
     }
     return result;
@@ -411,6 +929,18 @@ var I18n = class {
     return originalKey;
   }
 };
+
+// src/tagUtils.ts
+function normalizeTagName(tagName) {
+  return tagName.replace(/#/g, "").trim().replace(/\s+/g, "").replace(/\/+$/, "").toLowerCase();
+}
+function normalizePaletteIndex(index, length) {
+  if (length <= 0) {
+    return 0;
+  }
+  const normalized = index % length;
+  return normalized < 0 ? normalized + length : normalized;
+}
 
 // src/CommunityPalettesService.ts
 var import_obsidian = require("obsidian");
@@ -561,6 +1091,7 @@ var CommunityPalettesService = class {
 CommunityPalettesService.cache = null;
 
 // src/ColoredTagsPluginSettingTab.ts
+var SELECTED_CLASS = "is-selected";
 var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
@@ -568,14 +1099,12 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
     this.showAccessibility = false;
     this.communityPaletteDescriptionCounter = 0;
     this.communityPaletteCards = /* @__PURE__ */ new Map();
+    this.paletteChangeSubscribers = [];
     this.plugin = plugin;
   }
   renderPalette(paletteEl, animate = false) {
     paletteEl.empty();
-    let palette = this.plugin.palettes.light;
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      palette = this.plugin.palettes.dark;
-    }
+    const palette = this.getActivePalette();
     palette.forEach((paletteColor, index) => {
       const firstElementStyles = "border-radius: var(--radius-m) 0 0 var(--radius-m)";
       const lastElementStyles = "border-radius: 0 var(--radius-m) var(--radius-m) 0";
@@ -631,6 +1160,7 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
     const { containerEl } = this;
     containerEl.empty();
     containerEl.classList.add("colored-tags-settings");
+    this.paletteChangeSubscribers = [];
     this.renderTags(containerEl);
     const paletteEl = containerEl.createEl("div", {
       cls: "palette"
@@ -667,6 +1197,7 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
         this.plugin.settings.palette.seed = value;
         await this.plugin.saveSettings();
         this.renderPalette(paletteEl);
+        this.notifyPaletteChange();
       })
     );
   }
@@ -683,6 +1214,7 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
           this.plugin.settings.palette.custom = value;
           await this.plugin.saveSettings();
           this.renderPalette(paletteEl);
+          this.notifyPaletteChange();
           this.updateCommunityPaletteSelection();
         }
       });
@@ -806,6 +1338,7 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
     inputComponent.setValue(palette.value);
     await this.plugin.saveSettings();
     this.renderPalette(paletteEl, true);
+    this.notifyPaletteChange();
     this.updateCommunityPaletteSelection();
     new import_obsidian2.Notice(
       I18n.t("notices.communityPaletteApplied", {
@@ -827,9 +1360,9 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
     this.communityPaletteCards.forEach((card, value) => {
       const isSelected = hasMatch && value === normalizedCustom;
       if (isSelected) {
-        card.classList.add("is-selected");
+        card.classList.add(SELECTED_CLASS);
       } else {
-        card.classList.remove("is-selected");
+        card.classList.remove(SELECTED_CLASS);
       }
       card.setAttribute("aria-pressed", isSelected ? "true" : "false");
     });
@@ -881,6 +1414,7 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
         this.display();
       })
     );
+    this.renderTagPaletteOverrides(containerEl);
     new import_obsidian2.Setting(containerEl).setName(I18n.t("settings.experimental.reset.name")).setDesc(I18n.t("settings.experimental.reset.description")).addButton(
       (button) => button.setButtonText(I18n.t("settings.experimental.reset.button")).setClass("mod-warning").onClick(async () => {
         new import_obsidian2.Notice(I18n.t("notices.resetDone"), 1e4);
@@ -891,10 +1425,191 @@ var ColoredTagsPluginSettingTab = class extends import_obsidian2.PluginSettingTa
           {},
           DEFAULT_SETTINGS
         );
-        await this.plugin.saveData(this.plugin.settings);
+        await this.plugin.saveSettings();
         this.updateCommunityPaletteSelection();
       })
     );
+  }
+  renderTagPaletteOverrides(containerEl) {
+    const tagPaletteSetting = new import_obsidian2.Setting(containerEl).setName(I18n.t("settings.experimental.tagColors.name")).setDesc(I18n.t("settings.experimental.tagColors.description"));
+    tagPaletteSetting.settingEl.classList.add("tag-color-setting-item");
+    tagPaletteSetting.controlEl.empty();
+    const wrapper = tagPaletteSetting.controlEl.createDiv({
+      cls: "tag-color-setting"
+    });
+    const controlsRow = wrapper.createDiv({
+      cls: "tag-color-setting__row"
+    });
+    const inputContainer = controlsRow.createDiv({
+      cls: "tag-color-setting__input"
+    });
+    const datalistId = `tag-color-list-${Date.now()}`;
+    const datalist = inputContainer.createEl("datalist", {
+      attr: { id: datalistId }
+    });
+    const refreshTagOptions = () => this.populateTagOptions(datalist);
+    refreshTagOptions();
+    let currentTag = "";
+    const tagInput = new import_obsidian2.TextComponent(inputContainer);
+    tagInput.setPlaceholder(
+      I18n.t("settings.experimental.tagColors.placeholder")
+    ).setValue("");
+    tagInput.inputEl.setAttr("list", datalistId);
+    tagInput.onChange((value) => {
+      currentTag = normalizeTagName(value);
+      updateSelectedSwatch();
+    });
+    const paletteEl = controlsRow.createDiv({
+      cls: "tag-color-setting__palette"
+    });
+    const listContainer = wrapper.createDiv({
+      cls: "tag-color-setting__chips"
+    });
+    const handleAssignmentsChange = () => {
+      updateSelectionState();
+      refreshTagOptions();
+    };
+    const updateSelectedSwatch = () => {
+      var _a;
+      const palette = this.getActivePalette();
+      const assignedIndex = (_a = this.plugin.settings.tagColors && this.plugin.settings.tagColors[currentTag]) != null ? _a : null;
+      Array.from(paletteEl.children).forEach((child, index) => {
+        child.classList.toggle(
+          SELECTED_CLASS,
+          assignedIndex !== null && assignedIndex !== void 0 && normalizePaletteIndex(assignedIndex, palette.length) === index
+        );
+        child.disabled = !currentTag;
+      });
+    };
+    const updateSelectionState = () => {
+      updateSelectedSwatch();
+    };
+    const applySelection = async (index) => {
+      if (!currentTag) {
+        return;
+      }
+      this.plugin.settings.tagColors[currentTag] = index;
+      await this.plugin.saveSettings();
+      this.plugin.colorizeTag(currentTag);
+      this.renderTagColorAssignments(
+        listContainer,
+        handleAssignmentsChange
+      );
+    };
+    this.renderPaletteSwatches(paletteEl, applySelection);
+    this.renderTagColorAssignments(listContainer, handleAssignmentsChange);
+    this.subscribeToPaletteChange(() => {
+      this.renderPaletteSwatches(paletteEl, applySelection);
+      this.renderTagColorAssignments(
+        listContainer,
+        handleAssignmentsChange
+      );
+      updateSelectionState();
+    });
+    updateSelectionState();
+  }
+  renderPaletteSwatches(paletteEl, onSelect) {
+    paletteEl.empty();
+    const palette = this.getActivePalette();
+    palette.forEach((color, index) => {
+      const swatch = paletteEl.createEl("button", {
+        cls: "tag-color-setting__swatch",
+        attr: {
+          type: "button",
+          style: `background-color: ${color}`,
+          "aria-label": `${I18n.t(
+            "settings.experimental.tagColors.applyHint"
+          )} ${index + 1}`
+        }
+      });
+      swatch.addEventListener("click", () => onSelect(index));
+    });
+  }
+  renderTagColorAssignments(listEl, onChange) {
+    listEl.empty();
+    const entries = Object.entries(this.plugin.settings.tagColors || {});
+    if (!entries.length) {
+      listEl.createDiv({
+        cls: "tag-color-setting__empty",
+        text: I18n.t("settings.experimental.tagColors.empty")
+      });
+      onChange == null ? void 0 : onChange();
+      return;
+    }
+    entries.sort(([tagA], [tagB]) => tagA.localeCompare(tagB)).forEach(([tag]) => {
+      const chipWrapper = listEl.createDiv({
+        cls: "tag-color-setting__chip"
+      });
+      const chip = chipWrapper.createEl("a", {
+        cls: "tag",
+        text: `#${tag}`,
+        attr: {
+          href: `#${tag}`
+        }
+      });
+      chip.addEventListener("click", (event) => {
+        var _a;
+        event.preventDefault();
+        const tagInputEl = (_a = listEl.closest(".tag-color-setting")) == null ? void 0 : _a.querySelector(
+          ".tag-color-setting__input input"
+        );
+        if (tagInputEl) {
+          tagInputEl.value = `#${tag}`;
+          tagInputEl.dispatchEvent(new Event("input"));
+        }
+      });
+      const removeButton = chipWrapper.createEl("button", {
+        cls: "tag-color-setting__chip-remove",
+        attr: {
+          type: "button",
+          "aria-label": I18n.t(
+            "settings.experimental.tagColors.clear"
+          ),
+          title: I18n.t("settings.experimental.tagColors.clear")
+        },
+        text: "\u2715"
+      });
+      removeButton.addEventListener("click", async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        delete this.plugin.settings.tagColors[tag];
+        await this.plugin.saveSettings();
+        this.renderTagColorAssignments(listEl, onChange);
+      });
+    });
+    onChange == null ? void 0 : onChange();
+  }
+  populateTagOptions(datalist) {
+    var _a, _b;
+    datalist.empty();
+    const knownTags = new Set(
+      Object.keys(this.plugin.settings.knownTags || {})
+    );
+    const assignedTags = new Set(
+      Object.keys(this.plugin.settings.tagColors || {})
+    );
+    const metadataTags = Object.keys(
+      ((_b = (_a = this.app.metadataCache) == null ? void 0 : _a.getTags) == null ? void 0 : _b.call(_a)) || {}
+    ).map((tag) => normalizeTagName(tag)).filter((tag) => tag.length > 0);
+    metadataTags.forEach((tag) => knownTags.add(tag));
+    Array.from(knownTags).filter((tag) => !assignedTags.has(tag)).sort((a2, b2) => a2.localeCompare(b2)).forEach((tag) => {
+      datalist.createEl("option", {
+        attr: { value: `#${tag}` }
+      });
+    });
+  }
+  getActivePalette() {
+    let palette = this.plugin.palettes.light;
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      palette = this.plugin.palettes.dark;
+    }
+    return palette.length ? palette : this.plugin.palettes.light;
+  }
+  subscribeToPaletteChange(callback) {
+    this.paletteChangeSubscribers.push(callback);
+  }
+  notifyPaletteChange() {
+    this.paletteChangeSubscribers.forEach((cb) => cb());
   }
 };
 
@@ -3999,14 +4714,15 @@ var ColorService = class {
       })
     };
   }
-  getColors(tagName, palette, tagsMap, options) {
+  getColors(tagName, palette, tagsMap, options, tagColorOverrides) {
     const chunks = tagName.split("/");
     const gradientStops = this.calculateGradientStops(
       chunks,
       palette,
       tagsMap,
       options.isMixing,
-      options.isTransition
+      options.isTransition,
+      tagColorOverrides
     );
     const backgroundColor = new Color(gradientStops[0]);
     const background = backgroundColor.toString({ format: "lch" });
@@ -4017,36 +4733,64 @@ var ColorService = class {
     const color = options.highTextContrast ? this.calculateHighContrastColor(backgroundColor) : this.calculateDarkenedColor(backgroundColor);
     return { background, color, linearGradient };
   }
-  calculateGradientStops(chunks, palette, tagsMap, isMixing, isTransition) {
+  calculateGradientStops(chunks, palette, tagsMap, isMixing, isTransition, tagColorOverrides) {
     const gradientStops = [];
     let backgroundColor = null;
     let lastColor = "";
-    let combinedTag = "";
+    let currentPath = "";
     for (const chunk of chunks) {
-      const key = [combinedTag, chunk].filter(Boolean).join("/");
+      const key = this.composeTagPath(currentPath, chunk);
       const order = tagsMap.get(key) || 1;
-      const filteredPalette = palette.filter(
-        (colorString) => colorString !== lastColor
+      const overrideIndex = tagColorOverrides == null ? void 0 : tagColorOverrides.get(key);
+      const paletteForChunk = this.getPaletteForChunk(
+        palette,
+        lastColor,
+        overrideIndex
       );
-      const colorFromPalette = filteredPalette[(order - 1) % filteredPalette.length];
+      const colorFromPalette = this.pickColorFromPalette(
+        paletteForChunk,
+        order,
+        overrideIndex
+      );
       lastColor = colorFromPalette;
-      let newColor;
-      if (backgroundColor && isMixing) {
-        newColor = this.mixColors(
-          backgroundColor,
-          colorFromPalette,
-          isTransition
-        );
-      } else {
-        newColor = new Color(colorFromPalette).to("lch");
-      }
+      const newColor = this.buildColorForChunk(
+        backgroundColor,
+        colorFromPalette,
+        isMixing,
+        isTransition
+      );
       if (!backgroundColor) {
         backgroundColor = newColor;
-        combinedTag = key;
       }
       gradientStops.push(newColor.toString({ format: "lch" }));
+      currentPath = key;
     }
     return gradientStops;
+  }
+  composeTagPath(parentPath, chunk) {
+    return parentPath ? `${parentPath}/${chunk}` : chunk;
+  }
+  getPaletteForChunk(palette, lastColor, overrideIndex) {
+    if (overrideIndex !== void 0 || palette.length <= 1) {
+      return palette;
+    }
+    const filtered = palette.filter((color) => color !== lastColor);
+    return filtered.length > 0 ? filtered : palette;
+  }
+  pickColorFromPalette(palette, order, overrideIndex) {
+    const indexSource = overrideIndex !== void 0 ? overrideIndex : order - 1;
+    const index = normalizePaletteIndex(indexSource, palette.length);
+    return palette[index];
+  }
+  buildColorForChunk(backgroundColor, colorFromPalette, isMixing, isTransition) {
+    if (backgroundColor && isMixing) {
+      return this.mixColors(
+        backgroundColor,
+        colorFromPalette,
+        isTransition
+      );
+    }
+    return new Color(colorFromPalette).to("lch");
   }
   mixColors(baseColor, newColorStr, isTransition) {
     const mixingLevel = isTransition ? 0.5 : 0.4;
@@ -4142,6 +4886,22 @@ var ColorService = class {
     result.splice(0, 0, ...cut);
     return result;
   }
+  findClosestColorIndex(sourceColor, palette) {
+    if (!palette.length) {
+      return 0;
+    }
+    const source = new Color(sourceColor);
+    let bestIndex = 0;
+    let bestDistance = Number.POSITIVE_INFINITY;
+    palette.forEach((color, index) => {
+      const distance2 = source.deltaE2000(new Color(color));
+      if (distance2 < bestDistance) {
+        bestDistance = distance2;
+        bestIndex = index;
+      }
+    });
+    return bestIndex;
+  }
 };
 
 // src/CSSManager.ts
@@ -4182,7 +4942,14 @@ var CSSManager = class {
 var TagManager = class {
   constructor(knownTags) {
     this.renderedTags = /* @__PURE__ */ new Set();
-    this.tagsMap = new Map(Object.entries(knownTags));
+    const normalized = Object.entries(knownTags || {}).reduce((acc, [tagName, order]) => {
+      const normalizedName = normalizeTagName(tagName);
+      if (normalizedName) {
+        acc.push([normalizedName, order]);
+      }
+      return acc;
+    }, []);
+    this.tagsMap = new Map(normalized);
   }
   getTagsMap() {
     return this.tagsMap;
@@ -4197,49 +4964,95 @@ var TagManager = class {
     return this.renderedTags.has(tagName);
   }
   async updateKnownTags(metadataCache) {
-    const appTags = Object.keys(metadataCache.getTags()).map((tag) => tag.replace(/#/g, "")).filter((tag) => !tag.match(/\/$/) && tag.length > 0);
-    const allTags = Array.from(
-      /* @__PURE__ */ new Set([...this.tagsMap.keys(), ...appTags])
-    );
-    let hasChanges = false;
-    for (const tag of allTags) {
-      if (this.assignOrderToTagPath(tag, allTags)) {
-        hasChanges = true;
-      }
+    const orderedTags = this.collectTagPaths(metadataCache);
+    const nextMap = this.buildOrders(orderedTags);
+    const hasChanges = this.hasChanged(nextMap);
+    if (hasChanges) {
+      this.tagsMap = nextMap;
     }
     return hasChanges;
+  }
+  collectTagPaths(metadataCache) {
+    const paths = /* @__PURE__ */ new Set();
+    Object.keys(metadataCache.getTags()).map((tag) => normalizeTagName(tag)).filter((tag) => tag.length > 0 && !tag.match(/\/$/)).forEach((tag) => {
+      const chunks = tag.split("/");
+      let combined = "";
+      for (const chunk of chunks) {
+        combined = combined ? `${combined}/${chunk}` : chunk;
+        paths.add(combined);
+      }
+    });
+    return Array.from(paths).sort((a2, b2) => {
+      const depthDiff = a2.split("/").length - b2.split("/").length;
+      return depthDiff !== 0 ? depthDiff : a2.localeCompare(b2);
+    });
+  }
+  buildOrders(tags) {
+    var _a, _b;
+    const nextMap = /* @__PURE__ */ new Map();
+    const parentMaxOrder = /* @__PURE__ */ new Map();
+    for (const tag of tags) {
+      const parentIndex = tag.lastIndexOf("/");
+      const parentKey = parentIndex === -1 ? "" : tag.slice(0, parentIndex);
+      const previousOrder = this.tagsMap.get(tag);
+      const order = previousOrder != null ? previousOrder : ((_a = parentMaxOrder.get(parentKey)) != null ? _a : 0) + 1;
+      nextMap.set(tag, order);
+      parentMaxOrder.set(
+        parentKey,
+        Math.max((_b = parentMaxOrder.get(parentKey)) != null ? _b : 0, order)
+      );
+    }
+    return nextMap;
+  }
+  hasChanged(nextMap) {
+    if (nextMap.size !== this.tagsMap.size) {
+      return true;
+    }
+    for (const [tag, order] of nextMap.entries()) {
+      if (this.tagsMap.get(tag) !== order) {
+        return true;
+      }
+    }
+    return false;
   }
   exportKnownTags() {
     return Object.fromEntries(this.tagsMap.entries());
   }
-  assignOrderToTagPath(tag, allTags) {
-    const chunks = tag.split("/");
-    let combinedTag = "";
-    let hasChanges = false;
-    for (let chunkIndex = 0; chunkIndex < chunks.length; chunkIndex++) {
-      const key = [combinedTag, chunks[chunkIndex]].filter(Boolean).join("/");
-      if (!this.tagsMap.has(key)) {
-        const order = this.calculateOrderForNewTag(
-          key,
-          allTags,
-          chunkIndex,
-          combinedTag
-        );
-        this.tagsMap.set(key, order);
-        hasChanges = true;
-      }
-      combinedTag = key;
-    }
-    return hasChanges;
+};
+
+// src/tag-appliers/PropertiesTagApplier.ts
+var PROPERTY_TAG_SELECTOR = '.metadata-property[data-property-key="tags" i] .multi-select-pill';
+var getPropertyTagTargets = (pillEl) => {
+  const removeButton = pillEl.querySelector(
+    ".multi-select-pill-remove-button"
+  );
+  return removeButton ? [pillEl, removeButton] : [pillEl];
+};
+var getPropertyTagName = (pillEl) => {
+  var _a;
+  const content = pillEl.querySelector(
+    ".multi-select-pill-content"
+  );
+  return normalizeTagText((_a = content == null ? void 0 : content.textContent) != null ? _a : pillEl.textContent);
+};
+var singleUseApplier2 = new TagApplier({
+  selector: PROPERTY_TAG_SELECTOR,
+  getTagText: getPropertyTagName,
+  getTagTargets: getPropertyTagTargets
+});
+var PropertiesTagApplier = class {
+  constructor() {
+    this.applier = new TagApplier({
+      selector: PROPERTY_TAG_SELECTOR,
+      getTagText: getPropertyTagName,
+      getTagTargets: getPropertyTagTargets
+    });
   }
-  calculateOrderForNewTag(key, allTags, depth, parentPath) {
-    const siblings = allTags.filter(
-      (tag) => tag.split("/").length === depth + 1 && (parentPath ? tag.startsWith(parentPath) : true)
-    );
-    const maxOrder = siblings.reduce((max2, sibling) => {
-      return Math.max(max2, this.tagsMap.get(sibling) || 0);
-    }, 0);
-    return maxOrder + 1;
+  start(root = document.body) {
+    this.applier.start(root);
+  }
+  stop() {
+    this.applier.stop();
   }
 };
 
@@ -4251,6 +5064,9 @@ var _ColoredTagsPlugin = class extends import_obsidian3.Plugin {
       light: [],
       dark: []
     };
+    this.tagColorMap = /* @__PURE__ */ new Map();
+    this.baseViewTagApplier = new BaseViewTagApplier();
+    this.propertiesTagApplier = new PropertiesTagApplier();
   }
   async onload() {
     await this.loadSettings();
@@ -4330,45 +5146,78 @@ var _ColoredTagsPlugin = class extends import_obsidian3.Plugin {
       console.error(error);
     }
   }
-  reload() {
+  reload(palettes) {
     this.onunload();
-    this.palettes = this.colorService.generatePalettes(
-      this.settings.palette
-    );
+    this.palettes = palettes != null ? palettes : this.colorService.generatePalettes(this.settings.palette);
+    this.refreshTagColorMap();
+    this.baseViewTagApplier.start();
+    this.propertiesTagApplier.start();
     this.update();
-    this.updatingInterval = window.setInterval(
-      () => this.checkUpdates(),
-      _ColoredTagsPlugin.UPDATE_CHECK_INTERVAL
-    );
   }
   async saveSettings() {
+    const previousPalettes = {
+      light: [...this.palettes.light],
+      dark: [...this.palettes.dark]
+    };
+    const nextPalettes = this.colorService.generatePalettes(
+      this.settings.palette
+    );
+    if (this.havePalettesChanged(previousPalettes, nextPalettes)) {
+      this.remapTagColors(previousPalettes, nextPalettes);
+    }
     await this.saveData(this.settings);
-    this.reload();
+    this.reload(nextPalettes);
   }
   colorizeTag(tagName) {
     tagName = tagName.replace(/#/g, "");
     const tagsMap = this.tagManager.getTagsMap();
-    const getColors = (palette) => this.colorService.getColors(tagName, palette, tagsMap, {
-      isMixing: this.settings.mixColors,
-      isTransition: this.settings.transition,
-      highTextContrast: this.settings.accessibility.highTextContrast
-    });
+    const getColors = (palette) => this.colorService.getColors(
+      tagName,
+      palette,
+      tagsMap,
+      {
+        isMixing: this.settings.mixColors,
+        isTransition: this.settings.transition,
+        highTextContrast: this.settings.accessibility.highTextContrast
+      },
+      this.tagColorMap
+    );
     const light = getColors(this.palettes.light);
     const dark = getColors(this.palettes.dark);
     const selectors = this.buildTagSelectors(tagName);
+    const removeButtonSelectors = this.buildRemoveButtonSelectors(tagName);
     const groups = [
       { prefix: "body", colors: light },
       { prefix: "body.theme-dark", colors: dark }
     ];
+    const buildScopedSelector = (prefix, base) => base.length ? base.map((s) => `${prefix} ${s}`).join(", ") : "";
     const css = groups.map(({ prefix, colors }) => {
-      const scoped = selectors.map((s) => `${prefix} ${s}`).join(", ");
-      return `${scoped} {
+      const scopedTags = buildScopedSelector(prefix, selectors);
+      const scopedButtons = buildScopedSelector(
+        prefix,
+        removeButtonSelectors
+      );
+      const rules = [];
+      if (scopedTags) {
+        rules.push(
+          `${scopedTags} {
 	background-color: ${colors.background};
 	color: ${colors.color};
 	background-image: linear-gradient(108deg, ${colors.linearGradient.join(
-        ", "
-      )});
-	}`;
+            ", "
+          )});
+	}`
+        );
+      }
+      if (scopedButtons) {
+        rules.push(
+          `${scopedButtons} {
+	color: ${colors.color};
+	stroke: ${colors.color};
+	}`
+        );
+      }
+      return rules.join("\n");
     }).join("\n");
     this.cssManager.append(`
 ${css}
@@ -4380,7 +5229,9 @@ ${css}
     const tagLower = tagName.toLowerCase().replace(/\//g, "\\/");
     const selectors = [
       `a.tag[href="${tagHref}"]`,
-      `.cm-s-obsidian .cm-line span.cm-hashtag.colored-tag-${tagLower}`
+      `a.tag.colored-tag-${tagLower}`,
+      `.cm-s-obsidian .cm-line span.cm-hashtag.colored-tag-${tagLower}`,
+      `.metadata-property[data-property-key="tags" i] .multi-select-pill.colored-tag-${tagLower}`
     ];
     if (tagFlat) {
       const flatLower = tagFlat.toLowerCase();
@@ -4391,33 +5242,49 @@ ${css}
     }
     return selectors;
   }
+  buildRemoveButtonSelectors(tagName) {
+    const tagLower = tagName.toLowerCase().replace(/\//g, "\\/");
+    return tagLower ? [
+      `.metadata-property[data-property-key="tags" i] .multi-select-pill-remove-button.colored-tag-${tagLower}`
+    ] : [];
+  }
   async loadSettings() {
     const loadedData = await this.loadData();
     this.settings = this.migrateSettings(loadedData);
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   migrateSettings(loadedData) {
+    var _a;
+    const data = loadedData ? { ...loadedData } : {};
+    let currentVersion = (_a = data._version) != null ? _a : 0;
     let needToSave = false;
-    if (loadedData && loadedData._version < 2) {
-      loadedData.palette = 16;
-      loadedData._version = 2;
-      needToSave = true;
-    }
-    if (loadedData && loadedData._version < 3) {
-      loadedData.palette = {
-        ...DEFAULT_SETTINGS.palette,
-        seed: loadedData.seed || 0
-      };
-      if (loadedData.chroma > 16 || loadedData.lightness > 87) {
-        loadedData.palette.selected = "adaptive-bright" /* ADAPTIVE_BRIGHT */;
+    const applyMigration = (targetVersion, action) => {
+      if (currentVersion < targetVersion) {
+        action();
+        currentVersion = targetVersion;
+        data._version = targetVersion;
+        needToSave = true;
       }
-      delete loadedData.chroma;
-      delete loadedData.lightness;
-      delete loadedData.seed;
-      loadedData._version = 3;
-      needToSave = true;
-    }
-    const settings = Object.assign({}, DEFAULT_SETTINGS, loadedData);
+    };
+    applyMigration(2, () => {
+      data.palette = 16;
+    });
+    applyMigration(3, () => {
+      data.palette = {
+        ...DEFAULT_SETTINGS.palette,
+        seed: data.seed || 0
+      };
+      if (data.chroma > 16 || data.lightness > 87) {
+        data.palette.selected = "adaptive-bright" /* ADAPTIVE_BRIGHT */;
+      }
+      delete data.chroma;
+      delete data.lightness;
+      delete data.seed;
+    });
+    applyMigration(4, () => {
+      data.tagColors = data.tagColors || {};
+    });
+    const settings = Object.assign({}, DEFAULT_SETTINGS, data);
     if (needToSave) {
       this.saveData(settings);
     }
@@ -4426,7 +5293,48 @@ ${css}
   onunload() {
     this.tagManager.clearRenderedTags();
     this.cssManager.removeAll();
-    window.clearInterval(this.updatingInterval);
+    this.baseViewTagApplier.stop();
+    this.propertiesTagApplier.stop();
+  }
+  refreshTagColorMap() {
+    this.tagColorMap = new Map(
+      Object.entries(this.settings.tagColors || {}).map(
+        ([tagName, paletteIndex]) => [
+          normalizeTagName(tagName),
+          paletteIndex
+        ]
+      )
+    );
+  }
+  havePalettesChanged(prev, next) {
+    return prev.light.length !== next.light.length || prev.dark.length !== next.dark.length || prev.light.some((color, index) => color !== next.light[index]) || prev.dark.some((color, index) => color !== next.dark[index]);
+  }
+  remapTagColors(previousPalettes, nextPalettes) {
+    if (!previousPalettes.light.length || !nextPalettes.light.length) {
+      return;
+    }
+    const remapped = {};
+    const nextPalette = nextPalettes.light;
+    const previousPalette = previousPalettes.light;
+    Object.entries(this.settings.tagColors || {}).forEach(
+      ([tagName, paletteIndex]) => {
+        const normalizedIndex = normalizePaletteIndex(
+          paletteIndex,
+          previousPalette.length
+        );
+        const sourceColor = previousPalette[normalizedIndex];
+        const normalizedTagName = normalizeTagName(tagName);
+        if (!normalizedTagName) {
+          return;
+        }
+        const bestMatch = this.colorService.findClosestColorIndex(
+          sourceColor,
+          nextPalette
+        );
+        remapped[normalizedTagName] = bestMatch;
+      }
+    );
+    this.settings.tagColors = remapped;
   }
 };
 var ColoredTagsPlugin = _ColoredTagsPlugin;
@@ -4435,7 +5343,5 @@ ColoredTagsPlugin.INITIAL_UPDATE_CHECK_DELAY = 5e3;
 ColoredTagsPlugin.EDITOR_CHANGE_DEBOUNCE = 3e3;
 // 3 seconds
 ColoredTagsPlugin.LEAF_CHANGE_DEBOUNCE = 300;
-// 300ms
-ColoredTagsPlugin.UPDATE_CHECK_INTERVAL = 108e5;
 
 /* nosourcemap */
