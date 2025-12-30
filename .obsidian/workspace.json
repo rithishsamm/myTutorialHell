@@ -20,6 +20,16 @@
               "icon": "lucide-file",
               "title": "0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!"
             }
+          },
+          {
+            "id": "8fe83432036abb1c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ]
       }
@@ -493,6 +503,22 @@
             "state": {
               "type": "map-of-content",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "map-of-content"
+            }
+          }
+        ]
+      },
+      {
+        "id": "85bd9954d7227182",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d9e2dcc0f493f356",
+            "type": "leaf",
+            "state": {
+              "type": "map-of-content",
+              "state": {},
               "icon": "stacked-levels",
               "title": "Map of Content"
             }
@@ -524,9 +550,14 @@
   },
   "active": "b00709724fce0250",
   "lastOpenFiles": [
+    "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
+    "Security/kubescape - launch template.md",
+    "Security/DevSecOps Practice.md",
+    "Systems/vboxwebsrv system setup.md",
+    "rough/Pasted Image 20250905184334_559.png",
+    "rough/Concised Final Draft.md",
     "Orchestration/archives",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/1. Intro to K3s - Lightweight Kubernetes.md",
-    "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
     "Orchestration/K3s/archive/K3s-HomeBuild.md",
     "Orchestration/Kubevirt/references.md",
     "Orchestration/talos/others/media/image.png",
@@ -557,18 +588,13 @@
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/1. Difference between Imperative and Declarative approach.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/0.Introduction.md",
     "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm",
-    "Untitled",
-    "Excalidraw/VirtualBox Network Adapters - Complete Guide.md",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.png",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.png",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section14-k8sStorage(PV & PVC)/00.Section14-K8sStorage(PV, PVC).md",
     "haK8sCluster.png",
     "RealFullStack.png",
-    "What is personal branding for DevOps professionals How do you build it, and why is it important for your career.md",
     "moss.jpeg",
     "Pasted Image 20250929165857_386.png",
     "image-1.png",
-    "Orchestration/talos/others/media/Pasted Image 20250911153615_812.png",
-    "Orchestration/talos/others/media/Pasted Image 20250911154112_991.png"
+    "Orchestration/talos/others/media/Pasted Image 20250911153615_812.png"
   ]
 }
