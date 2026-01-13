@@ -8,27 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b00709724fce0250",
+            "id": "370bf0f1d6b22940",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
+                "file": "Orchestration/Helm/What TF is Helm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!"
+              "title": "What TF is Helm"
             }
           },
           {
-            "id": "8fe83432036abb1c",
+            "id": "630c5538bba95a10",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "00.Section 16 - K8S Configuration"
             }
           }
         ]
@@ -548,8 +552,23 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "b00709724fce0250",
+  "active": "370bf0f1d6b22940",
   "lastOpenFiles": [
+    "Orchestration/Helm/Custom Helm Charts.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
+    "Orchestration/Helm/What TF is Helm.md",
+    "Orchestration/HA-K8s/7. wn3.md",
+    "Orchestration/HA-K8s/6. wn2.md",
+    "Orchestration/HA-K8s/5. wn1.md",
+    "Orchestration/HA-K8s/4. cp2.md",
+    "Orchestration/HA-K8s/3. cp1.md",
+    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+    "Orchestration/HA-K8s/2. lb2.md",
+    "Orchestration/HA-K8s/1. lb1.md",
+    "Orchestration/HA-K8s/0. index.md",
+    "GitOps Structure.md",
+    "Orchestration/Helm",
+    "Orchestration/HA-K8s",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/0.1. HIGH AVAILABILITY k3s (Kubernetes) in minutes!.md",
     "Security/kubescape - launch template.md",
     "Security/DevSecOps Practice.md",
@@ -559,35 +578,20 @@
     "Orchestration/archives",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/1. Intro to K3s - Lightweight Kubernetes.md",
     "Orchestration/K3s/archive/K3s-HomeBuild.md",
-    "Orchestration/Kubevirt/references.md",
+    "Orchestration/K3s/Kubevirt/references.md",
     "Orchestration/talos/others/media/image.png",
     "Orchestration/talos/others/Selfhost Deployment Strategies.md",
-    "Orchestration/Kubevirt",
+    "Orchestration/K3s/Kubevirt",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/0. Index.md",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/Drawing 2025-12-16 14.22.55.md",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten/Untitled",
     "Orchestration/K3s/K3s-HolyGrail/PDFs/ARM-White-Paper-V3.pdf",
     "Orchestration/K3s/K3s-HolyGrail/PDFs/introduction-230807-083212.pdf",
     "Orchestration/K3s/K3s-HolyGrail/PDFs",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/00.Section 16 - K8S Configuration.md",
     "Orchestration/K3s/K3s-HolyGrail/Handwritten",
     "Orchestration/K3s/K3s-HolyGrail",
-    "Orchestration/K3s/archive",
     "Docker compose update mandation.md",
     "link-to-your-repo.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/1.Introduction to Kubernetes Configuration.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/0.index.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/4.Handling ConfigMap using Declarative approach(environment variables).md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/3.Handling ConfigMap using Imperative approach(environment variables).md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section16-k8sConfiguration/2.Introduction to Kubernetes ConfigMap.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section15-k8sStatefulSet/00.Section 15 - K8S StatefulSet.md",
-    "Storage/MinIO - Kubernetes native object storage.md",
-    "Excalidraw/Drawing 2025-11-14 14.48.49.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section18-k8sAuthetication&Authorization/1.Introduction to Kubernetes Authentication and Authorization stratagies.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/2. Understanding Kubernetes application deployment stratagies.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/1. Difference between Imperative and Declarative approach.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm/0.Introduction.md",
-    "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section23-Helm/section1-Helm",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoAppsCluster.png",
     "Excalidraw/vendorRentedOnPremDCsetup-ClusterEnvironmentArchitecture-DwinzoIoTClusterSetup.png",
     "haK8sCluster.png",
