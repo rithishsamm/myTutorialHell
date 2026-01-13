@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CICD/GitOps Structure.md",
-                "mode": "preview",
+                "file": "Orchestration/K8s-HolyGrail/Kubernetes-Deep-Dive/HANDWRITTEN/section2-k8sClusterSetup/00. section2-full-k8sClusterSetup.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GitOps Structure"
+              "title": "00. section2-full-k8sClusterSetup"
             }
           }
         ]
@@ -538,10 +538,10 @@
       "map-of-content:Update Map of Content": false
     }
   },
-  "active": "ed6661fe103edd81",
+  "active": "630c5538bba95a10",
   "lastOpenFiles": [
-    "haK8sCluster.png",
     "CICD/GitOps Structure.md",
+    "haK8sCluster.png",
     "moss.jpeg",
     "RealFullStack.png",
     "Orchestration/HA-K8s/roughHA-Ref.md",
