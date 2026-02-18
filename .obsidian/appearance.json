@@ -6,7 +6,7 @@
   "monospaceFontFamily": "Courier New,Source Code Pro",
   "baseFontSizeAction": true,
   "nativeMenus": true,
-  "baseFontSize": 15,
+  "baseFontSize": 18,
   "theme": "obsidian",
   "showRibbon": true
 }
