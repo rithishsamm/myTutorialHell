@@ -1,10 +1,14 @@
 
-admin123@controlplane123:~$ curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+admin123@controlplane123 :~$
+```
+curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+```
 Installing Kubescape... 100.0%
 Finished Installation.
-
 Remember to add the Kubescape CLI to your path with:
+```
 $ export PATH=$PATH:/home/admin123/.kubescape/bin
+```
 
 Executing Kubescape.
  ✅  Initialized scanner

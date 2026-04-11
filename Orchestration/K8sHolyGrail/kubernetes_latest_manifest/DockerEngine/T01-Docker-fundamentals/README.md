@@ -30,7 +30,7 @@
     - overlay
     - macvlan
 
-![Docker Flow](Orchestration/K8s-HolyGrail/kubernetes_latest_manifest/DockerEngine/T01-Docker-fundamentals/src/images/docker-flow.png)
+![Docker Flow](orchestration/K8sHolyGrail/kubernetes_latest_manifest/DockerEngine/T01-Docker-fundamentals/src/images/docker-flow.png)
 
 ## Docker Server
 **Docker server/daemon** is a service that runs in the background to handle the request from CLI/API to create a object for application deployment.
